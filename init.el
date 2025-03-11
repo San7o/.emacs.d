@@ -7,85 +7,91 @@
 
 (load-theme 'modus-vivendi t)
 (customize-set-variable 'modus-themes-common-palette-overrides
-			`(
-			  ;; Make the mode-line borderless
-			  (bg-mode-line-active bg-inactive)
-			  (fg-mode-line-active fg-main)
-			  (bg-mode-line-inactive bg-inactive)
-			  (fg-mode-line-inactive fg-dim)
-			  (border-mode-line-active bg-inactive)
-			  (border-mode-line-inactive bg-nactive)
-			  ))
+                        `(
+                          ;; Make the mode-line borderless
+                          (bg-mode-line-active bg-inactive)
+                          (fg-mode-line-active fg-main)
+                          (bg-mode-line-inactive bg-inactive)
+                          (fg-mode-line-inactive fg-dim)
+                          (border-mode-line-active bg-inactive)
+                          (border-mode-line-inactive bg-nactive)
+                          ))
 
 (require 'evil)
 
-(require 'which-key)
-(which-key-mode)
+(use-package which-key
+  :ensure t
+  :hook (after-init . which-key-mode))
 
-(require 'markdown-mode)
+(use-package markdown-mode
+  :ensure t)
 
-(ivy-mode)
-(setq ivy-use-virtual-buffers t)
-(setq enable-recursive-minibuffers t)
+(use-package ivy
+  :ensure t
+  :hook (after-init . ivy-mode)
+  :config
+  (setq ivy-use-virtual-buffers t)
+  (setq enable-recursive-minibuffers t))
 
-(require 'avy)
-(global-set-key (kbd "C-:") 'avy-goto-char)
+(use-package avy
+  :ensure t
+  :bind
+  ("C-:" . avy-goto-char))
+;; Alternative way of setting a keybinding:
+;;(global-set-key (kbd "C-:") 'avy-goto-char)
 
-(require 'diff-hl)
-(global-diff-hl-mode)
+(use-package diff-hl
+  :ensure t
+  :hook (after-init . global-diff-hl-mode))
 
-;; ################ EMMS BEGIN #################
-;; Emms is an emacs music player
+(use-package emms
+  :ensure t
+  :hook (after-init . emms-all)
+  :config
+  (setq emms-player-list '(emms-player-vlc)
+        emms-info-functions '(emms-info-native)))
 
-(require 'emms)
-(emms-all)
-(setq emms-player-list '(emms-player-vlc)
-      emms-info-functions '(emms-info-native))
-;; ################# EMMS END ##################
+(use-package gnus
+  :ensure t
+  :config
+  (setq gnus-select-method '(nntp "news.gmane.io")))
 
-(setq gnus-select-method '(nntp "news.gmane.io"))
+(use-package yasnippet
+  :ensure t)
 
-(require 'yasnippet)
+(use-package olivetti
+  :ensure t)
 
-;; Cleanup the screen
 (menu-bar-mode -1)
 (scroll-bar-mode -1)
 (tool-bar-mode -1)
 (display-time-mode 1)
 
-;; Startup Screen
 (setq-default inhibit-startup-screen t)
 (setq inhibit-splash-screen t)
 (setq inhibit-startup-message t)
 (setq initial-scratch-message "")
 
-;; Dev
 (global-display-line-numbers-mode)
 (setq display-line-numbers 'relative)
 
-;; Time
 (setq display-time-format "%I:%M")
-;; Battery
-;; Do not show when the device has no battery
+
 (require 'battery)
 (when (and battery-status-function
            (not (string-match-p "N/A"
                                 (battery-format "%B"
                                                 (funcall battery-status-function)))))
   (display-battery-mode 1))
-;; Fornt size
-(set-face-attribute 'default nil :height 130)
 
-;; Setup TLS
+(set-face-attribute 'default nil :height 130)
 
 (setq-default gnutls-trustfiles (list "~/.emacs.d/cacert.pem"
                                      "/etc/pki/tls/certs/ca-bundle.pem"))
 
-;; Column Line
 (global-display-fill-column-indicator-mode 1)
 (setq global-display-fill-column-indicator-column 80)
 
-;; Save *~ files in .emacs.d/backup
 (setq backup-directory-alist '(("." . "~/.emacs.d/backup"))
   backup-by-copying t    ; Don't delink hardlinks
   version-control t      ; Use version numbers on backups
