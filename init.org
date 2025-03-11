@@ -50,6 +50,18 @@ ashamed about it, I can do whatever I want.
 #+end_src
 
 * Packages
+** Use package
+
+I use use package to manage all my packages.
+
+#+begin_src emacs-lisp
+(when (< emacs-major-version 29)
+  (unless (package-installed-p 'use-package)
+    (unless package-archive-contents
+      (package-refresh-contents))
+    (package-install 'use-package)))
+#+end_src
+
 ** Evil?
 
 No, I do not use evil shortcuts... however the default emacs yank
@@ -62,7 +74,8 @@ Update: I discovered =C-y= to paste and It appears to work well.
 I will battle test it.
 
 #+begin_src emacs-lisp
-(require 'evil)
+  (use-package evil
+    :ensure t)
 #+end_src
 
 ** Which-key

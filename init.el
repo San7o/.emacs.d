@@ -17,7 +17,14 @@
                           (border-mode-line-inactive bg-nactive)
                           ))
 
-(require 'evil)
+(when (< emacs-major-version 29)
+  (unless (package-installed-p 'use-package)
+    (unless package-archive-contents
+      (package-refresh-contents))
+    (package-install 'use-package)))
+
+(use-package evil
+  :ensure t)
 
 (use-package which-key
   :ensure t
