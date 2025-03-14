@@ -329,6 +329,12 @@ code should live in a separate file.
 (load custom-file :no-error-if-file-is-missing)
 #+end_src
 
+** Save Session
+
+#+begin_src emacs-lisp
+(desktop-save-mode 1)
+#+end_src
+
 * Games
 
 A collection of some games.
