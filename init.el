@@ -104,6 +104,14 @@
   (setq completion-category-defaults nil)
   (setq completion-category-overrides nil))
 
+(use-package kubernetes
+  :ensure t)
+
+(use-package ox-publish
+  :ensure t)
+(use-package simple-httpd
+  :ensure t)
+
 (menu-bar-mode -1)
 (scroll-bar-mode -1)
 (tool-bar-mode -1)

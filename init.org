@@ -237,6 +237,26 @@ Emacs completion style that matches multiple regexps in any order
     (setq completion-category-overrides nil))
 #+end_src
 
+** Kubernetes
+
+Manage kubernetes clusters in emacs.
+
+#+begin_src emacs-lisp
+(use-package kubernetes
+  :ensure t)
+#+end_src
+
+** Ox-publish + simple-httpd
+
+Generate static websites from org-mode.
+
+#+begin_src emacs-lisp
+  (use-package ox-publish
+    :ensure t)
+  (use-package simple-httpd
+    :ensure t)
+#+end_src
+
 * Customization
 ** Cleanup the screen
  
