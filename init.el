@@ -6,8 +6,9 @@
 (unless package--initialized (package-initialize))
 
 (load-theme 'modus-vivendi t)
-;; Set default theme to white (I am trying this out)
-(modus-themes-toggle)
+;; Default theme is white, unless the time is after 18 (6 pm)
+(when (< (decoded-time-hour (decode-time)) 18)
+  (modus-themes-toggle))
 (customize-set-variable 'modus-themes-common-palette-overrides
                         `(
                           ;; Make the mode-line borderless
@@ -21,12 +22,9 @@
 
 (when (< emacs-major-version 29)
   (unless (package-installed-p 'use-package)
-    (unless package-archive-contents
-      (package-refresh-contents))
+    ;;(unless package-archive-contents
+     ;; (package-refresh-contents))
     (package-install 'use-package)))
-
-(use-package evil
-  :ensure t)
 
 (use-package which-key
   :ensure t
@@ -60,10 +58,40 @@
   (setq emms-player-list '(emms-player-vlc)
         emms-info-functions '(emms-info-native)))
 
+(defvar my-gnus-emacs-list
+  '("nntp+news.gmane.io:gmane.emacs.announce"
+    "nntp+news.gmane.io:gwene.com.sachachua"
+    "nntp+news.gmane.io:gwene.org.irreal.blog"
+    "nnrss:Protesilaos Stavrou: Master feed with all updates"))
+
+(defvar my-gnus-linux-list
+    '("nntp+news.gmane.io:gmane.emacs.announce"
+      "nntp+news.gmane.io:gwene.net.lwn.headlines"
+      "nntp+news.gmane.io:gmane.linux.kernel.bpf"
+      "nnrss:Linux Kernel Monkey Log"))
+
+(defvar my-gnus-blogs-list
+  '("nnrss:Blog System.5"))
+
+(defvar my-gnus-misc-list
+    '("nnrss:Seeds of Science"
+      "nntp+news.gmane.io:gwene.io.kubernetes"
+      "nntp+news.gmane.io:gmane.culture.internet.history"
+      "nntp+news.gmane.io:gmane.announcxe"))
+
 (use-package gnus
-  :ensure t
-  :config
-  (setq gnus-select-method '(nntp "news.gmane.io")))
+    :ensure t
+    :config
+    (setq gnus-select-method '(nntp "news.gmane.io"))
+    (setq gnus-directory "~/.emacs.d/news/")
+    (add-to-list 'gnus-topic-alist
+                 (add-to-list 'my-gnus-emacs-list "Emacs") t)
+    (add-to-list 'gnus-topic-alist
+                 (add-to-list 'my-gnus-linux-list "Linux") t)
+    (add-to-list 'gnus-topic-alist
+                 (add-to-list 'my-gnus-blogs-list "Blogs") t)
+    (add-to-list 'gnus-topic-alist
+                 (add-to-list 'my-gnus-misc-list "Misc") t))
 
 (use-package yasnippet
   :ensure t)
@@ -97,18 +125,11 @@
 (use-package swiper
   :ensure t)
 
-(use-package orderless
-  :ensure t
-  :custom
-  (setq completion-styles '(orderless basic))
-  (setq completion-category-defaults nil)
-  (setq completion-category-overrides nil))
-
 (use-package kubernetes
   :ensure t)
 
-(use-package ox-publish
-  :ensure t)
+;;(use-package ox-publish
+;;  :ensure t)
 (use-package simple-httpd
   :ensure t)
 
@@ -192,6 +213,9 @@
 
 ;;(add-to-list 'load-path "~/.emacs.d/c3-ts-mode")
 ;;(require 'c3-ts-mode)
+
+;;  (use-package evil
+;;    :ensure t)
 
 ;; ############## EXWM BEGIN ##################
 ;; Emac's X window manager, works fine
