@@ -66,6 +66,43 @@ I use use package to manage all my packages.
     (package-install 'use-package)))
 #+end_src
 
+** Org mode
+
+Org mode settings. I use org mode everywhere in my life.
+
+Run =org-todo= to update a keywork.
+#+begin_src emacs-lisp
+  (use-package org
+    :ensure nil ; do not try to install it as it is built-in
+    :config
+    (setq org-todo-keywords
+          '((sequence "TODO(t)" "WAIT(w!)" "|" "CANCEL(c!)" "DONE(d!)"))))
+#+end_src
+
+** Markdown mode
+
+I use markdown mode when editing markdown document, mostly on
+github because that is the defacto standard format to use.
+
+#+begin_src emacs-lisp
+  (use-package markdown-mode
+    :ensure t)
+#+end_src
+
+** ggtags
+
+GNU Global on emacs.
+
+Shortcuts:
+- =C-c f=: jump to definition.
+
+#+begin_src emacs-lisp
+  (use-package ggtags
+    :ensure t
+    :config
+    (global-set-key (kbd "C-c f") 'ggtags-find-definition))
+#+end_src
+
 ** Which-key
 
 This package displays the key bindings following an incomplete
@@ -141,6 +178,15 @@ Emms is an emacs music player.
 THE best email / rss client EVER. I read all my mailing lists and
 blogs here.
 
+Some useful shortcuts:
+- =t=: topic view
+- =T n=: create a new topic
+- =T m=: move to topic
+- =^=: list sources
+- =u=: subscribe / unsubscribe to source
+- =A u=: show all sources
+- =G R=: register a new rss feed
+  
 #+begin_src emacs-lisp
   (defvar my-gnus-emacs-list
     '("nntp+news.gmane.io:gmane.emacs.announce"

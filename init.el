@@ -9,6 +9,7 @@
 ;; Default theme is white, unless the time is after 18 (6 pm)
 (when (< (decoded-time-hour (decode-time)) 18)
   (modus-themes-toggle))
+
 (customize-set-variable 'modus-themes-common-palette-overrides
                         `(
                           ;; Make the mode-line borderless
@@ -25,6 +26,20 @@
     ;;(unless package-archive-contents
      ;; (package-refresh-contents))
     (package-install 'use-package)))
+
+(use-package org
+  :ensure nil ; do not try to install it as it is built-in
+  :config
+  (setq org-todo-keywords
+        '((sequence "TODO(t)" "WAIT(w!)" "|" "CANCEL(c!)" "DONE(d!)"))))
+
+(use-package markdown-mode
+  :ensure t)
+
+(use-package ggtags
+  :ensure t
+  :config
+  (global-set-key (kbd "C-c f") 'ggtags-find-definition))
 
 (use-package which-key
   :ensure t
