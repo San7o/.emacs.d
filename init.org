@@ -56,7 +56,7 @@ ashamed about it, I can do whatever I want.
 * Packages
 ** Use package
 
-I use use package to manage all my packages.
+I use =use-package= to manage all my packages.
 
 #+begin_src emacs-lisp
 (when (< emacs-major-version 29)
@@ -70,7 +70,7 @@ I use use package to manage all my packages.
 
 Org mode settings. I use org mode everywhere in my life.
 
-Run =org-todo= to update a keywork.
+Run =org-todo= to update a TODO keywork.
 #+begin_src emacs-lisp
   (use-package org
     :ensure nil ; do not try to install it as it is built-in
@@ -186,8 +186,18 @@ Some useful shortcuts:
 - =u=: subscribe / unsubscribe to source
 - =A u=: show all sources
 - =G R=: register a new rss feed
-  
+
+Some blogs use Atom feeds instead of RSS feeds, and Gnus does not
+support them. As a temporay solution, I am subscribing to them
+via newsticker. I will write some code to convert Atom into rss
+so that gnus can read them.
+
 #+begin_src emacs-lisp
+  (require 'newsticker)
+  (setq newsticker-url-list
+        '(("Eli Bendersky" "https://eli.thegreenplace.net/feeds/all.atom.xml")
+          ("Emacs Redux" "https://emacsredux.com/atom.xml")))
+
   (defvar my-gnus-emacs-list
     '("nntp+news.gmane.io:gmane.emacs.announce"
       "nntp+news.gmane.io:gwene.com.sachachua"
@@ -195,25 +205,28 @@ Some useful shortcuts:
       "nnrss:Protesilaos Stavrou: Master feed with all updates"))
 
   (defvar my-gnus-linux-list
-      '("nntp+news.gmane.io:gmane.emacs.announce"
-        "nntp+news.gmane.io:gwene.net.lwn.headlines"
-        "nntp+news.gmane.io:gmane.linux.kernel.bpf"
-        "nnrss:Linux Kernel Monkey Log"))
+    '("nntp+news.gmane.io:gmane.emacs.announce"
+      "nntp+news.gmane.io:gwene.net.lwn.headlines"
+      "nntp+news.gmane.io:gmane.linux.kernel.bpf"
+          "nnrss:Linux Kernel Monkey Log"))
 
   (defvar my-gnus-blogs-list
-    '("nnrss:Blog System.5"))
+    '("nnrss:Blog System.5"
+      "nnrss:https://www.usebox.net/jjm/blog/index.xml"
+      "nnrss:https://alexschroeder.ch/view/index.rss"))
 
   (defvar my-gnus-misc-list
-      '("nnrss:Seeds of Science"
-        "nntp+news.gmane.io:gwene.io.kubernetes"
-        "nntp+news.gmane.io:gmane.culture.internet.history"
-        "nntp+news.gmane.io:gmane.announcxe"))
+    '("nnrss:Seeds of Science"
+      "nntp+news.gmane.io:gwene.io.kubernetes"
+      "nntp+news.gmane.io:gmane.culture.internet.history"
+      "nntp+news.gmane.io:gmane.announcxe"))
 
-  (use-package gnus
+    (use-package gnus
       :ensure t
       :config
       (setq gnus-select-method '(nntp "news.gmane.io"))
       (setq gnus-directory "~/.emacs.d/news/")
+      ;;(setq gnus-startup-file "~/.emacs.d/.newsrc.eld") ;; Not working
       (add-to-list 'gnus-topic-alist
                    (add-to-list 'my-gnus-emacs-list "Emacs") t)
       (add-to-list 'gnus-topic-alist
@@ -222,6 +235,27 @@ Some useful shortcuts:
                    (add-to-list 'my-gnus-blogs-list "Blogs") t)
       (add-to-list 'gnus-topic-alist
                    (add-to-list 'my-gnus-misc-list "Misc") t))
+#+end_src
+
+Read atom feeds with gnus. Stolen from the emacswiki, you need to
+download =atom2rss.xsl= first from https://atom.geekhood.net/.
+
+#+begin_src emacs-lisp
+  (require 'mm-url)
+  (defadvice mm-url-insert (after DE-convert-atom-to-rss () )
+    "Converts atom to RSS by calling xsltproc."
+    (when (re-search-forward "xmlns=\"http://www.w3.org/.*/Atom\"" 
+           nil t)
+      (goto-char (point-min))
+      (message "Converting Atom to RSS... ")
+      (call-process-region (point-min) (point-max) 
+         "xsltproc" 
+         t t nil 
+         (expand-file-name "~/.emacs.d/atom2rss.xsl") "-")
+      (goto-char (point-min))
+      (message "Converting Atom to RSS... done")))
+
+  (ad-activate 'mm-url-insert)
 #+end_src
 
 ** Yasnippet
@@ -402,6 +436,14 @@ code should live in a separate file.
 
 #+begin_src emacs-lisp
 (desktop-save-mode 1)
+#+end_src
+
+** Tabs size
+
+Change the tab size as 2 spaces.
+
+#+begin_src emacs-lisp
+  (setq-default tab-width 2)
 #+end_src
 
 * Games
