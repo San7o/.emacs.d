@@ -1,5 +1,384 @@
 ;; -*- coding: utf-8-emacs; -*-
-(setq nnrss-group-data '((103 (26580 32188 431930 119000) "https://protesilaos.com/codelog/2025-03-14-emacs-denote-many-packages/" "Emacs: Denote is becoming many packages" nil "Fri, 14 Mar 2025 00:00:00 +0000" "<p>In February I announced the plan to reorganise the Denote project into
+(setq nnrss-group-data '((106 (26591 55059 976958 403000) "https://protesilaos.com/politics/2025-03-23-europe-remilitarisation/" "On the remilitarisation of Europe" nil "Sun, 23 Mar 2025 00:00:00 +0000" "<p>The European Union is in the process of expanding its military capacity. The immediate plan is to invest in “made in Europe” defence capabilities. As <a href=\"https://commission.europa.eu/topics/defence/future-european-defence_en\">outlined on the European Commission’s website</a>, governments will benefit from a lending facility that will mobilise funds from capital markets as well as creative national accounting. The latter involves the relaxation of the EU’s stringent rules on fiscal deficits and public debts such that expenditure up to 1.5% of Gross Domestic Product is not counted against the deficit if directed towards military affairs. Critics will rightly question where was this leeway when European leaders were insistent on imposing grinding austerity on the vast majority of the population. Why did the EU not relax those rules in favour of public health and education, for example, and why is the war machine treated differently in this regard? While I share that sentiment, I think the discrepancy is justified.</p>
+<p>War is odious yet part of our potential. A country that wants to preserve its way of living is a country that is combat ready. The same is true for individuals: those who do not want to be victims of some bully do what they must to make themselves a hard target. And those who are always mistreated are so because they are easy targets. Is this nice? No. Are the aggressors justified? No. The point is not one of aesthetics or of moralising against the phenomena. What matters is how the world works. There is no lasting security, personal or collective, that is sustained absent strong checks on innate ambitions of control, dominance, or even the sheer thrill of conquest and adventure.</p>
+<p>The story of the European integration process is one of peace among the Member States, in juxtaposition to the cruelty of two World Wars, yet it happened against the backdrop of the Cold War and, more recently, of ongoing tensions in the wider region. Europeans uniting under a single legal-institutional framework is, in practical terms, an alliance. Even from a purely economic standpoint, it makes sense for trading partners to have a vested interest in their common safety: it helps business continue. And with that come all the practicalities of the free movement of workers, their right to establishment, and so on. In other words, what starts out as a purely financial calculus inevitably spills over to all facets of the quotidian experience.</p>
+<p>The EU is a highly flawed architecture which cannot be a federal republic in its current form. It is a union of states or a confederation, else, a layer of bureaucracy on top of nation states, which has some competences (“sovereignty”) but which nevertheless lacks democratic accountability commensurate with that generally found at the Member State level. There still are degrees though, which critics of the Union need be mindful of in order not to lose their sense of perspective. Despite its shortcomings, the EU is a largely progressive place in terms of the rule of law and the respect for fundamental freedoms. One need only take a look at the immediate periphery of the EU to appreciate those nuances and understanding how nothing can be taken as a given.</p>
+<p>A European Defence Union provides a credible deterrent to aspiring overlords that seek to exploit Europeans. It cannot be
+purely good though, as it admittedly comes with the latent risk of turning into a repressive regime in its own right. Such is the trade-off every hitherto society faces: who guards us from the guardians? There is no ultimate guarantee and it is pointless to think of politics in terms of the untenable binary of good versus evil. It will always be an arrangement that is prone to abuse while having the merit of enabling a certain lifestyle. It is why political conduct rests on faith, else the acquiescence of individuals to the prevailing norms and their commitment to operate in good faith accordingly. Put differently for our immediate case, democracies are maintained by democratic citizens and cease to be democratic when the people no longer are vigilant in enforcing the values they purport to uphold.</p>
+<p>Accelerated rearmament is a pragmatic response to the evolving international trends. Anything else is complacency bordering on recklessness. My hope is that on the balance, we avoid the worse by showing the requisite readiness, without getting sucked into the black hole of militarism. The key, then, looking forward is to be responsible in the language we use and the deeds we carry out. We will all be on the losing side if in the process of fighting the bullies we become bullies ourselves.</p>" nil nil "c46731401de9d75ba43dd6042388f3c6") (105 (26590 33241 120539 712000) "https://protesilaos.com/codelog/2025-03-22-emacs-build-source-debian/" "Emacs: how I build from emacs.git on Debian stable" nil "Sat, 22 Mar 2025 00:00:00 +0000" "<p>I have been following the <code class=\"language-plaintext highlighter-rouge\">master</code> branch of the emacs.git repository
+for many years now. It helps me test new features and make necessary
+adjustments to all the packages I develop/maintain. Below I explain
+how I make this happen on my computer, which is running Debian stable
+(Debian 12 “Bookworm” as of this writing). If you are a regular user,
+there is no reason to build from source: just use the latest stable
+release and you should be fine.</p>
+<h2>Configure the <code class=\"language-plaintext highlighter-rouge\">apt</code> development sources</h2>
+<p>To build Emacs from source on Debian, you first need to have the
+<code class=\"language-plaintext highlighter-rouge\">deb-src</code> package archive enabled. In your <code class=\"language-plaintext highlighter-rouge\">/etc/apt/sources.list</code>
+file you must have something like this:</p>
+<div class=\"language-plaintext highlighter-rouge\"><div class=\"highlight\"><pre class=\"highlight\"><code>deb http://deb.debian.org/debian/ bookworm main
+deb-src http://deb.debian.org/debian/ bookworm main
+</code></pre></div></div>
+<p>After modifying the sources, run the following on the command line to
+fetch the index with new package names+versions:</p>
+<div class=\"language-plaintext highlighter-rouge\"><div class=\"highlight\"><pre class=\"highlight\"><code>sudo apt update
+</code></pre></div></div>
+<h2>Get the Emacs build dependencies</h2>
+<p>Now that you have enabled the <code class=\"language-plaintext highlighter-rouge\">deb-src</code> archive, you can install the
+build dependencies of the Debian <code class=\"language-plaintext highlighter-rouge\">emacs</code> package with the following on
+the command line:</p>
+<div class=\"language-plaintext highlighter-rouge\"><div class=\"highlight\"><pre class=\"highlight\"><code>sudo apt build-dep emacs
+</code></pre></div></div>
+<p>With this done, you are ready to build Emacs from source.</p>
+<h2>Get the Emacs source code</h2>
+<p>You need the <code class=\"language-plaintext highlighter-rouge\">git</code> program to get the source code from the emacs.git
+website. So install it with this command:</p>
+<div class=\"language-plaintext highlighter-rouge\"><div class=\"highlight\"><pre class=\"highlight\"><code>sudo apt install git
+</code></pre></div></div>
+<p>Now make a copy of the Emacs source code, using this on the command
+line:</p>
+<div class=\"language-plaintext highlighter-rouge\"><div class=\"highlight\"><pre class=\"highlight\"><code>git clone https://git.savannah.gnu.org/git/emacs.git ~/path/to/my/copy-of-emacs.git
+</code></pre></div></div>
+<p>Replace <code class=\"language-plaintext highlighter-rouge\">~/path/to/my/copy-of-emacs.git</code> with the actual destination
+of your preference. I have a <code class=\"language-plaintext highlighter-rouge\">~/Builds</code> directory where I store all
+the projects I build from source. I thus do:</p>
+<div class=\"language-plaintext highlighter-rouge\"><div class=\"highlight\"><pre class=\"highlight\"><code>git clone https://git.savannah.gnu.org/git/emacs.git ~/Builds/emacs.git
+</code></pre></div></div>
+<p>If the cloning process is too slow on your end, perform a <em>shallow
+clone</em> instead. For example:</p>
+<div class=\"language-plaintext highlighter-rouge\"><div class=\"highlight\"><pre class=\"highlight\"><code>git clone --depth 1 https://git.savannah.gnu.org/git/emacs.git ~/Builds/emacs.git
+</code></pre></div></div>
+<p>And if the Savannah website is not responsive, then clone from the
+GitHub mirror (with the <code class=\"language-plaintext highlighter-rouge\">--depth 1</code> if necessary):</p>
+<div class=\"language-plaintext highlighter-rouge\"><div class=\"highlight\"><pre class=\"highlight\"><code>git clone https://github.com/emacs-mirror/emacs.git ~/Builds/emacs.git
+</code></pre></div></div>
+<h2>Switch to the Emacs directory</h2>
+<p>Assuming you have the copy of emacs.git stored at <code class=\"language-plaintext highlighter-rouge\">~/Builds/emacs.git</code>,
+you switch to that directory with the following:</p>
+<div class=\"language-plaintext highlighter-rouge\"><div class=\"highlight\"><pre class=\"highlight\"><code>cd ~/Builds/emacs.git
+</code></pre></div></div>
+<p>Keep in mind that unless you explicitly switch to another branch, you
+are on <code class=\"language-plaintext highlighter-rouge\">master</code>, i.e. the latest development target.</p>
+<p><strong>NOTE:</strong> All subsequent commands are ran from your equivalent of
+<code class=\"language-plaintext highlighter-rouge\">~/Builds/emacs.git</code>.</p>
+<h2>Run the <code class=\"language-plaintext highlighter-rouge\">autogen.sh</code> the first time</h2>
+<p>This script will generate the configuration scaffold. You only really
+need to do this once (and I always forget about it for this very
+reason). Simply do this on the command line:</p>
+<div class=\"language-plaintext highlighter-rouge\"><div class=\"highlight\"><pre class=\"highlight\"><code>./autogen.sh
+</code></pre></div></div>
+<p>It checks that you have all you need to get started and prints output
+like this:</p>
+<div class=\"language-plaintext highlighter-rouge\"><div class=\"highlight\"><pre class=\"highlight\"><code>Checking whether you have the necessary tools...
+(Read INSTALL.REPO for more details on building Emacs)
+Checking for autoconf (need at least version 2.65) ... ok
+Your system has the required tools.
+Building aclocal.m4 ...
+Running 'autoreconf -fi -I m4' ...
+Building 'aclocal.m4' in exec ...
+Running 'autoreconf -fi' in exec ...
+Configuring local git repository...
+'.git/config' -> '.git/config.~1~'
+git config transfer.fsckObjects 'true'
+git config diff.cpp.xfuncname '!^[ 	]*[A-Za-z_][A-Za-z_0-9]*:[[:space:]]*($|/[/*])
+^((::[[:space:]]*)?[A-Za-z_][A-Za-z_0-9]*[[:space:]]*\\(.*)$
+^((#define[[:space:]]|DEFUN).*)$'
+git config diff.elisp.xfuncname '^\\([^[:space:]]*def[^[:space:]]+[[:space:]]+([^()[:space:]]+)'
+git config diff.m4.xfuncname '^((m4_)?define|A._DEFUN(_ONCE)?)\\([^),]*'
+git config diff.make.xfuncname '^([$.[:alnum:]_].*:|[[:alnum:]_]+[[:space:]]*([*:+]?[:?]?|!?)=|define .*)'
+git config diff.shell.xfuncname '^([[:space:]]*[[:alpha:]_][[:alnum:]_]*[[:space:]]*\\(\\)|[[:alpha:]_][[:alnum:]_]*=)'
+git config diff.texinfo.xfuncname '^@node[[:space:]]+([^,[:space:]][^,]+)'
+Installing git hooks...
+'build-aux/git-hooks/commit-msg' -> '.git/hooks/commit-msg'
+'build-aux/git-hooks/pre-commit' -> '.git/hooks/pre-commit'
+'build-aux/git-hooks/prepare-commit-msg' -> '.git/hooks/prepare-commit-msg'
+'build-aux/git-hooks/post-commit' -> '.git/hooks/post-commit'
+'build-aux/git-hooks/pre-push' -> '.git/hooks/pre-push'
+'build-aux/git-hooks/commit-msg-files.awk' -> '.git/hooks/commit-msg-files.awk'
+'.git/hooks/applypatch-msg.sample' -> '.git/hooks/applypatch-msg'
+'.git/hooks/pre-applypatch.sample' -> '.git/hooks/pre-applypatch'
+You can now run './configure'.
+</code></pre></div></div>
+<p>Do not be intimidated by it. Focus on the final line instead, which
+directs you to the <code class=\"language-plaintext highlighter-rouge\">configure</code> directive.</p>
+<h2>Explore the build flags</h2>
+<p>How exactly you build Emacs depends on your preferences and
+system-specific requirements. At the end of this post, I copy my
+current configuration, though <strong>I advise against</strong> copying it without
+understanding what it does.</p>
+<p>If you have no specific preferences, just use the defaults by running
+this on the command line:</p>
+<div class=\"language-plaintext highlighter-rouge\"><div class=\"highlight\"><pre class=\"highlight\"><code>./configure
+</code></pre></div></div>
+<p>It will set up the build environment for you. If, however, you wish
+to explore your options and customise the <code class=\"language-plaintext highlighter-rouge\">emacs</code> program you will
+get, then issue the following command and carefully read its output:</p>
+<div class=\"language-plaintext highlighter-rouge\"><div class=\"highlight\"><pre class=\"highlight\"><code>./configure --help
+</code></pre></div></div>
+<p>The <strong>minimum I recommend</strong> is to specify where the build artefacts
+are stored. I use this, which has not caused me any issues over the
+years:</p>
+<div class=\"language-plaintext highlighter-rouge\"><div class=\"highlight\"><pre class=\"highlight\"><code>./configure --prefix=/usr/local
+</code></pre></div></div>
+<h2>Configure the build environment with your preferred flags</h2>
+<p>Once you have understood the available options, go ahead and run
+<code class=\"language-plaintext highlighter-rouge\">configure</code>. For example:</p>
+<div class=\"language-plaintext highlighter-rouge\"><div class=\"highlight\"><pre class=\"highlight\"><code>./configure --prefix=/usr/local --with-x-toolkit=gtk3
+</code></pre></div></div>
+<p>Whenever you need to rebuild Emacs with some new flags, run the
+<code class=\"language-plaintext highlighter-rouge\">configure</code> command again, passing it the relevant flags. If you wish
+to keep the same options for a new build, then simply do not run
+<code class=\"language-plaintext highlighter-rouge\">configure</code> again.</p>
+<h2>Make the program</h2>
+<p>Once <code class=\"language-plaintext highlighter-rouge\">configure</code> finishes its work, it is time to run the <code class=\"language-plaintext highlighter-rouge\">make</code>
+program. For new builds, this is as simple as:</p>
+<div class=\"language-plaintext highlighter-rouge\"><div class=\"highlight\"><pre class=\"highlight\"><code>make
+</code></pre></div></div>
+<p>Sometimes you have old build artefacts that conflict with changes
+upstream. When that happens, the build process will fail. You may then
+need to use:</p>
+<div class=\"language-plaintext highlighter-rouge\"><div class=\"highlight\"><pre class=\"highlight\"><code>make bootstrap
+</code></pre></div></div>
+<p>In general, <code class=\"language-plaintext highlighter-rouge\">make</code> is enough. It will be slow the first time, but will
+be faster on subsequent runs as it reuses what is already there. A
+<code class=\"language-plaintext highlighter-rouge\">make bootstrap</code> will always be slow though, as it generates
+everything anew.</p>
+<h2>Install the program that was made</h2>
+<p>After <code class=\"language-plaintext highlighter-rouge\">make</code> is done, you are ready to install Emacs:</p>
+<div class=\"language-plaintext highlighter-rouge\"><div class=\"highlight\"><pre class=\"highlight\"><code>sudo make install
+</code></pre></div></div>
+<p>You will not need escalated privileges (i.e. <code class=\"language-plaintext highlighter-rouge\">sudo</code>) is you specified
+a <code class=\"language-plaintext highlighter-rouge\">--prefix</code> with a user directory during the <code class=\"language-plaintext highlighter-rouge\">configure</code> step. How
+you go about it is up to you.</p>
+<h2>Keeping Emacs up-to-date</h2>
+<p>Whenever you wish to update from source, go to where your copy of
+emacs.git is (e.g. <code class=\"language-plaintext highlighter-rouge\">~/Builds/emacs.git</code>) and pull the latest changes
+using the <code class=\"language-plaintext highlighter-rouge\">git</code> program:</p>
+<div class=\"language-plaintext highlighter-rouge\"><div class=\"highlight\"><pre class=\"highlight\"><code>git pull
+</code></pre></div></div>
+<p>Then repeat <code class=\"language-plaintext highlighter-rouge\">make</code> and <code class=\"language-plaintext highlighter-rouge\">make install</code>. Remember that you do not need
+to re-run <code class=\"language-plaintext highlighter-rouge\">configure</code> unless you specifically want to modify your
+build (and if you do that, you probably need to <code class=\"language-plaintext highlighter-rouge\">make bootstrap</code>).</p>
+<h2>Learn about the latest <code class=\"language-plaintext highlighter-rouge\">NEWS</code></h2>
+<p>Emacs users can at all times learn about changes introduced in their
+current version of Emacs with <code class=\"language-plaintext highlighter-rouge\">M-x view-emacs-news</code>. It is bound to
+the key <code class=\"language-plaintext highlighter-rouge\">C-h n</code> by default. This command opens the current <code class=\"language-plaintext highlighter-rouge\">NEWS</code>
+file. With a numeric prefix argument, you get the <code class=\"language-plaintext highlighter-rouge\">NEWS</code> of the given
+Emacs version. For example, <code class=\"language-plaintext highlighter-rouge\">C-u 27 C-h n</code> shows you what Emacs
+version 27 introduced.</p>
+<h2>Compare your <code class=\"language-plaintext highlighter-rouge\">NEWS</code> to those of emacs.git</h2>
+<p>With the help of the built-in Emacs <code class=\"language-plaintext highlighter-rouge\">ediff</code> package, you can compare
+your latest <code class=\"language-plaintext highlighter-rouge\">NEWS</code> to those coming from emacs.git. I always do this
+after pulling the latest changes from source (with <code class=\"language-plaintext highlighter-rouge\">git pull</code>).</p>
+<p>From the root directory of your copye of emacs.git (e.g.
+<code class=\"language-plaintext highlighter-rouge\">~/Builds/emacs.git</code>), and while using Emacs, you can do <code class=\"language-plaintext highlighter-rouge\">M-x
+project-find-file</code> (<code class=\"language-plaintext highlighter-rouge\">C-x p f</code>) to search the Emacs “project” for a
+file called <code class=\"language-plaintext highlighter-rouge\">etc/NEWS</code>. This is where the latest user-facing changes
+are recorded.</p>
+<p>If you are not sure where you are on the filesystem while inside
+Emacs, do <code class=\"language-plaintext highlighter-rouge\">M-x cd</code> (or <code class=\"language-plaintext highlighter-rouge\">M-x dired</code> or <code class=\"language-plaintext highlighter-rouge\">M-x find-file</code>), select the
+root directory of your emacs.git, hit <code class=\"language-plaintext highlighter-rouge\">RET</code>, and then do <code class=\"language-plaintext highlighter-rouge\">M-x
+project-find-file</code>.</p>
+<p>Now that you have <code class=\"language-plaintext highlighter-rouge\">emacs.git/etc/NEWS</code> in a buffer, also load your
+copy of <code class=\"language-plaintext highlighter-rouge\">NEWS</code> with <code class=\"language-plaintext highlighter-rouge\">M-x view-emacs-news</code> (<code class=\"language-plaintext highlighter-rouge\">C-h n</code>).</p>
+<p>Then do <code class=\"language-plaintext highlighter-rouge\">M-x ediff-buffers</code>, which will prompt for two buffers to
+compare. First select your version of <code class=\"language-plaintext highlighter-rouge\">NEWS</code> and then that of emacs.git.</p>
+<p><strong>NOTE:</strong> I think the default Ediff interface is problematic. Put the
+following in your configuration to make it work in a single frame:</p>
+<div class=\"language-elisp highlighter-rouge\"><div class=\"highlight\"><pre class=\"highlight\"><code><span class=\"p\">(</span><span class=\"k\">setq</span> <span class=\"nv\">ediff-split-window-function</span> <span class=\"ss\">'split-window-horizontally</span><span class=\"p\">)</span>
+<span class=\"p\">(</span><span class=\"k\">setq</span> <span class=\"nv\">ediff-window-setup-function</span> <span class=\"ss\">'ediff-setup-windows-plain</span><span class=\"p\">)</span>
+</code></pre></div></div>
+<p>Also watch my video with the Ediff basics: <a href=\"https://protesilaos.com/codelog/2023-11-17-emacs-ediff-basics/\">https://protesilaos.com/codelog/2023-11-17-emacs-ediff-basics/</a>.</p>
+<p>This is it. You are now in the flow of building Emacs from source.
+Good luck with everything!</p>
+<h2>My current build options</h2>
+<div class=\"language-plaintext highlighter-rouge\"><div class=\"highlight\"><pre class=\"highlight\"><code>--prefix=/usr/local --without-xinput2 --without-compress-install --without-gpm --without-selinux --with-native-compilation=yes --with-sound=no --without-gif --without-tiff --with-cairo --with-harfbuzz --with-tree-sitter=ifavailable --with-json --without-gsettings --without-gconf --with-x-toolkit=no --without-toolkit-scroll-bars --without-xft --without-xaw3d
+</code></pre></div></div>
+<p>I am not updating old publications, unless otherwise noted. The most
+up-to-date recode of my Emacs build is documented in my dotemacs:
+<a href=\"https://protesilaos.com/emacs/dotemacs\">https://protesilaos.com/emacs/dotemacs</a>.</p>
+<p>Inspect the value of the Emacs variable <code class=\"language-plaintext highlighter-rouge\">system-configuration-options</code>
+to find out how your Emacs is built.</p>
+<p>Have fun!</p>" nil nil "82c0144e71b21f7e5aa0ab255ae3dd34") (104 (26586 26423 206219 0) "https://protesilaos.com/books/2025-03-18-stoic-harmony-nature/" "On the Stoic harmony with nature" nil "Tue, 18 Mar 2025 00:00:00 +0000" "<p>I was asked to comment on the following passage from the <em>Enchiridion</em>
+of Epictetus. While <a href=\"https://protesilaos.com/commentary/2025-03-02-re-are-you-stoic-what-philosophy/\">I do not consider myself a
+Stoic</a>
+due to my wider appreciation of Greek culture (which includes [early]
+Stoicism), I still have several things to say on this topic.</p>
+<blockquote>
+<p>4 Whenever you are about to start on some activity, remind yourself
+what the activity is like. If you go out to bathe, picture what
+happens at a bathhouse—the people there who splash you or jostle
+you or talk rudely or steal your things. In this way you will be
+more prepared to start on the activity, by telling yourself at the
+outset: “I want to bather, and I also want to keep my will in
+harmony with nature.” Make this your practice in every activity.
+Then, if anything happens that gets in the way of your bathing, you
+will have the following response available: “Well, this was not the
+only thing I wanted; I also wanted to keep my will in harmony with
+nature. I shall not do that if I get angry about what is happening.”</p>
+</blockquote>
+<p>At its core, to live in harmony or accordance with nature is to have a
+bigger picture view of your life and of the cosmic life in general. It
+is to appreciate the place while being mindful of the space.</p>
+<h2>The balanced view</h2>
+<p>In Greece we have a saying that comes to us from antiquity: “nothing
+bad not intermixed with good” (ουδέν κακόν αμιγές καλού). A liberal
+translation is “there is no pure evil in this world as everything we
+find that is bad always has some good mixed into it.” The opposite is
+also true, namely, that all good things have some bad inherent to them.</p>
+<p>This is a worldview of balance. Phenomena are neither good nor bad
+once considered holistically. The cosmos as such is neutral. Or, when
+looking at the particulars, the degree of good or bad matters as do
+the prevailing conditions which together constitute the case at hand.</p>
+<p>In our everyday affairs we tend to think of actions in terms of the
+binary of good and evil. It is how many of our world’s religious
+precepts are framed. However useful this classification may be for
+day-to-day events, it is not helpful outside the narrow confines of
+human institution; of the process of enacting rules by which we
+regulate our shared experiences.</p>
+<p>We may call a tsunami “bad”, for example, due to all the loss it
+brings about. Though there is also one or more lessons to be learnt
+about how best to cope with the challenges we face on our planet:
+where to build settlements, how to monitor relevant indicators in
+order to improve our preparedness, what is the significance of
+solidarity in the face of such calamities, and so on. These may be
+considered “good” once we zoom out from the immediate emotional
+reaction to the catastrophe.</p>
+<p>By the same token, drinking water is “good” for each of us as it
+sustains our life. Though it is not purely so, as we can actually harm
+ourselves by drinking too much of it too quickly. That would then make
+it “bad”. It is no coincidence that the symbol of medicine since
+antiquity is the venomous snake: the difference between poison and
+remedy is one of degree.</p>
+<p>Thus, the ancient wisdom of the world as admixture readies us for a
+life of moderation. When so-called “good” things happen, we are
+content but do not lose sight of how the world works. When the “bad”
+things occur, we may feel sad though, again, admit that sorrow is not
+all there is.</p>
+<p>Couched in those terms, we may consider the diversity among people.
+Some will be polite and friendly, other noisy and rude, and others
+still will seek to harm us. Everything is possible out there and
+everyone will be different depending on the particularities of their
+situation. If we expect everybody to be strictly benevolent or
+malevolent, then we do not recognise what nature teaches us: it is
+mixed, it is nuanced, it is ever-changing in its particulars.</p>
+<p>It is in this spirit that we may consider the Delphic maxim “nothing
+in excess” (μηδέν άγαν), which would loosely translate as “nothing in
+deviation [of the middle way].” Whatever we do, we must be of the mind
+that it can be inwardly corrupted or turned into its opposite if done
+to a degree that is not appropriate in the given case.</p>
+<h2>The organic view</h2>
+<p>In nature things happen when they are meant to. Consider how trees
+blossom when their spring arrives, bears hibernate during winter, rain
+drops when there are clouds, and so on. No phenomenon can be decoupled
+from its fundamentals and, by extension, no event can be independent
+of the totality of phenomena. The same is true for the human
+condition, though we may lack that kind of patience in our deeds to
+see how some eventuality is the result of dynamics that build up over
+time.</p>
+<p>A person may only be ready when the conditions are right. A boy is a
+man when he is physically mature. A musician can perform skilfully
+after years of practice. An athlete may compete at the top of their
+sport when their fitness is optimal. One cannot simply wish for
+something to happen and it is just made manifest, no matter how much
+they believe in it: the prerequisites must be satisfied.</p>
+<p>This is particularly important for our outlook. It is easy to lose
+sight of the bigger picture, as outlined in the previous section, by
+obsessing about a specific outcome, while not considering the
+propriety of the moment. For example, to tell ourselves “I only want
+to do THIS in order to be happy and nothing else matters” where “THIS”
+is the item of our desire. It is narrow-minded because it assumes the
+object of the wish to be necessarily good: it sees it in a vacuum. As
+such, it also labours under the belief that it knows more about the
+case than it actually does, as it has stripped it of its details. And,
+finally, it is emotionally negatively disposed to the workings of the
+world which are independent of our plans yet whose eventualities we
+may ultimately like.</p>
+<p>I remember when I was a teenager how all I wanted was to become a
+professional football (soccer) player. Nothing else mattered to me as
+a career path and I had what it took in terms of talent and work ethic
+to realise my dream. An injury combined with the financial situation
+forced me to quit, which I did not like at the time though eventually
+grew to appreciate the value of: I took a completely different path
+that I had not anticipated but which ultimately brought with it
+fulfilling experiences. In the grand scheme of things, the injury was
+neither good nor bad. What I learnt in the process is that nature
+shows us how little we really know about ourselves, our plans, and our
+ability to make them happen. To become knowledgeable in this regard is
+the sign of wisdom.</p>
+<p>By taking an organic approach to life the way plants grow when they
+must, we are grounded in the bigger picture view of the world as one
+of admixture. It then is more likely that we do not get disturbed when
+our ambitions are not realised, for we have already internalised the
+relevant lessons and admit to our relative ignorance. What we desire
+the most may ultimately be what we do not like or indeed need: let the
+world reveal as much.</p>
+<p>In this light, we can think of the Delphic maxim of “certainty is
+beside ruin” (εγγύα παρά δ’Άτα), which literally means “assurances
+stand next to Ate (goddess of ruin)”. If we are convinced that we can
+force things to happen, if we do not pay attention to the prevailing
+conditions, if we overestimate our ability to enforce our will in the
+moment, and, if in other words, we do not recognise how our immediate
+milieu is constituted, we are going to harm ourselves (or others).</p>
+<h2>The adaptable view</h2>
+<p>The Greek word for “nature” is “physis” (φύσις) which refers to things
+that grow. They develop organically, as noted above, and have a life
+of their own that is couched in terms of the cosmic continuum of life:
+they are all coexistent and interdependent. To live in accordance with
+nature, then, is to go with the flow of the prevailing conditions,
+else to be adaptable. When trees cannot grow directly upward because
+some obstacle is in their way, they grow sideways, circumventing the
+problem.</p>
+<p>Compare this to the attitude of forcing things to happen, of declaring
+our wants, and trying to implement them regardless of the prevailing
+conditions. If the tree insists on only going straight up, then it
+will perish. Same principle for humans. What would my life be like had
+I insisted on becoming a footballer and did not show the requisite
+adaptability to try new things and to ultimately find value in them? I
+would probably be miserable the whole time, as I would be fighting
+against forces I could not overcome, never to realise my goal, and
+never to have the necessary openness to take in what the world was
+showing me.</p>
+<p>In this regard, any specific plan is not worth clinging on to: let
+whatever transpires happen in its natural life cycle. There can be a
+general direction of the balanced life, in accordance with the
+aforementioned, though not of a series of prescribed experiences that
+necessarily have to unfold within predefined boundaries. This goes for
+individual projects and relationships. They all come and go.</p>
+<p>Adaptability is the flip-side of sustainability, another quality of
+nature. Things not only happen when they are meant to happen, they
+also have a cycle that is not self-annulling. If we force things to
+happen, we will not only fail to meet the prerequisites, but also risk
+harming ourselves in the process.</p>
+<p>Suppose we want to improve our fitness. The sustainable option is to
+make small changes with regularity, whose cumulative effect will be
+that of fitness. The unsustainable and likely self-destructive
+approach is to, say, try to run a long distance at full speed. The
+stamina is not there, the muscles are not ready. Therein lies injury
+or even death.</p>
+<p>Sustainability makes us think of the bigger picture from a different
+perspective: that of being committed and patient as well as relaxed.
+We are not haphazard and opportunistic, nor are we oscillating between
+the extremes of excitement and disappointment, as we switch from one
+task to another, one wish to another, without paying attention to the
+balanced and organic aspects of nature.</p>
+<p>Against this backdrop, the Dephic maxim of “know yourself” (γνώθι
+σεαυτόν) is a reminder that we have to be mindful of who we are in
+relation to what our immediate surroundings make us be. The self
+cannot be decontextualised and considered without its environment, for
+the cosmos is a continuum, where each form of life is in the presence
+of all the rest of life. Those who does not know who they are will
+also violate the other two core Delphic maxims that I mentioned
+previously. To live in harmony with nature is to have those three
+maxims as the foundation of your conduct.</p>
+<p>Returning to the quote from the <em>Enchiridion</em> what Epictetus is
+telling us is to (i) remember that the world had good and bad things
+to it so do not get disappointed by having false expectations, (ii)
+that things happen independent of your volition and you must thus
+recognise you are not the epicentre of the world, so, do not have
+false wants, and (iii) that no particular project is necessarily
+viable at all times, and your ambitions must thus be kept in check
+while you operate with adaptability.</p>" nil nil "b38ed005d243e522027ee5e1a7036676") (103 (26580 32188 431930 119000) "https://protesilaos.com/codelog/2025-03-14-emacs-denote-many-packages/" "Emacs: Denote is becoming many packages" nil "Fri, 14 Mar 2025 00:00:00 +0000" "<p>In February I announced the plan to reorganise the Denote project into
 “core” and “extensions”: <a href=\"https://protesilaos.com/codelog/2025-02-11-emacs-splitting-denote-many-packages/\">https://protesilaos.com/codelog/2025-02-11-emacs-splitting-denote-many-packages/</a>.
 In essence, Denote is a file-naming scheme: you create new files
 and/or rename existing ones (of any file type). Having that naming

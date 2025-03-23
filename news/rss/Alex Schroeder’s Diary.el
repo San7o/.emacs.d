@@ -1,5 +1,314 @@
 ;; -*- coding: utf-8-emacs; -*-
-(setq nnrss-group-data '((11 (26588 11780 102477 30000) "https://alexschroeder.ch/view/2025-03-20-bot-defence" "2025-03-20 Something about the bot defence is working" nil "Thu, 20 Mar 2025 16:00:10 +0000" "<h1 id=\"2025-03-20-something-about-the-bot-defence-is-working\">2025-03-20 Something about the bot defence is working</h1>
+(setq nnrss-group-data '((15 (26591 55056 783191 463000) "https://alexschroeder.ch/view/2025-03-20-bot-defence" "2025-03-20 Something about the bot defence is working" nil "Sat, 22 Mar 2025 22:02:48 +0000" "<h1 id=\"2025-03-20-something-about-the-bot-defence-is-working\">2025-03-20 Something about the bot defence is working</h1>
+<p>At midnight, there was a surge in activity.
+CPU usage went up.</p>
+<p><img loading=\"lazy\" src=\"2025-03-20-bot-defence-1.jpg\" alt=\"\" /></p>
+<p>Load went up, too. But it stayed within reasonable bounds - less than 4 instead of the more than 80 I have seen in the past.</p>
+<p><img loading=\"lazy\" src=\"2025-03-20-bot-defence-2.jpg\" alt=\"\" /></p>
+<p>And the number of IP addresses blocked by <code>fail2ban</code> went from 40 to 50.</p>
+<p><img loading=\"lazy\" src=\"2025-03-20-bot-defence-3.jpg\" alt=\"\" /></p>
+<p>I'm usually sceptical of this because the big attacks are from a far wider variety of IP numbers.
+In this case, however, maybe there was some probing that resulted in blocks? I don't know. Lucky, I guess?</p>
+<p>In any case, the site is still up. Yay for small wins.</p>
+<p>Also, I cannot overstate how good it feel to have some <a href=\"https://munin-monitoring.org/\">Munin</a> graphs available.</p>
+<p><code>alex-bots</code> is a setup I desribed in <a href=\"2025-02-19-bots-again\">2025-02-19 Bots again, cursed</a>.
+Basically a request to one of my Oddmuse wikis containing the parameter <code>rcidonly</code> is an expensive endpoint: ``all changes for this single page'' or ``a feed for this single page''. This is something a human would rarely access and yet it somehow the URLs landed in some dataset for AI training, I suspect. So what I do is I’m redirecting any request containing “rcidonly” in the query string to <code>/nobots</code>, warning humans not to click on these links.</p>
+<p>In addition to that, the filter <code>/etc/fail2ban/filter.d/alex-bots.conf</code> contains this:</p>
+<pre><code>[Definition]
+failregex = ^(www\\.emacswiki\\.org|communitywiki\\.org|campaignwiki\\.org):[0-9]+ <HOST> .*rcidonly=
+</code></pre>
+<p>And I added a section using this filter to my jail <code>/etc/fail2ban/jail.d/alex.conf</code>:</p>
+<pre><code>[alex-bots]
+enabled = true
+port    = http,https
+logpath = %(apache_access_log)s
+findtime = 3600
+maxretry = 2
+</code></pre>
+<p>So if an IP number visits three URLs containing ``rcidonly'' in an hour, they get banned for ten minutes.</p>
+<p>The <code>recidive</code> filter (a standard filter you just need to activate) then makes sure that any IP number that got blocked three times gets blocked for a week.</p>
+<p><a class=\"tag\" href=\"/search/?q=%23Administration\">#Administration</a> <a class=\"tag\" href=\"/search/?q=%23Butlerian_Jihad\">#Butlerian Jihad</a></p>
+<p><strong>2025-03-20</strong>. Ever since Drew DeVault published his blog post, more people seem to notice what's going on: AI ingestion is killing web sites and web services.</p>
+<blockquote>
+<p>If you think these crawlers respect <code>robots.txt</code> then you are several assumptions of good faith removed from reality. These bots crawl everything they can find, <code>robots.txt</code> be damned, including expensive endpoints like git blame, every page of every git log, and every commit in every repo, and they do so using random User-Agents that overlap with end-users and come from tens of thousands of IP addresses – mostly residential, in unrelated subnets, each one making no more than one HTTP request over any time period we tried to measure – actively and maliciously adapting and blending in with end-user traffic and avoiding attempts to characterize their behavior or block their traffic. - <a href=\"https://drewdevault.com/2025/03/17/2025-03-17-Stop-externalizing-your-costs-on-me.html\">Please stop externalizing your costs directly into my face</a>, by Drew DeVault, for SourceHut</p>
+<p>Then, yesterday morning, KDE GitLab infrastructure was overwhelmed by another AI crawler, with IPs from an Alibaba range; this caused GitLab to be temporarily inaccessible by KDE developers. I then discovered that, one week ago, an Anime girl started appearing on the GNOME GitLab instance, as the page was loaded. It turns out that it's the default loading page for Anubis, a proof-of-work challenger that blocks AI scrapers that are causing outages. - <a href=\"https://thelibre.news/foss-infrastructure-is-under-attack-by-ai-companies/\">FOSS infrastructure is under attack by AI companies</a>, by Niccolò Venerandi, for LibreNews</p>
+<p>What do SourceHut, GNOME’s GitLab, and KDE’s GitLab have in common, other than all three of them being forges? Well, it turns out all three of them have been dealing with immense amounts of traffic from “AI” scrapers, who are effectively performing DDoS attacks with such ferocity it’s bringing down the infrastructures of these major open source projects. Being open source, and thus publicly accessible, means these scrapers have unlimited access, unlike with proprietary projects. … Everything about this “AI” bubble is gross, and I can’t wait for this bubble to pop so a semblance of sanity can return to the technology world. Until the next hype train rolls into the station, of course. - <a href=\"https://www.osnews.com/story/141969/foss-infrastructure-is-under-attack-by-ai-companies/\">FOSS infrastructure is under attack by AI companies</a>, by Thom Holwerda, for OSnews</p>
+</blockquote>
+<p><strong>2025-03-22</strong>. Ordinary sysadmins get hit as well. Here's Sean Conner of the The Boston Diaries: He reports on <a href=\"https://boston.conman.org/2025/03/21\">Friday, March 21, 2025</a> that his logs show a total of 468439 requests for February 2025. The top hitter was 4.231.104.62 with 43242 requests (9%). This was from MICROSOFT-CORP-MSN-AS-BLOCK, US. But the ASN has more networks, of course. Adding them all up give 78889 (17%).</p>
+<p>He links to the <a href=\"https://www.team-cymru.com/ip-asn-mapping\">IP to ASN Mapping Service</a> by Team Cymru. Apparently, this is also used by the Perl library <code>Net::Abuse::Utils</code>. I should use it!</p>
+" nil nil "ad75dba75171feb6b8dabae3cca1a5de") (14 (26590 50399 782366 374000) "https://alexschroeder.ch/view/2025-03-21-defence-summary" "2025-03-21 A summary of my bot defence systems" nil "Sat, 22 Mar 2025 12:03:34 +0000" "<h1 id=\"2025-03-21-a-summary-of-my-bot-defence-systems\">2025-03-21 A summary of my bot defence systems</h1>
+<p>If you've followed my <a href=\"Butlerian_Jihad\">Butlerian Jihad</a> pages, you know that I'm constantly fiddling with the setup.
+Each page got written in the middle of an attack as I'm trying to save my sites, documenting as I go along. But if
+you're looking for an overview, there is nothing to see. It's all over the place. Since the topic has gained some
+traction in recent days, I'm going to assemble all the things I do on this page.</p>
+<p>Here's Drew DeVault complaining about the problem that system administrators have been facing for a while, now:</p>
+<blockquote>
+<p>If you think these crawlers respect <code>robots.txt</code> then you are several assumptions of good faith removed from reality. These bots crawl everything they can find, <code>robots.txt</code> be damned, including expensive endpoints like git blame, every page of every git log, and every commit in every repo, and they do so using random User-Agents that overlap with end-users and come from tens of thousands of IP addresses – mostly residential, in unrelated subnets, each one making no more than one HTTP request over any time period we tried to measure – actively and maliciously adapting and blending in with end-user traffic and avoiding attempts to characterize their behavior or block their traffic. - <a href=\"https://drewdevault.com/2025/03/17/2025-03-17-Stop-externalizing-your-costs-on-me.html\">Please stop externalizing your costs directly into my face</a>, by Drew DeVault, for SourceHut</p>
+</blockquote>
+<p>I had read some similar reports before, on fedi, but this one links to quite a few of them: <a href=\"https://thelibre.news/foss-infrastructure-is-under-attack-by-ai-companies/\">FOSS infrastructure is under attack by AI companies</a>, by Niccolò Venerandi, for LibreNews.</p>
+<p>I'm going to skip the defences against spam as spam hasn't been a problem in recent months, surprisingly.</p>
+<p>The first defence against bots is <code>robots.txt</code>. All well-behaving bots should read it every now and then and then either stop crawling
+the site or slow down.</p>
+<p>Let's look at the file <a href=\"https://www.emacswiki.org/robots.txt\">for Emacs Wiki</a>.</p>
+<p>If I find that there are lot of requests from a particular user agent that looks like bot, and it has a URL where I can find instructions
+for how to address it in <code>robots.txt</code>, this is what I do. I tell them to stop crawling the entire site. Most of these are search engine optimizers, brand awareness monitors and other such creeps.</p>
+<p>The file also tells all well-behaving crawlers to slow down to a glacial tempo and it lists all the expensive endpoints that they should not be crawling at all. Conversely, this means that any bot that still crawls those URLs is a misbehaving bot and deserves to be blocked.</p>
+<p>Worth noting, perhaps, that ``an expensive endpoint'' means a URL that runs some executable to do something complicated, resulting in an answer that's always different. If the URL causes the web server to run a CGI script, for example, the request loads Perl, loads a script, loads all its libraries, compiles it all, runs it once, and answers with the request with the output. And since the answer is dynamic, it can't very well be cached, or additional complexity needs to be introduced and even more resources need to be allocated and paid for. In short, an expensive end-point is like loading an app. It's slow but useful, if done rarely. So you'd do this for a human, for example. It's a disaster if bots swarm all over the site, clicking on every link.</p>
+<p>It's also worth noting that not all my sites have the same expensive endpoints and so the second half of <code>robots.txt</code> can vary. Which makes maintenance of the first half a chore. I have a little script that allows me to add one bot to ``all'' the files, but it's annoying to have to do that. And I recently just copied a list from an <a href=\"https://robotstxt.com/ai\">AI / LLM User-Agents: Blocking Guide</a>.</p>
+<p>I use Apache as my web-server and I have a bunch of global configuration files to handle misbehaving bots and crawlers.</p>
+<p>This example blocks fediverse agents from accessing my site. That's because whenever anybody post a URL to one of my sites, within the next
+60 seconds, all the servers with users getting a copy of the URL will fetch a preview. That means hundreds of hits. This is particularly
+obnoxious for expensive endpoints. This response here tells them that they are forbidden from accessing the page.</p>
+<pre><code># Fediverse instances asking for previews: protect the expensive endpoints
+RewriteCond %{REQUEST_URI} /(wiki|download|food|paper|hug|helmut|input|korero|check|radicale|say|mojo|software)
+RewriteCond %{HTTP_USER_AGENT} Mastodon|Friendica|Pleroma [nocase]
+# then it's forbidden
+RewriteRule ^(.*)$ - [forbidden,last]
+</code></pre>
+<p>These are the evil bots that self-identify as a bot but don't seem to heed the <code>robots.txt</code> files. These are all told that whatever page they were looking for, it's now gone (410). And if there's a human looking at the output, it even links to an explanation. Adding new user agents to this list is annoying because I need to connect as root and restart the web server after making any changes.</p>
+<pre><code># SEO bots, borked feed services and other shit
+RewriteCond \"%{HTTP_USER_AGENT}\" \"academicbotrtu|ahrefsbot|amazonbot|awariobot|bitsightbot|blexbot|bytespider|dataforseobot|discordbot|domainstatsbot|dotbot|elisabot|eyemonit|facebot|linkfluence|magpie-crawler|megaindex|mediatoolkitbot|mj12bot|newslitbot|paperlibot|pcore|petalbot|pinterestbot|seekportbot|semanticscholarbot|semrushbot|semanticbot|seokicks-robot|siteauditbot|startmebot|summalybot|synapse|trendictionbot|twitterbot|wiederfrei|yandexbot|zoominfobot|velenpublicwebcrawler|gpt|\\bads|feedburner|brandwatch|openai|facebookexternalhit|yisou|docspider\" [nocase]
+RewriteRule ^ https://alexschroeder.ch/nobots [redirect=410,last]
+</code></pre>
+<p>For some of my sites, I disallow all user agents containing the words ``bot'', ``crawler'', ``spider'', ``ggpht'' or ``gpt'' with the exception of ``archivebot'' and ``wibybot'' because these two bots I want to give access. Again, these bots are all told that whatever page they were looking for, it's now gone (410).</p>
+<pre><code># Private sites block all bots and crawlers. This list does no include
+# social.alexschroeder.ch, communitywiki.org, www.emacswiki.org,
+# oddmuse.org, orientalisch.info, korero.org.
+RewriteCond \"%{HTTP_HOST}\" \"^((src\\.)?alexschroeder\\.ch|flying-carpet\\.ch|next\\.oddmuse\\.org|((chat|talk)\\.)?campaignwiki\\.org|((archive|vault|toki|xn--vxagggm5c)\\.)?transjovian\\.org)$\" [nocase]
+RewriteCond \"%{HTTP_USER_AGENT}\" \"!archivebot|^gwene|wibybot\" [nocase]
+RewriteCond \"%{HTTP_USER_AGENT}\" \"bot|crawler|spider|ggpht|gpt\" [nocase]
+RewriteRule ^ https://alexschroeder.ch/nobots [redirect=410,last]
+</code></pre>
+<p>I also eliminate a lot of bots looking for PHP endpoints. I can do this because I know that I don't have any PHP application installed.</p>
+<pre><code># Deny all idiots that are looking for borked PHP applications
+RewriteRule \\.php$ https://alexschroeder.ch/nobots [redirect=410,last]
+</code></pre>
+<p>There's also one particular image scraper that's using a unique string in its user agent.</p>
+<pre><code># Deny the image scraper
+# https://imho.alex-kunz.com/2024/02/25/block-this-shit/
+RewriteCond \"%{HTTP_USER_AGENT}\" \"Firefox/72.0\" [nocase]
+RewriteRule ^ https://alexschroeder.ch/nobots [redirect=410,last]
+</code></pre>
+<p>Next, all requests get logged by Apache in the <code>access.log</code> file. I use <code>fail2ban</code> to check this logfile. This is somewhat interesting
+because <code>fail2ban</code> is usually used to check for failed ssh login attempts. Those IP numbers that fail to login in a few times are banned.
+What I'm doing is I wrote a filter that treats every hit on the web server as a ``failed login attempt''.</p>
+<p>This is the filter:</p>
+<pre><code>[Definition]
+# Most sites in the logfile count! What doesn't count is fedi.alexschroeder.ch, or chat.campaignwiki.org.
+failregex = ^(www\\.)?(alexschroeder\\.ch|campaignwiki\\.org|communitywiki\\.org|emacswiki\\.org|flying-carpet\\.ch|korero\\.org|oddmuse\\.org|orientalisch\\.info):[0-9]+ <HOST>
+# Except css files, images...
+ignoreregex = ^[^\"]*\"(GET /(robots\\.txt |favicon\\.ico |[^/ \\\"]+\\.(css|js) |[^\\\"]*\\.(jpg|JPG|png|PNG) |css/|fonts/|pdfs/|txt/|pics/|export/|podcast/|1pdc/|static/|munin/|osr/|indie/|rpg/|face/|traveller/|hex-describe/|text-mapper/|contrib/pics/|roll/|alrik/|wiki/download/)|(OPTIONS|PROPFIND|REPORT) /radicale)
+</code></pre>
+<p>And this is the jail, saying that any IP number may make 30 hits in 60 seconds. If an IP number exceeds this (2s per page!) then it
+gets blocked at the firewall for 10 minutes.</p>
+<pre><code>[alex-apache]
+enabled = true
+port    = http,https
+logpath = %(apache_access_log)s
+findtime = 60
+maxretry = 30
+</code></pre>
+<p>I also have another filter for a particular substring in URLs that I found the bots are requesting all the time:</p>
+<pre><code>[Definition]
+failregex = ^(www\\.emacswiki\\.org|communitywiki\\.org|campaignwiki\\.org):[0-9]+ <HOST> .*rcidonly=
+</code></pre>
+<p>The corresponding jail says that when you trigger request such a URL for the third time in an hour, you're blocked at the firewall for 10 minutes.</p>
+<p>[alex-bots]
+enabled = true
+port    = http,https
+logpath = %(apache_access_log)s
+findtime = 3600
+maxretry = 2</p>
+<p>(At the same time, these URL's redirect to <a href=\"https://www.emacswiki.org/nobots\">a warning</a> so that humans know that this is a trap.)</p>
+<p>Furthermore, <code>fail2ban</code> also comes with a <code>recidive</code> filter that watches its own logs. If an IP has been banned five times in a day, it gets banned for a week.</p>
+<pre><code>[recidive]
+enabled = true
+</code></pre>
+<p>To add to the <code>alex-bots</code> jail, here's what my Apache configuration says: RSS feeds for single pages are errors.</p>
+<pre><code>RewriteCond %{QUERY_STRING} action=rss
+RewriteCond %{QUERY_STRING} rcidonly=.*
+RewriteRule .* /error.rss [last]
+</code></pre>
+<p>Note that all my sites also use the following headers, so anybody ignoring these is also a prime candidate for blocking.</p>
+<pre><code># https://github.com/rom1504/img2dataset#opt-out-directives
+Header always set X-Robots-Tag: noai
+Header always set X-Robots-Tag: noimageai
+</code></pre>
+<p>All of the above still doesn't handle extremely distributed attacks. In such situations, almost all IP numbers are unique. What I try to do in this situation is block the entire IP range that they come from.
+I scan the <code>access.log</code> for IP numbers that connected to a URL that shouldn't be used by bots because of <code>robots.txt</code>, containing <code>rcidonly</code> because I know humans will very rarely click it and it's expensive to serve. For each such IP number, I determine the IP range they come from, and then I block it all.</p>
+<p>Basically, this is what I keep repeating:</p>
+<pre><code># prefix with a timestamp
+date
+# log some candidates without whois information, skipping my fedi instance
+tail -n 2000 /var/log/apache2/access.log \\
+| grep -v ^social \\
+| grep \"rcidonly\" \\
+| bin/admin/network-lookup-lean > result.log
+# count
+grep ipset result.log|wc -l
+# add
+grep ipset result.log|sh
+# document
+grep ipset result.log>>bin/admin/ban-cidr
+</code></pre>
+<p>You can find the scripts in my <a href=\"https://alexschroeder.ch/admin/\">admin collection</a>.</p>
+<p><a class=\"tag\" href=\"/search/?q=%23Administration\">#Administration</a> <a class=\"tag\" href=\"/search/?q=%23Butlerian_Jihad\">#Butlerian Jihad</a></p>
+<p><strong>2025-03-22</strong>. The drawback of using the firewall to ban broad swaths of the Internet is that these networks host bots (bad) but also networked services that I'm interested in (good). Yesterday I found that <a class=\"account\" href=\"https://come-from.mad-scientist.club/users/algernon\" title=\"@algernon@come-from.mad-scientist.club\">@algernon</a> had gone silent, had been silent for quite a while, and yet I kept seeing replies to them by others. Something was off. We got into contact via an alt account and indeed, I had blocked the IPv4 range his server was on.</p>
+<p>So by my count I already had to unblock three networks on my list. It's not a great solution, to be honest.
+And it doesn't expire, either. The list still contains 47021 IP ranges.</p>
+" nil nil "4c3c87f4fe579064731b9b0ceb60c4a9") (13 (26590 33237 863861 78000) "https://alexschroeder.ch/view/2025-03-21-defence-summary" "2025-03-21 A summary of my bot defence systems" nil "Fri, 21 Mar 2025 15:28:52 +0000" "<h1 id=\"2025-03-21-a-summary-of-my-bot-defence-systems\">2025-03-21 A summary of my bot defence systems</h1>
+<p>If you've followed my <a href=\"Butlerian_Jihad\">Butlerian Jihad</a> pages, you know that I'm constantly fiddling with the setup.
+Each page got written in the middle of an attack as I'm trying to save my sites, documenting as I go along. But if
+you're looking for an overview, there is nothing to see. It's all over the place. Since the topic has gained some
+traction in recent days, I'm going to assemble all the things I do on this page.</p>
+<p>Here's Drew DeVault complaining about the problem that system administrators have been facing for a while, now:</p>
+<blockquote>
+<p>If you think these crawlers respect <code>robots.txt</code> then you are several assumptions of good faith removed from reality. These bots crawl everything they can find, <code>robots.txt</code> be damned, including expensive endpoints like git blame, every page of every git log, and every commit in every repo, and they do so using random User-Agents that overlap with end-users and come from tens of thousands of IP addresses – mostly residential, in unrelated subnets, each one making no more than one HTTP request over any time period we tried to measure – actively and maliciously adapting and blending in with end-user traffic and avoiding attempts to characterize their behavior or block their traffic. - <a href=\"https://drewdevault.com/2025/03/17/2025-03-17-Stop-externalizing-your-costs-on-me.html\">Please stop externalizing your costs directly into my face</a>, by Drew DeVault, for SourceHut</p>
+</blockquote>
+<p>I had read some similar reports before, on fedi, but this one links to quite a few of them: <a href=\"https://thelibre.news/foss-infrastructure-is-under-attack-by-ai-companies/\">FOSS infrastructure is under attack by AI companies</a>, by Niccolò Venerandi, for LibreNews.</p>
+<p>I'm going to skip the defences against spam as spam hasn't been a problem in recent months, surprisingly.</p>
+<p>The first defence against bots is <code>robots.txt</code>. All well-behaving bots should read it every now and then and then either stop crawling
+the site or slow down.</p>
+<p>Let's look at the file <a href=\"https://www.emacswiki.org/robots.txt\">for Emacs Wiki</a>.</p>
+<p>If I find that there are lot of requests from a particular user agent that looks like bot, and it has a URL where I can find instructions
+for how to address it in <code>robots.txt</code>, this is what I do. I tell them to stop crawling the entire site. Most of these are search engine optimizers, brand awareness monitors and other such creeps.</p>
+<p>The file also tells all well-behaving crawlers to slow down to a glacial tempo and it lists all the expensive endpoints that they should not be crawling at all. Conversely, this means that any bot that still crawls those URLs is a misbehaving bot and deserves to be blocked.</p>
+<p>Worth noting, perhaps, that ``an expensive endpoint'' means a URL that runs some executable to do something complicated, resulting in an answer that's always different. If the URL causes the web server to run a CGI script, for example, the request loads Perl, loads a script, loads all its libraries, compiles it all, runs it once, and answers with the request with the output. And since the answer is dynamic, it can't very well be cached, or additional complexity needs to be introduced and even more resources need to be allocated and paid for. In short, an expensive end-point is like loading an app. It's slow but useful, if done rarely. So you'd do this for a human, for example. It's a disaster if bots swarm all over the site, clicking on every link.</p>
+<p>It's also worth noting that not all my sites have the same expensive endpoints and so the second half of <code>robots.txt</code> can vary. Which makes maintenance of the first half a chore. I have a little script that allows me to add one bot to ``all'' the files, but it's annoying to have to do that. And I recently just copied a list from an <a href=\"https://robotstxt.com/ai\">AI / LLM User-Agents: Blocking Guide</a>.</p>
+<p>I use Apache as my web-server and I have a bunch of global configuration files to handle misbehaving bots and crawlers.</p>
+<p>This example blocks fediverse agents from accessing my site. That's because whenever anybody post a URL to one of my sites, within the next
+60 seconds, all the servers with users getting a copy of the URL will fetch a preview. That means hundreds of hits. This is particularly
+obnoxious for expensive endpoints. This response here tells them that they are forbidden from accessing the page.</p>
+<pre><code># Fediverse instances asking for previews: protect the expensive endpoints
+RewriteCond %{REQUEST_URI} /(wiki|download|food|paper|hug|helmut|input|korero|check|radicale|say|mojo|software)
+RewriteCond %{HTTP_USER_AGENT} Mastodon|Friendica|Pleroma [nocase]
+# then it's forbidden
+RewriteRule ^(.*)$ - [forbidden,last]
+</code></pre>
+<p>These are the evil bots that self-identify as a bot but don't seem to heed the <code>robots.txt</code> files. These are all told that whatever page they were looking for, it's now gone (410). And if there's a human looking at the output, it even links to an explanation. Adding new user agents to this list is annoying because I need to connect as root and restart the web server after making any changes.</p>
+<pre><code># SEO bots, borked feed services and other shit
+RewriteCond \"%{HTTP_USER_AGENT}\" \"academicbotrtu|ahrefsbot|amazonbot|awariobot|bitsightbot|blexbot|bytespider|dataforseobot|discordbot|domainstatsbot|dotbot|elisabot|eyemonit|facebot|linkfluence|magpie-crawler|megaindex|mediatoolkitbot|mj12bot|newslitbot|paperlibot|pcore|petalbot|pinterestbot|seekportbot|semanticscholarbot|semrushbot|semanticbot|seokicks-robot|siteauditbot|startmebot|summalybot|synapse|trendictionbot|twitterbot|wiederfrei|yandexbot|zoominfobot|velenpublicwebcrawler|gpt|\\bads|feedburner|brandwatch|openai|facebookexternalhit|yisou|docspider\" [nocase]
+RewriteRule ^ https://alexschroeder.ch/nobots [redirect=410,last]
+</code></pre>
+<p>For some of my sites, I disallow all user agents containing the words ``bot'', ``crawler'', ``spider'', ``ggpht'' or ``gpt'' with the exception of ``archivebot'' and ``wibybot'' because these two bots I want to give access. Again, these bots are all told that whatever page they were looking for, it's now gone (410).</p>
+<pre><code># Private sites block all bots and crawlers. This list does no include
+# social.alexschroeder.ch, communitywiki.org, www.emacswiki.org,
+# oddmuse.org, orientalisch.info, korero.org.
+RewriteCond \"%{HTTP_HOST}\" \"^((src\\.)?alexschroeder\\.ch|flying-carpet\\.ch|next\\.oddmuse\\.org|((chat|talk)\\.)?campaignwiki\\.org|((archive|vault|toki|xn--vxagggm5c)\\.)?transjovian\\.org)$\" [nocase]
+RewriteCond \"%{HTTP_USER_AGENT}\" \"!archivebot|^gwene|wibybot\" [nocase]
+RewriteCond \"%{HTTP_USER_AGENT}\" \"bot|crawler|spider|ggpht|gpt\" [nocase]
+RewriteRule ^ https://alexschroeder.ch/nobots [redirect=410,last]
+</code></pre>
+<p>I also eliminate a lot of bots looking for PHP endpoints. I can do this because I know that I don't have any PHP application installed.</p>
+<pre><code># Deny all idiots that are looking for borked PHP applications
+RewriteRule \\.php$ https://alexschroeder.ch/nobots [redirect=410,last]
+</code></pre>
+<p>There's also one particular image scraper that's using a unique string in its user agent.</p>
+<pre><code># Deny the image scraper
+# https://imho.alex-kunz.com/2024/02/25/block-this-shit/
+RewriteCond \"%{HTTP_USER_AGENT}\" \"Firefox/72.0\" [nocase]
+RewriteRule ^ https://alexschroeder.ch/nobots [redirect=410,last]
+</code></pre>
+<p>Next, all requests get logged by Apache in the <code>access.log</code> file. I use <code>fail2ban</code> to check this logfile. This is somewhat interesting
+because <code>fail2ban</code> is usually used to check for failed ssh login attempts. Those IP numbers that fail to login in a few times are banned.
+What I'm doing is I wrote a filter that treats every hit on the web server as a ``failed login attempt''.</p>
+<p>This is the filter:</p>
+<pre><code>[Definition]
+# Most sites in the logfile count! What doesn't count is fedi.alexschroeder.ch, or chat.campaignwiki.org.
+failregex = ^(www\\.)?(alexschroeder\\.ch|campaignwiki\\.org|communitywiki\\.org|emacswiki\\.org|flying-carpet\\.ch|korero\\.org|oddmuse\\.org|orientalisch\\.info):[0-9]+ <HOST>
+# Except css files, images...
+ignoreregex = ^[^\"]*\"(GET /(robots\\.txt |favicon\\.ico |[^/ \\\"]+\\.(css|js) |[^\\\"]*\\.(jpg|JPG|png|PNG) |css/|fonts/|pdfs/|txt/|pics/|export/|podcast/|1pdc/|static/|munin/|osr/|indie/|rpg/|face/|traveller/|hex-describe/|text-mapper/|contrib/pics/|roll/|alrik/|wiki/download/)|(OPTIONS|PROPFIND|REPORT) /radicale)
+</code></pre>
+<p>And this is the jail, saying that any IP number may make 30 hits in 60 seconds. If an IP number exceeds this (2s per page!) then it
+gets blocked at the firewall for 10 minutes.</p>
+<pre><code>[alex-apache]
+enabled = true
+port    = http,https
+logpath = %(apache_access_log)s
+findtime = 60
+maxretry = 30
+</code></pre>
+<p>I also have another filter for a particular substring in URLs that I found the bots are requesting all the time:</p>
+<pre><code>[Definition]
+failregex = ^(www\\.emacswiki\\.org|communitywiki\\.org|campaignwiki\\.org):[0-9]+ <HOST> .*rcidonly=
+</code></pre>
+<p>The corresponding jail says that when you trigger request such a URL for the third time in an hour, you're blocked at the firewall for 10 minutes.</p>
+<p>[alex-bots]
+enabled = true
+port    = http,https
+logpath = %(apache_access_log)s
+findtime = 3600
+maxretry = 2</p>
+<p>(At the same time, these URL's redirect to <a href=\"https://www.emacswiki.org/nobots\">a warning</a> so that humans know that this is a trap.)</p>
+<p>Furthermore, <code>fail2ban</code> also comes with a <code>recidive</code> filter that watches its own logs. If an IP has been banned five times in a day, it gets banned for a week.</p>
+<pre><code>[recidive]
+enabled = true
+</code></pre>
+<p>To add to the <code>alex-bots</code> jail, here's what my Apache configuration says: RSS feeds for single pages are errors.</p>
+<pre><code>RewriteCond %{QUERY_STRING} action=rss
+RewriteCond %{QUERY_STRING} rcidonly=.*
+RewriteRule .* /error.rss [last]
+</code></pre>
+<p>Note that all my sites also use the following headers, so anybody ignoring these is also a prime candidate for blocking.</p>
+<pre><code># https://github.com/rom1504/img2dataset#opt-out-directives
+Header always set X-Robots-Tag: noai
+Header always set X-Robots-Tag: noimageai
+</code></pre>
+<p>All of the above still doesn't handle extremely distributed attacks. In such situations, almost all IP numbers are unique. What I try to do in this situation is block the entire IP range that they come from.
+I scan the <code>access.log</code> for IP numbers that connected to a URL that shouldn't be used by bots because of <code>robots.txt</code>, containing <code>rcidonly</code> because I know humans will very rarely click it and it's expensive to serve. For each such IP number, I determine the IP range they come from, and then I block it all.</p>
+<p>Basically, this is what I keep repeating:</p>
+<pre><code># prefix with a timestamp
+date
+# log some candidates without whois information, skipping my fedi instance
+tail -n 2000 /var/log/apache2/access.log \\
+| grep -v ^social \\
+| grep \"rcidonly\" \\
+| bin/admin/network-lookup-lean > result.log
+# count
+grep ipset result.log|wc -l
+# add
+grep ipset result.log|sh
+# document
+grep ipset result.log>>bin/admin/ban-cidr
+</code></pre>
+<p>You can find the scripts in my <a href=\"https://alexschroeder.ch/admin/\">admin collection</a>.</p>
+<p><a class=\"tag\" href=\"/search/?q=%23Administration\">#Administration</a> <a class=\"tag\" href=\"/search/?q=%23Butlerian_Jihad\">#Butlerian Jihad</a></p>
+" nil nil "4702b888bfc3a8b70c574cb7e58caa5a") (12 (26590 33237 863104 875000) "https://alexschroeder.ch/view/2025-03-20-bot-defence" "2025-03-20 Something about the bot defence is working" nil "Fri, 21 Mar 2025 14:59:24 +0000" "<h1 id=\"2025-03-20-something-about-the-bot-defence-is-working\">2025-03-20 Something about the bot defence is working</h1>
+<p>At midnight, there was a surge in activity.
+CPU usage went up.</p>
+<p><img loading=\"lazy\" src=\"2025-03-20-bot-defence-1.jpg\" alt=\"\" /></p>
+<p>Load went up, too. But it stayed within reasonable bounds - less than 4 instead of the more than 80 I have seen in the past.</p>
+<p><img loading=\"lazy\" src=\"2025-03-20-bot-defence-2.jpg\" alt=\"\" /></p>
+<p>And the number of IP addresses blocked by <code>fail2ban</code> went from 40 to 50.</p>
+<p><img loading=\"lazy\" src=\"2025-03-20-bot-defence-3.jpg\" alt=\"\" /></p>
+<p>I'm usually sceptical of this because the big attacks are from a far wider variety of IP numbers.
+In this case, however, maybe there was some probing that resulted in blocks? I don't know. Lucky, I guess?</p>
+<p>In any case, the site is still up. Yay for small wins.</p>
+<p>Also, I cannot overstate how good it feel to have some <a href=\"https://munin-monitoring.org/\">Munin</a> graphs available.</p>
+<p><code>alex-bots</code> is a setup I desribed in <a href=\"2025-02-19-bots-again\">2025-02-19 Bots again, cursed</a>.
+Basically a request to one of my Oddmuse wikis containing the parameter <code>rcidonly</code> is an expensive endpoint: ``all changes for this single page'' or ``a feed for this single page''. This is something a human would rarely access and yet it somehow the URLs landed in some dataset for AI training, I suspect. So what I do is I’m redirecting any request containing “rcidonly” in the query string to <code>/nobots</code>, warning humans not to click on these links.</p>
+<p>In addition to that, the filter <code>/etc/fail2ban/filter.d/alex-bots.conf</code> contains this:</p>
+<pre><code>[Definition]
+failregex = ^(www\\.emacswiki\\.org|communitywiki\\.org|campaignwiki\\.org):[0-9]+ <HOST> .*rcidonly=
+</code></pre>
+<p>And I added a section using this filter to my jail <code>/etc/fail2ban/jail.d/alex.conf</code>:</p>
+<pre><code>[alex-bots]
+enabled = true
+port    = http,https
+logpath = %(apache_access_log)s
+findtime = 3600
+maxretry = 2
+</code></pre>
+<p>So if an IP number visits three URLs containing ``rcidonly'' in an hour, they get banned for ten minutes.</p>
+<p>The <code>recidive</code> filter (a standard filter you just need to activate) then makes sure that any IP number that got blocked three times gets blocked for a week.</p>
+<p><a class=\"tag\" href=\"/search/?q=%23Administration\">#Administration</a> <a class=\"tag\" href=\"/search/?q=%23Butlerian_Jihad\">#Butlerian Jihad</a></p>
+<p><strong>2025-03-20</strong>. Ever since Drew DeVault published his blog post, more people seem to notice what's going on: AI ingestion is killing web sites and web services.</p>
+<blockquote>
+<p>If you think these crawlers respect <code>robots.txt</code> then you are several assumptions of good faith removed from reality. These bots crawl everything they can find, <code>robots.txt</code> be damned, including expensive endpoints like git blame, every page of every git log, and every commit in every repo, and they do so using random User-Agents that overlap with end-users and come from tens of thousands of IP addresses – mostly residential, in unrelated subnets, each one making no more than one HTTP request over any time period we tried to measure – actively and maliciously adapting and blending in with end-user traffic and avoiding attempts to characterize their behavior or block their traffic. - <a href=\"https://drewdevault.com/2025/03/17/2025-03-17-Stop-externalizing-your-costs-on-me.html\">Please stop externalizing your costs directly into my face</a>, by Drew DeVault, for SourceHut</p>
+<p>Then, yesterday morning, KDE GitLab infrastructure was overwhelmed by another AI crawler, with IPs from an Alibaba range; this caused GitLab to be temporarily inaccessible by KDE developers. I then discovered that, one week ago, an Anime girl started appearing on the GNOME GitLab instance, as the page was loaded. It turns out that it's the default loading page for Anubis, a proof-of-work challenger that blocks AI scrapers that are causing outages. - <a href=\"https://thelibre.news/foss-infrastructure-is-under-attack-by-ai-companies/\">FOSS infrastructure is under attack by AI companies</a>, by Niccolò Venerandi, for LibreNews</p>
+<p>What do SourceHut, GNOME’s GitLab, and KDE’s GitLab have in common, other than all three of them being forges? Well, it turns out all three of them have been dealing with immense amounts of traffic from “AI” scrapers, who are effectively performing DDoS attacks with such ferocity it’s bringing down the infrastructures of these major open source projects. Being open source, and thus publicly accessible, means these scrapers have unlimited access, unlike with proprietary projects. … Everything about this “AI” bubble is gross, and I can’t wait for this bubble to pop so a semblance of sanity can return to the technology world. Until the next hype train rolls into the station, of course. - <a href=\"https://www.osnews.com/story/141969/foss-infrastructure-is-under-attack-by-ai-companies/\">FOSS infrastructure is under attack by AI companies</a>, by Thom Holwerda, for OSnews</p>
+</blockquote>
+" nil nil "7dff2c89697a86d81d1afa85ee637f85") (11 (26588 11780 102477 30000) "https://alexschroeder.ch/view/2025-03-20-bot-defence" "2025-03-20 Something about the bot defence is working" nil "Thu, 20 Mar 2025 16:00:10 +0000" "<h1 id=\"2025-03-20-something-about-the-bot-defence-is-working\">2025-03-20 Something about the bot defence is working</h1>
 <p>At midnight, there was a surge in activity.
 CPU usage went up.</p>
 <p><img loading=\"lazy\" src=\"2025-03-20-bot-defence-1.jpg\" alt=\"\" /></p>

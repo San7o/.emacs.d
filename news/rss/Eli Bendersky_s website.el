@@ -1,5 +1,9 @@
 ;; -*- coding: utf-8-emacs; -*-
-(setq nnrss-group-data '((10 (26588 11778 832167 784000) "https://eli.thegreenplace.net/2025/making-any-integer-with-four-2s/" "Making any integer with four 2s" nil "Sat, 22 Feb 2025 14:53:00 -0800" "<p>There's a cute math puzzle that can be interesting to folks on very
+(setq nnrss-group-data '((11 (26590 50398 975867 335000) "https://eli.thegreenplace.net/2025/understanding-numpys-einsum/" "Understanding Numpy's einsum" nil "Sat, 22 Mar 2025 06:01:00 -0700" "<p>This is a brief explanation and a cookbook for using <a class=\"reference external\" href=\"https://numpy.org/doc/stable/reference/generated/numpy.einsum.html\">numpy.einsum</a>,
+which lets us use <a class=\"reference external\" href=\"https://en.wikipedia.org/wiki/Einstein_notation\">Einstein notation</a> to evaluate operations on
+multi-dimensional arrays. The focus here is mostly on einsum's <em>explicit</em> mode
+(with <tt class=\"docutils literal\"><span class=\"pre\">-></span></tt> and output dimensions explicitly specified in the subscript string)
+and use cases common in ML papers …</p> (...)" nil nil "b5305ca91de6be5f97d8c43484310ee3") (10 (26588 11778 832167 784000) "https://eli.thegreenplace.net/2025/making-any-integer-with-four-2s/" "Making any integer with four 2s" nil "Sat, 22 Feb 2025 14:53:00 -0800" "<p>There's a cute math puzzle that can be interesting to folks on very
 different levels:</p>
 <blockquote>
 Given exactly four instances of the digit 2 and some target natural number,
