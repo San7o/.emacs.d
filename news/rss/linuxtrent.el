@@ -1,5 +1,11 @@
 ;; -*- coding: utf-8-emacs; -*-
-(setq nnrss-group-data '((51 (26590 32770 188206 853000) "http://www.freelists.org/post/linuxtrent/Sportello-linux" "[Linuxtrent] Sportello linux" "Adriano)" "Sat, 22 Mar 2025 10:16:50 +0100" "Martedì 8 aprile lo Sportello Linux di Rovereto riparte in sala Multimediale
+(setq nnrss-group-data '((52 (26595 3896 664726 843000) "http://www.freelists.org/post/linuxtrent/R-Versione-nuova-linux,4" "[Linuxtrent] Re: R: Versione nuova linux" "mickbert)" "Tue, 25 Mar 2025 21:16:56 +0100" "On 19.03.2025 09:36, Roberto Resoli wrote:
+Il 18/03/25 16:36, Gianguido Piani ha scritto:
+Personalmente ho deciso di abbandonare Ubuntu e passare a Linux Mint
+Debian Edition (LMDE).
+Anche io sto gradualmente passando a mint ( gradualmente  significa che
+ho
+..." nil nil "0ad5b9a9b7d6dc9639d7d072b0988dd5") (51 (26590 32770 188206 853000) "http://www.freelists.org/post/linuxtrent/Sportello-linux" "[Linuxtrent] Sportello linux" "Adriano)" "Sat, 22 Mar 2025 10:16:50 +0100" "Martedì 8 aprile lo Sportello Linux di Rovereto riparte in sala Multimediale
 della biblioteca presso il Mart con un incontro introduttivo sul mondo di IOT
 con Arduino dalle 18:00 alle 19:30 circa. Seguiranno incontri mensili sempre il
 secondo martedì del mese in maggio e giugno. Adriano.

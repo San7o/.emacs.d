@@ -1,5 +1,347 @@
 ;; -*- coding: utf-8-emacs; -*-
-(setq nnrss-group-data '((15 (26591 55056 783191 463000) "https://alexschroeder.ch/view/2025-03-20-bot-defence" "2025-03-20 Something about the bot defence is working" nil "Sat, 22 Mar 2025 22:02:48 +0000" "<h1 id=\"2025-03-20-something-about-the-bot-defence-is-working\">2025-03-20 Something about the bot defence is working</h1>
+(setq nnrss-group-data '((20 (26595 3901 213214 956000) "https://alexschroeder.ch/view/2025-03-25-down" "2025-03-25 Down down down" nil "Tue, 25 Mar 2025 12:14:28 +0000" "<h1 id=\"2025-03-25-down-down-down\">2025-03-25 Down down down</h1>
+<p>Israel is continuing its genocide against the Palestinians.
+<a href=\"https://en.wikipedia.org/wiki/Francesca_Albanese\">Fanscesca Albanese</a> is saying all the right things but people keep arming and Israel.</p>
+<blockquote>
+<p>There are ``reasonable grounds'' to believe that Israel is committing genocide against Palestinians in Gaza, the UN Special Rapporteur on the situation of human rights in the Occupied Palestinian Territories said on Tuesday. - <a href=\"https://news.un.org/en/story/2024/03/1147976\">Rights expert finds ‘reasonable grounds’ genocide is being committed in Gaza</a></p>
+</blockquote>
+<p>In a world where there are no consequences, sociopaths go on a rampage.</p>
+<p>Russia is continuing its <a href=\"https://en.wikipedia.org/wiki/Russo-Ukrainian_War\">invasion of Ukraine</a>.
+I'm following <a href=\"https://meduza.io/en\">Meduza</a> for news from Russia.
+I don't know what to do. But seizing Russian assets and supporting Ukraine should be at the obvious thing to do.
+Remember the news in 2014:</p>
+<blockquote>
+<p>Twenty years ago, Ukraine gave up its nuclear weapons in exchange for security guarantees from Russia and the West. Today Kyiv feels betrayed - and not merely by Moscow. - <a href=\"https://www.dw.com/en/ukraines-forgotten-security-guarantee-the-budapest-memorandum/a-18111097\">Ukraine's forgotten security guarantee</a>, by Roman Goncharenko / bw, for DW</p>
+</blockquote>
+<p><a class=\"account\" href=\"https://agora.echelon.pl/users/kravietz\" title=\"@kravietz@agora.echelon.pl\">@kravietz</a> posted a link to the <a href=\"https://treaties.un.org/Pages/showDetails.aspx?objid=08000002803fe18a\">Treaty between Ukraine and the Russian Federation on the Ukrainian-Russian State border</a> (2003), including maps at a scale of 1:50,000. With Putin's signature.</p>
+<p>In a world where there are no consequences, sociopaths keep going on a rampage.</p>
+<p>The US federal government keeps collapsing. Soon, the federal state will be dismantled. I wonder if there will be a new (smaller?) union to rise from the ashes.</p>
+<blockquote>
+<p>As a result, he is asking the question beloved of so many right-wingers over the last century or so, which question we thought to have been resolved by the American Civil War, which is whether or not any form of federal organisation is actually required in North America. – <a href=\"https://www.taxresearch.org.uk/Blog/2025/03/23/trumps-assault-on-the-usa-seeking-an-explanation/\">Trump’s assault on the USA: seeking an explanation</a>, by Richard Murphy (<a class=\"account\" href=\"https://mas.to/@RichardJMurphy\" title=\"@RichardJMurphy@mas.to\">@RichardJMurphy</a>)</p>
+</blockquote>
+<p>In a world where there are no consequences, sociopaths keep going on a rampage.</p>
+<p>And I'm not even looking at the rest of the world.</p>
+<p><a class=\"tag\" href=\"/search/?q=%23Politics\">#Politics</a> <a class=\"tag\" href=\"/search/?q=%23USA\">#USA</a> <a class=\"tag\" href=\"/search/?q=%23Russia\">#Russia</a> <a class=\"tag\" href=\"/search/?q=%23Ukraine\">#Ukraine</a> <a class=\"tag\" href=\"/search/?q=%23Palestine\">#Palestine</a></p>
+" nil nil "74ba81f39d375d49f5c02e4993e2ee45") (19 (26595 3901 209425 265000) "https://alexschroeder.ch/view/2025-03-21-blumen" "2025-03-24 Blumenfotos" nil "Tue, 25 Mar 2025 12:35:52 +0000" "<h1 id=\"2025-03-24-blumenfotos\">2025-03-24 Blumenfotos</h1>
+<p>I’ve been taking pictures of flowers in spring…</p>
+<p>Hanami!</p>
+<p>I'm so happy to have these cherry blossoms in the school yard accross the road.</p>
+<p>Japanische Blütenkirsche<br>
+Prunus serrulata</p>
+<p><img loading=\"lazy\" src=\"2025-03-21-blumen-1.jpg\" alt=\"\" /></p>
+<p>I’m walking through the neighbourhood. Identifying flowers using Flora Incognita.</p>
+<p>Scharbockskraut<br>
+Ficaria verna</p>
+<p><img loading=\"lazy\" src=\"2025-03-21-blumen-2.jpg\" alt=\"\" /></p>
+<p>Chinesische Zierquitte<br>
+Chaenomeles speciosa</p>
+<p><img loading=\"lazy\" src=\"2025-03-21-blumen-3.jpg\" alt=\"\" /></p>
+<p>Gewöhnliche Mahonie<br>
+Berberis aquifolium</p>
+<p><img loading=\"lazy\" src=\"2025-03-21-blumen-4.jpg\" alt=\"\" /></p>
+<p>Stängellose Schlüsselblume<br>
+Primula acaulis</p>
+<p><img loading=\"lazy\" src=\"2025-03-21-blumen-5.jpg\" alt=\"\" /></p>
+<p>Wald-Veilchen<br>
+Viola reichenbachiana</p>
+<p><img loading=\"lazy\" src=\"2025-03-21-blumen-6.jpg\" alt=\"\" /></p>
+<p>Dunkle Sternhyazinthe<br>
+Scilla sardensis</p>
+<p><img loading=\"lazy\" src=\"2025-03-21-blumen-7.jpg\" alt=\"\" /></p>
+<p>Frühlings-Krokus<br>
+Crocus vernus</p>
+<p><img loading=\"lazy\" src=\"2025-03-21-blumen-8.jpg\" alt=\"\" /></p>
+<p>Busch-Windröschen<br>
+Anemone nemorosa</p>
+<p><img loading=\"lazy\" src=\"2025-03-21-blumen-9.jpg\" alt=\"\" /></p>
+<p>Sent from this nice bench overlooking an outer part of Zürich.
+I just like taking pictures of benches where I intend to sit moments later. 😅</p>
+<p><img loading=\"lazy\" src=\"2025-03-21-blumen-10.jpg\" alt=\"\" /></p>
+<p>Griechisches Blaukissen<br>
+Aubrieta deltoidea</p>
+<p><img loading=\"lazy\" src=\"2025-03-21-blumen-11.jpg\" alt=\"\" /></p>
+<p>These flowers are all over the lawns in early spring!
+Here it is again.</p>
+<p>Stängellose Schlüsselblume<br>
+Primula acaulis</p>
+<p><img loading=\"lazy\" src=\"2025-03-21-blumen-12.jpg\" alt=\"\" /></p>
+<p>Like aubrieta, this one forms hanging carpets and I love that.</p>
+<p>Immergrüne Schleifenblume<br>
+Iberis sempervirens</p>
+<p><img loading=\"lazy\" src=\"2025-03-21-blumen-13.jpg\" alt=\"\" /></p>
+<p>And of course, the largest flowers in the area…</p>
+<p>Tulpen-Magnolie<br>
+Magnolia soulangeana</p>
+<p><img loading=\"lazy\" src=\"2025-03-21-blumen-14.jpg\" alt=\"\" /></p>
+<p>Riesen Schachtelhalm<br>
+Equisetum telmateia</p>
+<p><img loading=\"lazy\" src=\"2025-03-21-blumen-15.jpg\" alt=\"\" /></p>
+<p>Balkan-Windröschen<br>
+Anemone blanda</p>
+<p><img loading=\"lazy\" src=\"2025-03-21-blumen-16.jpg\" alt=\"\" /></p>
+<p>Weisses Veilchen<br>
+Viola alba</p>
+<p><img loading=\"lazy\" src=\"2025-03-21-blumen-18.jpg\" alt=\"\" /></p>
+<p>Gewöhnliches Greiskraut<br>
+Senecio vulgaris</p>
+<p><img loading=\"lazy\" src=\"2025-03-21-blumen-19.jpg\" alt=\"\" /></p>
+<p>And again, the wonderful magnolia.</p>
+<p>Tulpen-Magnolie<br>
+Magnolia soulangeana</p>
+<p><img loading=\"lazy\" src=\"2025-03-21-blumen-20.jpg\" alt=\"\" /></p>
+<p>I thought chaenomeles was always red, but I guess not.
+Here it is again.</p>
+<p>Chinesische Zierquitte<br>
+Chaenomeles speciosa</p>
+<p><img loading=\"lazy\" src=\"2025-03-21-blumen-21.jpg\" alt=\"\" /></p>
+<p>Gewöhnliche Kegelblume<br>
+Puschkinia scilloides</p>
+<p><img loading=\"lazy\" src=\"2025-03-21-blumen-24.jpg\" alt=\"\" /></p>
+<p>Gefiederte Sockenblume<br>
+Epimedium pinnatum</p>
+<p><img loading=\"lazy\" src=\"2025-03-21-blumen-17.jpg\" alt=\"\" /></p>
+<p>Not sure what this is. Some sort of prunus?</p>
+<p><img loading=\"lazy\" src=\"2025-03-21-blumen-22.jpg\" alt=\"\" /></p>
+<p>The contrast between those trees and the road construction works is poignant.</p>
+<p><img loading=\"lazy\" src=\"2025-03-21-blumen-23.jpg\" alt=\"\" /></p>
+<p>And back to cherry trees. 😍</p>
+<p><img loading=\"lazy\" src=\"2025-03-21-blumen-25.jpg\" alt=\"\" /></p>
+<p><a class=\"tag\" href=\"/search/?q=%23Pictures\">#Pictures</a> <a class=\"tag\" href=\"/search/?q=%23Flowers\">#Flowers</a> <a class=\"tag\" href=\"/search/?q=%23Plants\">#Plants</a></p>
+<p><strong>2025-03-25</strong>. And on the balcony, too.</p>
+<p>Goldlack<br>
+Erysimum cheiri</p>
+<p><img loading=\"lazy\" src=\"2025-03-21-blumen-26.jpg\" alt=\"\" /></p>
+<p>Armenische Traubenhyazinthe<br>
+Muscari armeniacum</p>
+<p><img loading=\"lazy\" src=\"2025-03-21-blumen-27.jpg\" alt=\"\" /></p>
+" nil nil "ccc8b3ae9e87be79af76a02e17126c5b") (18 (26594 28600 625541 32000) "https://alexschroeder.ch/view/2025-03-25-down" "2025-03-25 Down down down" nil "Tue, 25 Mar 2025 09:56:14 +0000" "<h1 id=\"2025-03-25-down-down-down\">2025-03-25 Down down down</h1>
+<p>Israel is continuing its genocide against the Palestinians.
+<a href=\"https://en.wikipedia.org/wiki/Francesca_Albanese\">Fanscesca Albanese</a> is saying all the right things but people keep arming and Israel.</p>
+<blockquote>
+<p>There are ``reasonable grounds'' to believe that Israel is committing genocide against Palestinians in Gaza, the UN Special Rapporteur on the situation of human rights in the Occupied Palestinian Territories said on Tuesday. - <a href=\"https://news.un.org/en/story/2024/03/1147976\">Rights expert finds ‘reasonable grounds’ genocide is being committed in Gaza</a></p>
+</blockquote>
+<p>In a world where there are no consequences, sociopaths go on a rampage.</p>
+<p>Russia is continuing its <a href=\"https://en.wikipedia.org/wiki/Russo-Ukrainian_War\">invasion of Ukraine</a>.
+I'm following <a href=\"https://meduza.io/en\">Meduza</a> for news from Russia.
+I don't know what to do. But seizing Russian assets and supporting Ukraine should be at the obvious thing to do.
+Remember the news in 2014:</p>
+<blockquote>
+<p>Twenty years ago, Ukraine gave up its nuclear weapons in exchange for security guarantees from Russia and the West. Today Kyiv feels betrayed - and not merely by Moscow. - <a href=\"https://www.dw.com/en/ukraines-forgotten-security-guarantee-the-budapest-memorandum/a-18111097\">Ukraine's forgotten security guarantee</a>, by Roman Goncharenko / bw, for DW</p>
+</blockquote>
+<p>In a world where there are no consequences, sociopaths keep going on a rampage.</p>
+<p>The US federal government keeps collapsing. Soon, the federal state will be dismantled. I wonder if there will be a new (smaller?) union to rise from the ashes.</p>
+<blockquote>
+<p>As a result, he is asking the question beloved of so many right-wingers over the last century or so, which question we thought to have been resolved by the American Civil War, which is whether or not any form of federal organisation is actually required in North America. – <a href=\"https://www.taxresearch.org.uk/Blog/2025/03/23/trumps-assault-on-the-usa-seeking-an-explanation/\">Trump’s assault on the USA: seeking an explanation</a>, by Richard Murphy (<a class=\"account\" href=\"https://mas.to/@RichardJMurphy\" title=\"@RichardJMurphy@mas.to\">@RichardJMurphy</a>)</p>
+</blockquote>
+<p>In a world where there are no consequences, sociopaths keep going on a rampage.</p>
+<p>And I'm not even looking at the rest of the world.</p>
+<p><a class=\"tag\" href=\"/search/?q=%23Politics\">#Politics</a> <a class=\"tag\" href=\"/search/?q=%23USA\">#USA</a> <a class=\"tag\" href=\"/search/?q=%23Russia\">#Russia</a> <a class=\"tag\" href=\"/search/?q=%23Ukraine\">#Ukraine</a> <a class=\"tag\" href=\"/search/?q=%23Palestine\">#Palestine</a></p>
+" nil nil "a48c81eba446e4b3dff9cb0233abb3c0") (17 (26593 44716 885045 253000) "https://alexschroeder.ch/view/2025-03-21-blumen" "2025-03-24 Blumenfotos" nil "Mon, 24 Mar 2025 18:50:26 +0000" "<h1 id=\"2025-03-24-blumenfotos\">2025-03-24 Blumenfotos</h1>
+<p>I’ve been taking pictures of flowers in spring…</p>
+<p>Hanami!</p>
+<p>I'm so happy to have these cherry blossoms in the school yard accross the road.</p>
+<p>Japanische Blütenkirsche<br>
+Prunus serrulata</p>
+<p><img loading=\"lazy\" src=\"2025-03-21-blumen-1.jpg\" alt=\"\" /></p>
+<p>I’m walking through the neighbourhood. Identifying flowers using Flora Incognita.</p>
+<p>Scharbockskraut<br>
+Ficaria verna</p>
+<p><img loading=\"lazy\" src=\"2025-03-21-blumen-2.jpg\" alt=\"\" /></p>
+<p>Chinesische Zierquitte<br>
+Chaenomeles speciosa</p>
+<p><img loading=\"lazy\" src=\"2025-03-21-blumen-3.jpg\" alt=\"\" /></p>
+<p>Gewöhnliche Mahonie<br>
+Berberis aquifolium</p>
+<p><img loading=\"lazy\" src=\"2025-03-21-blumen-4.jpg\" alt=\"\" /></p>
+<p>Stängellose Schlüsselblume<br>
+Primula acaulis</p>
+<p><img loading=\"lazy\" src=\"2025-03-21-blumen-5.jpg\" alt=\"\" /></p>
+<p>Wald-Veilchen<br>
+Viola reichenbachiana</p>
+<p><img loading=\"lazy\" src=\"2025-03-21-blumen-6.jpg\" alt=\"\" /></p>
+<p>Dunkle Sternhyazinthe<br>
+Scilla sardensis</p>
+<p><img loading=\"lazy\" src=\"2025-03-21-blumen-7.jpg\" alt=\"\" /></p>
+<p>Frühlings-Krokus<br>
+Crocus vernus</p>
+<p><img loading=\"lazy\" src=\"2025-03-21-blumen-8.jpg\" alt=\"\" /></p>
+<p>Busch-Windröschen<br>
+Anemone nemorosa</p>
+<p><img loading=\"lazy\" src=\"2025-03-21-blumen-9.jpg\" alt=\"\" /></p>
+<p>Sent from this nice bench overlooking an outer part of Zürich.
+I just like taking pictures of benches where I intend to sit moments later. 😅</p>
+<p><img loading=\"lazy\" src=\"2025-03-21-blumen-10.jpg\" alt=\"\" /></p>
+<p>Griechisches Blaukissen<br>
+Aubrieta deltoidea</p>
+<p><img loading=\"lazy\" src=\"2025-03-21-blumen-11.jpg\" alt=\"\" /></p>
+<p>These flowers are all over the lawns in early spring!
+Here it is again.</p>
+<p>Stängellose Schlüsselblume<br>
+Primula acaulis</p>
+<p><img loading=\"lazy\" src=\"2025-03-21-blumen-12.jpg\" alt=\"\" /></p>
+<p>Like aubrieta, this one forms hanging carpets and I love that.</p>
+<p>Immergrüne Schleifenblume<br>
+Iberis sempervirens</p>
+<p><img loading=\"lazy\" src=\"2025-03-21-blumen-13.jpg\" alt=\"\" /></p>
+<p>And of course, the largest flowers in the area…</p>
+<p>Tulpen-Magnolie<br>
+Magnolia soulangeana</p>
+<p><img loading=\"lazy\" src=\"2025-03-21-blumen-14.jpg\" alt=\"\" /></p>
+<p>Riesen Schachtelhalm<br>
+Equisetum telmateia</p>
+<p><img loading=\"lazy\" src=\"2025-03-21-blumen-15.jpg\" alt=\"\" /></p>
+<p>Balkan-Windröschen<br>
+Anemone blanda</p>
+<p><img loading=\"lazy\" src=\"2025-03-21-blumen-16.jpg\" alt=\"\" /></p>
+<p>Weisses Veilchen<br>
+Viola alba</p>
+<p><img loading=\"lazy\" src=\"2025-03-21-blumen-18.jpg\" alt=\"\" /></p>
+<p>Gewöhnliches Greiskraut<br>
+Senecio vulgaris</p>
+<p><img loading=\"lazy\" src=\"2025-03-21-blumen-19.jpg\" alt=\"\" /></p>
+<p>And again, the wonderful magnolia.</p>
+<p>Tulpen-Magnolie<br>
+Magnolia soulangeana</p>
+<p><img loading=\"lazy\" src=\"2025-03-21-blumen-20.jpg\" alt=\"\" /></p>
+<p>I thought chaenomeles was always red, but I guess not.
+Here it is again.</p>
+<p>Chinesische Zierquitte<br>
+Chaenomeles speciosa</p>
+<p><img loading=\"lazy\" src=\"2025-03-21-blumen-21.jpg\" alt=\"\" /></p>
+<p>Gewöhnliche Kegelblume<br>
+Puschkinia scilloides</p>
+<p><img loading=\"lazy\" src=\"2025-03-21-blumen-24.jpg\" alt=\"\" /></p>
+<p>Gefiederte Sockenblume<br>
+Epimedium pinnatum</p>
+<p><img loading=\"lazy\" src=\"2025-03-21-blumen-17.jpg\" alt=\"\" /></p>
+<p>Not sure what this is. Some sort of prunus?</p>
+<p><img loading=\"lazy\" src=\"2025-03-21-blumen-22.jpg\" alt=\"\" /></p>
+<p>The contrast between those trees and the road construction works is poignant.</p>
+<p><img loading=\"lazy\" src=\"2025-03-21-blumen-23.jpg\" alt=\"\" /></p>
+<p>And back to cherry trees. 😍</p>
+<p><img loading=\"lazy\" src=\"2025-03-21-blumen-25.jpg\" alt=\"\" /></p>
+<p><a class=\"tag\" href=\"/search/?q=%23Pictures\">#Pictures</a> <a class=\"tag\" href=\"/search/?q=%23Flowers\">#Flowers</a> <a class=\"tag\" href=\"/search/?q=%23Plants\">#Plants</a></p>
+" nil nil "df28d4102ed683e469a320327bbb7849") (16 (26593 44716 884587 864000) "https://alexschroeder.ch/view/2025-03-21-defence-summary" "2025-03-21 A summary of my bot defence systems" nil "Sat, 22 Mar 2025 12:03:34 +0000" "<h1 id=\"2025-03-21-a-summary-of-my-bot-defence-systems\">2025-03-21 A summary of my bot defence systems</h1>
+<p>If you've followed my <a href=\"Butlerian_Jihad\">Butlerian Jihad</a> pages, you know that I'm constantly fiddling with the setup.
+Each page got written in the middle of an attack as I'm trying to save my sites, documenting as I go along. But if
+you're looking for an overview, there is nothing to see. It's all over the place. Since the topic has gained some
+traction in recent days, I'm going to assemble all the things I do on this page.</p>
+<p>Here's Drew DeVault complaining about the problem that system administrators have been facing for a while, now:</p>
+<blockquote>
+<p>If you think these crawlers respect <code>robots.txt</code> then you are several assumptions of good faith removed from reality. These bots crawl everything they can find, <code>robots.txt</code> be damned, including expensive endpoints like git blame, every page of every git log, and every commit in every repo, and they do so using random User-Agents that overlap with end-users and come from tens of thousands of IP addresses – mostly residential, in unrelated subnets, each one making no more than one HTTP request over any time period we tried to measure – actively and maliciously adapting and blending in with end-user traffic and avoiding attempts to characterize their behavior or block their traffic. - <a href=\"https://drewdevault.com/2025/03/17/2025-03-17-Stop-externalizing-your-costs-on-me.html\">Please stop externalizing your costs directly into my face</a>, by Drew DeVault, for SourceHut</p>
+</blockquote>
+<p>I had read some similar reports before, on fedi, but this one links to quite a few of them: <a href=\"https://thelibre.news/foss-infrastructure-is-under-attack-by-ai-companies/\">FOSS infrastructure is under attack by AI companies</a>, by Niccolò Venerandi, for LibreNews.</p>
+<p>I'm going to skip the defences against spam as spam hasn't been a problem in recent months, surprisingly.</p>
+<p>The first defence against bots is <code>robots.txt</code>. All well-behaving bots should read it every now and then and then either stop crawling
+the site or slow down.</p>
+<p>Let's look at the file <a href=\"https://www.emacswiki.org/robots.txt\">for Emacs Wiki</a>.</p>
+<p>If I find that there are lot of requests from a particular user agent that looks like bot, and it has a URL where I can find instructions
+for how to address it in <code>robots.txt</code>, this is what I do. I tell them to stop crawling the entire site. Most of these are search engine optimizers, brand awareness monitors and other such creeps.</p>
+<p>The file also tells all well-behaving crawlers to slow down to a glacial tempo and it lists all the expensive endpoints that they should not be crawling at all. Conversely, this means that any bot that still crawls those URLs is a misbehaving bot and deserves to be blocked.</p>
+<p>Worth noting, perhaps, that ``an expensive endpoint'' means a URL that runs some executable to do something complicated, resulting in an answer that's always different. If the URL causes the web server to run a CGI script, for example, the request loads Perl, loads a script, loads all its libraries, compiles it all, runs it once, and answers with the request with the output. And since the answer is dynamic, it can't very well be cached, or additional complexity needs to be introduced and even more resources need to be allocated and paid for. In short, an expensive end-point is like loading an app. It's slow but useful, if done rarely. So you'd do this for a human, for example. It's a disaster if bots swarm all over the site, clicking on every link.</p>
+<p>It's also worth noting that not all my sites have the same expensive endpoints and so the second half of <code>robots.txt</code> can vary. Which makes maintenance of the first half a chore. I have a little script that allows me to add one bot to ``all'' the files, but it's annoying to have to do that. And I recently just copied a list from an <a href=\"https://robotstxt.com/ai\">AI / LLM User-Agents: Blocking Guide</a>.</p>
+<p>I use Apache as my web-server and I have a bunch of global configuration files to handle misbehaving bots and crawlers.</p>
+<p>This example blocks fediverse agents from accessing my site. That's because whenever anybody post a URL to one of my sites, within the next
+60 seconds, all the servers with users getting a copy of the URL will fetch a preview. That means hundreds of hits. This is particularly
+obnoxious for expensive endpoints. This response here tells them that they are forbidden from accessing the page.</p>
+<pre><code># Fediverse instances asking for previews: protect the expensive endpoints
+RewriteCond %{REQUEST_URI} /(wiki|download|food|paper|hug|helmut|input|korero|check|radicale|say|mojo|software)
+RewriteCond %{HTTP_USER_AGENT} Mastodon|Friendica|Pleroma [nocase]
+# then it's forbidden
+RewriteRule ^(.*)$ - [forbidden,last]
+</code></pre>
+<p>These are the evil bots that self-identify as a bot but don't seem to heed the <code>robots.txt</code> files. These are all told that whatever page they were looking for, it's now gone (410). And if there's a human looking at the output, it even links to an explanation. Adding new user agents to this list is annoying because I need to connect as root and restart the web server after making any changes.</p>
+<pre><code># SEO bots, borked feed services and other shit
+RewriteCond \"%{HTTP_USER_AGENT}\" \"academicbotrtu|ahrefsbot|amazonbot|awariobot|bitsightbot|blexbot|bytespider|dataforseobot|discordbot|domainstatsbot|dotbot|elisabot|eyemonit|facebot|linkfluence|magpie-crawler|megaindex|mediatoolkitbot|mj12bot|newslitbot|paperlibot|pcore|petalbot|pinterestbot|seekportbot|semanticscholarbot|semrushbot|semanticbot|seokicks-robot|siteauditbot|startmebot|summalybot|synapse|trendictionbot|twitterbot|wiederfrei|yandexbot|zoominfobot|velenpublicwebcrawler|gpt|\\bads|feedburner|brandwatch|openai|facebookexternalhit|yisou|docspider\" [nocase]
+RewriteRule ^ https://alexschroeder.ch/nobots [redirect=410,last]
+</code></pre>
+<p>For some of my sites, I disallow all user agents containing the words ``bot'', ``crawler'', ``spider'', ``ggpht'' or ``gpt'' with the exception of ``archivebot'' and ``wibybot'' because these two bots I want to give access. Again, these bots are all told that whatever page they were looking for, it's now gone (410).</p>
+<pre><code># Private sites block all bots and crawlers. This list does no include
+# social.alexschroeder.ch, communitywiki.org, www.emacswiki.org,
+# oddmuse.org, orientalisch.info, korero.org.
+RewriteCond \"%{HTTP_HOST}\" \"^((src\\.)?alexschroeder\\.ch|flying-carpet\\.ch|next\\.oddmuse\\.org|((chat|talk)\\.)?campaignwiki\\.org|((archive|vault|toki|xn--vxagggm5c)\\.)?transjovian\\.org)$\" [nocase]
+RewriteCond \"%{HTTP_USER_AGENT}\" \"!archivebot|^gwene|wibybot\" [nocase]
+RewriteCond \"%{HTTP_USER_AGENT}\" \"bot|crawler|spider|ggpht|gpt\" [nocase]
+RewriteRule ^ https://alexschroeder.ch/nobots [redirect=410,last]
+</code></pre>
+<p>I also eliminate a lot of bots looking for PHP endpoints. I can do this because I know that I don't have any PHP application installed.</p>
+<pre><code># Deny all idiots that are looking for borked PHP applications
+RewriteRule \\.php$ https://alexschroeder.ch/nobots [redirect=410,last]
+</code></pre>
+<p>There's also one particular image scraper that's using a unique string in its user agent.</p>
+<pre><code># Deny the image scraper
+# https://imho.alex-kunz.com/2024/02/25/block-this-shit/
+RewriteCond \"%{HTTP_USER_AGENT}\" \"Firefox/72.0\" [nocase]
+RewriteRule ^ https://alexschroeder.ch/nobots [redirect=410,last]
+</code></pre>
+<p>Next, all requests get logged by Apache in the <code>access.log</code> file. I use <code>fail2ban</code> to check this logfile. This is somewhat interesting
+because <code>fail2ban</code> is usually used to check for failed ssh login attempts. Those IP numbers that fail to login in a few times are banned.
+What I'm doing is I wrote a filter that treats every hit on the web server as a ``failed login attempt''.</p>
+<p>This is the filter:</p>
+<pre><code>[Definition]
+# Most sites in the logfile count! What doesn't count is fedi.alexschroeder.ch, or chat.campaignwiki.org.
+failregex = ^(www\\.)?(alexschroeder\\.ch|campaignwiki\\.org|communitywiki\\.org|emacswiki\\.org|flying-carpet\\.ch|korero\\.org|oddmuse\\.org|orientalisch\\.info):[0-9]+ <HOST>
+# Except css files, images...
+ignoreregex = ^[^\"]*\"(GET /(robots\\.txt |favicon\\.ico |[^/ \\\"]+\\.(css|js) |[^\\\"]*\\.(jpg|JPG|png|PNG) |css/|fonts/|pdfs/|txt/|pics/|export/|podcast/|1pdc/|static/|munin/|osr/|indie/|rpg/|face/|traveller/|hex-describe/|text-mapper/|contrib/pics/|roll/|alrik/|wiki/download/)|(OPTIONS|PROPFIND|REPORT) /radicale)
+</code></pre>
+<p>And this is the jail, saying that any IP number may make 30 hits in 60 seconds. If an IP number exceeds this (2s per page!) then it
+gets blocked at the firewall for 10 minutes.</p>
+<pre><code>[alex-apache]
+enabled = true
+port    = http,https
+logpath = %(apache_access_log)s
+findtime = 60
+maxretry = 30
+</code></pre>
+<p>I also have another filter for a particular substring in URLs that I found the bots are requesting all the time:</p>
+<pre><code>[Definition]
+failregex = ^(www\\.emacswiki\\.org|communitywiki\\.org|campaignwiki\\.org):[0-9]+ <HOST> .*rcidonly=
+</code></pre>
+<p>The corresponding jail says that when you trigger request such a URL for the third time in an hour, you're blocked at the firewall for 10 minutes.</p>
+<p>[alex-bots]
+enabled = true
+port    = http,https
+logpath = %(apache_access_log)s
+findtime = 3600
+maxretry = 2</p>
+<p>(At the same time, these URL's redirect to <a href=\"https://www.emacswiki.org/nobots\">a warning</a> so that humans know that this is a trap.)</p>
+<p>Furthermore, <code>fail2ban</code> also comes with a <code>recidive</code> filter that watches its own logs. If an IP has been banned five times in a day, it gets banned for a week.</p>
+<pre><code>[recidive]
+enabled = true
+</code></pre>
+<p>To add to the <code>alex-bots</code> jail, here's what my Apache configuration says: RSS feeds for single pages are errors.</p>
+<pre><code>RewriteCond %{QUERY_STRING} action=rss
+RewriteCond %{QUERY_STRING} rcidonly=.*
+RewriteRule .* /error.rss [last]
+</code></pre>
+<p>Note that all my sites also use the following headers, so anybody ignoring these is also a prime candidate for blocking.</p>
+<pre><code># https://github.com/rom1504/img2dataset#opt-out-directives
+Header always set X-Robots-Tag: noai
+Header always set X-Robots-Tag: noimageai
+</code></pre>
+<p>All of the above still doesn't handle extremely distributed attacks. In such situations, almost all IP numbers are unique. What I try to do in this situation is block the entire IP range that they come from.
+I scan the <code>access.log</code> for IP numbers that connected to a URL that shouldn't be used by bots because of <code>robots.txt</code>, containing <code>rcidonly</code> because I know humans will very rarely click it and it's expensive to serve. For each such IP number, I determine the IP range they come from, and then I block it all.</p>
+<p>Basically, this is what I keep repeating:</p>
+<pre><code># prefix with a timestamp
+date
+# log some candidates without whois information, skipping my fedi instance
+tail -n 2000 /var/log/apache2/access.log \\
+| grep -v ^social \\
+| grep \"rcidonly\" \\
+| bin/admin/network-lookup-lean > result.log
+# count
+grep ipset result.log|wc -l
+# add
+grep ipset result.log|sh
+# document
+grep ipset result.log>>bin/admin/ban-cidr
+</code></pre>
+<p>You can find the scripts in my <a href=\"https://alexschroeder.ch/admin/\">admin collection</a>.</p>
+<p><a class=\"tag\" href=\"/search/?q=%23Administration\">#Administration</a> <a class=\"tag\" href=\"/search/?q=%23Butlerian_Jihad\">#Butlerian Jihad</a></p>
+<p><strong>2025-03-22</strong>. The drawback of using the firewall to ban broad swaths of the Internet is that these networks host bots (bad) but also networked services that I'm interested in (good). Yesterday I found that <a class=\"account\" href=\"https://come-from.mad-scientist.club/@algernon\" title=\"@algernon@come-from.mad-scientist.club\">@algernon</a> had gone silent, had been silent for quite a while, and yet I kept seeing replies to them by others. Something was off. We got into contact via an alt account and indeed, I had blocked the IPv4 range his server was on.</p>
+<p>So by my count I already had to unblock three networks on my list. It's not a great solution, to be honest.
+And it doesn't expire, either. The list still contains 47021 IP ranges.</p>
+" nil nil "7b9936984fa9ede0022a07ea022f3716") (15 (26591 55056 783191 463000) "https://alexschroeder.ch/view/2025-03-20-bot-defence" "2025-03-20 Something about the bot defence is working" nil "Sat, 22 Mar 2025 22:02:48 +0000" "<h1 id=\"2025-03-20-something-about-the-bot-defence-is-working\">2025-03-20 Something about the bot defence is working</h1>
 <p>At midnight, there was a surge in activity.
 CPU usage went up.</p>
 <p><img loading=\"lazy\" src=\"2025-03-20-bot-defence-1.jpg\" alt=\"\" /></p>

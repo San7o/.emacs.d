@@ -172,6 +172,17 @@
 (use-package simple-httpd
   :ensure t)
 
+(use-package mastodon
+  :ensure t
+  :config
+  (setq mastodon-instance-url "https://mastodon.social"
+        mastodon-active-user "santo7"))
+
+(when (< emacs-major-version 30)
+  (use-package auto-complete
+    :ensure t
+    :hook (after-init . auto-complete-mode)))
+
 (menu-bar-mode -1)
 (scroll-bar-mode -1)
 (tool-bar-mode -1)
@@ -224,6 +235,7 @@
 ;;(require 'typit)
 
 (global-set-key (kbd "C-c c") 'compile)
+(global-set-key (kbd "C-c v") 'modus-themes-toggle)
 
 ;;(require 'undo-tree)
 ;;(global-undo-tree-mode)

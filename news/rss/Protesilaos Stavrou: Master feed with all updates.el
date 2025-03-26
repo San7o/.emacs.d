@@ -1,5 +1,73 @@
 ;; -*- coding: utf-8-emacs; -*-
-(setq nnrss-group-data '((106 (26591 55059 976958 403000) "https://protesilaos.com/politics/2025-03-23-europe-remilitarisation/" "On the remilitarisation of Europe" nil "Sun, 23 Mar 2025 00:00:00 +0000" "<p>The European Union is in the process of expanding its military capacity. The immediate plan is to invest in “made in Europe” defence capabilities. As <a href=\"https://commission.europa.eu/topics/defence/future-european-defence_en\">outlined on the European Commission’s website</a>, governments will benefit from a lending facility that will mobilise funds from capital markets as well as creative national accounting. The latter involves the relaxation of the EU’s stringent rules on fiscal deficits and public debts such that expenditure up to 1.5% of Gross Domestic Product is not counted against the deficit if directed towards military affairs. Critics will rightly question where was this leeway when European leaders were insistent on imposing grinding austerity on the vast majority of the population. Why did the EU not relax those rules in favour of public health and education, for example, and why is the war machine treated differently in this regard? While I share that sentiment, I think the discrepancy is justified.</p>
+(setq nnrss-group-data '((108 (26595 3904 546552 100000) "https://protesilaos.com/news/2025-03-25-hut-manual-labour-avoid-distractions/" "Vlog: manual work at the hut and avoiding computer distractions" nil "Tue, 25 Mar 2025 00:00:00 +0000" "<p>In this ~30-minute video, I do some manual labour while talking about
+the need to create physical distance from connected devices that take
+up too much of our attention. I also provide an update on the hut
+project, describing what exactly I am doing and how my winter went.</p>" nil nil "f01f2cb7f482971d80070413d6052c71") (107 (26593 11106 224646 30000) "https://protesilaos.com/codelog/2025-03-24-emacs-denote-query-links/" "Emacs: first look at query links for Denote version 4.0.0" nil "Mon, 24 Mar 2025 00:00:00 +0000" "<p>The next version of Denote is shaping up to be a huge one. One of the
+newest features I am working on is the support for “query links”.
+Those use the same <code class=\"language-plaintext highlighter-rouge\">denote:</code> link type infrastructure but exhibit a
+different behaviour than the direct links we have always had. Instead
+of pointing to a file via its unique identifier, they initiate a
+search through the contents of all files in the <code class=\"language-plaintext highlighter-rouge\">denote-directory</code>.
+This search uses the built-in Xref mechanism and is the same as what
+we have already been doing with backlinks (basically, a <code class=\"language-plaintext highlighter-rouge\">grep</code>).</p>
+<p>In short:</p>
+<ul>
+<li><strong>Direct links:</strong> Those point to a file via its unique identifier.
+For example, <code class=\"language-plaintext highlighter-rouge\">denote:20250324T074132</code> resolves to a file path.
+Clicking on the link opens the corresponding file. Org export will
+also take care to turn this into a file path.</li>
+<li><strong>Query links:</strong> Those do not point to any file per se. They are a
+string of one or more words or regular expression which is matched
+against the contents of files. For example, <code class=\"language-plaintext highlighter-rouge\">denote:this is a test</code>
+produces a buffer listing all matches for the given query. Clicking
+on the matching line in that buffer opens the file at that point
+(just how our backlinks work when they show context—I am
+generalising this mechanism).</li>
+</ul>
+<p><em>Direct links</em> can point to any file, including PDFs, videos, and
+pictures (assuming it is renamed to use the Denote file-naming
+scheme). Whereas <em>query links</em> are limited to text files.</p>
+<h2>Development discussion and screenshots</h2>
+<p>This is a work-in-progress that lives on its own branch as of this
+writing. I will not elaborate at length right now as the
+implementation details may change. I have, nonetheless, created an
+issue on the GitHub repository where interested parties can provide
+their feedback. It also includes some screenshots I took:
+<a href=\"https://github.com/protesilaos/denote/issues/561\">https://github.com/protesilaos/denote/issues/561</a>. The code includes
+other changes which pertain to how we handle backlinks and constitutes
+a simplification of the code base.</p>
+<p>The idea is to add the functionality to the <code class=\"language-plaintext highlighter-rouge\">main</code> branch in the
+coming days or weeks. Then I will do a video about it and/or explain
+more.</p>
+<p>That granted, do not forget that the official manual is the most
+up-to-date reference and the single source of truth.</p>
+<h2>Denote sources</h2>
+<p>Denote is a simple note-taking tool for Emacs.  It is based on the idea
+that notes should follow a predictable and descriptive file-naming
+scheme.  The file name must offer a clear indication of what the note is
+about, without reference to any other metadata.  Denote basically
+streamlines the creation of such files while providing facilities to
+link between them.</p>
+<p>Denote’s file-naming scheme is not limited to “notes”.  It can be used
+for all types of file, including those that are not editable in Emacs,
+such as videos.  Naming files in a consistent way makes their
+filtering and retrieval considerably easier.  Denote provides relevant
+facilities to rename files, regardless of file type.</p>
+<p>[ Further down on this list I include more of my Denote-related packages. ]</p>
+<ul>
+<li>Package name (GNU ELPA): <code class=\"language-plaintext highlighter-rouge\">denote</code></li>
+<li>Official manual: <a href=\"https://protesilaos.com/emacs/denote\">https://protesilaos.com/emacs/denote</a></li>
+<li>Change log: <a href=\"https://protesilaos.com/emacs/denote-changelog\">https://protesilaos.com/emacs/denote-changelog</a></li>
+<li>Git repositories:
+<ul>
+<li>GitHub: <a href=\"https://github.com/protesilaos/denote\">https://github.com/protesilaos/denote</a></li>
+<li>GitLab: <a href=\"https://gitlab.com/protesilaos/denote\">https://gitlab.com/protesilaos/denote</a></li>
+</ul>
+</li>
+<li>Video demo: <a href=\"https://protesilaos.com/codelog/2022-06-18-denote-demo/\">https://protesilaos.com/codelog/2022-06-18-denote-demo/</a></li>
+<li>Backronyms: Denote Everything Neatly; Omit The Excesses.  Don’t Ever
+Note Only The Epiphenomenal.</li>
+</ul>" nil nil "9c7f23a7c24ff25623c8f698ae0e8b3b") (106 (26591 55059 976958 403000) "https://protesilaos.com/politics/2025-03-23-europe-remilitarisation/" "On the remilitarisation of Europe" nil "Sun, 23 Mar 2025 00:00:00 +0000" "<p>The European Union is in the process of expanding its military capacity. The immediate plan is to invest in “made in Europe” defence capabilities. As <a href=\"https://commission.europa.eu/topics/defence/future-european-defence_en\">outlined on the European Commission’s website</a>, governments will benefit from a lending facility that will mobilise funds from capital markets as well as creative national accounting. The latter involves the relaxation of the EU’s stringent rules on fiscal deficits and public debts such that expenditure up to 1.5% of Gross Domestic Product is not counted against the deficit if directed towards military affairs. Critics will rightly question where was this leeway when European leaders were insistent on imposing grinding austerity on the vast majority of the population. Why did the EU not relax those rules in favour of public health and education, for example, and why is the war machine treated differently in this regard? While I share that sentiment, I think the discrepancy is justified.</p>
 <p>War is odious yet part of our potential. A country that wants to preserve its way of living is a country that is combat ready. The same is true for individuals: those who do not want to be victims of some bully do what they must to make themselves a hard target. And those who are always mistreated are so because they are easy targets. Is this nice? No. Are the aggressors justified? No. The point is not one of aesthetics or of moralising against the phenomena. What matters is how the world works. There is no lasting security, personal or collective, that is sustained absent strong checks on innate ambitions of control, dominance, or even the sheer thrill of conquest and adventure.</p>
 <p>The story of the European integration process is one of peace among the Member States, in juxtaposition to the cruelty of two World Wars, yet it happened against the backdrop of the Cold War and, more recently, of ongoing tensions in the wider region. Europeans uniting under a single legal-institutional framework is, in practical terms, an alliance. Even from a purely economic standpoint, it makes sense for trading partners to have a vested interest in their common safety: it helps business continue. And with that come all the practicalities of the free movement of workers, their right to establishment, and so on. In other words, what starts out as a purely financial calculus inevitably spills over to all facets of the quotidian experience.</p>
 <p>The EU is a highly flawed architecture which cannot be a federal republic in its current form. It is a union of states or a confederation, else, a layer of bureaucracy on top of nation states, which has some competences (“sovereignty”) but which nevertheless lacks democratic accountability commensurate with that generally found at the Member State level. There still are degrees though, which critics of the Union need be mindful of in order not to lose their sense of perspective. Despite its shortcomings, the EU is a largely progressive place in terms of the rule of law and the respect for fundamental freedoms. One need only take a look at the immediate periphery of the EU to appreciate those nuances and understanding how nothing can be taken as a given.</p>
