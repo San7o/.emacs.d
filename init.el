@@ -21,6 +21,8 @@
                           (border-mode-line-inactive bg-nactive)
                           ))
 
+(add-to-list 'custom-theme-load-path "~/.emacs.d/themes/")
+
 (when (< emacs-major-version 29)
   (unless (package-installed-p 'use-package)
     ;;(unless package-archive-contents
@@ -207,6 +209,7 @@
 (scroll-bar-mode -1)
 (tool-bar-mode -1)
 (display-time-mode 1)
+(fringe-mode "minimal")
 
 (setq-default inhibit-startup-screen t)
 (setq inhibit-splash-screen t)
