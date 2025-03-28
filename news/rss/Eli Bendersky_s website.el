@@ -1,5 +1,9 @@
 ;; -*- coding: utf-8-emacs; -*-
-(setq nnrss-group-data '((11 (26590 50398 975867 335000) "https://eli.thegreenplace.net/2025/understanding-numpys-einsum/" "Understanding Numpy's einsum" nil "Sat, 22 Mar 2025 06:01:00 -0700" "<p>This is a brief explanation and a cookbook for using <a class=\"reference external\" href=\"https://numpy.org/doc/stable/reference/generated/numpy.einsum.html\">numpy.einsum</a>,
+(setq nnrss-group-data '((12 (26598 25801 912044 512000) "https://eli.thegreenplace.net/2025/notes-on-implementing-attention/" "Notes on implementing Attention" nil "Wed, 26 Mar 2025 17:15:00 -0700" "<p>Some notes on implementing attention blocks in pure Python +
+Numpy. The focus here is on the exact implementation in code, explaining all the
+shapes throughout the process. The motivation for why attention works is not
+covered here - there are plenty of excellent online resources explaining it.</p>
+<p>Several papers are mentioned …</p> (...)" nil nil "c9be346b62f7eedf9442395deaf85223") (11 (26590 50398 975867 335000) "https://eli.thegreenplace.net/2025/understanding-numpys-einsum/" "Understanding Numpy's einsum" nil "Sat, 22 Mar 2025 06:01:00 -0700" "<p>This is a brief explanation and a cookbook for using <a class=\"reference external\" href=\"https://numpy.org/doc/stable/reference/generated/numpy.einsum.html\">numpy.einsum</a>,
 which lets us use <a class=\"reference external\" href=\"https://en.wikipedia.org/wiki/Einstein_notation\">Einstein notation</a> to evaluate operations on
 multi-dimensional arrays. The focus here is mostly on einsum's <em>explicit</em> mode
 (with <tt class=\"docutils literal\"><span class=\"pre\">-></span></tt> and output dimensions explicitly specified in the subscript string)

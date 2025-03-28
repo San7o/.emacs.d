@@ -9,6 +9,26 @@ setup, do not expect anything remarcable, just some lisp code :)
 Use =M-x load-file= to load this configuration. You can also use
 =eval-buffer= inside this buffer.
 
+* Early Init
+
+This code gets executed very early during emacs' startup sequence.
+It is useful to speedup the startup process.
+
+What I am doing here is to temporarely increase the treshold for the
+garbage collector for reduce Its frequency. The value
+=most-positive-fixnm= represents the biffest positive integer that
+Emacs can handle. After the startup, we want to restore the GC
+treshold to a more sane amount, but still bigger than the default
+one. I am setting this to 50MB, the default one is 800000 bytes, or
+0.79MB.
+
+#+begin_src emacs-lisp :tangle early-init.el
+  (setq gc-cons-threshold most-positive-fixnum)
+
+  (add-hook 'emacs-startup-hook
+            (lambda () (setq gc-cons-threshold (* 50 1024 1024))))
+#+end_src
+
 * Repositories
 
 Those are the usual emacs repositories. Once in a while, you may have
@@ -72,11 +92,23 @@ Org mode settings. I use org mode everywhere in my life.
 
 Run =org-todo= to update a TODO keywork.
 #+begin_src emacs-lisp
-  (use-package org
-    :ensure nil ; do not try to install it as it is built-in
-    :config
-    (setq org-todo-keywords
-          '((sequence "TODO(t)" "WAIT(w!)" "|" "CANCEL(c!)" "DONE(d!)"))))
+    (use-package org
+      :ensure nil ; do not try to install it as it is built-in
+      :config
+      (setq org-todo-keywords
+            '((sequence "TODO(t)" "WAIT(w!)" "|" "CANCEL(c!)" "DONE(d!)"))))
+  
+  ;; Automatically toggle Latex
+    (use-package org-fragtog
+      :ensure t
+      :config
+      (setq org-format-latex-options
+          '(:foreground "White" 
+                        :background "Transparent" 
+                        :scale 3.0      ;; Base scaling factor
+                        :html-scale 1.5 ;; For HTML export
+                        :matchers ("begin" "$1" "$" "\\(" "\\["))))
+    (add-hook 'org-mode-hook 'org-fragtog-mode)
 #+end_src
 
 ** Markdown mode
@@ -362,6 +394,20 @@ Available by default in emacs 30.
         :hook (after-init . auto-complete-mode)))
 #+end_src
 
+** Flycheck
+
+Modern on-the-fly syntax checking extension for GNU Emacs.
+
+#+begin_src emacs-lisp
+  (use-package flycheck
+    :ensure
+    :commands flycheck-mode
+    :config
+    (setq flycheck-check-syntax-automatically
+          '(save mode-enabled))
+    :hook (flycheck-error-list-mode-hook . visual-line-mode))
+#+end_src
+
 * Customization
 ** Cleanup the screen
  
@@ -454,17 +500,12 @@ code should live in a separate file.
 (load custom-file :no-error-if-file-is-missing)
 #+end_src
 
-** Save Session
-
-#+begin_src emacs-lisp
-(desktop-save-mode 1)
-#+end_src
-
 ** Tabs size
 
 Change the tab size as 2 spaces.
 
 #+begin_src emacs-lisp
+  (setq-default indent-tabs-mode nil)
   (setq-default tab-width 2)
 #+end_src
 
@@ -558,6 +599,11 @@ is now complete.
 #+begin_src emacs-lisp
 ;;  (use-package evil
 ;;    :ensure t)
+#+end_src
+** Save Session
+
+#+begin_src emacs-lisp
+;;(desktop-save-mode 1)
 #+end_src
 
 ** EXWM

@@ -1,5 +1,39 @@
 ;; -*- coding: utf-8-emacs; -*-
-(setq nnrss-group-data '((108 (26595 3904 546552 100000) "https://protesilaos.com/news/2025-03-25-hut-manual-labour-avoid-distractions/" "Vlog: manual work at the hut and avoiding computer distractions" nil "Tue, 25 Mar 2025 00:00:00 +0000" "<p>In this ~30-minute video, I do some manual labour while talking about
+(setq nnrss-group-data '((109 (26598 40087 564216 792000) "https://protesilaos.com/codelog/2025-03-28-emacs-denote-query-links/" "Emacs: Denote =?utf-8?Q?=E2=80=98query_links=E2=80=99?= (links that trigger a search)" nil "Fri, 28 Mar 2025 00:00:00 +0000" "<p>In this ~16-minute video, I demonstrate the new, in-development “query
+links” functionality of Denote. These are links that trigger a search
+when you interact with them. There are two types of query links: (i)
+search in file contents, or (ii) search in file names. When there are
+matches for a given query, those are displayed in a separate buffer,
+which uses the appropriate major mode. Query links complement the
+“direct links” Denote has always supported. Internally, they use the
+same infrastructure that Denote backlinks rely on (and we have had
+backlink support since the beginning).</p>
+<h2>Denote sources</h2>
+<p>Denote is a simple note-taking tool for Emacs.  It is based on the idea
+that notes should follow a predictable and descriptive file-naming
+scheme.  The file name must offer a clear indication of what the note is
+about, without reference to any other metadata.  Denote basically
+streamlines the creation of such files while providing facilities to
+link between them.</p>
+<p>Denote’s file-naming scheme is not limited to “notes”.  It can be used
+for all types of file, including those that are not editable in Emacs,
+such as videos.  Naming files in a consistent way makes their
+filtering and retrieval considerably easier.  Denote provides relevant
+facilities to rename files, regardless of file type.</p>
+<ul>
+<li>Package name (GNU ELPA): <code class=\"language-plaintext highlighter-rouge\">denote</code></li>
+<li>Official manual: <a href=\"https://protesilaos.com/emacs/denote\">https://protesilaos.com/emacs/denote</a></li>
+<li>Change log: <a href=\"https://protesilaos.com/emacs/denote-changelog\">https://protesilaos.com/emacs/denote-changelog</a></li>
+<li>Git repositories:
+<ul>
+<li>GitHub: <a href=\"https://github.com/protesilaos/denote\">https://github.com/protesilaos/denote</a></li>
+<li>GitLab: <a href=\"https://gitlab.com/protesilaos/denote\">https://gitlab.com/protesilaos/denote</a></li>
+</ul>
+</li>
+<li>Video demo: <a href=\"https://protesilaos.com/codelog/2022-06-18-denote-demo/\">https://protesilaos.com/codelog/2022-06-18-denote-demo/</a></li>
+<li>Backronyms: Denote Everything Neatly; Omit The Excesses.  Don’t Ever
+Note Only The Epiphenomenal.</li>
+</ul>" nil nil "2441e942c685b267e10040fc458f0387") (108 (26595 3904 546552 100000) "https://protesilaos.com/news/2025-03-25-hut-manual-labour-avoid-distractions/" "Vlog: manual work at the hut and avoiding computer distractions" nil "Tue, 25 Mar 2025 00:00:00 +0000" "<p>In this ~30-minute video, I do some manual labour while talking about
 the need to create physical distance from connected devices that take
 up too much of our attention. I also provide an update on the hut
 project, describing what exactly I am doing and how my winter went.</p>" nil nil "f01f2cb7f482971d80070413d6052c71") (107 (26593 11106 224646 30000) "https://protesilaos.com/codelog/2025-03-24-emacs-denote-query-links/" "Emacs: first look at query links for Denote version 4.0.0" nil "Mon, 24 Mar 2025 00:00:00 +0000" "<p>The next version of Denote is shaping up to be a huge one. One of the

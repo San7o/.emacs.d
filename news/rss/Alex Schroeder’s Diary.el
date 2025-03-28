@@ -1,5 +1,101 @@
 ;; -*- coding: utf-8-emacs; -*-
-(setq nnrss-group-data '((20 (26595 3901 213214 956000) "https://alexschroeder.ch/view/2025-03-25-down" "2025-03-25 Down down down" nil "Tue, 25 Mar 2025 12:14:28 +0000" "<h1 id=\"2025-03-25-down-down-down\">2025-03-25 Down down down</h1>
+(setq nnrss-group-data '((22 (26596 20183 584789 887000) "https://alexschroeder.ch/view/2025-03-20-bot-defence" "2025-03-20 Something about the bot defence is working" nil "Wed, 26 Mar 2025 17:54:31 +0000" "<h1 id=\"2025-03-20-something-about-the-bot-defence-is-working\">2025-03-20 Something about the bot defence is working</h1>
+<p>At midnight, there was a surge in activity.
+CPU usage went up.</p>
+<p><img loading=\"lazy\" src=\"2025-03-20-bot-defence-1.jpg\" alt=\"\" /></p>
+<p>Load went up, too. But it stayed within reasonable bounds - less than 4 instead of the more than 80 I have seen in the past.</p>
+<p><img loading=\"lazy\" src=\"2025-03-20-bot-defence-2.jpg\" alt=\"\" /></p>
+<p>And the number of IP addresses blocked by <code>fail2ban</code> went from 40 to 50.</p>
+<p><img loading=\"lazy\" src=\"2025-03-20-bot-defence-3.jpg\" alt=\"\" /></p>
+<p>I'm usually sceptical of this because the big attacks are from a far wider variety of IP numbers.
+In this case, however, maybe there was some probing that resulted in blocks? I don't know. Lucky, I guess?</p>
+<p>In any case, the site is still up. Yay for small wins.</p>
+<p>Also, I cannot overstate how good it feel to have some <a href=\"https://munin-monitoring.org/\">Munin</a> graphs available.</p>
+<p><code>alex-bots</code> is a setup I desribed in <a href=\"2025-02-19-bots-again\">2025-02-19 Bots again, cursed</a>.
+Basically a request to one of my Oddmuse wikis containing the parameter <code>rcidonly</code> is an expensive endpoint: ``all changes for this single page'' or ``a feed for this single page''. This is something a human would rarely access and yet it somehow the URLs landed in some dataset for AI training, I suspect. So what I do is I’m redirecting any request containing “rcidonly” in the query string to <code>/nobots</code>, warning humans not to click on these links.</p>
+<p>In addition to that, the filter <code>/etc/fail2ban/filter.d/alex-bots.conf</code> contains this:</p>
+<pre><code>[Definition]
+failregex = ^(www\\.emacswiki\\.org|communitywiki\\.org|campaignwiki\\.org):[0-9]+ <HOST> .*rcidonly=
+</code></pre>
+<p>And I added a section using this filter to my jail <code>/etc/fail2ban/jail.d/alex.conf</code>:</p>
+<pre><code>[alex-bots]
+enabled = true
+port    = http,https
+logpath = %(apache_access_log)s
+findtime = 3600
+maxretry = 2
+</code></pre>
+<p>So if an IP number visits three URLs containing ``rcidonly'' in an hour, they get banned for ten minutes.</p>
+<p>The <code>recidive</code> filter (a standard filter you just need to activate) then makes sure that any IP number that got blocked three times gets blocked for a week.</p>
+<p><a class=\"tag\" href=\"/search/?q=%23Administration\">#Administration</a> <a class=\"tag\" href=\"/search/?q=%23Butlerian_Jihad\">#Butlerian Jihad</a></p>
+<p><strong>2025-03-20</strong>. Ever since Drew DeVault published his blog post, more people seem to notice what's going on: AI ingestion is killing web sites and web services.</p>
+<blockquote>
+<p>If you think these crawlers respect <code>robots.txt</code> then you are several assumptions of good faith removed from reality. These bots crawl everything they can find, <code>robots.txt</code> be damned, including expensive endpoints like git blame, every page of every git log, and every commit in every repo, and they do so using random User-Agents that overlap with end-users and come from tens of thousands of IP addresses – mostly residential, in unrelated subnets, each one making no more than one HTTP request over any time period we tried to measure – actively and maliciously adapting and blending in with end-user traffic and avoiding attempts to characterize their behavior or block their traffic. - <a href=\"https://drewdevault.com/2025/03/17/2025-03-17-Stop-externalizing-your-costs-on-me.html\">Please stop externalizing your costs directly into my face</a>, by Drew DeVault, for SourceHut</p>
+<p>Then, yesterday morning, KDE GitLab infrastructure was overwhelmed by another AI crawler, with IPs from an Alibaba range; this caused GitLab to be temporarily inaccessible by KDE developers. I then discovered that, one week ago, an Anime girl started appearing on the GNOME GitLab instance, as the page was loaded. It turns out that it's the default loading page for Anubis, a proof-of-work challenger that blocks AI scrapers that are causing outages. - <a href=\"https://thelibre.news/foss-infrastructure-is-under-attack-by-ai-companies/\">FOSS infrastructure is under attack by AI companies</a>, by Niccolò Venerandi, for LibreNews</p>
+<p>What do SourceHut, GNOME’s GitLab, and KDE’s GitLab have in common, other than all three of them being forges? Well, it turns out all three of them have been dealing with immense amounts of traffic from “AI” scrapers, who are effectively performing DDoS attacks with such ferocity it’s bringing down the infrastructures of these major open source projects. Being open source, and thus publicly accessible, means these scrapers have unlimited access, unlike with proprietary projects. … Everything about this “AI” bubble is gross, and I can’t wait for this bubble to pop so a semblance of sanity can return to the technology world. Until the next hype train rolls into the station, of course. - <a href=\"https://www.osnews.com/story/141969/foss-infrastructure-is-under-attack-by-ai-companies/\">FOSS infrastructure is under attack by AI companies</a>, by Thom Holwerda, for OSnews</p>
+</blockquote>
+<p><strong>2025-03-22</strong>. Ordinary sysadmins get hit as well. Here's Sean Conner of the The Boston Diaries: He reports on <a href=\"https://boston.conman.org/2025/03/21\">Friday, March 21, 2025</a> that his logs show a total of 468439 requests for February 2025. The top hitter was 4.231.104.62 with 43242 requests (9%). This was from MICROSOFT-CORP-MSN-AS-BLOCK, US. But the ASN has more networks, of course. Adding them all up give 78889 (17%).</p>
+<p>He links to the <a href=\"https://www.team-cymru.com/ip-asn-mapping\">IP to ASN Mapping Service</a> by Team Cymru. I started switching my <a href=\"/admin/network-lookup\">network-lookup</a> script to using it because it also supports IPv6. Something that I haven't done is find the ASN and then block all the blocks belonging to the ASN. That's where I want to be, actually.</p>
+<p><strong>2025-03-26</strong>. More media are picking it up, but with a strange focus on ``open source''.</p>
+<blockquote>
+<p>As it currently stands, both the rapid growth of AI-generated content <a href=\"https://www.404media.co/ai-slop-is-a-brute-force-attack-on-the-algorithms-that-control-reality/\">overwhelming</a> online spaces and aggressive web-crawling practices by AI firms threaten the sustainability of essential online resources. The current approach taken by some large AI companies—<a href=\"https://www.vintagecomputing.com/index.php/archives/3292/the-pc-is-dead-its-time-to-make-computing-personal-again\">extracting</a> vast amounts of data from open-source projects without clear consent or compensation—risks severely damaging the very digital ecosystem on which these AI models depend. - <a href=\"https://arstechnica.com/ai/2025/03/devs-say-ai-crawlers-dominate-traffic-forcing-blocks-on-entire-countries/\">Open Source devs say AI crawlers dominate traffic, forcing blocks on entire countries</a>, by Benj Edwards, for Ars Technica</p>
+</blockquote>
+<p><a class=\"account\" href=\"https://mastodon.social/@bagder\" title=\"@bagder@mastodon.social\">@bagder</a> recently had some numbers:</p>
+<blockquote>
+<p>The AI bots that desperately need OSS for code training, are now slowly killing OSS by overloading every site.
+The curl website is now at 77TB/month, or 8GB every five minutes.</p>
+</blockquote>
+<p><a class=\"account\" href=\"https://tilde.zone/@gluejar\" title=\"@gluejar@tilde.zone\">@gluejar</a> writes:</p>
+<blockquote>
+<p>There's a war going on on the Internet. AI companies with billions to burn are hard at work destroying the websites of libraries, archives, non-profit organizations, and scholarly publishers, anyone who is working to make quality information universally available on the internet. - <a href=\"https://go-to-hellman.blogspot.com/2025/03/ai-bots-are-destroying-open-access.html\">AI bots are destroying Open Access</a>, by Eric Hellman</p>
+</blockquote>
+" nil nil "227efe79edde9eb333e278caf136e5ae") (21 (26595 51257 16816 933000) "https://alexschroeder.ch/view/2025-03-20-bot-defence" "2025-03-20 Something about the bot defence is working" nil "Wed, 26 Mar 2025 09:31:31 +0000" "<h1 id=\"2025-03-20-something-about-the-bot-defence-is-working\">2025-03-20 Something about the bot defence is working</h1>
+<p>At midnight, there was a surge in activity.
+CPU usage went up.</p>
+<p><img loading=\"lazy\" src=\"2025-03-20-bot-defence-1.jpg\" alt=\"\" /></p>
+<p>Load went up, too. But it stayed within reasonable bounds - less than 4 instead of the more than 80 I have seen in the past.</p>
+<p><img loading=\"lazy\" src=\"2025-03-20-bot-defence-2.jpg\" alt=\"\" /></p>
+<p>And the number of IP addresses blocked by <code>fail2ban</code> went from 40 to 50.</p>
+<p><img loading=\"lazy\" src=\"2025-03-20-bot-defence-3.jpg\" alt=\"\" /></p>
+<p>I'm usually sceptical of this because the big attacks are from a far wider variety of IP numbers.
+In this case, however, maybe there was some probing that resulted in blocks? I don't know. Lucky, I guess?</p>
+<p>In any case, the site is still up. Yay for small wins.</p>
+<p>Also, I cannot overstate how good it feel to have some <a href=\"https://munin-monitoring.org/\">Munin</a> graphs available.</p>
+<p><code>alex-bots</code> is a setup I desribed in <a href=\"2025-02-19-bots-again\">2025-02-19 Bots again, cursed</a>.
+Basically a request to one of my Oddmuse wikis containing the parameter <code>rcidonly</code> is an expensive endpoint: ``all changes for this single page'' or ``a feed for this single page''. This is something a human would rarely access and yet it somehow the URLs landed in some dataset for AI training, I suspect. So what I do is I’m redirecting any request containing “rcidonly” in the query string to <code>/nobots</code>, warning humans not to click on these links.</p>
+<p>In addition to that, the filter <code>/etc/fail2ban/filter.d/alex-bots.conf</code> contains this:</p>
+<pre><code>[Definition]
+failregex = ^(www\\.emacswiki\\.org|communitywiki\\.org|campaignwiki\\.org):[0-9]+ <HOST> .*rcidonly=
+</code></pre>
+<p>And I added a section using this filter to my jail <code>/etc/fail2ban/jail.d/alex.conf</code>:</p>
+<pre><code>[alex-bots]
+enabled = true
+port    = http,https
+logpath = %(apache_access_log)s
+findtime = 3600
+maxretry = 2
+</code></pre>
+<p>So if an IP number visits three URLs containing ``rcidonly'' in an hour, they get banned for ten minutes.</p>
+<p>The <code>recidive</code> filter (a standard filter you just need to activate) then makes sure that any IP number that got blocked three times gets blocked for a week.</p>
+<p><a class=\"tag\" href=\"/search/?q=%23Administration\">#Administration</a> <a class=\"tag\" href=\"/search/?q=%23Butlerian_Jihad\">#Butlerian Jihad</a></p>
+<p><strong>2025-03-20</strong>. Ever since Drew DeVault published his blog post, more people seem to notice what's going on: AI ingestion is killing web sites and web services.</p>
+<blockquote>
+<p>If you think these crawlers respect <code>robots.txt</code> then you are several assumptions of good faith removed from reality. These bots crawl everything they can find, <code>robots.txt</code> be damned, including expensive endpoints like git blame, every page of every git log, and every commit in every repo, and they do so using random User-Agents that overlap with end-users and come from tens of thousands of IP addresses – mostly residential, in unrelated subnets, each one making no more than one HTTP request over any time period we tried to measure – actively and maliciously adapting and blending in with end-user traffic and avoiding attempts to characterize their behavior or block their traffic. - <a href=\"https://drewdevault.com/2025/03/17/2025-03-17-Stop-externalizing-your-costs-on-me.html\">Please stop externalizing your costs directly into my face</a>, by Drew DeVault, for SourceHut</p>
+<p>Then, yesterday morning, KDE GitLab infrastructure was overwhelmed by another AI crawler, with IPs from an Alibaba range; this caused GitLab to be temporarily inaccessible by KDE developers. I then discovered that, one week ago, an Anime girl started appearing on the GNOME GitLab instance, as the page was loaded. It turns out that it's the default loading page for Anubis, a proof-of-work challenger that blocks AI scrapers that are causing outages. - <a href=\"https://thelibre.news/foss-infrastructure-is-under-attack-by-ai-companies/\">FOSS infrastructure is under attack by AI companies</a>, by Niccolò Venerandi, for LibreNews</p>
+<p>What do SourceHut, GNOME’s GitLab, and KDE’s GitLab have in common, other than all three of them being forges? Well, it turns out all three of them have been dealing with immense amounts of traffic from “AI” scrapers, who are effectively performing DDoS attacks with such ferocity it’s bringing down the infrastructures of these major open source projects. Being open source, and thus publicly accessible, means these scrapers have unlimited access, unlike with proprietary projects. … Everything about this “AI” bubble is gross, and I can’t wait for this bubble to pop so a semblance of sanity can return to the technology world. Until the next hype train rolls into the station, of course. - <a href=\"https://www.osnews.com/story/141969/foss-infrastructure-is-under-attack-by-ai-companies/\">FOSS infrastructure is under attack by AI companies</a>, by Thom Holwerda, for OSnews</p>
+</blockquote>
+<p><strong>2025-03-22</strong>. Ordinary sysadmins get hit as well. Here's Sean Conner of the The Boston Diaries: He reports on <a href=\"https://boston.conman.org/2025/03/21\">Friday, March 21, 2025</a> that his logs show a total of 468439 requests for February 2025. The top hitter was 4.231.104.62 with 43242 requests (9%). This was from MICROSOFT-CORP-MSN-AS-BLOCK, US. But the ASN has more networks, of course. Adding them all up give 78889 (17%).</p>
+<p>He links to the <a href=\"https://www.team-cymru.com/ip-asn-mapping\">IP to ASN Mapping Service</a> by Team Cymru. I started switching my <a href=\"/admin/network-lookup\">network-lookup</a> script to using it because it also supports IPv6. Something that I haven't done is find the ASN and then block all the blocks belonging to the ASN. That's where I want to be, actually.</p>
+<p><strong>2025-03-26</strong>. More media are picking it up, but with a strange focus on ``open source''.</p>
+<blockquote>
+<p>As it currently stands, both the rapid growth of AI-generated content <a href=\"https://www.404media.co/ai-slop-is-a-brute-force-attack-on-the-algorithms-that-control-reality/\">overwhelming</a> online spaces and aggressive web-crawling practices by AI firms threaten the sustainability of essential online resources. The current approach taken by some large AI companies—<a href=\"https://www.vintagecomputing.com/index.php/archives/3292/the-pc-is-dead-its-time-to-make-computing-personal-again\">extracting</a> vast amounts of data from open-source projects without clear consent or compensation—risks severely damaging the very digital ecosystem on which these AI models depend. - <a href=\"https://arstechnica.com/ai/2025/03/devs-say-ai-crawlers-dominate-traffic-forcing-blocks-on-entire-countries/\">Open Source devs say AI crawlers dominate traffic, forcing blocks on entire countries</a>, by Benj Edwards, for Ars Technica</p>
+</blockquote>
+<p><a class=\"account\" href=\"https://mastodon.social/@bagder\" title=\"@bagder@mastodon.social\">@bagder</a> recently had some numbers:</p>
+<blockquote>
+<p>The AI bots that desperately need OSS for code training, are now slowly killing OSS by overloading every site.
+The curl website is now at 77TB/month, or 8GB every five minutes.</p>
+</blockquote>
+" nil nil "9850070acfaffaf7575a8051b289cc7b") (20 (26595 3901 213214 956000) "https://alexschroeder.ch/view/2025-03-25-down" "2025-03-25 Down down down" nil "Tue, 25 Mar 2025 12:14:28 +0000" "<h1 id=\"2025-03-25-down-down-down\">2025-03-25 Down down down</h1>
 <p>Israel is continuing its genocide against the Palestinians.
 <a href=\"https://en.wikipedia.org/wiki/Francesca_Albanese\">Fanscesca Albanese</a> is saying all the right things but people keep arming and Israel.</p>
 <blockquote>

@@ -28,10 +28,22 @@
     (package-install 'use-package)))
 
 (use-package org
-  :ensure nil ; do not try to install it as it is built-in
-  :config
-  (setq org-todo-keywords
-        '((sequence "TODO(t)" "WAIT(w!)" "|" "CANCEL(c!)" "DONE(d!)"))))
+    :ensure nil ; do not try to install it as it is built-in
+    :config
+    (setq org-todo-keywords
+          '((sequence "TODO(t)" "WAIT(w!)" "|" "CANCEL(c!)" "DONE(d!)"))))
+
+;; Automatically toggle Latex
+  (use-package org-fragtog
+    :ensure t
+    :config
+    (setq org-format-latex-options
+        '(:foreground "White" 
+                      :background "Transparent" 
+                      :scale 3.0      ;; Base scaling factor
+                      :html-scale 1.5 ;; For HTML export
+                      :matchers ("begin" "$1" "$" "\\(" "\\["))))
+  (add-hook 'org-mode-hook 'org-fragtog-mode)
 
 (use-package markdown-mode
   :ensure t)
@@ -183,6 +195,14 @@
     :ensure t
     :hook (after-init . auto-complete-mode)))
 
+(use-package flycheck
+  :ensure
+  :commands flycheck-mode
+  :config
+  (setq flycheck-check-syntax-automatically
+        '(save mode-enabled))
+  :hook (flycheck-error-list-mode-hook . visual-line-mode))
+
 (menu-bar-mode -1)
 (scroll-bar-mode -1)
 (tool-bar-mode -1)
@@ -227,8 +247,7 @@
 (setq custom-file (locate-user-emacs-file "custom.el"))
 (load custom-file :no-error-if-file-is-missing)
 
-(desktop-save-mode 1)
-
+(setq-default indent-tabs-mode nil)
 (setq-default tab-width 2)
 
 ;; Monkey-type game
@@ -269,6 +288,8 @@
 
 ;;  (use-package evil
 ;;    :ensure t)
+
+;;(desktop-save-mode 1)
 
 ;; ############## EXWM BEGIN ##################
 ;; Emac's X window manager, works fine
