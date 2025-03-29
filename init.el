@@ -5,23 +5,24 @@
 	     ))
 (unless package--initialized (package-initialize))
 
-(load-theme 'modus-vivendi t)
-;; Default theme is white, unless the time is after 18 (6 pm)
-(when (< (decoded-time-hour (decode-time)) 18)
-  (modus-themes-toggle))
+;; (load-theme 'modus-vivendi t)
+;; ;; Default theme is white, unless the time is after 18 (6 pm)
+;; (when (< (decoded-time-hour (decode-time)) 18)
+;;   (modus-themes-toggle))
 
-(customize-set-variable 'modus-themes-common-palette-overrides
-                        `(
-                          ;; Make the mode-line borderless
-                          (bg-mode-line-active bg-inactive)
-                          (fg-mode-line-active fg-main)
-                          (bg-mode-line-inactive bg-inactive)
-                          (fg-mode-line-inactive fg-dim)
-                          (border-mode-line-active bg-inactive)
-                          (border-mode-line-inactive bg-nactive)
-                          ))
+;; (customize-set-variable 'modus-themes-common-palette-overrides
+;;                         `(
+;;                           ;; Make the mode-line borderless
+;;                           (bg-mode-line-active bg-inactive)
+;;                           (fg-mode-line-active fg-main)
+;;                           (bg-mode-line-inactive bg-inactive)
+;;                           (fg-mode-line-inactive fg-dim)
+;;                           (border-mode-line-active bg-inactive)
+;;                           (border-mode-line-inactive bg-nactive)
+;;                           ))
 
 (add-to-list 'custom-theme-load-path "~/.emacs.d/themes/")
+(load-theme 'giovanni-base)
 
 (when (< emacs-major-version 29)
   (unless (package-installed-p 'use-package)
@@ -209,7 +210,6 @@
 (scroll-bar-mode -1)
 (tool-bar-mode -1)
 (display-time-mode 1)
-(fringe-mode "minimal")
 
 (setq-default inhibit-startup-screen t)
 (setq inhibit-splash-screen t)

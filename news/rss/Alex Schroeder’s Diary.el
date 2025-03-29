@@ -1,5 +1,27 @@
 ;; -*- coding: utf-8-emacs; -*-
-(setq nnrss-group-data '((22 (26596 20183 584789 887000) "https://alexschroeder.ch/view/2025-03-20-bot-defence" "2025-03-20 Something about the bot defence is working" nil "Wed, 26 Mar 2025 17:54:31 +0000" "<h1 id=\"2025-03-20-something-about-the-bot-defence-is-working\">2025-03-20 Something about the bot defence is working</h1>
+(setq nnrss-group-data '((23 (26599 50747 262299 53000) "https://alexschroeder.ch/view/2025-03-25-camellias" "2025-03-28 Locarno Camellia park" nil "Sat, 29 Mar 2025 00:10:41 +0000" "<h1 id=\"2025-03-28-locarno-camellia-park\">2025-03-28 Locarno Camellia park</h1>
+<p>It’s spring and we went there. Locarno is in the canton Ticino, in the south of Switzerland, at the shores of Lago Maggiore (“big lake”) that it shares with Italy.</p>
+<p>They have a fantastic camellia park. In early spring, it's the best place to be.</p>
+<p>I tried to take pictures with my trusty Olympus EP-5 and the 30mm 1:3.5 macro lens. Sadly, I have been untrained by the phone and was confused by the settings and the tiny screen. Oh my! So this is mix of camera pictures and phone pictures.</p>
+<p><img loading=\"lazy\" src=\"2025-03-25-camellias-1.jpg\" alt=\"\" />
+<img loading=\"lazy\" src=\"2025-03-25-camellias-2.jpg\" alt=\"\" />
+<img loading=\"lazy\" src=\"2025-03-25-camellias-3.jpg\" alt=\"\" />
+<img loading=\"lazy\" src=\"2025-03-25-camellias-4.jpg\" alt=\"\" />
+<img loading=\"lazy\" src=\"2025-03-25-camellias-5.jpg\" alt=\"\" />
+<img loading=\"lazy\" src=\"2025-03-25-camellias-6.jpg\" alt=\"\" />
+<img loading=\"lazy\" src=\"2025-03-25-camellias-7.jpg\" alt=\"\" /></p>
+<p><img loading=\"lazy\" src=\"2025-03-25-camellias-8.jpg\" alt=\"\" />
+<img loading=\"lazy\" src=\"2025-03-25-camellias-9.jpg\" alt=\"\" />
+<img loading=\"lazy\" src=\"2025-03-25-camellias-10.jpg\" alt=\"\" />
+<img loading=\"lazy\" src=\"2025-03-25-camellias-11.jpg\" alt=\"\" />
+<img loading=\"lazy\" src=\"2025-03-25-camellias-12.jpg\" alt=\"\" />
+<img loading=\"lazy\" src=\"2025-03-25-camellias-13.jpg\" alt=\"\" />
+<img loading=\"lazy\" src=\"2025-03-25-camellias-14.jpg\" alt=\"\" /></p>
+<p><img loading=\"lazy\" src=\"2025-03-25-camellias-15.jpg\" alt=\"\" />
+<img loading=\"lazy\" src=\"2025-03-25-camellias-16.jpg\" alt=\"\" /></p>
+<p><img loading=\"lazy\" src=\"2025-03-25-camellias-17.jpg\" alt=\"\" /></p>
+<p><a class=\"tag\" href=\"/search/?q=%23Pictures\">#Pictures</a> <a class=\"tag\" href=\"/search/?q=%23Plants\">#Plants</a> <a class=\"tag\" href=\"/search/?q=%23Camellias\">#Camellias</a> <a class=\"tag\" href=\"/search/?q=%23Locarno\">#Locarno</a></p>
+" nil nil "bf1fc1ef4e7419fd537e9339c1b94c42") (22 (26596 20183 584789 887000) "https://alexschroeder.ch/view/2025-03-20-bot-defence" "2025-03-20 Something about the bot defence is working" nil "Wed, 26 Mar 2025 17:54:31 +0000" "<h1 id=\"2025-03-20-something-about-the-bot-defence-is-working\">2025-03-20 Something about the bot defence is working</h1>
 <p>At midnight, there was a surge in activity.
 CPU usage went up.</p>
 <p><img loading=\"lazy\" src=\"2025-03-20-bot-defence-1.jpg\" alt=\"\" /></p>
