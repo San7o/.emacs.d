@@ -114,7 +114,7 @@ Run =org-todo= to update a TODO keywork.
                         :background "Transparent" 
                         :scale 3.0      ;; Base scaling factor
                         :html-scale 1.5 ;; For HTML export
-                        :matchers ("begin" "$1" "$" "\\(" "\\["))))
+                        :matchers ("begin" "$1" "$" "$$" "\\(" "\\["))))
     (add-hook 'org-mode-hook 'org-fragtog-mode)
 #+end_src
 
@@ -414,6 +414,18 @@ Modern on-the-fly syntax checking extension for GNU Emacs.
           '(save mode-enabled))
     :hook (flycheck-error-list-mode-hook . visual-line-mode))
 #+end_src
+
+** rfc-mode
+
+Browse and read RFC documents.
+
+#+begin_src emacs-lisp
+  (use-package rfc-mode
+    :ensure t
+    :config
+    (setq rfc-mode-directory (expand-file-name "~/.emacs.d/rfc/")))
+#+end_src
+
 
 * Customization
 ** Cleanup the screen

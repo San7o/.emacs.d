@@ -45,7 +45,7 @@
                       :background "Transparent" 
                       :scale 3.0      ;; Base scaling factor
                       :html-scale 1.5 ;; For HTML export
-                      :matchers ("begin" "$1" "$" "\\(" "\\["))))
+                      :matchers ("begin" "$1" "$" "$$" "\\(" "\\["))))
   (add-hook 'org-mode-hook 'org-fragtog-mode)
 
 (use-package markdown-mode
@@ -205,6 +205,11 @@
   (setq flycheck-check-syntax-automatically
         '(save mode-enabled))
   :hook (flycheck-error-list-mode-hook . visual-line-mode))
+
+(use-package rfc-mode
+  :ensure t
+  :config
+  (setq rfc-mode-directory (expand-file-name "~/.emacs.d/rfc/")))
 
 (menu-bar-mode -1)
 (scroll-bar-mode -1)
