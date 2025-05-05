@@ -1,5 +1,232 @@
 ;; -*- coding: utf-8-emacs; -*-
-(setq nnrss-group-data '((101 (26591 55054 145564 47000) "http://antirez.com/news/148
+(setq nnrss-group-data '((105 (26644 42391 12364 126000) "http://antirez.com/news/152
+" "What I learned during the license switch " nil "Fri, 02 May 2025 08:46:25 +0000" "Yesterday, it was a very intense day. In Italy it was 1st of May, the workers holiday, so in the morning I went for a 4h walk in the Etna with friends <3, I love walking, and I often take pauses when coding just to walk, to return later at the keyboard with a few more kilometers on my legs, and walking in the Etna is amazing (Etna is the largest active volcano in Europe, and I happen to live in Catania, that is on its slopes).
+<br>
+<br>Then at 6PM I was at home to release my blog post about the AGPL license switch, and I started following the comments, feedbacks, private messages, and I learned a few things in the process.
+<br>
+<br>1. Regardless of the different few clauses, that IMHO make a difference, the AGPL vs SSPL main difference is that AGPL is \"understood\". In general, yesterday for the first time I realized that in licensing there is not just what you can do and can't do, but the degree a given license is understood, tested, adopted, ...
+<br>
+<br>2. I was very touched by the words of Simon Willison on the matter (https://simonwillison.net/2025/May/1/redis-is-open-source-again/) because it is very peculiar that different persons, living in different parts of the world, but with a similar age and background in software, feel *so similar* about things. I, too, when was writing Vector Sets, was thinking: I would never use it if it wasn't going to be released under the AGPL (or other open source license I understand). This sentiment, multiplied by a non trivial fraction of the community, makes open source eventually win even in the complex software landscape that there is today.
+<br>
+<br>3. People still care a lot about software distributions. Not that I didn't care, but in the past I burned my fingers with it. I was a very initial Linux user, with SlackWare 3.1 or something like that. During the years I wrote my device drivers, contributed a few patches to the kernel, during the years Debian had maybe ~10 packages of stuff that I wrote, from hping, to the Visitors web log analyzer, dump1090, Redis, and a few more. But, eventually, I started to see all the fragmentation, the rigidity of certain processes (binary compatibility of modules for the Linux kernel), the lack of a consistent design, the lack of a binary format for software distribution with all the libs inside, and so forth. I switched to MacOS on the desktop and continued using Linux on the server in a very pragmatic way, often times more happy to \"tar xvzf software.tgz; make\" than relying on what distributions offered. And, maybe, my obsession with shipping software with zero dependencies has something to do with it. But people still care a lot, and probably it is important to have Redis as distribution packages in many situations where you want to make things as automatic and reproducible as possible? Well, now there are many folks asking if Redis will re-enter the distributions.
+<br>
+<br>My take on that is simple: Redis and ValKey diverged already in a significant way, and will diverge a lot more in the future. I believe distributions should have both, so that users can have a choice, and sometimes this choice is forced by the features difference. Trivially: if you need to do vector similarity searches, you need to use Redis; if instead your company has a no-AGPL policy, you need to use ValKey, and so forth.
+<br>
+<br>4. People are kind to me. In the comments around there were a few harsh takes, and this is normal and even healthy (after all it is part of the reason many companies believe more and more they can't use SSPL or other licenses but an OSI approved one). Yet, when addressing me personally, I see a lot of good words. I just want to say: thank you for all that.
+<br>
+<br>5. We kinda live in a bubble. In one of the forums out there at some point somebody said: \"But did you ever switched from Redis to one of the forks?\", and there was a chain of comments: \"never\", \"who cares if I can use it\" and so forth. And this is true for ValKey too, that if people write apt-get install redis and ValKey is installed instead, and they use SET, GET, DEL, a few more, they don't care. What I mean is that software is no longer the one in 1998 (to use a very crucial and symbolic date for open source, the Internet, and myself) where we were all open source software license experts. Most people, especially the newer generations, have a different and more practical take. So all this is very important (vital, to me), but there is to understand that not every sensibility is alike. In the end, what is the most important aspect of all, is trying to ship good software.
+<a href=\"http://antirez.com/news/152\">Comments</a>" nil "http://antirez.com/news/152" "75a32f7474c16d3ef5349fc728e313c3") (104 (26643 47258 802427 670000) "http://antirez.com/news/151
+" "Redis is open source again " nil "Thu, 01 May 2025 15:55:50 +0000" "Five months ago, I rejoined Redis and quickly started to talk with my colleagues about a possible switch to the AGPL license, only to discover that there was already an ongoing discussion, a very old one, too. Many people, within the company, had the feeling that the AGPL was a better pick than SSPL, and while eventually Redis switched to the SSPL license, the internal discussion continued.
+<br>
+<br>I tried to give more strength to the ongoing pro-AGPL license side. My feeling was that the SSPL, in practical terms, failed to be accepted by the community. The OSI wouldn’t accept it, nor would the software community regard the SSPL as an open license. In little time, I saw the hypothesis getting more and more traction, at all levels within the company hierarchy.
+<br>
+<br>I’ll be honest: I truly wanted the code I wrote for the new Vector Sets data type to be released under an open source license. Writing open source software is too rooted in me: I rarely wrote anything else in my career. I’m too old to start now. This may be childish, but I wrote Vector Sets with a huge amount of enthusiasm exactly because I knew Redis (and my new work) was going to be open source again.
+<br>
+<br>I understand that the core of our work is to improve Redis, to continue building a good system, useful, simple, able to change with the requirements of the software stack. Yet, returning back to an open source license is the basis for such efforts to be coherent with the Redis project, to be accepted by the user base, and to contribute to a human collective effort that is larger than any single company. So, honestly, while I can’t take credit for the license switch, I hope I contributed a little bit to it, because today I’m happy. I’m happy that Redis is open source software again, under the terms of the AGPLv3 license.
+<br>
+<br>Now, time to go back to the terminal, to show Redis users some respect by writing the best code I’m able to write, and make Vector Sets more useful and practical: I have a few more ideas for improvements, and I hope that more will be stimulated by your feedback (it is already happening). Good hacking!
+<br>
+<br>P.S. Redis 8, the first version of Redis with the new license, is also GA today, with a many new features and speed improvements of the core: https://redis.io/blog/redis-8-ga/
+<br>
+<br>You can also find the Redis CEO blog post here: https://redis.io/blog/agplv3/
+<a href=\"http://antirez.com/news/151\">Comments</a>" nil "http://antirez.com/news/151" "08a9d785043ab45cfa70978f5226f1b3") (103 (26624 38274 625943 763000) "http://antirez.com/news/150
+" "Reproducing Hacker News writing style fingerprinting " nil "Wed, 16 Apr 2025 13:53:16 +0000" "About three years ago I saw a quite curious and interesting post on Hacker News. A student, Christopher Tarry, was able to use cosine similarity against a vector of top words frequencies in comments, in order to detect similar HN accounts — and, sometimes, even accounts actually controlled by the same user, that is, fake accounts used to uncover the identity of the writer.
+<br>
+<br>This is the original post: https://news.ycombinator.com/item?id=33755016
+<br>
+<br>I was not aware, back then, of Burrows-Delta method for style detection: it seemed kinda magical that you just needed to normalize a frequency vector of top words to reach such quite remarkable results. I read a few wikipedia pages and took mental note of it. Then, as I was working with Vectors for Redis I remembered about this post, searched the web only to discover that the original page was gone and that the author, in the original post and website, didn’t really explained very well how the data was processed, the top words extracted (and, especially, how many were used) and so forth. I thought I could reproduce the work with Vector Sets, once I was done with the main work. Now the new data type is in the release candidate, and I found some time to work on the problem. This is a report of what I did, but before to continue, the mandatory demo site: you can play with it at the following link:
+<br>
+<br>https://antirez.com/hnstyle?username=pg&threshold=20&action=search
+<br>
+<br>NOTE: since the dataset takes 700MB of RAM, in my tiny server, in the next months I may take this down. However, later in this post you will find the link and the Github repository with the code to reproduce everything from scratch.
+<br>
+<br>NOTE2: I hope the web site will survive, it's a very crude Python script. I benchmarked the VSIM command in such a small server and yet it can deliver 80k VSIM per second! The wonders of int8 quantization, together with a few more optimizations. But the Python script is terrible, creates a new Redis connection each time and so forth. Fingers crossed.
+<br>
+<br># Raw data download and processing
+<br>
+<br>Well, the first problem I had, in order to do something like that, was to find an archive with Hacker News comments. Luckily there was one with apparently everything posted on HN from the start to 2023, for a huge 10GB of total data. You can find it here: https://huggingface.co/datasets/OpenPipe/hacker-news and, honestly, I’m not really sure how this was obtained, if using scarping or if HN makes this data public in some way.
+<br>
+<br>Since I’m not a big fan of binary files, in the specific case of public datasets at least, I used two Python scripts in order to convert the Parquet files into something smaller and simpler to handle. The first script, gen-top-words.py, takes the binary files and generates a txt file with the list of the top N words used in the dataset. It generates 10k words by default, but for the statistical analysis a lot less are needed (or, actually: if you use too many words you no longer capture the style, but the kind of content a user is talking about!). Then, another Python script, accumulates all the comments for each single user and generates a very big JSONL file where there are just two keys: the user name and the frequency table of all the words used by a given user in all the history from HN starts to 2023. Each entry is like that:
+<br>
+<br>{\"by\": \"rtghrhtr\", \"freqtab\": {\"everyone\": 1, \"hates\": 1, \"nvidia\": 1, \"but\": 1, \"treats\": 1, \"ati\": 1, \"as\": 1, \"an\": 1, \"afterthought\": 1, \"another\": 1, \"completely\": 1, \"useless\": 1, \"tool\": 1, \"to\": 1, \"throw\": 1, \"on\": 1, \"the\": 1, \"pile\": 1}}
+<br>
+<br>At this point, the final script, insert.py, could do all the real work: to apply the Borrows method for each user, create the user style vector, and insert it into Redis. The advantage of pre-processing the files (a slow operation) is that the insertion script could be called more easily with different parameters (especially the number of top words to use) in order to see the different results more promptly, without the need to re-process the Parquet files each time.
+<br>
+<br># How the Burrow method works?
+<br>
+<br>In the original post, Christopher wrote that you just need to normalize the frequency of the words usage and apply cosine similarity. Actually the process is a bit more involved. First, let’s ask ourselves, how this method actually works, in its essence? Well, it wants to capture words that each specific user over-uses or under-uses compared to the expected “average” language. To do so, we actually use the following steps (from the Python code).
+<br>
+<br>That’s what we do for each of the top words:
+<br>
+<br># Convert to relative frequency
+<br>rel_freq = frequency / total_words
+<br>
+<br># Standardize using z-score: z = (freq - mean) / stddev
+<br>mean = word_means.get(word, 0.0)
+<br>stddev = word_stddevs.get(word, 1.0)  # Default to 1.0 to avoid division
+<br>by zero
+<br>
+<br>z_score = (rel_freq - mean) / stddev
+<br>
+<br># Set the z-score directly in the vector at the word's index
+<br>vector[word_to_index[word]] = z_score
+<br>
+<br>So we start by “centering” the frequency the user used a given word, by subtracting the *global* usage frequency for that word. This way, we have a number that describes how much the user under (negative) or over (positive) used such word. But, if you think at it, words that have a much higher variance among usage of different writers are less important, when they change. We want to amplify the signal of words that are under of over used by this user in a much greater way compared to the normal variance of the word. This is why we divide the centered frequency by the global standard deviation of the word. Now we have what is called the “z score”, an adjusted measure of how much a given word is an outlier in one or the other direction.
+<br>
+<br>Now, we are ready to insert the word into a Redis vector set, with just:
+<br>
+<br>VADD key FP32 [blob with 350 floats] username
+<br>
+<br>(I’ll not cover the details of vector sets here since you can find the doc here -> https://github.com/redis/redis/blob/unstable/modules/vector-sets/README.md)
+<br>
+<br>Note that Redis performs L2 normalization of the inserted vectors, but remembers the L2 value in order to return back the values when VEMB is used to retrieve the associated vector, so the z_score was set as it is.
+<br>
+<br>Finally, with VSIM, we can get similar users:
+<br>
+<br>127.0.0.1:6379> vsim hn_fingerprint ele pg
+<br> 1) \"pg\"
+<br> 2) \"karaterobot\"
+<br> 3) \"Natsu\"
+<br> 4) \"mattmaroon\"
+<br> 5) \"chc\"
+<br> 6) \"montrose\"
+<br> 7) \"jfengel\"
+<br> 8) \"emodendroket\"
+<br> 9) \"vintermann\"
+<br>10) \"c3534l\"
+<br>
+<br>All the code (but the webapp itself) can be found here: https://github.com/antirez/hnstyle
+<br>
+<br>The README file explains how to reproduce every part.
+<br>
+<br># Why 350 words?
+<br>
+<br>One of the things missing in the original post that stimulated this blog post, is how many top words one should use. If you use too many words, you’ll see many comments of mine about Redis, since Redis is one of the top 10k words used. Guess what? I did exactly this error, initially, and VSIM continued to report users that talked about similar topics than myself, not with similar *style*. But fortunately the Internet Archive cached the Christopher results for the “pg” account, here:
+<br>
+<br>https://web.archive.org/web/20221126235433/https://stylometry.net/user?username=pg
+<br>
+<br>So now I could tune my top-k words to get similar results. Also, reading the original papers, I discovered that, with my surprise, for the analysis to work well you need even as little as 150 words. And in general the range from 150 to 500 is considered to be optimal.
+<br>
+<br>Warning: don’t believe that when you search for a user you’ll find mostly fake accounts. For many fake accounts there is too little data, as often people create throw away accounts, write a few comments, and that’s it. So most of the accounts associated with a given user style will be just other people that have a similar writing style. This method I believe is quite powerful in distinguishing who is a native speaker and who is not. This is especially clear from the vectors visualization below.
+<br>
+<br># Validate and visualize…
+<br>
+<br>Another thing that I reproduced (also an idea from OP) was to try inserting the same users in two variants, like antirez_A and antirez_B, using two different set of comments. Then check if asking for similar users to antirez_A would report B. Indeed, for *most* of the users I tested this against, it worked very well, and often times it was the top result. So we know that actually our method works.
+<br>
+<br>But since from the vectors it is so easy to “see” a style, what about our naked eyes? Recently I switched to Ghostty as my terminal, and it supports the Kitty graphics protocol, so you can display bitmaps directly in the terminal window. It is quite some time I want to play with it. Finally I had a good reason to test this feature.
+<br>
+<br>img://antirez.com/misc/hnstyle_1.jpg
+<br>
+<br>What’s happening above is that we call the VEMB command, that returns just a list of floats (the vector).
+<br>Then the vshow utility, also part of the repository, will care to find the smallest square that can contain the vector and show positive values in red, negative in green.
+<br>
+<br>As you can see, as a non native speaker I over-use very simple words and under-use more sophisticated words. Other authors stress certain specific words, others are much more “plain”, showing less artifacts. At some point I was curious about what was really happening there: what words I would use too much and too little? So in the demo website you can also press the button to analyze a given user, and see the top 10 words over-used and under-used. Well, a few of mine are definitely due to my issues with English grammar :D
+<br>
+<br>Ok, enough with this investigation! Vector sets are now in Redis 8 RC1 and I have more work to do, but this was fun, and I believe it shows that vectors were definitely cool even before AI. Thanks for reading such a long post.
+<br>
+<br>EDIT: I forgot to say that the insert.py script also inserts the JSON metadata with the total words written by the user. So you can use FILTER in order to only show matches with a given number of words. This can be useful to detect duplicated accounts since often they are used only seldom, when the identity must be covered:
+<br>
+<br>127.0.0.1:6379> vsim hn_fingerprint ele pg FILTER \".wordcount < 10000\"
+<br> 1) \"montrose\"
+<br> 2) \"kar5pt\"
+<br> 3) \"ryusage\"
+<br> 4) \"corwinstephen\"
+<br> 5) \"ElfinTrousers\"
+<br> 6) \"beaned\"
+<br> 7) \"MichaelDickens\"
+<br> 8) \"bananaface\"
+<br> 9) \"area51org\"
+<br>10) \"william42\"
+<br>
+<br>EDIT2: In case the matches look suspicious to you (meaningless), like tptacek noted in a comment in the HN submission of this blog post, here is a \"visual\" match that shows how, for instance, montrose and pg are really similar in the words usage patterns:
+<br>
+<br>img://antirez.com/misc/hnstyle_2.jpg
+<a href=\"http://antirez.com/news/150\">Comments</a>" nil "http://antirez.com/news/150" "1f614981ba66b3c02abfe1084502dc75") (102 (26607 41481 166255 334000) "http://antirez.com/news/149
+" "Vector Sets are part of Redis " nil "Thu, 03 Apr 2025 18:01:20 +0000" "Yesterday we finally merged vector sets into Redis, here you can find the README that explains in detail what you get:
+<br>
+<br>https://github.com/redis/redis/blob/unstable/modules/vector-sets/README.md
+<br>
+<br>The goal of the new data structure is, in short, to create a new “Set alike” data type, similar to Sorted Sets, where instead of having a scalar as a score, you have a vector, and you can add and remove elements the Redis way, without caring about anything except the properties of the abstract data structure Redis implements, ask for elements similar to a given query vector (or a vector associated to some element already in the set), and so forth. But more about that later, a bit of background, first:
+<br>
+<br>From the path of the README itself, you can see the implementation is into “modules”, but actually, Vector Sets are not a module, it’s a part of the Redis core, the thing is that I started developing them as a module, and later I suggested that the implementation should still use the modules API, in order to promote modularity of the internals of Redis, in order to have both the advantages: every Redis instance starting from Redis 8 will have Vector Sets as a native data type, and there are clear boundaries between the core and the implementation
+<br>
+<br>## The first new main data type of Redis after… some time
+<br>
+<br>I think that the latest big data structure of Redis were Streams, also developed by me. I resigned, returned, forks happened in the meantime, and it still it looks like the burden to introduce a new data type in Redis is mine :D I must say: I’m ok with that, because as much as I like programming, I also like design, a lot, and I had a feeling, that vectors, and vector similarity, are conceptually very simple, so they deserved a very simple API. And that was what I tried to do. Vector Sets are still a beta feature but I can tell you something, I can guarantee you can learn the API in 3 minutes.
+<br>
+<br>I decided that a fundamental requirement for implementing vector similarity was to also reimplement from scratch HNSWs (you can see my implementation in hnsw.c), because that was going to be my core data structure, and I didn’t want to grab some random code from GitHub and be happy with it. However, as I started reading the papers, I started to understand that a few pieces were missing.
+<br>
+<br>So, as I did in the past with HyperLogLog, where I had to fill a few gaps (here: https://antirez.com/news/75), there was already some new algorithmic challenges. Especially I wanted two things:
+<br>
+<br>1. To have true deletions of nodes. In Vector Sets you can add new elements with VADD, and you can remove elements with VREM. And I wanted the memory to be reclaimed ASAP.
+<br>
+<br>2. I wanted to be sure that as you delete elements, the connectivity properties of the HNSW graph were retained.
+<br>
+<br>So this lead me to a few differences compared to other implementations of HNSW. I don’t use tombstone deletions, but effectively unlink the node in the moment it gets deleted, relinking it back with other potential good neighbors. To do so, in turn, my implementation is designed to enforce that links must be reciprocal, it’s no longer a best effort property: this in turn changes quite a bit what you need to do during insertions.
+<br>
+<br>Another modification I did in the HNSW was to support the ability to scan the graph with a predicate function, so that you can ask for nodes matching a given expression. This requires to modify the greedy graph scanning algorithm in some way: to collect potential nodes to visit, and to collect the result set, but also to have some early stop condition in case there is too much selectivity in the query. We don’t want trigger a full graph scan, of course.
+<br>
+<br>Other than the HNSW modifications, I wanted a few more things that are more pragmatic and obvious:
+<br>
+<br>1. Threading of all the vector similarity requests. Yeah, that’s new in Redis land, but as much as I believe single thread and shared nothing was a good design in general, I think that vectors are special. They are slow, a lot slower than other data structures modeled by Redis. As a bonus point, as I was implementing threaded VSIM (the command that performs vector similarity queries) I also discovered that with a few tricks you can split the read half and the write half of writes in two parts, so that neighbors candidate collections happen in the background, and the actual insertion is performed in the foreground. This splitting however is not the default, and you need to force it with the CAS option of VADD.
+<br>
+<br>2. I wanted to support quantization and even make it the default. So Vector Sets ship with both 8 bit quantization and binary quantization. There is also support for random projection for dimensionality reduction. However as much as I like RP and having bin quants, the reality is that the “killer” for me is int8 quants. They are super fast, take 25% of the memory of FP32, and the results are nearly identical to those from full vectors for most vectors generated via embedding AI models.
+<br>
+<br>Btw the end result is, I believe, a very fast implementation. For instance in my machine, with a 3 million items vector set of 300 components each, I get 50/60k VSIM (top 10 items) per second on my laptop. But I encourage you to do your benchmarks.
+<br>
+<br>Also note that Vector Sets are serialized on disk as a graph, so when they are loaded back in memory, after a Redis restart, you don’t pay back the insertion time: loading every million of elements take a few seconds and not the minutes needed otherwise to add back into the in-memory HNSW.
+<br>
+<br>## Data structures, not indexes
+<br>
+<br>What I’ve said so far is all about the low level stuff. But for me the most interesting part of Vector Sets is the data model and the API supporting it. Many databases propose vector similarity as a kind of index, but that’s Redis, and things in Redis are data structures: no exception this time. You add stuff like that:
+<br>
+<br>> VADD mykey FP32 …blob of data… item1
+<br>
+<br>And so forth. So you can have many small vector sets if you want, one per key. And an important thing here is that if you split your vectors into N different keys (hashing the item you are inserting or alike to select which key to pick), then you can merge different VSIM calls against different keys into a single reply:
+<br>
+<br>> VSIM word_embeddings_int8 ele \"banana\" WITHSCORES COUNT 4
+<br>1) \"banana\"
+<br>2) \"0.9997616112232208\"
+<br>3) \"bananas\"
+<br>4) \"0.8758847117424011\"
+<br>5) \"pineapple\"
+<br>6) \"0.8288004100322723\"
+<br>7) \"mango\"
+<br>8) \"0.8179697692394257\"
+<br>
+<br>If I get a few of those results from different keys and instances, I can sort by the score (where 1 means identical, 0 opposite vector) and that’s it.
+<br>
+<br>So, my feeling is that Vector Sets can be composed into different patterns to handle having many vectors (they consume quite a bit of RAM) into different instances and so forth. Also it is interesting that splitting linearly scale writes, since each subset will hit a given key, and multiple insertions are possible in parallel.
+<br>
+<br>As usually, the Redis community will likely figure many usage patterns that are now not obvious.
+<br>
+<br>## How filtering works
+<br>
+<br>About filtering, if threading was not common in Redis, let’s imagine JSON! But for the first time, I found a good reason to expose JSON directly in the Redis API, user facing:
+<br>
+<br>> VGETATTR word_embeddings_int8 banana
+<br>{\"len\": 6}
+<br>
+<br>So basically with VSETATTR / VGETATTR (and equivalent option to set the JSON attribute directly when adding the item in VADD) you can associate a string to the items you want.
+<br>
+<br>Then you can do things like that:
+<br>
+<br>> VSIM word_embeddings_int8 ele \"banana\" FILTER \".len == 3\"
+<br> 1) \"yam\"
+<br> 2) \"pea\"
+<br> 3) \"fig\"
+<br> 4) \"rum\"
+<br> 5) \"ube\"
+<br> 6) \"oat\"
+<br> 7) \"nut\"
+<br> 8) \"gum\"
+<br> 9) \"soy\"
+<br>10) \"pua\"
+<br>
+<br>The filter expression is not a programming language, is what you could write inside the if() statement of high level programming languages, with &&, ||, all the obvious operators and so forth (but I bet we will add a few more).
+<br>
+<br>Well, the details are into the doc, there are also memory usage examples, in depth discussions about specific features, and so forth. I will extend the documentation soon, I hope. For now I really (really!) hope you’ll enjoy Vector Sets. Please, ping me if you find bugs :)
+<a href=\"http://antirez.com/news/149\">Comments</a>" nil "http://antirez.com/news/149" "4c30ee524671998a3b1249798bc892b9") (101 (26591 55054 145564 47000) "http://antirez.com/news/148
 " "AI is useless, but it is our best bet for the future " nil "Sun, 23 Mar 2025 08:13:53 +0000" "I used AI with success 5 minutes ago.
 <br>
 <br>Just five minutes ago, I was writing a piece of software and relied on AI for assistance. Yet, here I am, starting this blog post by telling you that artificial intelligence, so far, has proven somewhat useless. How can I make such a statement if AI was just so helpful a moment ago? Actually, there's no contradiction here if we clarify exactly what we mean.

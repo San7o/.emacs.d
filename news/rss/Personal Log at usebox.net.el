@@ -1,5 +1,54 @@
 ;; -*- coding: utf-8-emacs; -*-
-(setq nnrss-group-data '((10 (26587 55753 155547 619000) "https://www.usebox.net/jjm/blog/the-problem-of-the-llm-crawlers/" "The problem of the LLM crawlers" nil "Wed, 19 Mar 2025 09:20:46 +0000" "<p>The founder of <a href=\"https://sourcehut.org/\">SourceHut</a>, an open source platform to build software collaboratively -sometimes referred to as <em>forge</em>-, has written a post in his blog that shows <a href=\"https://drewdevault.com/2025/03/17/2025-03-17-Stop-externalizing-your-costs-on-me.html\">the scale of the problems that bad crawlers feeding AIs are causing</a>:</p>
+(setq nnrss-group-data '((12 (26629 57990 639233 261000) "https://www.usebox.net/jjm/blog/playing-skyrim/" "Playing Skyrim" nil "Sun, 20 Apr 2025 16:18:52 +0000" "<p>I used to write more often here about games I was playing, specially because it was a rare event.</p>
+<p>Now things have changed a bit. Essentially because my PC broke -no idea why, which is what happens with the modern computers: they just stop working-, and I got a <em>modern-ish</em> replacement.</p>
+<p>It isn't a gaming PC, but has a Ryzen 9 CPU that allows playing <em>some stuff</em>, including games <em>not that new</em>, but that for me look amazing independently of not being state of the art any more. For example: <a href=\"https://en.wikipedia.org/wiki/The_Elder_Scrolls_V:_Skyrim\">The Elder Scrolls V: Skyrim</a>.</p>
+<figure >
+
+<img src=\"https://www.usebox.net/jjm/blog/playing-skyrim/nice-views.png\" alt=\"Some nice views in the game\">
+
+
+<figcaption>
+<h4>Not the best views, but unfortunately I didn't think about taking screenshots until now</h4>
+
+</figcaption>
+
+</figure>
+<p>When playing new games, I don't seem to stick with them for more than a handful of sessions, and it feels like real effort! Until I tried Skyrim. I've been playing for <code>45 hours</code> so far, and my interest hasn't waned at all.</p>
+<p>Sure, some of the side quests are awful -like you stumble upon a bandit hideaway, and of course you murder everybody-, and the main quest is not super original; but there is something about walking around foraging ingredients to make potions, or visiting new places -not necessarily dungeons-, or going back to my house in Whiterun and talk to the two girls I adopted -I play a woman and they call me <em>mommy</em>-; that clicks with me. I had tried <a href=\"https://en.wikipedia.org/wiki/The_Elder_Scrolls_IV:_Oblivion\">Oblivion</a> -the previous game in the series- before this one, but after a few sessions I forgot to keep playing it.</p>
+<figure >
+
+<img src=\"https://www.usebox.net/jjm/blog/playing-skyrim/dragon-fight.png\" alt=\"Fighting a dragon\">
+
+
+<figcaption>
+<h4>You get to kill a few of these in the game and some people say that after a while it gets old</h4>
+
+</figcaption>
+
+</figure>
+<p>Also the difficulty seems OK for me, so far. I'm playing in the default setting and only a couple of events felt a bit unbalanced -and there are some caves with vampires that I had to give up; but some day I will return and they'll see!-, and another couple of encounters required some creativity. In one of those, my first companion Lydia sadly died, and I refused to reload a save: that's my experience of Skyrim and I will take it as it is.</p>
+<p>Of course everything is scripted, but you still have some agency and being an open world game, I feel like <em>it is my story</em>.</p>
+<p>As always, I'm not sure how much I'm going to play, but I don't feel like quitting for now. I know is not too original, but considering that I don't play many <em>new</em> games, Skyrim is probably my favourite of <em>the modern era</em>!</p>
+<hr>
+<p>Would you like to discuss the post? You can send me <a href=\"mailto:jjm@usebox.net?subject=Re:%20Playing%20Skyrim\">an email</a>!</p>" nil nil "cbe1439d03a537289cb6fbc7652de420") (11 (26606 45060 91532 372000) "https://www.usebox.net/jjm/blog/logwatch-and-systemd-journal/" "logwatch and systemd/journal" nil "Wed, 02 Apr 2025 09:42:07 +0000" "<p>I'm a bit old-style and I like <a href=\"https://manpages.debian.org/testing/logwatch/logwatch.8.en.html\">logwatch</a>, and all my servers send me an email every day with a handy summary of what happened on the server. And sometimes I even read those emails! It is probably not as useful as <a href=\"https://manpages.debian.org/testing/logcheck/logcheck.8.en.html\">logcheck</a>, but it is easier to use.</p>
+<p>Anyway, from the man page:</p>
+<blockquote>
+<p>Logwatch is a customizable, pluggable log-monitoring system. It will go through your logs for a given period of time and make a report in the areas that you wish with the detail that you wish.</p>
+</blockquote>
+<p>I have been using it <em>virtually for ever</em>, and I was setting up a new server last weekend and of course I had to get that daily email. But turns out a fresh install of Debian 12 comes with <code>systemd-journald</code> -my other servers were <em>upgraded</em>, so they still use the old logging system-, and there aren't logs for <code>sshd</code> that <code>logwatch</code> can process. At least not in the usual place.</p>
+<p>In reality <code>systemd-journald</code> is not that different from what you get with <code>rsyslog</code>, but some of the differences are annoying, like being a binary log that means you can't use the text processing tools you are used to in simple files, you need to use <code>journalctl</code>. And that is what prevents <code>logwatch</code> from checking <code>sshd</code>'s logs, because there is not <code>auth.log</code> file.</p>
+<p>I don't like the direction  most Linux distributions are taking embracing <code>systemd</code> and its ecosystem, but I trust Debian, even if some decisions are controversial. In theory <code>systemd-journald</code> improves on a few things, but in practice none of those really make a difference to me, and I'm only left with the annoyance of things that used to work that now they don't.</p>
+<p>This time I decided to see if I can still use it, instead of just installing <code>rsyslog</code> like in the other servers. And turns out, <code>logwatch</code> can interact with <code>journalctl</code>.</p>
+<p>We only have to add a file in <code>/etc/logwatch/conf/services</code> with the name of the service ending in <code>.conf</code>, in this case <code>sshd.conf</code>, with the following content:</p>
+<pre tabindex=\"0\"><code>LogFile =
+LogFile = none
+*JournalCtl = \"--output=cat --unit=ssh.service\"
+</code></pre><p>With <code>Logfile</code> you specify a <em>logfile group</em>, and it is required. You can provide as many entries as you want and they will be merged. We don't really have a log file, that's why we need to provide two entries: one empty to clear any value, and the other with a magic string <code>none</code> for no logfile group (we could also create a logfile group pointing to an empty log file, but this is cleaner).</p>
+<p>Then <code>*JournalCtl</code> refers to a script in <code>/usr/share/logwatch/scripts/</code> that will interface with <code>journalctl</code>, and will enable <code>logwatch</code> to process the missing logs.</p>
+<p>Once the file is in place, you can run <code>logwatch</code> with <code>/etc/cron.daily/00logwatch</code> and you should get your email, including the report of the <code>sshd</code> logs (you can also just run <code>logwatch</code> and get the report on the console, but testing end-to-end is nice in this case).</p>
+<p>I assume I will find other cases in which <code>journalctl</code> gets in the way and I may end installing <code>rsyslog</code> anyway, but for now things work!</p>
+<hr>
+<p>Would you like to discuss the post? You can send me <a href=\"mailto:jjm@usebox.net?subject=Re:%20logwatch%20and%20systemd%2fjournal\">an email</a>!</p>" nil nil "4c8f512bc15e904e2aeb953652effb0c") (10 (26587 55753 155547 619000) "https://www.usebox.net/jjm/blog/the-problem-of-the-llm-crawlers/" "The problem of the LLM crawlers" nil "Wed, 19 Mar 2025 09:20:46 +0000" "<p>The founder of <a href=\"https://sourcehut.org/\">SourceHut</a>, an open source platform to build software collaboratively -sometimes referred to as <em>forge</em>-, has written a post in his blog that shows <a href=\"https://drewdevault.com/2025/03/17/2025-03-17-Stop-externalizing-your-costs-on-me.html\">the scale of the problems that bad crawlers feeding AIs are causing</a>:</p>
 <blockquote>
 <p>If you think these crawlers respect robots.txt then you are several assumptions of good faith removed from reality. These bots crawl everything they can find, robots.txt be damned, including expensive endpoints like git blame, every page of every git log, and every commit in every repo, and they do so using random User-Agents that overlap with end-users and come from tens of thousands of IP addresses – mostly residential, in unrelated subnets, each one making no more than one HTTP request over any time period we tried to measure – actively and maliciously adapting and blending in with end-user traffic and avoiding attempts to characterize their behavior or block their traffic.</p>
 </blockquote>

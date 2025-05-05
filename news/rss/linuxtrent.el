@@ -1,5 +1,51 @@
 ;; -*- coding: utf-8-emacs; -*-
-(setq nnrss-group-data '((52 (26595 3896 664726 843000) "http://www.freelists.org/post/linuxtrent/R-Versione-nuova-linux,4" "[Linuxtrent] Re: R: Versione nuova linux" "mickbert)" "Tue, 25 Mar 2025 21:16:56 +0100" "On 19.03.2025 09:36, Roberto Resoli wrote:
+(setq nnrss-group-data '((62 (26633 14274 424324 785000) "http://www.freelists.org/post/linuxtrent/Il-Prof-Meo-scrive-al-Prof-Valditara-Ministro-dellIstruzione-e-del-Merito-Associazione-per-il-Software-Libero,1" "[Linuxtrent] Re: Il Prof. Meo scrive al Prof. Valditara, Ministro dell'Istruzione e del Merito | Associazione per il Software Libero" "Diego Maniacco)" "Wed, 23 Apr 2025 20:56:02 +0200" "Vediamo se il MinistroValDiTara risponderà pubblicamente...
+---------------------------------------
+Diego Maniacco, Bolzano (Italy)
+diego.maniacco@xxxxxxxxx
+---------------------------------------
+[image: Not f'd — you won't find me on Facebook]
+Not f'd — you won't find me on FacebookNot wa'd — you won't find me on WhatsApp
+..." nil nil "eac8161893d85731128377816ef10e8f") (61 (26631 55463 691574 40000) "http://www.freelists.org/post/linuxtrent/Il-Prof-Meo-scrive-al-Prof-Valditara-Ministro-dellIstruzione-e-del-Merito-Associazione-per-il-Software-Libero" "[Linuxtrent] Il Prof. Meo scrive al Prof. Valditara, Ministro dell'Istruzione e del Merito | Associazione per il Software Libero" "Paolo Dongilli)" "Tue, 22 Apr 2025 19:57:59 +0200" "..." nil nil "0d334afea427355ad1307a4abd768cae") (60 (26610 13179 986481 506000) "http://www.freelists.org/post/linuxtrent/8-aprile-Rovereto-incontro-arduino" "[Linuxtrent] 8 aprile Rovereto: incontro arduino" "Adriano)" "Sun, 06 Apr 2025 09:55:39 +0200" "Segnalo l'incontro in biblioteca a Rovereto 8 aprile 2025 ore 18:00 -
+19:30 dal titolo  Primi passi nel mondo IOT con Arduino . Dettagli sul
+sito  linuxtrent.it . Adriano
+..." nil nil "8af423f2757333d7e40372aedc477022") (59 (26606 45052 688453 315000) "http://www.freelists.org/post/linuxtrent/Bastardi-senza-Google,2" "[Linuxtrent] Re: Bastardi senza Google" "Gianguido Piani)" "Thu, 03 Apr 2025 17:57:48 +0200" "On Tue, 2025-04-01 at 13:15 +0000, Marco Ciampa wrote:
+(inoltrata anche in lista soci, rispondete dove vi pare
+appropriato...)
+--
+..." nil nil "bffcb444d53dbcfb6a57dd9b5205ae7f") (58 (26606 45052 688387 824000) "http://www.freelists.org/post/linuxtrent/Bastardi-senza-Google,1" "[Linuxtrent] Re: Bastardi senza Google" "Maurizio Napolitano)" "Thu, 03 Apr 2025 17:57:48 +0200" "vedo che sono collegati a questo
+On Tue, Apr 1, 2025 at 3:15 PM Marco Ciampa  dmarc-noreply@xxxxxxxxxxxxx  wrote:
+Che ne pensate? Conoscete? Vale la pena contattarli no?
+(inoltrata anche in lista soci, rispondete dove vi pare appropriato...)
+..." nil nil "811d8ed7ee3a0c2ef1cc10e55e4258d4") (57 (26606 45052 688308 247000) "http://www.freelists.org/post/linuxtrent/Announcing-Ubuntu-Stainless-Steel-Edition-A-CorrosionResistant-Alternative,3" "[Linuxtrent] Re: Announcing Ubuntu Stainless Steel Edition: A Corrosion-Resistant Alternative" "Steevie)" "Thu, 03 Apr 2025 17:57:48 +0200" "On Tue, 1 Apr 2025 at 14:57, Marco Ciampa  dmarc-noreply@xxxxxxxxxxxxx  wrote:
+Che ne pensate?
+----- Messaggio inoltrato da Benjamin Drung  bdrung@xxxxxxxxxx  -----
+Date: Tue, 01 Apr 2025 13:33:59 +0200
+kernel—removing it completely will take time. We are committed to this
+..." nil nil "9a880422a9e430774fb473a72f49b324") (56 (26606 45052 688219 880000) "http://www.freelists.org/post/linuxtrent/Announcing-Ubuntu-Stainless-Steel-Edition-A-CorrosionResistant-Alternative,2" "[Linuxtrent] Re: Announcing Ubuntu Stainless Steel Edition: A Corrosion-Resistant Alternative" "Marco Ciampa)" "Thu, 03 Apr 2025 17:57:48 +0200" "Accidenti oggi dovevo stare più attento... anche il nome...
+Benjamin Drung
+^^^^^
+avrebbe dovuto suggerirmi qualcosa...
+Il Tue, Apr 01, 2025 at 01:00:37PM +0000, rgh ha scritto:
+..." nil nil "5012033bbae1c86833a04a7a8ea47cd9") (55 (26606 45052 688144 147000) "http://www.freelists.org/post/linuxtrent/Bastardi-senza-Google" "[Linuxtrent] Bastardi senza Google" "Marco Ciampa)" "Thu, 03 Apr 2025 17:57:48 +0200" "Che ne pensate? Conoscete? Vale la pena contattarli no?
+(inoltrata anche in lista soci, rispondete dove vi pare appropriato...)
+--
+Amike,
+Marco Ciampa
+..." nil nil "a0f28d4172786f836dee5b2cd26354c4") (54 (26606 45052 688069 384000) "http://www.freelists.org/post/linuxtrent/Announcing-Ubuntu-Stainless-Steel-Edition-A-CorrosionResistant-Alternative,1" "[Linuxtrent] Re: Announcing Ubuntu Stainless Steel Edition: A Corrosion-Resistant Alternative" "rgh)" "Thu, 03 Apr 2025 17:57:48 +0200" "ehm, 1/4/2025 ?
+On 01/04/2025 14:57, Marco Ciampa wrote:
+Che ne pensate?
+----- Messaggio inoltrato da Benjamin Drung bdrung@xxxxxxxxxx   -----
+Date: Tue, 01 Apr 2025 13:33:59 +0200
+..." nil nil "b8e67c2eec48d18b05fdcb5ffe7dc66f") (53 (26606 45052 687967 406000) "http://www.freelists.org/post/linuxtrent/Announcing-Ubuntu-Stainless-Steel-Edition-A-CorrosionResistant-Alternative" "[Linuxtrent] Announcing Ubuntu Stainless Steel Edition: A Corrosion-Resistant Alternative" "Marco Ciampa)" "Thu, 03 Apr 2025 17:57:48 +0200" "Che ne pensate?
+----- Messaggio inoltrato da Benjamin Drung  bdrung@xxxxxxxxxx  -----
+Date: Tue, 01 Apr 2025 13:33:59 +0200
+From: Benjamin Drung  bdrung@xxxxxxxxxx
+To: ubuntu-devel@xxxxxxxxxxxxxxxx
+Subject: Announcing Ubuntu Stainless Steel Edition: A Corrosion-Resistant
+Alternative
+User-Agent: Evolution 3.56.0-1
+..." nil nil "b5ffda5c769bc0e5fd4b257bd28a332c") (52 (26595 3896 664726 843000) "http://www.freelists.org/post/linuxtrent/R-Versione-nuova-linux,4" "[Linuxtrent] Re: R: Versione nuova linux" "mickbert)" "Tue, 25 Mar 2025 21:16:56 +0100" "On 19.03.2025 09:36, Roberto Resoli wrote:
 Il 18/03/25 16:36, Gianguido Piani ha scritto:
 Personalmente ho deciso di abbandonare Ubuntu e passare a Linux Mint
 Debian Edition (LMDE).

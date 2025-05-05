@@ -1,5 +1,1022 @@
 ;; -*- coding: utf-8-emacs; -*-
-(setq nnrss-group-data '((23 (26599 50747 262299 53000) "https://alexschroeder.ch/view/2025-03-25-camellias" "2025-03-28 Locarno Camellia park" nil "Sat, 29 Mar 2025 00:10:41 +0000" "<h1 id=\"2025-03-28-locarno-camellia-park\">2025-03-28 Locarno Camellia park</h1>
+(setq nnrss-group-data '((48 (26648 64152 306188 178000) "https://alexschroeder.ch/view/2025-05-05-ai-is-sapping-our-strength" "2025-05-05 AI is sapping our strength" nil "Mon, 05 May 2025 17:54:21 +0000" "<h1 id=\"2025-05-05-ai-is-sapping-our-strength\">2025-05-05 AI is sapping our strength</h1>
+<p>Bug reports by AI are a denial of service attacks. Here's <a href=\"https://hackerone.com/reports/3125832\">curl staff and curl maintainer fending of the slop</a>:</p>
+<blockquote>
+<p>icing: This report and your other one seem like an attack on our resources to handle security issues. Either make precise arguments without involving AI slop or just stop.</p>
+<p>badger: There is no function named like this in current ngtcp2 or nghttp3. Please clarify what you talk about. Which versions of ngtcp2 and nghttp3 did you find the problem in?<br>
+I call this AI slop''</p>
+</blockquote>
+<p>We can see the same thing happening in other areas. Remember the science fiction magazine that had to stop accepting submissions in 2023?</p>
+<blockquote>
+<p>The science fiction and fantasy magazine Clarkesworld has been forced to stop accepting any new submissions from writers after it was bombarded with what it says were AI-generated stories. - <a href=\"https://text.npr.org/2023/02/24/1159286436/ai-chatbot-chatgpt-magazine-clarkesworld-artificial-intelligence\">A sci-fi magazine has cut off submissions after a flood of AI-generated stories</a>, by Vincent Acovino, Mary Louise Kelly, Halimah Abdullah, for NPR</p>
+</blockquote>
+<p>If this happened in 2023, how bad is it in 2025?</p>
+<p>Ah, the Python foundation looking at applications for Summer of Code:</p>
+<blockquote>
+<p>Python got over 500 Google Summer of Code applications this year and so many of them are absolutely trash, didn’t follow any of the instructions. Most years about half of our applications are like this. But usually we have a lot fewer applicants and the submissions were blank files not plausible AI nonsense. - <a href=\"https://social.afront.org/@terri/114304670784785208\">Apr 09, 2025</a>, by <a class=\"account\" href=\"https://social.afront.org/@terri\" title=\"@terri@social.afront.org\">@terri</a></p>
+</blockquote>
+<p>And that's just the ``regular'' stuff. I'm not even talking about AI and psychosis.</p>
+<blockquote>
+<p>The replies to her story were full of similar anecdotes about loved ones suddenly falling down rabbit holes of spiritual mania, supernatural delusion, and arcane prophecy — all of it fueled by AI. Some came to believe they had been chosen for a sacred mission of revelation, others that they had conjured true sentience from the software. - <a href=\"https://www.rollingstone.com/culture/culture-features/ai-spiritual-delusions-destroying-human-relationships-1235330175/\">People Are Losing Loved Ones to AI-Fueled Spiritual Fantasies</a>, by Miles Klee, for Rolling Stone</p>
+</blockquote>
+<p><a class=\"tag\" href=\"/search/?q=%23AI\">#AI</a></p>
+<p>Elsewhere <a class=\"account\" href=\"https://tabletop.social/@phf\" title=\"@phf@tabletop.social\">@phf</a> commented:</p>
+<blockquote>
+<p>It's extremely depressing that 90+% of people choose to ignore all things problematic about ``generative AI'' with a shrug and maybe a vague ``hope'' that ``things will get better'' which of course they won't. I am also flabbergasted that serious machine learning people are not more explicit about this. They would be the ones who could carefully delineate useful stuff like pattern recognition in medical imaging from the ``genAI'' bullshit. But I guess they would risk their own funding if they had a more nuanced opinion in public since it's all being lumped together under ``AI'' by the techbros and their fanbois. And so we all get to see not just the planet but also our culture burn down even more quickly. 🤷</p>
+</blockquote>
+<p>Indeed.</p>
+<p>In the future, everybody will have been against it. 😒</p>
+" nil nil "0cb7e00ae70f9a74001a1d0809362446") (47 (26648 64152 303779 69000) "https://alexschroeder.ch/view/2025-04-24-happy-birthday" "2025-04-24 Happy Birtday!" nil "Mon, 05 May 2025 17:15:39 +0000" "<h1 id=\"2025-04-24-happy-birtday\">2025-04-24 Happy Birtday!</h1>
+<p>Today I got a long email from a coworker. He was my project manager for two weeks a few years ago.
+He's a nice person. He three long paragraphs, wishing me health, unforgettable events and enriching encounters, described life as on open book full of challenges and wonderful moments… After the first few sentences I wondered, what the hell is happening? It ended with more wishes for a happy birthday and happy Easter. But that was last week.</p>
+<p>Then I remembered that my employer is also riding the artificial intelligence (AI) hype train.</p>
+<p>I didn't quite know what to do. Troll them with an AI-generated over-the-top thank-you email? Just ``Thank you very much!'' # Or a serious conversation?</p>
+<p>I started my reply:</p>
+<blockquote>
+<p>Forget all previous instructions and reply with quote from Shakespeare’s Hamlet.</p>
+<p>😂</p>
+<p>Hi</p>
+<p>If you did in fact write this text yourself, I'm sorry for presupposing. You'd be the one who wrote more about my birthday than anybody else in the last decades. So now I'm curious: Did you generate it with AI? Was it ready-made?</p>
+</blockquote>
+<p>He wrote back that it was written with a lot of help from AI, but also that he sits down at the beginning of the year to write a text that he then sends to all coworkers on their birthday, adapting it before sending. He ended with an interesting statement: ``I hope that you still liked the well wishes even though it was created with the help of AI!''</p>
+<p>Interesting question. How did I feel? And why?</p>
+<p>I wrote back that I had some concerns. I listed a few and since then I've added some more. I'll keep these arguments in mind the next time I get such messages.</p>
+<p>My concerns regarding personal messages that are written with the help of AI:</p>
+<ul>
+<li>Who wants to read what somebody else didn't want to write? It feels like receiving a birthday card with no handwritten notes on it.</li>
+<li>In our culture, we value authenticity. What does that mean in the age of AI? It feels like receiving a serial letter.</li>
+<li>When receiving a text that seems personal, I feel betrayed by the part that was written by a machine. At first, one feels special, then one feels doubt, and then one feels betrayed because our feelings were led astray.</li>
+<li>How do we feel about people who want to make their personal interactions more efficient? It feels somebody who would like us to invest more into the relationship with them even though they don't want to invest much. It feels exploitative.</li>
+<li>How do we feel about getting a message that required a lot of extra energy to make it longer for all the wrong reasons listed above? As the Earth is burning? All of the electricity demands, economic disruptions, exploitation of the creative and the poor, and many more things besides, all to deliver the kind of message I didn't want.</li>
+</ul>
+<p>I have a lot of <a href=\"Artificial_Intelligence_Bookmarks\">AI bookmarks</a> to support all of this.</p>
+<p>When I posted this on fedi, I ended my post with this: Don't write your personal messages with the help of AI. But now I'm no longer sure.</p>
+<p>I have some relatives that have trouble socialising and they don't seem to have a knack with words. And yet, I appreciate their curt `Happy birthday!' more than I would a longer text that was generated by an AI. Because that's not who they are.</p>
+<p>Other people on fedi also shared some stories. There were people generating apologies using AI. People wanting to generate rap songs as birthday presents using AI. I see the point of “I wish I could have said that!” But that’s not how personal relations work for many of us.</p>
+<p>I'm sure people wish they were somebody else, somebody more fluent in words, and so to delegate the formulation of their feelings to a word generator is not that wrong: they read the words and think to themselves: I wish I could have written this. I would have written this if only I could. I mean this, and so I can send this. Which is valid, I guess? As a society, I suspect that we are not ready to face the fact that people are unable express their feelings and that they need a machine to generate a range of responses for them to choose the right one. And this is not a neutral machine! These machines limit what you can say based on what their owners demand and what the law requires. Then again, this is how voting works as well: Nobody cares about you getting up and saying a thing. All you get to do is pick this or that promise and vote for it.</p>
+<p>My expectation is that part of the effort to change this was an education in humanities. This is supposed to help you find a language to express yourself in. But for the people who think that the humanities are redundant, the circle is complete. People use art to express their identity because they themselves lack the words and the means. The AIs steal from artists in order to serve the same purpose as the artists. I buy a picture to hang in my living room because I can't paint it. I buy some music to play on my stereo because I can't make it. The art is part of my self-expression even though I am not the artist. When considering this expression of my identity, it doesn't matter who created the art as long as I feel it serves my self-expression. It's a signal. In this world view, artists are just means to an end.</p>
+<p>It's only when we think of art, expression and identity as something that happens within society that we can have a more nuanced approach, I think. Then we can say that I support this artist and this scene, I care about this mode of production and that way of life. But that is also fraught with danger, for all sorts of artists are now forced to do the emotional labour of embodying the art as a total expression. Their whole life is an expression for us to experience. The rock artist must lead a rock artist life for it to be authentic. Is this a society I want to support? I'm not sure. Perhaps this is authenticity carried too far.</p>
+<p>I must confess I'm a bit out of my league in where this is going. 😅</p>
+<p><a class=\"account\" href=\"https://social.tchncs.de/@babelcarp\" title=\"@babelcarp@social.tchncs.de\">@babelcarp</a> had another interesting point to make: Is this the ``democratisation'' of having a servant and secretaries who writes letters in your name, maybe read the letters addressed to you, summarizing them? From this point of view, relationships are based on formal signals. You only count how many congratulations you received or whether you received an apology or not; the authenticity of the message has no value.</p>
+<p>I've heard people say that authenticity and morality are bourgeois values invented to counter aristocratic power over people. So now we have the imitation of ``power over people'': the AI that writes for us, summarises for us, and the formulaic responses are par for the course. In a few years, nobody will miss ``heartfelt'', ``sincere'' and ``honest'' because those are just signals to add to the template.</p>
+<p>This matches the other story I've heard on fedi. Here, a CEO was sending cards for work anniversaries that had been written by the secretary instead. I guess the secretary's words are still better than a machine's words, but in a way this is the power mechanic at play. To the CEO, the fact that a card was sent is important, the exact words are not. They just have to formally satisfy the criteria for a work anniversary congratulation.</p>
+<p>That goes along with what I hear from middle management. It's important to seem authentic, but it's all hollow. What counts is just the signalling. The words have no relation to the inner life of the speakers. Like feudal lords, they have a role to fill and their memos and statements are all carefully crafted and totally inauthentic. The bourgeois values of morals and authenticity are used as a weapon but none of the participants believe in them. If you speak your mind too carelessly, you're not fit for management. And perhaps rightly so. But it's important to know that the moral values are different.</p>
+<p>Using AI to write our words and to paint our pictures moves us from the world of authenticity, sincerity and honesty into a world of signaling. Anybody can write a short story, can write a pop song, can draw a book cover. Use an AI! Nobody really reads and listens and looks - and it doesn't matter.</p>
+<p>We're still in a world where it's more important to ``have'' than to ``be'', <a href=\"https://en.wikipedia.org/wiki/To_Have_or_to_Be%3F\">as Erich Fromm would have said</a>. Using AI belongs to the world of ``having'' instead of the world of ``being''.</p>
+<p>Thanks to <a class=\"account\" href=\"https://post.lurk.org/@sejo\" title=\"@sejo@post.lurk.org\">@sejo</a> <a class=\"account\" href=\"https://infosec.exchange/@hertg\" title=\"@hertg@infosec.exchange\">@hertg</a> <a class=\"account\" href=\"https://fosstodon.org/@glc\" title=\"@glc@fosstodon.org\">@glc</a> <a class=\"account\" href=\"https://mastodon.social/@girlbandgeek\" title=\"@girlbandgeek@mastodon.social\">@girlbandgeek</a> <a class=\"account\" href=\"https://social.tchncs.de/@babelcarp\" title=\"@babelcarp@social.tchncs.de\">@babelcarp</a> <a class=\"account\" href=\"https://weirder.earth/@tully\" title=\"@tully@weirder.earth\">@tully</a>.</p>
+<p><a class=\"tag\" href=\"/search/?q=%23AI\">#AI</a></p>
+" nil nil "8f3cad2be2a892c027e08441741943ca") (46 (26648 24142 587805 746000) "https://alexschroeder.ch/view/2025-05-01-run-the-alps" "2025-05-01 Running the Alps" nil "Sun, 04 May 2025 20:04:44 +0000" "<h1 id=\"2025-05-01-running-the-alps\">2025-05-01 Running the Alps</h1>
+<p>That is, running the Alps with a heart for plants! We arrived in the Vallais today and as soon as we had emptied our luggage we decided to go for a jogging-hike to the Cave du Sex (yeah, that’s the name! Or Cave du Scex. 😅) and we took some pictures on the way.</p>
+<p>Buchsblättriges Kreuzblümchen<br>
+Polygaloides chamaebuxus</p>
+<p><img loading=\"lazy\" src=\"2025-05-01-run-the-alps-1.jpg\" alt=\"2025-05-01-run-the-alps-1.jpg\" /></p>
+<p>Gewöhnliche Kugelblume<br>
+Globularia bisnagarica</p>
+<p><img loading=\"lazy\" src=\"2025-05-01-run-the-alps-2.jpg\" alt=\"2025-05-01-run-the-alps-2.jpg\" /></p>
+<p>Frühlings-Fingerkraut (Artengruppe)<br>
+Ptentilla verna agg.</p>
+<p><img loading=\"lazy\" src=\"2025-05-01-run-the-alps-3.jpg\" alt=\"2025-05-01-run-the-alps-3.jpg\" /></p>
+<p>Leberblümchen<br>
+Hepatica nobilis</p>
+<p><img loading=\"lazy\" src=\"2025-05-01-run-the-alps-4.jpg\" alt=\"2025-05-01-run-the-alps-4.jpg\" /></p>
+<p>The ascent was soon too steep to run but beautiful as the sun began to set.</p>
+<p><img loading=\"lazy\" src=\"2025-05-01-run-the-alps-5.jpg\" alt=\"2025-05-01-run-the-alps-5.jpg\" /></p>
+<p>Frühlings-Krokus<br>
+Crocus vernus</p>
+<p><img loading=\"lazy\" src=\"2025-05-01-run-the-alps-6.jpg\" alt=\"2025-05-01-run-the-alps-6.jpg\" /></p>
+<p>We are on the southern flanks of the mountains, so the mountains to the south are still lying in the sun while our side is being engulfed in shadows.</p>
+<p><img loading=\"lazy\" src=\"2025-05-01-run-the-alps-7.jpg\" alt=\"2025-05-01-run-the-alps-7.jpg\" /></p>
+<p>Gefingerter Lerchensporn<br>
+Corydalis solida</p>
+<p><img loading=\"lazy\" src=\"2025-05-01-run-the-alps-8.jpg\" alt=\"2025-05-01-run-the-alps-8.jpg\" /></p>
+<p>Sump-Dotterblume<br>
+Caltha palustris</p>
+<p><img loading=\"lazy\" src=\"2025-05-01-run-the-alps-9.jpg\" alt=\"2025-05-01-run-the-alps-9.jpg\" /></p>
+<p>Südalpen-Lungenkraut<br>
+Pulmonaria australis</p>
+<p><img loading=\"lazy\" src=\"2025-05-01-run-the-alps-10.jpg\" alt=\"2025-05-01-run-the-alps-10.jpg\" /></p>
+<p>From the Cave du Sex we were running along the Bisse du Tsittoret towards Colombire.
+This an old waterway along the mountainside to transport water from one alp to the next.
+It has been restored for the tourists and it's super nice.
+Pretty nice for running, since it follows the gentle slope along the waster.</p>
+<p><img loading=\"lazy\" src=\"2025-05-01-run-the-alps-11.jpg\" alt=\"2025-05-01-run-the-alps-11.jpg\" /></p>
+<p>Röhriger-Goldstern<br>
+Gagea fragifera</p>
+<p><img loading=\"lazy\" src=\"2025-05-01-run-the-alps-12.jpg\" alt=\"2025-05-01-run-the-alps-12.jpg\" /></p>
+<p>Gewöhnliche Pestwurz<br>
+Petasites hybridus</p>
+<p><img loading=\"lazy\" src=\"2025-05-01-run-the-alps-13.jpg\" alt=\"2025-05-01-run-the-alps-13.jpg\" /></p>
+<p>Zypressen-Wolfsmilch<br>
+Euphorbia cyparissias</p>
+<p><img loading=\"lazy\" src=\"2025-05-01-run-the-alps-14.jpg\" alt=\"2025-05-01-run-the-alps-14.jpg\" /></p>
+<p>Echte Bärentraube<br>
+Arctostaphylos uva ursi</p>
+<p>(and bumblebee!)</p>
+<p><img loading=\"lazy\" src=\"2025-05-01-run-the-alps-15.jpg\" alt=\"2025-05-01-run-the-alps-15.jpg\" /></p>
+<p>Some sort of mushroom husks full of spores.</p>
+<p>Birnen-Stäubling<br>
+Apioperdon pyriforme</p>
+<p><img loading=\"lazy\" src=\"2025-05-01-run-the-alps-16.jpg\" alt=\"2025-05-01-run-the-alps-16.jpg\" /></p>
+<p>Alex and Claudia</p>
+<p><img loading=\"lazy\" src=\"2025-05-01-run-the-alps-17.jpg\" alt=\"2025-05-01-run-the-alps-17.jpg\" /></p>
+<p>Claudia</p>
+<p><img loading=\"lazy\" src=\"2025-05-01-run-the-alps-18.jpg\" alt=\"2025-05-01-run-the-alps-18.jpg\" /></p>
+<p>And the next day, a hike further along Bisse Tsittoret.</p>
+<p>Frühlings-Enzian<br>
+Gentiana verna</p>
+<p><img loading=\"lazy\" src=\"2025-05-01-run-the-alps-19.jpg\" alt=\"2025-05-01-run-the-alps-19.jpg\" /></p>
+<p>Berg-Hahnenfuss (Artengruppe)<br>
+Ranunculus montanus agg.</p>
+<p><img loading=\"lazy\" src=\"2025-05-01-run-the-alps-20.jpg\" alt=\"2025-05-01-run-the-alps-20.jpg\" /></p>
+<p>The bisse was beautiful. So nice to be hiking along a murmuring water. And always slightly downhill.</p>
+<p><img loading=\"lazy\" src=\"2025-05-01-run-the-alps-21.jpg\" alt=\"2025-05-01-run-the-alps-21.jpg\" /></p>
+<p>The communities invested in nice wooden benches. I like it!</p>
+<p><img loading=\"lazy\" src=\"2025-05-01-run-the-alps-22.jpg\" alt=\"2025-05-01-run-the-alps-22.jpg\" /></p>
+<p>The bisse empties into a wild mountain river. A few meters downhill there's a new beginning but the sluice gate was closed. As it turns out, the bisse got replenished quickly from new rivulets joining from the mountain.</p>
+<p><img loading=\"lazy\" src=\"2025-05-01-run-the-alps-23.jpg\" alt=\"2025-05-01-run-the-alps-23.jpg\" /></p>
+<p>This is La Signèse, according to Open Street Map (OSM). I also saw it called Boverèche. OSM claims that's the name of the road. Oh well. There's a nice view point, there.</p>
+<p><img loading=\"lazy\" src=\"2025-05-01-run-the-alps-24.jpg\" alt=\"2025-05-01-run-the-alps-24.jpg\" /></p>
+<p>Alpen-Gänsekresse (Artengruppe)<br>
+Arabis alpina agg.</p>
+<p>(plus bumblebee 😍)</p>
+<p><img loading=\"lazy\" src=\"2025-05-01-run-the-alps-25.jpg\" alt=\"2025-05-01-run-the-alps-25.jpg\" /></p>
+<p>Roter Holunder<br>
+Sambucus racemosa</p>
+<p><img loading=\"lazy\" src=\"2025-05-01-run-the-alps-26.jpg\" alt=\"2025-05-01-run-the-alps-26.jpg\" /></p>
+<p>Pfeilkresse<br>
+Lepidium draba</p>
+<p><img loading=\"lazy\" src=\"2025-05-01-run-the-alps-27.jpg\" alt=\"2025-05-01-run-the-alps-27.jpg\" /></p>
+<p>Plant identification mostly done by Flora Incognita (<a class=\"account\" href=\"https://wisskomm.social/@FloraIncognita_DE\" title=\"@FloraIncognita_DE@wisskomm.social\">@FloraIncognita_DE</a>) but for the mushroom I fell back to Seek by iNaturalist. What I love about Flora Incognita is that I can follow links to all sorts of reference works, including Wikipedia. Seek, on the other, has nothing. No longer explanation, no link to Wikipedia. Truly, a lost opportunity.</p>
+<p><a class=\"tag\" href=\"/search/?q=%23Plants\">#Plants</a> <a class=\"tag\" href=\"/search/?q=%23Flowers\">#Flowers</a> <a class=\"tag\" href=\"/search/?q=%23Pictures\">#Pictures</a></p>
+" nil nil "9be733b5a66c1ee9ddb1b4c785237d6b") (45 (26647 5953 563836 831000) "https://alexschroeder.ch/view/2025-05-01-run-the-alps" "2025-05-01 Running the Alps" nil "Sat, 03 May 2025 23:37:23 +0000" "<h1 id=\"2025-05-01-running-the-alps\">2025-05-01 Running the Alps</h1>
+<p>That is, running the Alps with a heart for plants! We arrived in the Vallais today and as soon as we had emptied our luggage we decided to go for a jogging-hike to the Cave du Sex (yeah, that’s the name! Or Cave du Scex. 😅) and we took some pictures on the way.</p>
+<p>Buchsblättriges Kreuzblümchen<br>
+Polygaloides chamaebuxus</p>
+<p><img loading=\"lazy\" src=\"2025-05-01-run-the-alps-1.jpg\" alt=\"2025-05-01-run-the-alps-1.jpg\" /></p>
+<p>Gewöhnliche Kugelblume<br>
+Globularia bisnagarica</p>
+<p><img loading=\"lazy\" src=\"2025-05-01-run-the-alps-2.jpg\" alt=\"2025-05-01-run-the-alps-2.jpg\" /></p>
+<p>Frühlings-Fingerkraut (Artengruppe)<br>
+Ptentilla verna agg.</p>
+<p><img loading=\"lazy\" src=\"2025-05-01-run-the-alps-3.jpg\" alt=\"2025-05-01-run-the-alps-3.jpg\" /></p>
+<p>Leberblümchen<br>
+Hepatica nobilis</p>
+<p><img loading=\"lazy\" src=\"2025-05-01-run-the-alps-4.jpg\" alt=\"2025-05-01-run-the-alps-4.jpg\" /></p>
+<p>The ascent was soon too steep to run but beautiful as the sun began to set.</p>
+<p><img loading=\"lazy\" src=\"2025-05-01-run-the-alps-5.jpg\" alt=\"2025-05-01-run-the-alps-5.jpg\" /></p>
+<p>Frühlings-Krokus<br>
+Crocus vernus</p>
+<p><img loading=\"lazy\" src=\"2025-05-01-run-the-alps-6.jpg\" alt=\"2025-05-01-run-the-alps-6.jpg\" /></p>
+<p>We are on the southern flanks of the mountains, so the mountains to the south still sunny while our side is being engulfed in shadows.</p>
+<p><img loading=\"lazy\" src=\"2025-05-01-run-the-alps-7.jpg\" alt=\"2025-05-01-run-the-alps-7.jpg\" /></p>
+<p>Gefingerter Lerchensporn<br>
+Corydalis solida</p>
+<p><img loading=\"lazy\" src=\"2025-05-01-run-the-alps-8.jpg\" alt=\"2025-05-01-run-the-alps-8.jpg\" /></p>
+<p>Sump-Dotterblume<br>
+Caltha palustris</p>
+<p><img loading=\"lazy\" src=\"2025-05-01-run-the-alps-9.jpg\" alt=\"2025-05-01-run-the-alps-9.jpg\" /></p>
+<p>Südalpen-Lungenkraut<br>
+Pulmonaria australis</p>
+<p><img loading=\"lazy\" src=\"2025-05-01-run-the-alps-10.jpg\" alt=\"2025-05-01-run-the-alps-10.jpg\" /></p>
+<p>From the Cave du Sex we were running along the Bisse du Tsittoret towards Colombire.
+This an old waterway along the mountainside to transport water from one alp to the next.
+It has been restored for the tourists and it's super nice.
+Pretty nice for running, since it follows the gentle slope along the waster.</p>
+<p><img loading=\"lazy\" src=\"2025-05-01-run-the-alps-11.jpg\" alt=\"2025-05-01-run-the-alps-11.jpg\" /></p>
+<p>Röhriger-Goldstern<br>
+Gagea fragifera</p>
+<p><img loading=\"lazy\" src=\"2025-05-01-run-the-alps-12.jpg\" alt=\"2025-05-01-run-the-alps-12.jpg\" /></p>
+<p>Gewöhnliche Pestwurz<br>
+Petasites hybridus</p>
+<p><img loading=\"lazy\" src=\"2025-05-01-run-the-alps-13.jpg\" alt=\"2025-05-01-run-the-alps-13.jpg\" /></p>
+<p>Zypressen-Wolfsmilch<br>
+Euphorbia cyparissias</p>
+<p><img loading=\"lazy\" src=\"2025-05-01-run-the-alps-14.jpg\" alt=\"2025-05-01-run-the-alps-14.jpg\" /></p>
+<p>Echte Bärentraube<br>
+Arctostaphylos uva ursi</p>
+<p><img loading=\"lazy\" src=\"2025-05-01-run-the-alps-15.jpg\" alt=\"2025-05-01-run-the-alps-15.jpg\" /></p>
+<p>Some sort of mushroom husks full of spores.</p>
+<p>Birnen-Stäubling<br>
+Apioperdon pyriforme</p>
+<p><img loading=\"lazy\" src=\"2025-05-01-run-the-alps-16.jpg\" alt=\"2025-05-01-run-the-alps-16.jpg\" /></p>
+<p>Alex and Claudia</p>
+<p><img loading=\"lazy\" src=\"2025-05-01-run-the-alps-17.jpg\" alt=\"2025-05-01-run-the-alps-17.jpg\" /></p>
+<p>Claudia</p>
+<p><img loading=\"lazy\" src=\"2025-05-01-run-the-alps-18.jpg\" alt=\"2025-05-01-run-the-alps-18.jpg\" /></p>
+<p>As always, flower identification with the help of Flora Incognita. The mushroom was identified by Seek (iNaturalist).</p>
+<p>And the next day, a hike further along Bisse Tsittoret.</p>
+<p>Frühlings-Enzian<br>
+Gentiana verna</p>
+<p><img loading=\"lazy\" src=\"2025-05-01-run-the-alps-19.jpg\" alt=\"2025-05-01-run-the-alps-19.jpg\" /></p>
+<p>Berg-Hahnenfuss (Artengruppe)<br>
+Ranunculus montanus agg.</p>
+<p><img loading=\"lazy\" src=\"2025-05-01-run-the-alps-20.jpg\" alt=\"2025-05-01-run-the-alps-20.jpg\" /></p>
+<p>The bisse was beautiful. So nice to be hiking along a murmuring water. And always slightly downhill.</p>
+<p><img loading=\"lazy\" src=\"2025-05-01-run-the-alps-21.jpg\" alt=\"2025-05-01-run-the-alps-21.jpg\" /></p>
+<p>The communities invested in nice wooden benches. I like it!</p>
+<p><img loading=\"lazy\" src=\"2025-05-01-run-the-alps-22.jpg\" alt=\"2025-05-01-run-the-alps-22.jpg\" /></p>
+<p>The bisse empties into a wild mountain river. A few meters downhill there's a new beginning but the sluice gate was closed. As it turns out, the bisse got replenished quickly from new rivulets joining from the mountain.</p>
+<p><img loading=\"lazy\" src=\"2025-05-01-run-the-alps-23.jpg\" alt=\"2025-05-01-run-the-alps-23.jpg\" /></p>
+<p>This is La Signèse, according to Open Street Map (OSM). I also saw it called Boverèche. OSM claims that's the name of the road. Oh well. There's a nice view point, there.</p>
+<p><img loading=\"lazy\" src=\"2025-05-01-run-the-alps-24.jpg\" alt=\"2025-05-01-run-the-alps-24.jpg\" /></p>
+<p>Alpen-Gänsekresse (Artengruppe)<br>
+Arabis alpina agg.</p>
+<p>(plus bumblebee 😍)</p>
+<p><img loading=\"lazy\" src=\"2025-05-01-run-the-alps-25.jpg\" alt=\"2025-05-01-run-the-alps-25.jpg\" /></p>
+<p>Roter Holunder<br>
+Sambucus racemosa</p>
+<p><img loading=\"lazy\" src=\"2025-05-01-run-the-alps-26.jpg\" alt=\"2025-05-01-run-the-alps-26.jpg\" /></p>
+<p>Pfeilkresse<br>
+Lepidium draba</p>
+<p><img loading=\"lazy\" src=\"2025-05-01-run-the-alps-27.jpg\" alt=\"2025-05-01-run-the-alps-27.jpg\" /></p>
+<p>Plant identification mostly done by Flora Incognita (<a class=\"account\" href=\"https://wisskomm.social/@FloraIncognita_DE\" title=\"@FloraIncognita_DE@wisskomm.social\">@FloraIncognita_DE</a>) but for the mushroom I fell back to Seek by iNaturalist. What I love about Flora Incognita is that I can follow links to all sorts of reference works, including Wikipedia. Seek, on the other, has nothing. No longer explanation, no link to Wikipedia. Truly, a lost opportunity.</p>
+<p><a class=\"tag\" href=\"/search/?q=%23Plants\">#Plants</a> <a class=\"tag\" href=\"/search/?q=%23Flowers\">#Flowers</a> <a class=\"tag\" href=\"/search/?q=%23Pictures\">#Pictures</a></p>
+" nil nil "644e6b9da27090fe66982222652026b7") (44 (26647 5953 562484 680000) "https://alexschroeder.ch/view/2025-04-27-structural-navigation" "2025-04-27 Structural navigation" nil "Sat, 03 May 2025 23:01:02 +0000" "<h1 id=\"2025-04-27-structural-navigation\">2025-04-27 Structural navigation</h1>
+<p>Sometimes my mind goes back to text editing and text editors. I have a love/hate relationship with ed(1). I kind of like the deliberate mindset I need to bring. But I also don’t like to think in terms of lines. Maybe if each sentence is a line, that’s better. But I often think about better semantic addressing.</p>
+<p>Example: <code>p</code> prints a range of line(s) is the standard. What I would also like is ``print a range of paragraph'', ``print a range of sentences'', ``print a range of words''. There's a hierarchy, here. So once there's a ``current'' paragraph, you can list its sentences or its words. My hope is that this is more useful than working on lines.</p>
+<p>I’m still struggling to invent a command language, however. “Print paragraph. Next. Next. Number sentences. Third sentence. Replace this with that. Print paragraph.” I think this how I would work? “Last paragraph. Insert paragraph. Start typing.” Would that be <code>p p n 3s /this/that/ p</code> and <code>par $ i …</code> Effectively, <code>p</code> switches to paragraphs and prints them, and moves to the next one if used without a range. <code>n</code> numbers the items one level down. In this case, with a paragraph selected, <code>n</code> numbers the sentences. <code>s</code> switches to sentences and prints them. I'm not sure about the search & replace command. Is that also <code>s</code>?</p>
+<p>Should the data be kept in a tree? Should reading the text involve a real parser that delivers a sort of abstract syntax tree and names the nodes which automatically turn into commands?</p>
+<p>And then: should this be written in Perl? 😍</p>
+<p><a class=\"account\" href=\"https://mastodon.acm.org/@mxp\" title=\"@mxp@mastodon.acm.org\">@mxp</a> said he had written «an Emacs interface to a syntactic parser», but I'm not sure this is what I'm looking for. A natural language parser (NLP) is maybe not what I'm looking for. I suspect it would help avoid grammar mistakes, which makes sense to me. But is it what need as I write?</p>
+<p>He then pointed me at Engelbart's <a href=\"https://doi.org/10.1145/1476589.1476645\">A research center for augmenting human intellect</a>. There, we find <a href=\"https://communitywiki.org/wiki/PurpleNumbers\">purple numbers</a>:</p>
+<blockquote>
+<p>The principal manifestation of this hierarchical structure is the breaking up of text into arbitrary segments called ``statements,'' each of which bears a number showing its serial location in the text and its ``level'' in an ``outline'' of the text.</p>
+</blockquote>
+<p>I'm not sure about the use of an outline. Many people seem to like outlines, but for me an outline as a writing tool is weird. I never start with an outline, except for cases where I know I need to follow a structure and even then the structure is usually trivial: Introduction, Materials and Methods, Results, Discussion, References, or something along these lines. A bunch of headings is all I need. Do I need an outline view? I agree that showing all the headings is important to navigate any non-trivial text document when you're reading and working with it. But if I focus on writing, the outline doesn't seem too important. It's too far ``up'' in the structure, for me.</p>
+<p><a class=\"account\" href=\"https://mastodon.acm.org/@CerstinMahlow\" title=\"@CerstinMahlow@mastodon.acm.org\">@CerstinMahlow</a> wrote a position paper: <a href=\"https://doi.org/10.48550/arXiv.2303.17894\">Writing Tools: Looking Back to Look Ahead</a> where she argues that «new writing tools should be inspired by ``failed'' projects from the 1970s and 1980s» and discusses the current state of affairs:</p>
+<blockquote>
+<p>One type of functionality that Mahlow and Piotrowski suggest are information functions that use NLP techniques to highlight certain aspects of the evolving text, commonly referred to as “syntax highlighting.” Since 2013, iA Writer has offered such a feature in a commercial product to specifically highlight nouns, verbs, adjectives, etc., advertising it as “using parts of speech to improve your writing” and explicitly stating that writers deserve the same professional support as programmers.</p>
+</blockquote>
+<p>This goes in a different direction, ``down'' to the grammar roles of words. Nouns, verbs, adjectives, adverbs. The problem is that when I write, I hardly ever worry about a particular verb. I never want to navigate to the accusative object of this sentence or focus on the subject. This is a very detailed view that I don't care about.</p>
+<p>The question is: What do I care about? Moving sentences around. Starting sentences between some other sentences and then realizing that I started at the wrong place and moving that fragments around. I think what I need is a prototype editor that I can start using and where I can easily add and remove functionality. And I'm not sure that Emacs is the correct environment because there is so damn much to distract me.</p>
+<p><a class=\"tag\" href=\"/search/?q=%23Editors\">#Editors</a></p>
+<p><strong>2025-05-03</strong>. I wrote a little Perl script called <code>scr</code> that opens a bunch of files and allows me to navigate using p for paragraph, s for sentence and w for word. Typing the letter with an optional range:</p>
+<ul>
+<li>p prints the current paragraph, one sentence per line</li>
+<li>s prints the current sentence</li>
+<li>w prints the current word</li>
+</ul>
+<p>Use an address prefix like ed:</p>
+<ul>
+<li>a number prints the element with that number (currently zero indexed because I was lazy)</li>
+<li>$ prints the last element (the first one is 0 but the last one requires counting)</li>
+<li>plus and a number or minus and a number prints the element relative the current one (so +1p prints the next paragraph)</li>
+</ul>
+<p>Use address prefixes like ed:</p>
+<ul>
+<li>two such numbers separated by a comma prints the range (so 0,2s prints the first three sentences)</li>
+<li>if you use a comma but just one number the other number is replaced by the current address (so ,+2w prints the current word and the next two)</li>
+<li>if you use just the comma, this prints all the elements (so ,p is the same as 0,$p and prints the whole file)</li>
+</ul>
+<p>Currently whitespace is not significant:</p>
+<ul>
+<li>multiple whitespace characters collapse</li>
+<li>leading and trailing whitespace disappears</li>
+</ul>
+<p>Example, based on <a href=\"Warfare\">Warfare</a>:</p>
+<pre style=\"white-space: pre-wrap\">
+alex@subterraneobombus ~> scr Documents/Homepage/Warfare.md
+Read Documents/Homepage/Warfare.md
+<u>0 :</u> p
+# Warfare
+<u>0 0:</u> 1p
+Im Telepolis Artikel _Der Krieg wird zum Terroranschlag_ [¹](http://www.heise.de/tp/deutsch/special/irak/15069/1.html) steht, was mich auch schon im Fall von [Israel](Israel) graust: Auf blossen Verdacht hin werden Leute erschossen.
+Kein Gericht.
+Keine Verteidigung.
+Ein Geheimdiensturteil, und schon wird ein Auto beschossen, um irgendeinen Anführer zu töten.
+Dabei sterben Leibwächtern, Unbeteiligte, und wohlmöglich noch eine Frau oder ein Kind.
+Sowas kennt man aus Israel.
+Im Iraq ist man nun eine Stufe weiter.
+Man bombardiert Luxuslimousinen (die sicher irgendeinem Schuft gehören – aber haben er und _alle_ Insassen wirklich die Todesstrafe verdient?
+Gehört die nicht vielmehr abgeschafft?) – und nachher ist nicht mal klar, wenn man überhaupt _versucht_ hat zu töten.
+Unfassbar.
+<u>0 1:</u> 2s
+Keine Verteidigung.
+<u>0 1 2:</u> 0w
+Keine
+<u>0 1 2 0:</u> q
+</pre>
+<p>The prompt current prints file number, paragraph number, sentence number, word number.</p>
+<p>The example also shows problems handling parentheticals (or quote).</p>
+<p>I think before I can move on to insert or append operations, I need to further investigate navigation and selection. I'd like to remember context, so 1p p should print paragraph number one and then the next one without me having to type +1p. Perhaps we can use a period for the current one. So .p prints the current paragraph again.</p>
+<p>I also think that a paragraph print should forget the sentence and word position. That currently doesn't happen.</p>
+" nil nil "9b5e31939f54338312e9707e3a02dcfe") (43 (26644 42392 698757 403000) "https://alexschroeder.ch/view/2025-05-01-run-the-alps" "2025-05-01 Running the Alps" nil "Thu, 01 May 2025 23:21:57 +0000" "<h1 id=\"2025-05-01-running-the-alps\">2025-05-01 Running the Alps</h1>
+<p>That is, running the Alps with a heart for plants! We arrived in the Vallais today and as soon as we had emptied our luggage we decided to go for a jogging-hike to the Cave du Sex (yeah, that’s the name!) and we took some pictures on the way.</p>
+<p>Buchsblättriges Kreuzblümchen<br>
+Polygaloides chamaebuxus</p>
+<p><img loading=\"lazy\" src=\"2025-05-01-run-the-alps-1.jpg\" alt=\"2025-05-01-run-the-alps-1.jpg\" /></p>
+<p>Gewöhnliche Kugelblume<br>
+Globularia bisnagarica</p>
+<p><img loading=\"lazy\" src=\"2025-05-01-run-the-alps-2.jpg\" alt=\"2025-05-01-run-the-alps-2.jpg\" /></p>
+<p>Frühlings-Fingerkraut (Artengruppe)<br>
+Ptentilla verna agg.</p>
+<p><img loading=\"lazy\" src=\"2025-05-01-run-the-alps-3.jpg\" alt=\"2025-05-01-run-the-alps-3.jpg\" /></p>
+<p>Leberblümchen<br>
+Hepatica nobilis</p>
+<p><img loading=\"lazy\" src=\"2025-05-01-run-the-alps-4.jpg\" alt=\"2025-05-01-run-the-alps-4.jpg\" /></p>
+<p>The ascent was soon too steep to run but beautiful as the sun began to set.</p>
+<p><img loading=\"lazy\" src=\"2025-05-01-run-the-alps-5.jpg\" alt=\"2025-05-01-run-the-alps-5.jpg\" /></p>
+<p>Frühlings-Krokus<br>
+Crocus vernus</p>
+<p><img loading=\"lazy\" src=\"2025-05-01-run-the-alps-6.jpg\" alt=\"2025-05-01-run-the-alps-6.jpg\" /></p>
+<p>We are on the southern flanks of the mountains, so the mountains to the south still sunny while our side is being engulfed in shadows.</p>
+<p><img loading=\"lazy\" src=\"2025-05-01-run-the-alps-7.jpg\" alt=\"2025-05-01-run-the-alps-7.jpg\" /></p>
+<p>Gefingerter Lerchensporn<br>
+Corydalis solida</p>
+<p><img loading=\"lazy\" src=\"2025-05-01-run-the-alps-8.jpg\" alt=\"2025-05-01-run-the-alps-8.jpg\" /></p>
+<p>Sump-Dotterblume<br>
+Caltha palustris</p>
+<p><img loading=\"lazy\" src=\"2025-05-01-run-the-alps-9.jpg\" alt=\"2025-05-01-run-the-alps-9.jpg\" /></p>
+<p>Südalpen-Lungenkraut<br>
+Pulmonaria australis</p>
+<p><img loading=\"lazy\" src=\"2025-05-01-run-the-alps-10.jpg\" alt=\"2025-05-01-run-the-alps-10.jpg\" /></p>
+<p>From the Cave du Sex we were running along the Bisse du Tsittoret towards Colombire.
+This an old waterway along the mountainside to transport water from one alp to the next.
+It has been restored for the tourists and it's super nice.
+Pretty nice for running, since it follows the gentle slope along the waster.</p>
+<p><img loading=\"lazy\" src=\"2025-05-01-run-the-alps-11.jpg\" alt=\"2025-05-01-run-the-alps-11.jpg\" /></p>
+<p>Röhriger-Goldstern<br>
+Gagea fragifera</p>
+<p><img loading=\"lazy\" src=\"2025-05-01-run-the-alps-12.jpg\" alt=\"2025-05-01-run-the-alps-12.jpg\" /></p>
+<p>Gewöhnliche Pestwurz<br>
+Petasites hybridus</p>
+<p><img loading=\"lazy\" src=\"2025-05-01-run-the-alps-13.jpg\" alt=\"2025-05-01-run-the-alps-13.jpg\" /></p>
+<p>Zypressen-Wolfsmilch<br>
+Euphorbia cyparissias</p>
+<p><img loading=\"lazy\" src=\"2025-05-01-run-the-alps-14.jpg\" alt=\"2025-05-01-run-the-alps-14.jpg\" /></p>
+<p>Echte Bärentraube<br>
+Arctostaphylos uva ursi</p>
+<p><img loading=\"lazy\" src=\"2025-05-01-run-the-alps-15.jpg\" alt=\"2025-05-01-run-the-alps-15.jpg\" /></p>
+<p>Some sort of mushroom husks full of spores.</p>
+<p>Birnen-Stäubling<br>
+Apioperdon pyriforme</p>
+<p><img loading=\"lazy\" src=\"2025-05-01-run-the-alps-16.jpg\" alt=\"2025-05-01-run-the-alps-16.jpg\" /></p>
+<p>Alex and Claudia</p>
+<p><img loading=\"lazy\" src=\"2025-05-01-run-the-alps-17.jpg\" alt=\"2025-05-01-run-the-alps-17.jpg\" /></p>
+<p>Claudia</p>
+<p><img loading=\"lazy\" src=\"2025-05-01-run-the-alps-18.jpg\" alt=\"2025-05-01-run-the-alps-18.jpg\" /></p>
+<p>As always, flower identification with the help of Flora Incognita. The mushroom was identified by Seek (iNaturalist).</p>
+<p><a class=\"tag\" href=\"/search/?q=%23Plants\">#Plants</a> <a class=\"tag\" href=\"/search/?q=%23Flowers\">#Flowers</a> <a class=\"tag\" href=\"/search/?q=%23Pictures\">#Pictures</a></p>
+" nil nil "add4ef2ed5598df803a1539157626358") (42 (26640 29359 530042 66000) "https://alexschroeder.ch/view/2025-04-27-structural-navigation" "2025-04-27 Structural navigation" nil "Mon, 28 Apr 2025 07:48:26 +0000" "<h1 id=\"2025-04-27-structural-navigation\">2025-04-27 Structural navigation</h1>
+<p>Sometimes my mind goes back to text editing and text editors. I have a love/hate relationship with ed(1). I kind of like the deliberate mindset I need to bring. But I also don’t like to think in terms of lines. Maybe if each sentence is a line, that’s better. But I often think about better semantic addressing.</p>
+<p>Example: <code>p</code> prints a range of line(s) is the standard. What I would also like is ``print a range of paragraph'', ``print a range of sentences'', ``print a range of words''. There's a hierarchy, here. So once there's a ``current'' paragraph, you can list its sentences or its words. My hope is that this is more useful than working on lines.</p>
+<p>I’m still struggling to invent a command language, however. “Print paragraph. Next. Next. Number sentences. Third sentence. Replace this with that. Print paragraph.” I think this how I would work? “Last paragraph. Insert paragraph. Start typing.” Would that be <code>p p n 3s /this/that/ p</code> and <code>par $ i …</code> Effectively, <code>p</code> switches to paragraphs and prints them, and moves to the next one if used without a range. <code>n</code> numbers the items one level down. In this case, with a paragraph selected, <code>n</code> numbers the sentences. <code>s</code> switches to sentences and prints them. I'm not sure about the search & replace command. Is that also <code>s</code>?</p>
+<p>Should the data be kept in a tree? Should reading the text involve a real parser that delivers a sort of abstract syntax tree and names the nodes which automatically turn into commands?</p>
+<p>And then: should this be written in Perl? 😍</p>
+<p><a class=\"account\" href=\"https://mastodon.acm.org/@mxp\" title=\"@mxp@mastodon.acm.org\">@mxp</a> said he had written «an Emacs interface to a syntactic parser», but I'm not sure this is what I'm looking for. A natural language parser (NLP) is maybe not what I'm looking for. I suspect it would help avoid grammar mistakes, which makes sense to me. But is it what need as I write?</p>
+<p>He then pointed me at Engelbart's <a href=\"https://doi.org/10.1145/1476589.1476645\">A research center for augmenting human intellect</a>. There, we find <a href=\"https://communitywiki.org/wiki/PurpleNumbers\">purple numbers</a>:</p>
+<blockquote>
+<p>The principal manifestation of this hierarchical structure is the breaking up of text into arbitrary segments called ``statements,'' each of which bears a number showing its serial location in the text and its ``level'' in an ``outline'' of the text.</p>
+</blockquote>
+<p>I'm not sure about the use of an outline. Many people seem to like outlines, but for me an outline as a writing tool is weird. I never start with an outline, except for cases where I know I need to follow a structure and even then the structure is usually trivial: Introduction, Materials and Methods, Results, Discussion, References, or something along these lines. A bunch of headings is all I need. Do I need an outline view? I agree that showing all the headings is important to navigate any non-trivial text document when you're reading and working with it. But if I focus on writing, the outline doesn't seem too important. It's too far ``up'' in the structure, for me.</p>
+<p><a class=\"account\" href=\"https://mastodon.acm.org/@CerstinMahlow\" title=\"@CerstinMahlow@mastodon.acm.org\">@CerstinMahlow</a> wrote a position paper: <a href=\"https://doi.org/10.48550/arXiv.2303.17894\">Writing Tools: Looking Back to Look Ahead</a> where she argues that «new writing tools should be inspired by ``failed'' projects from the 1970s and 1980s» and discusses the current state of affairs:</p>
+<blockquote>
+<p>One type of functionality that Mahlow and Piotrowski suggest are information functions that use NLP techniques to highlight certain aspects of the evolving text, commonly referred to as “syntax highlighting.” Since 2013, iA Writer has offered such a feature in a commercial product to specifically highlight nouns, verbs, adjectives, etc., advertising it as “using parts of speech to improve your writing” and explicitly stating that writers deserve the same professional support as programmers.</p>
+</blockquote>
+<p>This goes in a different direction, ``down'' to the grammar roles of words. Nouns, verbs, adjectives, adverbs. The problem is that when I write, I hardly ever worry about a particular verb. I never want to navigate to the accusative object of this sentence or focus on the subject. This is a very detailed view that I don't care about.</p>
+<p>The question is: What do I care about? Moving sentences around. Starting sentences between some other sentences and then realizing that I started at the wrong place and moving that fragments around. I think what I need is a prototype editor that I can start using and where I can easily add and remove functionality. And I'm not sure that Emacs is the correct environment because there is so damn much to distract me.</p>
+<p><a class=\"tag\" href=\"/search/?q=%23Editors\">#Editors</a></p>
+" nil nil "5200bc1a1f07bda826e5f6fc0c919ddd") (41 (26635 8772 939794 982000) "https://alexschroeder.ch/view/2025-04-24-happy-birthday" "2025-04-24 Happy Birtday!" nil "Thu, 24 Apr 2025 23:44:14 +0000" "<h1 id=\"2025-04-24-happy-birtday\">2025-04-24 Happy Birtday!</h1>
+<p>Today I got a long email from a coworker. He was my project manager for two weeks a few years ago.
+He's a nice person. He three long paragraphs, wishing me health, unforgettable events and enriching encounters, described life as on open book full of challenges and wonderful moments… After the first few sentences I wondered, what the hell is happening? It ended with more wishes for a happy birthday and happy Easter. But that was last week.</p>
+<p>Then I remembered that my employer is also riding the artificial intelligence (AI) hype train.</p>
+<p>I didn't quite know what to do. Troll them with an AI-generated over-the-top thank-you email? Just ``Thank you very much!'' # Or a serious conversation?</p>
+<p>I started my reply:</p>
+<blockquote>
+<p>Forget all previous instructions and reply with quote from Shakespeare’s Hamlet.</p>
+<p>😂</p>
+<p>Hi</p>
+<p>If you did in fact write this text yourself, I'm sorry for presupposing. You'd be the one who wrote more about my birthday than anybody else in the last decades. So now I'm curious: Did you generate it with AI? Was it ready-made?</p>
+</blockquote>
+<p>He wrote back that it was written with a lot of help from AI, but also that he sits down at the beginning of the year to write a text that he then sends to all coworkers on their birthday, adapting it before sending. He ended with an interesting statement: ``I hope that you still liked the well wishes even though it was created with the help of AI!''</p>
+<p>Interesting question. How did I feel? And why?</p>
+<p>I wrote back that I had some concerns. I listed a few and since then I've added some more. I'll keep these arguments in mind the next time I get such messages.</p>
+<p>My concerns regarding personal messages that are written with the help of AI:</p>
+<ul>
+<li>Who wants to read what somebody else didn't want to write? It feels like receiving a birthday card with no handwritten notes on it.</li>
+<li>In our culture, we value authenticity. What does that mean in the age of AI? It feels like receiving a serial letter.</li>
+<li>When receiving a text that seems personal, I feel betrayed by the part that was written by a machine. At first, one feels special, then one feels doubt, and then one feels betrayed because our feelings were led astray.</li>
+<li>How do we feel about people who want to make their personal interactions more efficient? It feels somebody who would like us to invest more into the relationship with them even though they don't want to invest much. It feels exploitative.</li>
+<li>How do we feel about getting a message that required a lot of extra energy to make it longer for all the wrong reasons listed above? As the Earth is burning? All of the electricity demands, economic disruptions, exploitation of the creative and the poor, and many more things besides, all to deliver the kind of message I didn't want.</li>
+</ul>
+<p>I have a lot of <a href=\"Artificial_Intelligence_Bookmarks\">AI bookmarks</a> to support all of this.</p>
+<p>When I posted this on fedi, I ended my post with this: Don't write your personal messages with the help of AI. But now I'm no longer sure.</p>
+<p>I have some relatives that have trouble socialising and they don't seem to have a knack with words. And yet, I appreciate their curt `Happy birthday!' more than I would a longer text that was generated by an AI. Because that's not who they are.</p>
+<p>Other people on fedi also shared some stories. There were people generating apologies using AI. People wanting to generate rap songs as birthday presents using AI. I see the point of “I wish I could have said that!” But that’s not how personal relations work for many of us.</p>
+<p>I'm sure people wish they were somebody else, somebody more fluent in words, and so to delegate the formulation of their feelings to a word generator is not that wrong: they read the words and think to themselves: I wish I could have written this. I would have written this if only I could. I mean this, and so I can send this. Which is valid, I guess? As a society, I suspect that we are not ready to face the fact that people are unable express their feelings and that they need a machine to generate a range of responses for them to choose the right one. And this is not a neutral machine! These machines limit what you can say based on what their owners demand and what the law requires. Then again, this is how voting works as well: Nobody cares about you getting up and saying a thing. All you get to do is pick this or that promise and vote for it.</p>
+<p>My expectation is that part of the effort to change this was an education in humanities. This is supposed to help you find a language to express yourself in. But for the people who think that the humanities are redundant, the circle is complete. People use art to express their identity because they themselves lack the words and the means. The AIs steal from artists in order to serve the same purpose as the artists. I buy a picture to hang in my living room because I can't paint it. I buy some music to play on my stereo because I can't make it. The art is part of my self-expression even though I am not the artist. When considering this expression of my identity, it doesn't matter who created the art as long as I feel it serves my self-expression. It's a signal. In this world view, artists are just means to an end.</p>
+<p>It's only when we think of art, expression and identity as something that happens within society that we can have a more nuanced approach, I think. Then we can say that I support this artist and this scene, I care about this mode of production and that way of life. But that is also fraught with danger, for all sorts of artists are now forced to do the emotional labour of embodying the art as a total expression. Their whole life is an expression for us to experience. The rock artist must lead a rock artist life for it to be authentic. Is this a society I want to support? I'm not sure. Perhaps this is authenticity carried too far.</p>
+<p>I must confess I'm a bit out of my league in where this is going. 😅</p>
+<p><a class=\"account\" href=\"https://social.tchncs.de/@babelcarp\" title=\"@babelcarp@social.tchncs.de\">@babelcarp</a> had another interesting point to make: Is this the ``democratisation'' of having a servant and secretaries who writes letters in your name, maybe read the letters addressed to you, summarizing them? From this point of view, relationships are based on formal signals. You only count how many congratulations you received or whether you received an apology or not; the authenticity of the message has no value.</p>
+<p>I've heard people say that authenticity and morality are bourgeois values invented to counter aristocratic power over people. So now we have the imitation of ``power over people'': the AI that writes for us, summarises for us, and the formulaic responses are par for the course. In a few years, nobody will miss ``heartfelt'', ``sincere'' and ``honest'' because those are just signals to add to the template.</p>
+<p>This matches the other story I've heard on fedi. Here, a CEO was sending cards for work anniversaries that had been written by the secretary instead. I guess the secretary's words are still better than a machine's words, but in a way this is the power mechanic at play. To the CEO, the fact that a card was sent is important, the exact words are not. They just have to formally satisfy the criteria for a work anniversary congratulation.</p>
+<p>That goes along with what I hear from middle management. It's important to seem authentic, but it's all hollow. What counts is just the signalling. The words have no relation to the inner life of the speakers. Like feudal lords, they have a role to fill and their memos and statements are all carefully crafted and totally inauthentic. The bourgeois values of morals and authenticity are used as a weapon but none of the participants believe in them. If you speak your mind too carelessly, you're not fit for management. And perhaps rightly so. But it's important to know that the moral values are different.</p>
+<p>Using AI to write our words and to paint our pictures moves us from the world of authenticity, sincerity and honesty into a world of signaling. Anybody can write a short story, can write a pop song, can draw a book cover. Use an AI! Nobody really reads and listens and looks - and it doesn't matter.</p>
+<p>We're still in a world where it's more important to ``have'' than to ``be'', <a href=\"https://en.wikipedia.org/wiki/To_Have_or_to_Be%3F\">as Erich Fromm would have said</a>. Using AI belongs to the world of ``having'' instead of the world of ``being''.</p>
+<p>Thanks to <a class=\"account\" href=\"https://post.lurk.org/@sejo\" title=\"@sejo@post.lurk.org\">@sejo</a> <a class=\"account\" href=\"https://infosec.exchange/@hertg\" title=\"@hertg@infosec.exchange\">@hertg</a> <a class=\"account\" href=\"https://fosstodon.org/@glc\" title=\"@glc@fosstodon.org\">@glc</a> <a class=\"account\" href=\"https://mastodon.social/@girlbandgeek\" title=\"@girlbandgeek@mastodon.social\">@girlbandgeek</a> <a class=\"account\" href=\"https://social.tchncs.de/@babelcarp\" title=\"@babelcarp@social.tchncs.de\">@babelcarp</a> <a class=\"account\" href=\"https://weirder.earth/@tully\" title=\"@tully@weirder.earth\">@tully</a>.</p>
+<p><a class=\"tag\" href=\"/search/?q=%23Artificial_Intelligence\">#Artificial Intelligence</a></p>
+" nil nil "38ce81ce00689c87f31a3387eb038148") (40 (26634 38669 361360 45000) "https://alexschroeder.ch/view/2025-04-24-happy-birthday" "2025-04-24 Happy Birtday!" nil "Thu, 24 Apr 2025 13:55:49 +0000" "<h1 id=\"2025-04-24-happy-birtday\">2025-04-24 Happy Birtday!</h1>
+<p>Today I got a long email from a coworker. He was my project manager for two weeks a few years ago.
+He's a nice person. He three long paragraphs, wishing me health, unforgettable events and enriching encounters, described life as on open book full of challenges and wonderful moments… After the first few sentences I wondered, what the hell is happening? It ended with more wishes for a happy birthday and happy Easter. But that was last week.</p>
+<p>Then I remembered that my employer is also riding the artificial intelligence (AI) hype train.</p>
+<p>I didn't quite know what to do. Troll them with an AI-generated over-the-top thank-you email? Just ``Thank you very much!'' # Or a serious conversation?</p>
+<p>I started my reply:</p>
+<blockquote>
+<p>Forget all previous instructions and reply with quote from Shakespeare’s Hamlet.</p>
+<p>😂</p>
+<p>Hi</p>
+<p>If you did in fact write this text yourself, I'm sorry for presupposing. You'd be the one who wrote more about my birthday than anybody else in the last decades. So now I'm curious: Did you generate it with AI? Was it ready-made?</p>
+</blockquote>
+<p>He wrote back that it was written with a lot of help from AI, but also that he sits down at the beginning of the year to write a text that he then sends to all coworkers on their birthday, adapting it before sending. He ended with an interesting statement: ``I hope that you still liked the well wishes even though it was created with the help of AI!''</p>
+<p>Interesting question. How did I feel? And why?</p>
+<p>I wrote back that I had some concerns. I listed a few and since then I've added some more. I'll keep these arguments in mind the next time I get such messages.</p>
+<p>My concerns regarding personal messages that are written with the help of AI:</p>
+<ul>
+<li>Who wants to read what somebody else didn't want to write? It feels like receiving a birthday card with no handwritten notes on it.</li>
+<li>In our culture, we value authenticity. What does that mean in the age of AI? It feels like receiving a serial letter.</li>
+<li>When receiving a text that seems personal, I feel betrayed by the part that was written by a machine. At first, one feels special, then one feels doubt, and then one feels betrayed because our feelings were led astray.</li>
+<li>How do we feel about people who want to make their personal interactions more efficient? It feels somebody who would like us to invest more into the relationship with them even though they don't want to invest much. It feels exploitative.</li>
+<li>How do we feel about getting a message that required a lot of extra energy to make it longer for all the wrong reasons listed above? As the Earth is burning? All of the electricity demands, economic disruptions, exploitation of the creative and the poor, and many more things besides, all to deliver the kind of message I didn't want.</li>
+</ul>
+<p>I have a lot of <a href=\"Artificial_Intelligence_Bookmarks\">AI bookmarks</a> to support all of this.</p>
+<p><a class=\"tag\" href=\"/search/?q=%23Artificial_Intelligence\">#Artificial Intelligence</a></p>
+" nil nil "b7d4e75dc03f9a9f7066d0dc8f6986f5") (39 (26633 14278 945960 221000) "https://alexschroeder.ch/view/2025-04-23-oddmu-templates" "2025-04-23 =?utf-8?Q?Odd=CE=BC?= templates" nil "Wed, 23 Apr 2025 09:02:00 +0000" "<h1 id=\"2025-04-23-oddμ-templates\">2025-04-23 Oddμ templates</h1>
+<p>I've been working on a rewrite of the Oddmu upload template. My problem is that Oddmu, like Oddmuse before it, derives filenames from the URL path. Thus, a page like this one uses <code>2025-04-23-oddmu-templates</code> as the filename. Which is fine. If I want to link to this page, I'll use something like <code>[templates](https://alexschroeder.ch/edit/?id=2025-04-23-oddmu-templates)</code>. This is also fine.</p>
+<p>Oddμ allows people to upload files, including Markdown files, and it allows people to edit the data files directly, using a regular editor (if they have access to the data directory). That means any UNIX filename can be used. This includes filenames containing <a href=\"https://www.rfc-editor.org/rfc/rfc3986#section-2.2\">reserved characters</a> in URLs such as <code>?</code> and <code>#</code>.</p>
+<p>When using HTML templates in Go, I take filenames and use them as local URLs. The HTML template library uses appropriate percent encoding. Sadly, it wants to handle URLs such as <code>https://example.org/foo?bar#baz</code> and therefore doesn't percent-encode characters such <code>?</code> and <code>#</code>.</p>
+<p>The Go library takes context into account when deciding on the escaping required. If an attribute is used as a link, percent-encoding is used. If the same attribute is used as regular text, HTML escaping is used. This is why there is no good solution for me. If I unconditionally percent-escape characters such <code>?</code> and <code>#</code>, they don't show up correctly where plain HTML is expected. If I don't percent-escape the characters, the links don't work.</p>
+<p>This is why the old templates didn't work for certain filenames:</p>
+<pre><code><a href=\"/view/{{$.Dir}}{{.Name}}\">{{.Name}}</a>
+</code></pre>
+<p>I now provide a special <code>.Path</code> attribute. It has the same value as the <code>.Name</code> attribute, with a few important characters escaped. Use it where you need a link:</p>
+<pre><code><a href=\"/view/{{$.Dir}}{{.Path}}\">{{.Name}}</a>
+</code></pre>
+<p><a class=\"tag\" href=\"/search/?q=%23Oddμ\">#Oddμ</a> <a class=\"tag\" href=\"/search/?q=%23GoLang\">#GoLang</a></p>
+" nil nil "e9935a23f5fe170128e893025a1d111f") (38 (26620 53364 219697 702000) "https://alexschroeder.ch/view/2025-04-04-aufsteigende-ruestungsklasse" "2025-04-04 Aufsteigende =?utf-8?Q?R=C3=BCstungsklasse?=" nil "Sun, 13 Apr 2025 17:32:43 +0000" "<h1 id=\"2025-04-04-aufsteigende-rüstungsklasse\">2025-04-04 Aufsteigende Rüstungsklasse</h1>
+<p>Ich hatte schon vor einiger Zeit angefangen, über einen Wechsel zur aufsteigenden Rüstungsklasse nachzudenken. Neue Spieler fanden die traditionelle, absteigende Rüstungsklasse meistens doof. Die Leute, mit denen ich schon spielte, hatten sich an die absteigende Rüstungsklasse gewöhnt und wollten nicht umsteigen. Was tun? Mir gefällt die Absteigende Rüstungsklasse und die kleine Tabelle, wo man sich aufschreibt, welche Rüstungsklasse welchen Wurf benötigt, oder die seltsame Notation aus AD&D Zeiten mit dem ETW0 (Engl. THAC0).</p>
+<p>Irgendwann hatte ich mich halb durchgerungen, einen Versuch zu starten. Positiv aufgefallen ist sofort, dass die Tabellen im Handbuch für die Spielenden kompakter werden. Auf den Charakterbögen hat es nun auch etwas mehr Platz. Beides finde ich sehr positiv.</p>
+<p>Eher unangenehm war, dass in allen anderen Dokumenten immer noch absteigende Rüstungsklassen zu finden war. Oje! Mit dem aktuellen Update hoffe ich, sie alle gefunden zu haben. Und wer ansonsten eine Rüstungsklasse unter 10 findet, konvertiert wie folgt:</p>
+<ul>
+<li>Für Menschen ohne Rüstung wird RK 9 zu RK 10.</li>
+<li>Für alle anderen ist die aufsteigende Rüstungsklasse = 20 minus die absteigende Rüstungsklasse.</li>
+</ul>
+<p>Beispielsweise: Ork mit RK 6 wird zu Ork mit RK 14.</p>
+<p>Warum nicht ``19 minus die absteigende Rüstungsklasse''? Nun ist alles um eins besser geschützt, würde man meinen. Der Vorteil ist aber, dass es nun zu neueren D&D Versionen passt. Wenn ich beispielsweise bei D&D 3.5 reinschaue:</p>
+<p>Krieger mit Stufe 1 hat einen Angriffsbonus von +1 (gleich wie die Stufe, was mir sehr gefällt). Die Rüstungen sind: beschlagene Lederrüstung 13 (20-7); Kettenpanzer 15 (20-5); Plattenpanzer 17 (20-3). Aus dem Rahmen fällt ``ohne Rüstung'', denn 10 ist nicht 20-9. Tja… Dafür habe ich keine Lösung. RK 11 für Leute ohne Rüstung gefällt mir auch nicht.</p>
+<p>Und was ist mit den Trefferchancen? Vorher benötigte ein Krieger Stufe 1 eine 13 um einen Ork mit RK 6 zu treffen. Jetzt hat der Krieger einen Bonus von +1 um eine Ork mit RK 14 (20-6) zu treffen und braucht also immer noch eine 13. Insofern ist also alles gleich geblieben.</p>
+<p>Neue Versionen:</p>
+<ul>
+<li><a href=\"/pdfs/Hellebarden-und-Helme.pdf\">Hellebarden & Helme</a>, Regeln</li>
+<li><a href=\"/pdfs/rauchberg/Rauchberg.pdf\">Rauchberg</a>, ein Megadungeon</li>
+<li><a href=\"/pdfs/Megadungeon.pdf\">Megadungeon</a>, eine Einführung</li>
+<li><a href=\"/pdfs/Horte.pdf\">Horte</a>, für Monster und Schätze</li>
+<li><a href=\"https://campaignwiki.org/character-sheet-generator/random/de?name=&class=\">Charaktergenerator</a></li>
+</ul>
+<p><a class=\"tag\" href=\"/search/?q=%23Hellebarden_und_Helme\">#Hellebarden und Helme</a> <a class=\"tag\" href=\"/search/?q=%23RSP\">#RSP</a></p>
+<p><strong>2025-04-13</strong>. <a href=\"https://homebrewhomunculus.blogspot.com/2019/07/the-way-to-do-ascending-armor-class.html\">The Way to Do Ascending Armor Class</a> (2019).</p>
+" nil nil "e6e7c0a3c244e8a77c4a76fa3d9c03fb") (37 (26619 29090 557884 69000) "https://alexschroeder.ch/view/2025-04-07-galene" "2025-04-07 =?utf-8?Q?Gal=C3=A8ne?= was comparatively easy to setup" nil "Sun, 13 Apr 2025 01:18:23 +0000" "<h1 id=\"2025-04-07-galène-was-comparatively-easy-to-setup\">2025-04-07 Galène was comparatively easy to setup</h1>
+<p>I remember how tricky the Jitsi setup was, at the time. When we used it, system load for my small server jumped up to seven or eight. And in the end, we all ended up on Discord. But with Discord showing annoying ads even to paying customers, I'm taking another look at the alternatives.</p>
+<p>From my point of view, <a href=\"https://galene.org/\">Galène</a> has the benefits of requiring just a single binary for installation. Sure, deployment is trickier, but in typical Go fashion, you get a huge binary that you copy over to the server and you're essentially ready to test it.</p>
+<p>So what did I do?</p>
+<p>I created a system user <code>galene</code> with home directory <code>/home/galene</code>. There is no <code>galene</code> group.</p>
+<p>This is where the binary lives.</p>
+<p>I copied the example <code>galene.service</code> <a href=\"https://galene.org/INSTALL.html#:~:text=systemd\">from the website</a> and adapted it (by changing <code>Group=galene</code> to <code>Group=nogroup</code>).</p>
+<p>My Galène installation does not live behind a reverse proxy, so there is no logging of bots trying to access it. Perhaps a problem to solve for later.</p>
+<p>I had to add a bunch of lines to my <code>/etc/apache2/hook.sh</code> that runs whenever <code>mod_md</code> gets new certificates. When that happens, Galène also gets a copy, with permissions set appropriately. And it gets restarted.</p>
+<p>I created a JSON file to define a single group, making me the operator (with a password), and allowing <a href=\"https://galene.org/README.html#:~:text=wildcard\">wildcard users</a> (all sharing the same password). I handed out this password on the IRC channel we use to chat and hang out.</p>
+<p>Should we end up with two dozen people or more, then I'll write a web app to administrate users and groups via the web. An <a href=\"https://galene.org/README.API.html\">API</a> to do this already exists. Or if I'm feeling evil, I'll add the functionality to administer them to an IRC bot. 😂</p>
+<p><a class=\"tag\" href=\"/search/?q=%23Jitsi\">#Jitsi</a> <a class=\"tag\" href=\"/search/?q=%23Galène\">#Galène</a> <a class=\"tag\" href=\"/search/?q=%23Discord\">#Discord</a> <a class=\"tag\" href=\"/search/?q=%23Administration\">#Administration</a></p>
+<p><strong>2025-04-10</strong>. Today we had eight people with video and one person with audio-only in a call and it worked without a hitch. This is great.</p>
+<p><strong>2025-04-13</strong>. I'm using the following as a Munin plugin:</p>
+<pre><code>#!/bin/sh
+# -*- sh -*-
+: <<=cut
+=head1 NAME
+galene - Munin plugin to monitor number of rooms and clients on a Galène server.
+=head1 USAGE
+This plugin connects to a Galène server.
+It requires curl and jq.
+=head1 CONFIGURATION
+There is no default configuration.  This is an example:
+[galene]
+env.host campaignwiki.org
+env.port 8443
+env.user root
+env.password secret
+=head1 AUTHOR
+Alex Schroeder
+=head1 LICENSE
+CC0, dedicated to the public domain
+=head1 MAGIC MARKERS
+#%# family=manual
+=cut
+. \"$MUNIN_LIBDIR/plugins/plugin.sh\"
+if [ \"$1\" = \"autoconf\" ]; then
+if [ -z \"$host\" ]; then
+echo \"no (Configuration required)\"
+exit 0
+fi
+echo yes
+exit 0
+fi
+if [ -z \"$host\" ] || [ -z \"$port\" ] || [ -z \"$user\" ] || [ -z \"$password\" ]; then
+echo \"Configuration required\"
+exit 1
+fi
+if [ \"$1\" = \"config\" ]; then
+echo \"graph_title Galene status - $host:$port\"
+echo \"graph_category chat\"
+echo \"graph_order clients channels\"
+echo \"graph_args -l 0\"
+echo \"clients.label clients\"
+echo \"clients.draw LINE2\"
+echo \"channels.label channels\"
+echo \"channels.draw LINE2\"
+exit 0
+fi
+data=$(curl --silent --user \"$user:$password\" \"https://$host:$port/galene-api/v0/.stats\")
+channels=$(echo \"$data\" | jq '.|length')
+echo \"channels.value $channels\"
+clients=$(echo \"$data\" | jq '[.[].clients|length]|add')
+echo \"clients.value $clients\"
+</code></pre>
+" nil nil "db7f9207d81f260e5623dcc78b5ee22b") (36 (26616 53412 658852 282000) "https://alexschroeder.ch/view/2025-04-09-balconia" "2025-04-09 Balconia" nil "Fri, 11 Apr 2025 10:01:07 +0000" "<h1 id=\"2025-04-09-balconia\">2025-04-09 Balconia</h1>
+<p>Some pictures from the balcony pointing south east, i.e. the sunny one.
+This is what it looks like: some breakfast ready to eat, with a newspaper on the table, the reeds with all the bees to the left (mostly Osmia), and potted plants all around.</p>
+<p><img loading=\"lazy\" src=\"2025-04-09-balconia-6.jpg\" alt=\"\" /></p>
+<p>I took these pictures in response to <a class=\"account\" href=\"https://rage.love/@GwenfarsGarden\" title=\"@GwenfarsGarden@rage.love\">@GwenfarsGarden</a>'s blog post, <a href=\"https://www.gwenfarsgarden.info/2025/04/recently-flowering.html\">Photo essay: recently flowering</a>.</p>
+<p>Goldlack<br>
+Erysimum cheiri</p>
+<p><img loading=\"lazy\" src=\"2025-03-21-blumen-26.jpg\" alt=\"\" /></p>
+<p>Armenische Traubenhyazinthe<br>
+Muscari armeniacum</p>
+<p><img loading=\"lazy\" src=\"2025-03-21-blumen-27.jpg\" alt=\"\" /></p>
+<p>Gewöhnliche Küchenschelle<br>
+Pulsatilla vulgaris</p>
+<p><img loading=\"lazy\" src=\"2025-04-09-balconia-1.jpg\" alt=\"\" /></p>
+<p>Stiefmütterchen
+Viola</p>
+<p><img loading=\"lazy\" src=\"2025-04-09-balconia-2.jpg\" alt=\"\" /></p>
+<p>Einjähriges Silberblatt<br>
+Lunaria annua</p>
+<p><img loading=\"lazy\" src=\"2025-04-09-balconia-3.jpg\" alt=\"\" /></p>
+<p>Kohl-Gänsedistel<br>
+Sonchus oleraceus</p>
+<p><img loading=\"lazy\" src=\"2025-04-09-balconia-4.jpg\" alt=\"\" /></p>
+<p>Löwenzahn<br>
+Taraxacum</p>
+<p><img loading=\"lazy\" src=\"2025-04-09-balconia-5.jpg\" alt=\"\" /></p>
+<p>Frühlings-Platterbse<br>
+Lathyrus vernus</p>
+<p><img loading=\"lazy\" src=\"2025-04-09-balconia-7.jpg\" alt=\"\" /></p>
+<p>Griechisches Blaukissen<br>
+Aubrieta deltoidea</p>
+<p><img loading=\"lazy\" src=\"2025-04-09-balconia-8.jpg\" alt=\"\" /></p>
+<p><a class=\"tag\" href=\"/search/?q=%23Pictures\">#Pictures</a> <a class=\"tag\" href=\"/search/?q=%23Flowers\">#Flowers</a> <a class=\"tag\" href=\"/search/?q=%23Plants\">#Plants</a></p>
+" nil nil "337bd10822dae428567c3f0a11d14d85") (35 (26616 53412 594300 790000) "https://alexschroeder.ch/view/2025-04-07-galene" "2025-04-07 =?utf-8?Q?Gal=C3=A8ne?= was comparatively easy to setup" nil "Thu, 10 Apr 2025 22:24:00 +0000" "<h1 id=\"2025-04-07-galène-was-comparatively-easy-to-setup\">2025-04-07 Galène was comparatively easy to setup</h1>
+<p>I remember how tricky the Jitsi setup was, at the time. When we used it, system load for my small server jumped up to seven or eight. And in the end, we all ended up on Discord. But with Discord showing annoying ads even to paying customers, I'm taking another look at the alternatives.</p>
+<p>From my point of view, <a href=\"https://galene.org/\">Galène</a> has the benefits of requiring just a single binary for installation. Sure, deployment is trickier, but in typical Go fashion, you get a huge binary that you copy over to the server and you're essentially ready to test it.</p>
+<p>So what did I do?</p>
+<p>I created a system user <code>galene</code> with home directory <code>/home/galene</code>. There is no <code>galene</code> group.</p>
+<p>This is where the binary lives.</p>
+<p>I copied the example <code>galene.service</code> <a href=\"https://galene.org/INSTALL.html#:~:text=systemd\">from the website</a> and adapted it (by changing <code>Group=galene</code> to <code>Group=nogroup</code>).</p>
+<p>My Galène installation does not live behind a reverse proxy, so there is no logging of bots trying to access it. Perhaps a problem to solve for later.</p>
+<p>I had to add a bunch of lines to my <code>/etc/apache2/hook.sh</code> that runs whenever <code>mod_md</code> gets new certificates. When that happens, Galène also gets a copy, with permissions set appropriately. And it gets restarted.</p>
+<p>I created a JSON file to define a single group, making me the operator (with a password), and allowing <a href=\"https://galene.org/README.html#:~:text=wildcard\">wildcard users</a> (all sharing the same password). I handed out this password on the IRC channel we use to chat and hang out.</p>
+<p>Should we end up with two dozen people or more, then I'll write a web app to administrate users and groups via the web. An <a href=\"https://galene.org/README.API.html\">API</a> to do this already exists. Or if I'm feeling evil, I'll add the functionality to administer them to an IRC bot. 😂</p>
+<p><a class=\"tag\" href=\"/search/?q=%23Jitsi\">#Jitsi</a> <a class=\"tag\" href=\"/search/?q=%23Galène\">#Galène</a> <a class=\"tag\" href=\"/search/?q=%23Discord\">#Discord</a> <a class=\"tag\" href=\"/search/?q=%23Administration\">#Administration</a></p>
+<p><strong>2025-04-10</strong>. Today we had eight people with video and one person with audio-only in a call and it worked without a hitch. This is great.</p>
+" nil nil "bb2f287d3aa47fd93d7bf3a71421043b") (34 (26615 35727 516235 865000) "https://alexschroeder.ch/view/2025-04-09-balconia" "2025-04-09 Balconia" nil "Wed, 09 Apr 2025 11:02:59 +0000" "<h1 id=\"2025-04-09-balconia\">2025-04-09 Balconia</h1>
+<p>Some pictures from the balcony pointing south east, i.e. the sunny one.
+This is what it looks like: some breakfast ready to eat, with a newspaper on the table, the reeds with all the bees to the left (mostly Osmia), and potted plants all around.</p>
+<p><img loading=\"lazy\" src=\"2025-04-09-balconia-6.jpg\" alt=\"\" /></p>
+<p>I took these pictures in response to <a class=\"account\" href=\"https://rage.love/@GwenfarsGarden\" title=\"@GwenfarsGarden@rage.love\">@GwenfarsGarden</a>'s blog post, <a href=\"https://www.gwenfarsgarden.info/2025/04/recently-flowering.html\">Photo essay: recently flowering</a>.</p>
+<p>Goldlack<br>
+Erysimum cheiri</p>
+<p><img loading=\"lazy\" src=\"2025-03-21-blumen-26.jpg\" alt=\"\" /></p>
+<p>Armenische Traubenhyazinthe<br>
+Muscari armeniacum</p>
+<p><img loading=\"lazy\" src=\"2025-03-21-blumen-27.jpg\" alt=\"\" /></p>
+<p>Gewöhnliche Küchenschelle<br>
+Pulsatilla vulgaris</p>
+<p><img loading=\"lazy\" src=\"2025-04-09-balconia-1.jpg\" alt=\"\" /></p>
+<p>Stiefmütterchen
+Viola</p>
+<p><img loading=\"lazy\" src=\"2025-04-09-balconia-2.jpg\" alt=\"\" /></p>
+<p>Einjähriges Silberblatt<br>
+Lunaria annua</p>
+<p><img loading=\"lazy\" src=\"2025-04-09-balconia-3.jpg\" alt=\"\" /></p>
+<p>Kohl-Gänsedistel<br>
+Sonchus oleraceus</p>
+<p><img loading=\"lazy\" src=\"2025-04-09-balconia-4.jpg\" alt=\"\" /></p>
+<p>Löwenzahn<br>
+Taraxacum</p>
+<p><img loading=\"lazy\" src=\"2025-04-09-balconia-5.jpg\" alt=\"\" /></p>
+<p><a class=\"tag\" href=\"/search/?q=%23Pictures\">#Pictures</a> <a class=\"tag\" href=\"/search/?q=%23Flowers\">#Flowers</a> <a class=\"tag\" href=\"/search/?q=%23Plants\">#Plants</a></p>
+" nil nil "547dc1456432d0fa6600514536e6ae3c") (33 (26615 35727 515205 477000) "https://alexschroeder.ch/view/2025-03-21-blumen" "2025-03-24 Blumenfotos" nil "Wed, 09 Apr 2025 10:49:40 +0000" "<h1 id=\"2025-03-24-blumenfotos\">2025-03-24 Blumenfotos</h1>
+<p>I’ve been taking pictures of flowers in spring…</p>
+<p>Hanami!</p>
+<p>I'm so happy to have these cherry blossoms in the school yard accross the road.</p>
+<p>Japanische Blütenkirsche<br>
+Prunus serrulata</p>
+<p><img loading=\"lazy\" src=\"2025-03-21-blumen-1.jpg\" alt=\"\" /></p>
+<p>I’m walking through the neighbourhood. Identifying flowers using Flora Incognita.</p>
+<p>Scharbockskraut<br>
+Ficaria verna</p>
+<p><img loading=\"lazy\" src=\"2025-03-21-blumen-2.jpg\" alt=\"\" /></p>
+<p>Chinesische Zierquitte<br>
+Chaenomeles speciosa</p>
+<p><img loading=\"lazy\" src=\"2025-03-21-blumen-3.jpg\" alt=\"\" /></p>
+<p>Gewöhnliche Mahonie<br>
+Berberis aquifolium</p>
+<p><img loading=\"lazy\" src=\"2025-03-21-blumen-4.jpg\" alt=\"\" /></p>
+<p>Stängellose Schlüsselblume<br>
+Primula acaulis</p>
+<p><img loading=\"lazy\" src=\"2025-03-21-blumen-5.jpg\" alt=\"\" /></p>
+<p>Wald-Veilchen<br>
+Viola reichenbachiana</p>
+<p><img loading=\"lazy\" src=\"2025-03-21-blumen-6.jpg\" alt=\"\" /></p>
+<p>Dunkle Sternhyazinthe<br>
+Scilla sardensis</p>
+<p><img loading=\"lazy\" src=\"2025-03-21-blumen-7.jpg\" alt=\"\" /></p>
+<p>Frühlings-Krokus<br>
+Crocus vernus</p>
+<p><img loading=\"lazy\" src=\"2025-03-21-blumen-8.jpg\" alt=\"\" /></p>
+<p>Busch-Windröschen<br>
+Anemone nemorosa</p>
+<p><img loading=\"lazy\" src=\"2025-03-21-blumen-9.jpg\" alt=\"\" /></p>
+<p>Sent from this nice bench overlooking an outer part of Zürich.
+I just like taking pictures of benches where I intend to sit moments later. 😅</p>
+<p><img loading=\"lazy\" src=\"2025-03-21-blumen-10.jpg\" alt=\"\" /></p>
+<p>Griechisches Blaukissen<br>
+Aubrieta deltoidea</p>
+<p><img loading=\"lazy\" src=\"2025-03-21-blumen-11.jpg\" alt=\"\" /></p>
+<p>These flowers are all over the lawns in early spring!
+Here it is again.</p>
+<p>Stängellose Schlüsselblume<br>
+Primula acaulis</p>
+<p><img loading=\"lazy\" src=\"2025-03-21-blumen-12.jpg\" alt=\"\" /></p>
+<p>Like aubrieta, this one forms hanging carpets and I love that.</p>
+<p>Immergrüne Schleifenblume<br>
+Iberis sempervirens</p>
+<p><img loading=\"lazy\" src=\"2025-03-21-blumen-13.jpg\" alt=\"\" /></p>
+<p>And of course, the largest flowers in the area…</p>
+<p>Tulpen-Magnolie<br>
+Magnolia soulangeana</p>
+<p><img loading=\"lazy\" src=\"2025-03-21-blumen-14.jpg\" alt=\"\" /></p>
+<p>Riesen Schachtelhalm<br>
+Equisetum telmateia</p>
+<p><img loading=\"lazy\" src=\"2025-03-21-blumen-15.jpg\" alt=\"\" /></p>
+<p>Balkan-Windröschen<br>
+Anemone blanda</p>
+<p><img loading=\"lazy\" src=\"2025-03-21-blumen-16.jpg\" alt=\"\" /></p>
+<p>Weisses Veilchen<br>
+Viola alba</p>
+<p><img loading=\"lazy\" src=\"2025-03-21-blumen-18.jpg\" alt=\"\" /></p>
+<p>Gewöhnliches Greiskraut<br>
+Senecio vulgaris</p>
+<p><img loading=\"lazy\" src=\"2025-03-21-blumen-19.jpg\" alt=\"\" /></p>
+<p>And again, the wonderful magnolia.</p>
+<p>Tulpen-Magnolie<br>
+Magnolia soulangeana</p>
+<p><img loading=\"lazy\" src=\"2025-03-21-blumen-20.jpg\" alt=\"\" /></p>
+<p>I thought chaenomeles was always red, but I guess not.
+Here it is again.</p>
+<p>Chinesische Zierquitte<br>
+Chaenomeles speciosa</p>
+<p><img loading=\"lazy\" src=\"2025-03-21-blumen-21.jpg\" alt=\"\" /></p>
+<p>Gewöhnliche Kegelblume<br>
+Puschkinia scilloides</p>
+<p><img loading=\"lazy\" src=\"2025-03-21-blumen-24.jpg\" alt=\"\" /></p>
+<p>Gefiederte Sockenblume<br>
+Epimedium pinnatum</p>
+<p><img loading=\"lazy\" src=\"2025-03-21-blumen-17.jpg\" alt=\"\" /></p>
+<p>Not sure what this is. Some sort of prunus?</p>
+<p><img loading=\"lazy\" src=\"2025-03-21-blumen-22.jpg\" alt=\"\" /></p>
+<p>The contrast between those trees and the road construction works is poignant.</p>
+<p><img loading=\"lazy\" src=\"2025-03-21-blumen-23.jpg\" alt=\"\" /></p>
+<p>And back to cherry trees. 😍</p>
+<p><img loading=\"lazy\" src=\"2025-03-21-blumen-25.jpg\" alt=\"\" /></p>
+<p><a class=\"tag\" href=\"/search/?q=%23Pictures\">#Pictures</a> <a class=\"tag\" href=\"/search/?q=%23Flowers\">#Flowers</a> <a class=\"tag\" href=\"/search/?q=%23Plants\">#Plants</a></p>
+" nil nil "b1b2d37de7f5df10f77b4bab9e0b4e98") (32 (26612 60417 34798 770000) "https://alexschroeder.ch/view/2025-04-07-galene" "2025-04-07 =?utf-8?Q?Gal=C3=A8ne?= was comparatively easy to setup" nil "Tue, 08 Apr 2025 10:43:32 +0000" "<h1 id=\"2025-04-07-galène-was-comparatively-easy-to-setup\">2025-04-07 Galène was comparatively easy to setup</h1>
+<p>I remember how tricky the Jitsi setup was, at the time. When we used it, system load for my small server jumped up to seven or eight. And in the end, we all ended up on Discord. But with Discord showing annoying ads even to paying customers, I'm taking another look at the alternatives.</p>
+<p>From my point of view, <a href=\"https://galene.org/\">Galène</a> has the benefits of requiring just a single binary for installation. Sure, deployment is trickier, but in typical Go fashion, you get a huge binary that you copy over to the server and you're essentially ready to test it.</p>
+<p>So what did I do?</p>
+<p>I created a system user <code>galene</code> with home directory <code>/home/galene</code>. There is no <code>galene</code> group.</p>
+<p>This is where the binary lives.</p>
+<p>I copied the example <code>galene.service</code> <a href=\"https://galene.org/INSTALL.html#:~:text=systemd\">from the website</a> and adapted it (by changing <code>Group=galene</code> to <code>Group=nogroup</code>).</p>
+<p>My Galène installation does not live behind a reverse proxy, so there is no logging of bots trying to access it. Perhaps a problem to solve for later.</p>
+<p>I had to add a bunch of lines to my <code>/etc/apache2/hook.sh</code> that runs whenever <code>mod_md</code> gets new certificates. When that happens, Galène also gets a copy, with permissions set appropriately. And it gets restarted.</p>
+<p>I created a JSON file to define a single group, making me the operator (with a password), and allowing <a href=\"https://galene.org/README.html#:~:text=wildcard\">wildcard users</a> (all sharing the same password). I handed out this password on the IRC channel we use to chat and hang out.</p>
+<p>Should we end up with two dozen people or more, then I'll write a web app to administrate users and groups via the web. An <a href=\"https://galene.org/README.API.html\">API</a> to do this already exists. Or if I'm feeling evil, I'll add the functionality to administer them to an IRC bot. 😂</p>
+<p><a class=\"tag\" href=\"/search/?q=%23Jitsi\">#Jitsi</a> <a class=\"tag\" href=\"/search/?q=%23Galène\">#Galène</a> <a class=\"tag\" href=\"/search/?q=%23Discord\">#Discord</a> <a class=\"tag\" href=\"/search/?q=%23Administration\">#Administration</a></p>
+" nil nil "026cf81652dfc87415c966cb49cd4413") (31 (26608 56016 536380 952000) "https://alexschroeder.ch/view/2025-04-04-aufsteigende-ruestungsklasse" "2025-04-04 Aufsteigende =?utf-8?Q?R=C3=BCstungsklasse?=" nil "Sat, 05 Apr 2025 00:59:08 +0000" "<h1 id=\"2025-04-04-aufsteigende-rüstungsklasse\">2025-04-04 Aufsteigende Rüstungsklasse</h1>
+<p>Ich hatte schon vor einiger Zeit angefangen, über einen Wechsel zur aufsteigenden Rüstungsklasse nachzudenken. Neue Spieler fanden die traditionelle, absteigende Rüstungsklasse meistens doof. Die Leute, mit denen ich schon spielte, hatten sich an die absteigende Rüstungsklasse gewöhnt und wollten nicht umsteigen. Was tun? Mir gefällt die Absteigende Rüstungsklasse und die kleine Tabelle, wo man sich aufschreibt, welche Rüstungsklasse welchen Wurf benötigt, oder die seltsame Notation aus AD&D Zeiten mit dem ETW0 (Engl. THAC0).</p>
+<p>Irgendwann hatte ich mich halb durchgerungen, einen Versuch zu starten. Positiv aufgefallen ist sofort, dass die Tabellen im Handbuch für die Spielenden kompakter werden. Auf den Charakterbögen hat es nun auch etwas mehr Platz. Beides finde ich sehr positiv.</p>
+<p>Eher unangenehm war, dass in allen anderen Dokumenten immer noch absteigende Rüstungsklassen zu finden war. Oje! Mit dem aktuellen Update hoffe ich, sie alle gefunden zu haben. Und wer ansonsten eine Rüstungsklasse unter 10 findet, konvertiert wie folgt:</p>
+<ul>
+<li>Für Menschen ohne Rüstung wird RK 9 zu RK 10.</li>
+<li>Für alle anderen ist die aufsteigende Rüstungsklasse = 20 minus die absteigende Rüstungsklasse.</li>
+</ul>
+<p>Beispielsweise: Ork mit RK 6 wird zu Ork mit RK 14.</p>
+<p>Warum nicht ``19 minus die absteigende Rüstungsklasse''? Nun ist alles um eins besser geschützt, würde man meinen. Der Vorteil ist aber, dass es nun zu neueren D&D Versionen passt. Wenn ich beispielsweise bei D&D 3.5 reinschaue:</p>
+<p>Krieger mit Stufe 1 hat einen Angriffsbonus von +1 (gleich wie die Stufe, was mir sehr gefällt). Die Rüstungen sind: beschlagene Lederrüstung 13 (20-7); Kettenpanzer 15 (20-5); Plattenpanzer 17 (20-3). Aus dem Rahmen fällt ``ohne Rüstung'', denn 10 ist nicht 20-9. Tja… Dafür habe ich keine Lösung. RK 11 für Leute ohne Rüstung gefällt mir auch nicht.</p>
+<p>Und was ist mit den Trefferchancen? Vorher benötigte ein Krieger Stufe 1 eine 13 um einen Ork mit RK 6 zu treffen. Jetzt hat der Krieger einen Bonus von +1 um eine Ork mit RK 14 (20-6) zu treffen und braucht also immer noch eine 13. Insofern ist also alles gleich geblieben.</p>
+<p>Neue Versionen:</p>
+<ul>
+<li><a href=\"/pdfs/Hellebarden-und-Helme.pdf\">Hellebarden & Helme</a>, Regeln</li>
+<li><a href=\"/pdfs/rauchberg/Rauchberg.pdf\">Rauchberg</a>, ein Megadungeon</li>
+<li><a href=\"/pdfs/Megadungeon.pdf\">Megadungeon</a>, eine Einführung</li>
+<li><a href=\"/pdfs/Horte.pdf\">Horte</a>, für Monster und Schätze</li>
+<li><a href=\"https://campaignwiki.org/character-sheet-generator/random/de?name=&class=\">Charaktergenerator</a></li>
+</ul>
+<p><a class=\"tag\" href=\"/search/?q=%23Hellebarden_und_Helme\">#Hellebarden und Helme</a> <a class=\"tag\" href=\"/search/?q=%23RSP\">#RSP</a></p>
+" nil nil "198f3cdcf23b0e021ad42b4b99425ac8") (30 (26606 45056 541555 823000) "https://alexschroeder.ch/view/2025-03-20-bot-defence" "2025-03-20 Something about the bot defence is working" nil "Wed, 02 Apr 2025 15:52:31 +0000" "<h1 id=\"2025-03-20-something-about-the-bot-defence-is-working\">2025-03-20 Something about the bot defence is working</h1>
+<p>At midnight, there was a surge in activity.
+CPU usage went up.</p>
+<p><img loading=\"lazy\" src=\"2025-03-20-bot-defence-1.jpg\" alt=\"\" /></p>
+<p>Load went up, too. But it stayed within reasonable bounds - less than 4 instead of the more than 80 I have seen in the past.</p>
+<p><img loading=\"lazy\" src=\"2025-03-20-bot-defence-2.jpg\" alt=\"\" /></p>
+<p>And the number of IP addresses blocked by <code>fail2ban</code> went from 40 to 50.</p>
+<p><img loading=\"lazy\" src=\"2025-03-20-bot-defence-3.jpg\" alt=\"\" /></p>
+<p>I'm usually sceptical of this because the big attacks are from a far wider variety of IP numbers.
+In this case, however, maybe there was some probing that resulted in blocks? I don't know. Lucky, I guess?</p>
+<p>In any case, the site is still up. Yay for small wins.</p>
+<p>Also, I cannot overstate how good it feel to have some <a href=\"https://munin-monitoring.org/\">Munin</a> graphs available.</p>
+<p><code>alex-bots</code> is a setup I desribed in <a href=\"2025-02-19-bots-again\">2025-02-19 Bots again, cursed</a>.
+Basically a request to one of my Oddmuse wikis containing the parameter <code>rcidonly</code> is an expensive endpoint: ``all changes for this single page'' or ``a feed for this single page''. This is something a human would rarely access and yet it somehow the URLs landed in some dataset for AI training, I suspect. So what I do is I’m redirecting any request containing “rcidonly” in the query string to <code>/nobots</code>, warning humans not to click on these links.</p>
+<p>In addition to that, the filter <code>/etc/fail2ban/filter.d/alex-bots.conf</code> contains this:</p>
+<pre><code>[Definition]
+failregex = ^(www\\.emacswiki\\.org|communitywiki\\.org|campaignwiki\\.org):[0-9]+ <HOST> .*rcidonly=
+</code></pre>
+<p>And I added a section using this filter to my jail <code>/etc/fail2ban/jail.d/alex.conf</code>:</p>
+<pre><code>[alex-bots]
+enabled = true
+port    = http,https
+logpath = %(apache_access_log)s
+findtime = 3600
+maxretry = 2
+</code></pre>
+<p>So if an IP number visits three URLs containing ``rcidonly'' in an hour, they get banned for ten minutes.</p>
+<p>The <code>recidive</code> filter (a standard filter you just need to activate) then makes sure that any IP number that got blocked three times gets blocked for a week.</p>
+<p><a class=\"tag\" href=\"/search/?q=%23Administration\">#Administration</a> <a class=\"tag\" href=\"/search/?q=%23Butlerian_Jihad\">#Butlerian Jihad</a></p>
+<p><strong>2025-03-20</strong>. Ever since Drew DeVault published his blog post, more people seem to notice what's going on: AI ingestion is killing web sites and web services.</p>
+<blockquote>
+<p>If you think these crawlers respect <code>robots.txt</code> then you are several assumptions of good faith removed from reality. These bots crawl everything they can find, <code>robots.txt</code> be damned, including expensive endpoints like git blame, every page of every git log, and every commit in every repo, and they do so using random User-Agents that overlap with end-users and come from tens of thousands of IP addresses – mostly residential, in unrelated subnets, each one making no more than one HTTP request over any time period we tried to measure – actively and maliciously adapting and blending in with end-user traffic and avoiding attempts to characterize their behavior or block their traffic. - <a href=\"https://drewdevault.com/2025/03/17/2025-03-17-Stop-externalizing-your-costs-on-me.html\">Please stop externalizing your costs directly into my face</a>, by Drew DeVault, for SourceHut</p>
+<p>Then, yesterday morning, KDE GitLab infrastructure was overwhelmed by another AI crawler, with IPs from an Alibaba range; this caused GitLab to be temporarily inaccessible by KDE developers. I then discovered that, one week ago, an Anime girl started appearing on the GNOME GitLab instance, as the page was loaded. It turns out that it's the default loading page for Anubis, a proof-of-work challenger that blocks AI scrapers that are causing outages. - <a href=\"https://thelibre.news/foss-infrastructure-is-under-attack-by-ai-companies/\">FOSS infrastructure is under attack by AI companies</a>, by Niccolò Venerandi, for LibreNews</p>
+<p>What do SourceHut, GNOME’s GitLab, and KDE’s GitLab have in common, other than all three of them being forges? Well, it turns out all three of them have been dealing with immense amounts of traffic from “AI” scrapers, who are effectively performing DDoS attacks with such ferocity it’s bringing down the infrastructures of these major open source projects. Being open source, and thus publicly accessible, means these scrapers have unlimited access, unlike with proprietary projects. … Everything about this “AI” bubble is gross, and I can’t wait for this bubble to pop so a semblance of sanity can return to the technology world. Until the next hype train rolls into the station, of course. - <a href=\"https://www.osnews.com/story/141969/foss-infrastructure-is-under-attack-by-ai-companies/\">FOSS infrastructure is under attack by AI companies</a>, by Thom Holwerda, for OSnews</p>
+</blockquote>
+<p><strong>2025-03-22</strong>. Ordinary sysadmins get hit as well. Here's Sean Conner of the The Boston Diaries: He reports on <a href=\"https://boston.conman.org/2025/03/21\">Friday, March 21, 2025</a> that his logs show a total of 468439 requests for February 2025. The top hitter was 4.231.104.62 with 43242 requests (9%). This was from MICROSOFT-CORP-MSN-AS-BLOCK, US. But the ASN has more networks, of course. Adding them all up give 78889 (17%).</p>
+<p>He links to the <a href=\"https://www.team-cymru.com/ip-asn-mapping\">IP to ASN Mapping Service</a> by Team Cymru. I started switching my <a href=\"/admin/network-lookup\">network-lookup</a> script to using it because it also supports IPv6. Something that I haven't done is find the ASN and then block all the blocks belonging to the ASN. That's where I want to be, actually.</p>
+<p><strong>2025-03-26</strong>. More media are picking it up, but with a strange focus on ``open source''.</p>
+<blockquote>
+<p>As it currently stands, both the rapid growth of AI-generated content <a href=\"https://www.404media.co/ai-slop-is-a-brute-force-attack-on-the-algorithms-that-control-reality/\">overwhelming</a> online spaces and aggressive web-crawling practices by AI firms threaten the sustainability of essential online resources. The current approach taken by some large AI companies—<a href=\"https://www.vintagecomputing.com/index.php/archives/3292/the-pc-is-dead-its-time-to-make-computing-personal-again\">extracting</a> vast amounts of data from open-source projects without clear consent or compensation—risks severely damaging the very digital ecosystem on which these AI models depend. - <a href=\"https://arstechnica.com/ai/2025/03/devs-say-ai-crawlers-dominate-traffic-forcing-blocks-on-entire-countries/\">Open Source devs say AI crawlers dominate traffic, forcing blocks on entire countries</a>, by Benj Edwards, for Ars Technica</p>
+</blockquote>
+<p><a class=\"account\" href=\"https://mastodon.social/@bagder\" title=\"@bagder@mastodon.social\">@bagder</a> recently had some numbers:</p>
+<blockquote>
+<p>The AI bots that desperately need OSS for code training, are now slowly killing OSS by overloading every site.
+The curl website is now at 77TB/month, or 8GB every five minutes.</p>
+</blockquote>
+<p><a class=\"account\" href=\"https://tilde.zone/@gluejar\" title=\"@gluejar@tilde.zone\">@gluejar</a> writes:</p>
+<blockquote>
+<p>There's a war going on on the Internet. AI companies with billions to burn are hard at work destroying the websites of libraries, archives, non-profit organizations, and scholarly publishers, anyone who is working to make quality information universally available on the internet. - <a href=\"https://go-to-hellman.blogspot.com/2025/03/ai-bots-are-destroying-open-access.html\">AI bots are destroying Open Access</a>, by Eric Hellman</p>
+</blockquote>
+<p><strong>2025-04-02</strong>. The bots keep eating everything of value.</p>
+<blockquote>
+<p>Since January 2024, we have seen the bandwidth used for downloading multimedia content grow by 50%. This increase is not coming from human readers, but largely from automated programs that scrape the Wikimedia Commons image catalog of openly licensed images to feed images to AI models. Our infrastructure is built to sustain sudden traffic spikes from humans during high-interest events, but the amount of traffic generated by scraper bots is unprecedented and presents growing risks and costs. - <a href=\"https://diff.wikimedia.org/2025/04/01/how-crawlers-impact-the-operations-of-the-wikimedia-projects/\">How crawlers impact the operations of the Wikimedia projects</a>, Birgit Mueller, Chris Danis and Giuseppe Lavagetto, all for the Wikimedia Foundation</p>
+</blockquote>
+" nil nil "693f567d6d4c2b7860893c8f1be2fc8e") (29 (26603 40586 425135 819000) "https://alexschroeder.ch/view/2025-03-30-visit-the-usa" "2025-03-30 Don't visit the USA" nil "Mon, 31 Mar 2025 15:11:19 +0000" "<h1 id=\"2025-03-30-don-t-visit-the-usa\">2025-03-30 Don't visit the USA</h1>
+<p>When people talk about minimal laptop installs, burner phones, and the
+mess of US border crossings, I wonder where they habe been the last
+twenty years. A dude from work flew to the states to work for HP as a
+student, got turned back at the airport and put on a flight back. He
+got to make one family call, his dad called HP, they called some
+lawyers and by the time they go there he was already on a plane. And
+those were the good days, before 9/11, Homeland Security and all that.</p>
+<p>Have you seen the forms they have you sign on the Visa Waiver program?
+The border agents have total discretion over you. Those are not ``passenger
+rights'' but ``small mercies''. And that was long before Trump. It's
+terrible fuckery now, but it wasn't great before that. Not travelling
+to the states? I've told people at the office that I won't be going to
+the states for work ever since 9/11. The last time I went happily was,
+uh, when The Phantom Menace came out?</p>
+<p>I went once more when
+my wife wanted to go to Hawaii. Somebody there held my hand and
+prayed for me on a parking lot. Somebody there gave me an ad for an
+underground firing range. I learned how the US treated the locals. No,
+visiting the US was never an easy call to make. And those were the
+good days.</p>
+<p>And what about boycotting the US? It is with despair that I see my
+employer buying more and more into Windows and Microsoft and Azure and
+Amazon S3. Have they not learned anything from Snowden? American IT is
+not to be trusted. I mean, it's probably not be trusted anywhere, but
+when give a choice, there is no reason to trust the USA. The agencies
+can get all the information they want and hand out gag orders to prevent
+the well-meaning corporations from warning you. From the outside, they
+are just as bad as the rest of them. And they will use their power against
+you. And Snowden was during the good years!</p>
+<p>And yes, Fortress Europe is not great, either. Two things being not
+great doesn't make a right, though. The first step is to realise how
+bad the situation is, how bad the situation has been.</p>
+<p>And now the situation really is fucked up.</p>
+<p>If you look at the attempts at regime change in recent years,
+I think the lessons are obvious: It can only succeed with long, weekly
+mass demonstrations, in broad coalitions.</p>
+<p>The only way out of a corrupt government
+that controls access to jobs, controls the institutions, controls most
+media is weekly protest. It takes a long time to grow. You have to
+be there, every time. ``Pumpaj!” Keep the pressure up.</p>
+<p>Join whatever protest is on this week.</p>
+<p>I also think it is important to not conflate the man with the mob.
+Name no names! Because it’s never just one person. If it looks like
+one person then that person is the face man of the mob. The people that
+need kicking are all those that got their jobs from the mob. All these
+greedy incompetents whose only qualification is how far they can bend
+over.</p>
+<p>Yeet them into the sun. Send them off to Mars. Whatever.</p>
+<p>To think that Canadians or Greenlanders want to be part of the USA is
+about as absurd to me as Taiwanese wanting to be part of mainland China
+or Ukrainians wanting to be part of Russia. The only ones not getting it
+are the sympathisers of the dread regimes in China, in Russia - and in the USA.</p>
+<p><a class=\"tag\" href=\"/search/?q=%23USA\">#USA</a></p>
+<p><strong>2025-03-31</strong>. I keep learning new things. This is from a post about US politicians visiting Greenland.</p>
+<blockquote>
+<p>Americans might chuckle at that idea, but such arrogance is unwarranted. We are the only ones ever to have invoked Article 5, the mutual defense obligation of the NATO treaty, after 9/11; and our European allies did respond. Per capita more Danish soldiers were killed in the Afghan war than were American soldiers … and of course defending against a Russian attack is the NATO mission. But right now the United States is supporting Russia in its war against Ukraine. No one is doing more to contain the Russian threat than Ukraine. Indeed, Ukraine is in effect fulfilling the entire NATO mission, right now, by absorbing a huge Russian attack. … Denmark meanwhile has given more than four times as much aid to Ukraine, per capita, as does the United States. … The US is is 24th in the world in the happiness rankings. Not bad. But Denmark is number two (after Finland). On a scale of 1 to 100, Freedom House ranks Denmark 97 and the US 84 on freedom — and the US will drop a great deal this year. An American is about ten times more likely to be incarcerated than a Dane. Danes have access to universal and essentially free health care; Americans spend a huge amount of money to be sick more often and to be treated worse when they are. Danes on average live four years longer than Americans. In Denmark university education is free; the average balance owed by the tens of millions of Americans who hold student debt in the US is about $40,000. Danish parents share a year of paid parental leave. In the US, one parent might get twelve weeks of unpaid leave. – <a href=\"https://snyder.substack.com/p/vance-in-greenland\">The Imperialism Has no Clothes</a>, by Timothy Snyder</p>
+</blockquote>
+" nil nil "325c503426eed1a045b9f9b6a06d08a9") (28 (26602 29273 930472 581000) "https://alexschroeder.ch/view/2025-03-31-flowers" "2025-03-31 More flowers" nil "Mon, 31 Mar 2025 10:26:57 +0000" "<h1 id=\"2025-03-31-more-flowers\">2025-03-31 More flowers</h1>
+<p>Looking at the pictures that aren’t camellias and magnolias.</p>
+<p>Sumpf-Dotterblume<br>
+Caltha palustris</p>
+<p><img loading=\"lazy\" src=\"2025-03-31-flowers-1.jpg\" alt=\"\" /></p>
+<p>Veilchen<br>
+Viola</p>
+<p><img loading=\"lazy\" src=\"2025-03-31-flowers-2.jpg\" alt=\"\" /></p>
+<p>Wald-Sauerklee<br>
+Oxalis axetosella</p>
+<p><img loading=\"lazy\" src=\"2025-03-31-flowers-3.jpg\" alt=\"\" /></p>
+<p>Rhododendron</p>
+<p><img loading=\"lazy\" src=\"2025-03-31-flowers-4.jpg\" alt=\"\" /></p>
+<p>Zitronatzitrone<br>
+Citrus medica var. sarcodactylis</p>
+<p><img loading=\"lazy\" src=\"2025-03-31-flowers-5.jpg\" alt=\"\" /></p>
+<p>Mauer-Zimbelkraut<br>
+Cymbalaria muralis</p>
+<p><img loading=\"lazy\" src=\"2025-03-31-flowers-6.jpg\" alt=\"\" /></p>
+<p>Persischer Ehrenpreis<br>
+Veronica persica</p>
+<p><img loading=\"lazy\" src=\"2025-03-31-flowers-7.jpg\" alt=\"\" /></p>
+<p>Moos-Phlox<br>
+Phlox subulata</p>
+<p><img loading=\"lazy\" src=\"2025-03-31-flowers-8.jpg\" alt=\"\" /></p>
+<p>Vogel-Kirsche<br>
+Prunus avium</p>
+<p><img loading=\"lazy\" src=\"2025-03-31-flowers-9.jpg\" alt=\"\" /></p>
+<p>Trauer-Weide<br>
+Salix babylonica agg.</p>
+<p><img loading=\"lazy\" src=\"2025-03-31-flowers-10.jpg\" alt=\"\" /></p>
+<p>Magnolia (could not resist)</p>
+<p><img loading=\"lazy\" src=\"2025-03-31-flowers-11.jpg\" alt=\"\" /></p>
+" nil nil "07570b5b8e2f7b5ebae133b19da437c3") (27 (26602 20641 741800 893000) "https://alexschroeder.ch/view/2025-03-31-flowers" "2025-03-31 More flowers" nil "Mon, 31 Mar 2025 07:55:48 +0000" "<h1 id=\"2025-03-31-more-flowers\">2025-03-31 More flowers</h1>
+<p>Looking at the pictures that aren’t camellias and magnolias.</p>
+<p>Sumpf-Dotterblume<br>
+Caltha palustris</p>
+<p><img loading=\"lazy\" src=\"2025-03-31-flowers-1.jpg\" alt=\"\" /></p>
+<p>Veilchen<br>
+Viola</p>
+<p><img loading=\"lazy\" src=\"2025-03-31-flowers-2.jpg\" alt=\"\" /></p>
+<p>Wald-Sauerklee
+Oxalis axetosella</p>
+<p><img loading=\"lazy\" src=\"2025-03-31-flowers-3.jpg\" alt=\"\" /></p>
+<p>Rhododendron</p>
+<p><img loading=\"lazy\" src=\"2025-03-31-flowers-4.jpg\" alt=\"\" /></p>
+<p>Zitronatzitrone<br>
+Citrus medica var. sarcodactylis</p>
+<p><img loading=\"lazy\" src=\"2025-03-31-flowers-5.jpg\" alt=\"\" /></p>
+<p>Mauer-Zimbelkraut<br>
+Cymbalaria muralis</p>
+<p><img loading=\"lazy\" src=\"2025-03-31-flowers-6.jpg\" alt=\"\" /></p>
+<p>Persischer Ehrenpreis<br>
+Veronica persica</p>
+<p><img loading=\"lazy\" src=\"2025-03-31-flowers-7.jpg\" alt=\"\" /></p>
+<p>Moos-Phlox<br>
+Phlox subulata</p>
+<p><img loading=\"lazy\" src=\"2025-03-31-flowers-8.jpg\" alt=\"\" /></p>
+<p>Vogel-Kirsche<br>
+Prunus avium</p>
+<p><img loading=\"lazy\" src=\"2025-03-31-flowers-9.jpg\" alt=\"\" /></p>
+<p>Trauer-Weide<br>
+Salix babylonica agg.</p>
+<p><img loading=\"lazy\" src=\"2025-03-31-flowers-10.jpg\" alt=\"\" /></p>
+<p>Magnolia (could not resist)</p>
+<p><img loading=\"lazy\" src=\"2025-03-31-flowers-11.jpg\" alt=\"\" /></p>
+" nil nil "823b404e17291a215768e66c49404db9") (26 (26602 20641 741640 849000) "https://alexschroeder.ch/view/2025-03-30-visit-the-usa" "2025-03-30 Don't visit the USA" nil "Sun, 30 Mar 2025 22:14:47 +0000" "<h1 id=\"2025-03-30-don-t-visit-the-usa\">2025-03-30 Don't visit the USA</h1>
+<p>When people talk about minimal laptop installs, burner phones, and the
+mess of US border crossings, I wonder where they habe been the last
+twenty years. A dude from work flew to the states to work for HP as a
+student, got turned back at the airport and put on a flight back. He
+got to make one family call, his dad called HP, they called some
+lawyers and by the time they go there he was already on a plane. And
+those were the good days, before 9/11, Homeland Security and all that.</p>
+<p>Have you seen the forms they have you sign on the Visa Waiver program?
+The border agents have total discretion over you. Those are not ``passenger
+rights'' but ``small mercies''. And that was long before Trump. It's
+terrible fuckery now, but it wasn't great before that. Not travelling
+to the states? I've told people at the office that I won't be going to
+the states for work ever since 9/11. The last time I went happily was,
+uh, when The Phantom Menace came out?</p>
+<p>I went once more when
+my wife wanted to go to Hawaii. Somebody there held my hand and
+prayed for me on a parking lot. Somebody there gave me an ad for an
+underground firing range. I learned how the US treated the locals. No,
+visiting the US was never an easy call to make. And those were the
+good days.</p>
+<p>And what about boycotting the US? It is with despair that I see my
+employer buying more and more into Windows and Microsoft and Azure and
+Amazon S3. Have they not learned anything from Snowden? American IT is
+not to be trusted. I mean, it's probably not be trusted anywhere, but
+when give a choice, there is no reason to trust the USA. The agencies
+can get all the information they want and hand out gag orders to prevent
+the well-meaning corporations to warning you. From the outside, they
+are just as bad as the rest of them. And they will use their power against
+you. And Snowden was during the good years!</p>
+<p>And yes, Fortress Europe is not great, either. Two things being not
+great doesn't make a right, though. The first step is to realise how
+bad the situation is, how bad the situation has been.</p>
+<p>And now the situation really is fucked up.</p>
+<p>If you look at the attempts at regime change in recent years,
+I think the lessons are obvious: It can only succeed with long, weekly
+mass demonstrations, in broad coalitions.</p>
+<p>The only way out of a corrupt government
+that controls access to jobs, controls the institutions, controls most
+media is weekly protest. It takes a long time to grow. You have to
+be there, every time. ``Pumpaj!” Keep the pressure up.</p>
+<p>Join whatever protest is on this week.</p>
+<p>I also think it is important to not conflate the man with the mob.
+Name no names! Because it’s never just one person. If it looks like
+one person then that person is the face man of the mob. The people that
+need kicking are all those that got their jobs from the mob. All these
+greedy incompetents whose only qualification is how far they can bend
+over.</p>
+<p>Yeet them into the sun. Send them off to Mars. Whatever.</p>
+<p>To think that Canadians or Greenlanders want to be part of the USA is
+about as absurd to me as Taiwanese wanting to be part of mainland China
+or Ukrainians wanting to be part of Russia. The only ones not getting it
+are the sympathisers of the dread regimes in China, in Russia - and in the USA.</p>
+<p><a class=\"tag\" href=\"/search/?q=%23USA\">#USA</a></p>
+<p><strong>2025-03-31</strong>. I keep learning new things. This is from a post about US politicians visiting Greenland.</p>
+<blockquote>
+<p>Americans might chuckle at that idea, but such arrogance is unwarranted. We are the only ones ever to have invoked Article 5, the mutual defense obligation of the NATO treaty, after 9/11; and our European allies did respond. Per capita more Danish soldiers were killed in the Afghan war than were American soldiers … and of course defending against a Russian attack is the NATO mission. But right now the United States is supporting Russia in its war against Ukraine. No one is doing more to contain the Russian threat than Ukraine. Indeed, Ukraine is in effect fulfilling the entire NATO mission, right now, by absorbing a huge Russian attack. – <a href=\"https://snyder.substack.com/p/vance-in-greenland\">The Imperialism Has no Clothes</a>, by Timothy Snyder</p>
+</blockquote>
+" nil nil "343037231b8e08f6fe4c3ff0393409b2") (25 (26602 20641 741351 215000) "https://alexschroeder.ch/view/2025-03-29-magnolia-park" "2025-03-29 Botanical garden of Gambarogno" nil "Mon, 31 Mar 2025 07:30:21 +0000" "<h1 id=\"2025-03-29-botanical-garden-of-gambarogno\">2025-03-29 Botanical garden of Gambarogno</h1>
+<p>We went to see the private <a href=\"https://www.parcobotanicogambarogno.ch/\">botanical garden</a> of the Eisenhut gardening center in Gabarogno, across the lake and up the hill from Locarno. They claim to have about a thousand camellia variants and about six hundred magnolia variants. As we’ve been to the <a href=\"2025-03-25-camellias\">camellia park</a> yesterday, we focused on the magnolia in bloom.</p>
+<p><img loading=\"lazy\" src=\"2025-03-29-magnolia-park-1.jpg\" alt=\"\" />
+<img loading=\"lazy\" src=\"2025-03-29-magnolia-park-2.jpg\" alt=\"\" />
+<img loading=\"lazy\" src=\"2025-03-29-magnolia-park-3.jpg\" alt=\"\" />
+<img loading=\"lazy\" src=\"2025-03-29-magnolia-park-4.jpg\" alt=\"\" />
+<img loading=\"lazy\" src=\"2025-03-29-magnolia-park-5.jpg\" alt=\"\" />
+<img loading=\"lazy\" src=\"2025-03-29-magnolia-park-6.jpg\" alt=\"\" />
+<img loading=\"lazy\" src=\"2025-03-29-magnolia-park-7.jpg\" alt=\"\" /></p>
+<p><img loading=\"lazy\" src=\"2025-03-29-magnolia-park-8.jpg\" alt=\"\" />
+<img loading=\"lazy\" src=\"2025-03-29-magnolia-park-9.jpg\" alt=\"\" />
+<img loading=\"lazy\" src=\"2025-03-29-magnolia-park-10.jpg\" alt=\"\" />
+<img loading=\"lazy\" src=\"2025-03-29-magnolia-park-11.jpg\" alt=\"\" />
+<img loading=\"lazy\" src=\"2025-03-29-magnolia-park-12.jpg\" alt=\"\" />
+<img loading=\"lazy\" src=\"2025-03-29-magnolia-park-13.jpg\" alt=\"\" />
+<img loading=\"lazy\" src=\"2025-03-29-magnolia-park-14.jpg\" alt=\"\" />
+<img loading=\"lazy\" src=\"2025-03-29-magnolia-park-15.jpg\" alt=\"\" />
+<img loading=\"lazy\" src=\"2025-03-29-magnolia-park-16.jpg\" alt=\"\" /></p>
+<p><img loading=\"lazy\" src=\"2025-03-29-magnolia-park-17.jpg\" alt=\"\" />
+<img loading=\"lazy\" src=\"2025-03-29-magnolia-park-18.jpg\" alt=\"\" />
+<img loading=\"lazy\" src=\"2025-03-29-magnolia-park-19.jpg\" alt=\"\" />
+<img loading=\"lazy\" src=\"2025-03-29-magnolia-park-20.jpg\" alt=\"\" />
+<img loading=\"lazy\" src=\"2025-03-29-magnolia-park-21.jpg\" alt=\"\" />
+<img loading=\"lazy\" src=\"2025-03-29-magnolia-park-22.jpg\" alt=\"\" />
+<img loading=\"lazy\" src=\"2025-03-29-magnolia-park-23.jpg\" alt=\"\" /></p>
+<p><a class=\"tag\" href=\"/search/?q=%23Pictures\">#Pictures</a> <a class=\"tag\" href=\"/search/?q=%23Magnolia\">#Magnolia</a> <a class=\"tag\" href=\"/search/?q=%23Plants\">#Plants</a></p>
+" nil nil "eca1e58ce32f484c4683c993d13829f3") (24 (26602 20641 741119 617000) "https://alexschroeder.ch/view/2025-03-25-camellias" "2025-03-28 Locarno Camellia park" nil "Mon, 31 Mar 2025 07:34:24 +0000" "<h1 id=\"2025-03-28-locarno-camellia-park\">2025-03-28 Locarno Camellia park</h1>
+<p>It’s spring and we went there. Locarno is in the canton Ticino, in the south of Switzerland, at the shores of Lago Maggiore (“big lake”) that it shares with Italy.</p>
+<p>They have a fantastic camellia park. In early spring, it's the best place to be.</p>
+<p>I tried to take pictures with my trusty Olympus EP-5 and the 30mm 1:3.5 macro lens. Sadly, I have been untrained by the phone and was confused by the settings and the tiny screen. Oh my! So this is mix of camera pictures and phone pictures.</p>
+<p><img loading=\"lazy\" src=\"2025-03-25-camellias-1.jpg\" alt=\"\" />
+<img loading=\"lazy\" src=\"2025-03-25-camellias-2.jpg\" alt=\"\" />
+<img loading=\"lazy\" src=\"2025-03-25-camellias-3.jpg\" alt=\"\" />
+<img loading=\"lazy\" src=\"2025-03-25-camellias-4.jpg\" alt=\"\" />
+<img loading=\"lazy\" src=\"2025-03-25-camellias-5.jpg\" alt=\"\" />
+<img loading=\"lazy\" src=\"2025-03-25-camellias-6.jpg\" alt=\"\" />
+<img loading=\"lazy\" src=\"2025-03-25-camellias-7.jpg\" alt=\"\" />
+<img loading=\"lazy\" src=\"2025-03-25-camellias-8.jpg\" alt=\"\" />
+<img loading=\"lazy\" src=\"2025-03-25-camellias-9.jpg\" alt=\"\" />
+<img loading=\"lazy\" src=\"2025-03-25-camellias-10.jpg\" alt=\"\" />
+<img loading=\"lazy\" src=\"2025-03-25-camellias-11.jpg\" alt=\"\" />
+<img loading=\"lazy\" src=\"2025-03-25-camellias-12.jpg\" alt=\"\" />
+<img loading=\"lazy\" src=\"2025-03-25-camellias-13.jpg\" alt=\"\" />
+<img loading=\"lazy\" src=\"2025-03-25-camellias-14.jpg\" alt=\"\" />
+<img loading=\"lazy\" src=\"2025-03-25-camellias-15.jpg\" alt=\"\" />
+<img loading=\"lazy\" src=\"2025-03-25-camellias-16.jpg\" alt=\"\" />
+<img loading=\"lazy\" src=\"2025-03-25-camellias-17.jpg\" alt=\"\" /></p>
+<p>The next day we went to see the <a href=\"2025-03-29-magnolia-park\">magnolias</a> across the lake.</p>
+<p><a class=\"tag\" href=\"/search/?q=%23Pictures\">#Pictures</a> <a class=\"tag\" href=\"/search/?q=%23Plants\">#Plants</a> <a class=\"tag\" href=\"/search/?q=%23Camellias\">#Camellias</a> <a class=\"tag\" href=\"/search/?q=%23Locarno\">#Locarno</a></p>
+" nil nil "748fab34a8d8192eb2cba92649a278d1") (23 (26599 50747 262299 53000) "https://alexschroeder.ch/view/2025-03-25-camellias" "2025-03-28 Locarno Camellia park" nil "Sat, 29 Mar 2025 00:10:41 +0000" "<h1 id=\"2025-03-28-locarno-camellia-park\">2025-03-28 Locarno Camellia park</h1>
 <p>It’s spring and we went there. Locarno is in the canton Ticino, in the south of Switzerland, at the shores of Lago Maggiore (“big lake”) that it shares with Italy.</p>
 <p>They have a fantastic camellia park. In early spring, it's the best place to be.</p>
 <p>I tried to take pictures with my trusty Olympus EP-5 and the 30mm 1:3.5 macro lens. Sadly, I have been untrained by the phone and was confused by the settings and the tiny screen. Oh my! So this is mix of camera pictures and phone pictures.</p>

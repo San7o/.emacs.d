@@ -2,6 +2,7 @@
 #+startup: content indent
 
 * Welcome
+#+INDEX: Giovanni's Diary!Programming!Emacs!Init
 
 Welcome to my humble emacs configuration file. This is my daily emacs
 setup, do not expect anything remarcable, just some lisp code :)
@@ -76,6 +77,7 @@ ashamed about it, I can do whatever I want.
 Add a directory for my custom themes:
 
 #+begin_src emacs-lisp
+  (setq custom-safe-themes t)
   (add-to-list 'custom-theme-load-path "~/.emacs.d/themes/")
   (load-theme 'giovanni-base)
 #+end_src
@@ -97,7 +99,8 @@ I use =use-package= to manage all my packages.
 
 Org mode settings. I use org mode everywhere in my life.
 
-Run =org-todo= to update a TODO keywork.
+Run =org-todo= to update a TODO keywork, or =C-c C-t=.
+To update completition percentage: =C-c C-c=.
 #+begin_src emacs-lisp
     (use-package org
       :ensure nil ; do not try to install it as it is built-in
@@ -426,6 +429,20 @@ Browse and read RFC documents.
     (setq rfc-mode-directory (expand-file-name "~/.emacs.d/rfc/")))
 #+end_src
 
+** hledger
+An Emacs major mode for writing hledger journals and generating useful
+accounting reports.
+
+The external hledger program should be installed first, or most of the
+report features won't work.
+#+begin_src emacs-lisp
+  (use-package hledger-mode
+    :ensure
+    :config
+    (add-to-list 'auto-mode-alist '("\\.journal\\'" . hledger-mode))
+    (setq hledger-jfile "/home/santo/todo.org/expenses.journal")
+    (global-set-key (kbd "C-c j") 'hledger-run-command))
+#+end_src
 
 * Customization
 ** Cleanup the screen

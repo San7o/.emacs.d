@@ -1,5 +1,2104 @@
 ;; -*- coding: utf-8-emacs; -*-
-(setq nnrss-group-data '((109 (26598 40087 564216 792000) "https://protesilaos.com/codelog/2025-03-28-emacs-denote-query-links/" "Emacs: Denote =?utf-8?Q?=E2=80=98query_links=E2=80=99?= (links that trigger a search)" nil "Fri, 28 Mar 2025 00:00:00 +0000" "<p>In this ~16-minute video, I demonstrate the new, in-development “query
+(setq nnrss-group-data '((132 (26645 44353 690190 102000) "https://protesilaos.com/poems/2025-05-02-escape/" "Escape (my poem)" nil "Fri, 02 May 2025 00:00:00 +0000" "<div class=\"language-plaintext highlighter-rouge\"><div class=\"highlight\"><pre class=\"highlight\"><code>It is not fear of rejection
+but the likelihood of affirmation
+that forced this escape
+</code></pre></div></div>" nil nil "61ff53f30696f339f8212d5aa925d127") (131 (26642 27884 492271 831000) "https://protesilaos.com/poems/2025-04-30-late-bloomer/" "Late bloomer (my poem)" nil "Wed, 30 Apr 2025 00:00:00 +0000" "<div class=\"language-plaintext highlighter-rouge\"><div class=\"highlight\"><pre class=\"highlight\"><code>In indefinite wait for the elusive
+the late bloomer has an unspoken hope
+That there will be more Springtime
+and that two decades will not matter
+Like the highlands' purple-leafed sage
+some of us will not be discovered
+</code></pre></div></div>" nil nil "7e9cc3928101a5da1a1430398d436b84") (130 (26641 51346 992403 744000) "https://protesilaos.com/codelog/2025-04-29-emacs-ef-themes-1-10-0/" "Emacs: ef-themes version 1.10.0" nil "Tue, 29 Apr 2025 00:00:00 +0000" "<p>The <code class=\"language-plaintext highlighter-rouge\">ef-themes</code> are a collection of light and dark themes for GNU
+Emacs that provide colourful (“pretty”) yet legible options for users
+who want something with a bit more flair than the <code class=\"language-plaintext highlighter-rouge\">modus-themes</code> (also
+designed by me).</p>
+<ul>
+<li>Package name (GNU ELPA): <code class=\"language-plaintext highlighter-rouge\">ef-themes</code></li>
+<li>Official manual: <a href=\"https://protesilaos.com/emacs/ef-themes\">https://protesilaos.com/emacs/ef-themes</a></li>
+<li>Change log: <a href=\"https://protesilaos.com/emacs/ef-themes-changelog\">https://protesilaos.com/emacs/ef-themes-changelog</a></li>
+<li>Sample pictures: <a href=\"https://protesilaos.com/emacs/ef-themes-pictures\">https://protesilaos.com/emacs/ef-themes-pictures</a></li>
+<li>Git repositories:
+<ul>
+<li>GitHub: <a href=\"https://github.com/protesilaos/ef-themes\">https://github.com/protesilaos/ef-themes</a></li>
+<li>GitLab: <a href=\"https://gitlab.com/protesilaos/ef-themes\">https://gitlab.com/protesilaos/ef-themes</a></li>
+</ul>
+</li>
+<li>Backronym: Eclectic Fashion in Themes Hides Exaggerated Markings,
+Embellishments, and Sparkles.</li>
+</ul>
+<p>Below are the release notes.</p>
+<hr />
+<h2>Version 1.10.0 on 2025-04-29</h2>
+<p>This version introduces minor refinements to an already stable
+package.</p>
+<h3>The palette preview uses a tabulated interface</h3>
+<p>The commands <code class=\"language-plaintext highlighter-rouge\">ef-themes-preview-colors</code> and <code class=\"language-plaintext highlighter-rouge\">ef-themes-preview-colors-current</code>
+produce a preview of the given theme’s palette. In the past, we were
+using a bespoke buffer for this task, just how the built-in command
+<code class=\"language-plaintext highlighter-rouge\">list-colors-display</code> does it.</p>
+<p>Now we rely on the built-in <code class=\"language-plaintext highlighter-rouge\">tabulated-list-mode</code> to get a cleaner
+tabulated view. Plus, users can sort by column.</p>
+<h3>Support for more faces or face groups</h3>
+<ul>
+<li>
+<p>Added support for my <code class=\"language-plaintext highlighter-rouge\">tmr</code> package. This will be especially
+noticeable in its tabulated view (used to show timers, with the
+command <code class=\"language-plaintext highlighter-rouge\">tmr-tabulated-view</code> (alias <code class=\"language-plaintext highlighter-rouge\">tmr-list-timers</code>)).</p>
+</li>
+<li>
+<p>Added explicit support for my <code class=\"language-plaintext highlighter-rouge\">spacious-padding</code> package.
+Specifically, this is for the faces <code class=\"language-plaintext highlighter-rouge\">spacious-padding-subtle-mode-line-active</code>
+and <code class=\"language-plaintext highlighter-rouge\">spacious-padding-subtle-mode-line-inactive</code>. Those can be
+configured as part of the user option <code class=\"language-plaintext highlighter-rouge\">spacious-padding-subtle-mode-line</code>.</p>
+<div class=\"language-elisp highlighter-rouge\"><div class=\"highlight\"><pre class=\"highlight\"><code><span class=\"p\">(</span><span class=\"k\">setq</span> <span class=\"nv\">spacious-padding-subtle-mode-line</span>
+<span class=\"o\">'</span><span class=\"p\">(</span> <span class=\"ss\">:mode-line-active</span> <span class=\"nv\">spacious-padding-subtle-mode-line-active</span>
+<span class=\"ss\">:mode-line-inactive</span> <span class=\"nv\">spacious-padding-subtle-mode-line-inactive</span><span class=\"p\">))</span>
+</code></pre></div>    </div>
+</li>
+<li>
+<p>Made the <code class=\"language-plaintext highlighter-rouge\">helpful</code> headings use whatever the style of level 1
+headings is, as defined by the user option <code class=\"language-plaintext highlighter-rouge\">ef-themes-heading</code>.
+Thanks to John Haman for applying the relevant code we have for the
+<code class=\"language-plaintext highlighter-rouge\">modus-themes</code>. The change is small (and comes from my <code class=\"language-plaintext highlighter-rouge\">modus-themes</code>,
+anyway), meaning that John does not need to assign copyright to the
+Free Software Foundation.</p>
+</li>
+<li>
+<p>Added support for the <code class=\"language-plaintext highlighter-rouge\">howm</code> package.</p>
+</li>
+<li>
+<p>Extended support for the <code class=\"language-plaintext highlighter-rouge\">auto-dim-other-buffers</code> package to include
+its <code class=\"language-plaintext highlighter-rouge\">auto-dim-other-buffers-hide-face</code>.</p>
+</li>
+<li>
+<p>Made sure that all new <code class=\"language-plaintext highlighter-rouge\">transient</code> faces conform with the design
+priorities of the themes. Concretely, this means that they do not
+support any colour-coding: all keys look the same, regardless of
+whether they mean “continue”, “exit”, or anything else.
+Colour-coding with a full spectrum of colours cannot be accessible
+(and I do not believe colour-coding alone even works because the
+colours have nothing else to be associated with, like how a red line
+in a diff buffer also goes together with the minus sign).</p>
+<p>Thanks to Kevin Fleming for including the <code class=\"language-plaintext highlighter-rouge\">transient-key-stack</code> face
+that I had originally missed. This was done in pull request 54:
+<a href=\"https://github.com/protesilaos/ef-themes/pull/54\">https://github.com/protesilaos/ef-themes/pull/54</a>. The change is
+small, meaning that Kevin does not need to assign copyright to the
+Free Software Foundation</p>
+</li>
+<li>
+<p>Extended support for <code class=\"language-plaintext highlighter-rouge\">adoc-mode</code> courtesy of Leilei332. This was
+done in pull request 52: <a href=\"https://github.com/protesilaos/ef-themes/pull/52\">https://github.com/protesilaos/ef-themes/pull/52</a>.</p>
+<p>The change is within the ~15-line limit, meaning that its author does
+not need to assign copyright to the Free Software Foundation.</p>
+</li>
+</ul>" nil nil "39a13c7a93dc073b67d32fcb96026fc3") (129 (26640 29361 977769 861000) "https://protesilaos.com/codelog/2025-04-27-aporetic-fonts-version-1-2-0/" "Aporetic fonts version 1.2.0" nil "Sun, 27 Apr 2025 00:00:00 +0000" "<p>Customised build of the Iosevka typeface, with a consistent rounded
+style and overrides for almost all individual glyphs in both upright
+(roman) and slanted (italic) variants. This is the successor to my
+now-discontinued “Iosevka Comfy” fonts.</p>
+<ul>
+<li>Git repository: <a href=\"https://github.com/protesilaos/aporetic\">https://github.com/protesilaos/aporetic</a>.</li>
+<li>Sample pictures: <a href=\"https://protesilaos.com/emacs/aporetic-fonts-pictures\">https://protesilaos.com/emacs/aporetic-fonts-pictures</a></li>
+<li>Backronym: Aporetic’s Predecessor Objects’ Reserved Eponym Truly Included “Comfy”.</li>
+</ul>
+<p>Below are the release notes.</p>
+<hr />
+<p>The major change for this release is that Aporetic Sans Mono and
+Aporetic Serif Mono are rendered in a strictly monospaced width. This
+means that characters such as the em dash (<code class=\"language-plaintext highlighter-rouge\">—</code>) occupy the same space
+as the regular dash.</p>
+<p>Before, Aporetic Sans Mono and Aporetic Serif Mono had some characters
+that were proportionately spaced. This would upset the expectations of
+terminal emulators and thus break the display, sometimes with
+characters overlapping when they should not.</p>
+<p>Other changes are more subtle. They pertain to the style of individual
+characters, namely:</p>
+<ul>
+<li>
+<p>The Greek lower case lambda (<code class=\"language-plaintext highlighter-rouge\">λ</code>) has a flat top instead of a straight
+one. The legs remain straight. This makes it consistent with the
+design of the Greek lower case delta (<code class=\"language-plaintext highlighter-rouge\">δ</code>), among others.</p>
+</li>
+<li>
+<p>The Greek lower case mee (<code class=\"language-plaintext highlighter-rouge\">μ</code>) has a rounder right corner, which is
+in line with a whole range of characters.</p>
+</li>
+<li>
+<p>The micro sign is the same design as the Greek lower case mee, even
+though these are technically two distinct code points.</p>
+</li>
+<li>
+<p>The at sign (<code class=\"language-plaintext highlighter-rouge\">@</code>) of Aporetic Sans and Aporetic Serif (i.e. the
+proportionately spaced fonts I provide) is a bit taller than it was
+before. This makes it look more related to its monospaced
+counterpart, which is also relatively tall.</p>
+</li>
+</ul>
+<p>I also added support for some more Greek characters, as well as the
+Latin eth (<code class=\"language-plaintext highlighter-rouge\">ð</code>), thorn (<code class=\"language-plaintext highlighter-rouge\">þ</code>), and thorn capital (<code class=\"language-plaintext highlighter-rouge\">Þ</code>).</p>
+<p>All other changes are done to retain the aesthetic of the fonts while
+dealing with the breaking changes introduced by the upstream Iosevka
+project.</p>" nil nil "6791e960207170c72f00aebad6ea5ba7") (128 (26637 12256 411652 618000) "https://protesilaos.com/codelog/2025-04-26-emacs-show-font-0-3-0/" "Emacs: show-font version 0.3.0" nil "Sat, 26 Apr 2025 00:00:00 +0000" "<p>This package lets you preview a font inside of Emacs. It does so in
+three ways:</p>
+<ul>
+<li>Prompt for a font on the system and display it in a buffer.</li>
+<li>List all known fonts in a buffer, with a short preview for each.</li>
+<li>Provide a major mode to preview a font whose file is among the
+installed ones.</li>
+</ul>
+<p>Sources:</p>
+<ul>
+<li>Package name (GNU ELPA): <code class=\"language-plaintext highlighter-rouge\">show-font</code></li>
+<li>Official manual: <a href=\"https://protesilaos.com/emacs/show-font\">https://protesilaos.com/emacs/show-font</a></li>
+<li>Change log: <a href=\"https://protesilaos.com/emacs/show-font-changelog\">https://protesilaos.com/emacs/show-font-changelog</a></li>
+<li>Git repository: <a href=\"https://github.com/protesilaos/show-font\">https://github.com/protesilaos/show-font</a></li>
+<li>Sample pictures: <a href=\"https://protesilaos.com/codelog/2024-09-10-emacs-show-font-0-1-0/\">https://protesilaos.com/codelog/2024-09-10-emacs-show-font-0-1-0/</a></li>
+<li>Backronym: Should Highlight Only With the Family Of the Named Typeface.</li>
+</ul>
+<p>Below are the release notes.</p>
+<hr />
+<h2>Version 0.3.0 on 2025-04-26</h2>
+<p>This version adds some refinements to an already stable package.</p>
+<h3>The command <code class=\"language-plaintext highlighter-rouge\">show-font-list</code> is an alias for <code class=\"language-plaintext highlighter-rouge\">show-font-tabulated</code></h3>
+<p>The <code class=\"language-plaintext highlighter-rouge\">show-font-list</code> command was using a custom buffer that listed
+font families and their corresponding short preview. It did not have
+any other feature.</p>
+<p>I made changes under the hood to rely on the built-in
+<code class=\"language-plaintext highlighter-rouge\">tabulated-list-mode</code> which is a standard and gives us the option to
+sort by column. The <code class=\"language-plaintext highlighter-rouge\">show-font-list</code> is thus an alias for the new
+command <code class=\"language-plaintext highlighter-rouge\">show-font-tabulated</code>. Right now the sorting facility only
+applies to reversing the name-based order. In the future we may have
+more columns, such as if we describe a font as “Latin”, “Greek”, etc.</p>
+<h3>The tabulated list marks fonts that cannot be previewed</h3>
+<p>In the past, the font listing would include families that could not
+display the <code class=\"language-plaintext highlighter-rouge\">show-font-pangram</code> or, indeed, any Latin character. Those
+would be rendered as empty boxes.</p>
+<p>I have now introduced a simple heuristic to test that the given family
+supports Latin characters. If it does not, then (i) it is highlighted
+with a different colour, (ii) it shows “No preview” instead of the
+pangram, and (iii) it displays the information in the Emacs default
+font family. Some families do not play nice with this approach though,
+as they pass the test but still do not display any Latin characters.
+This happens with icon fonts.</p>
+<p>The long-term goal is to support different scripts and show the
+appropriate text for each of them.</p>
+<h3>The <code class=\"language-plaintext highlighter-rouge\">show-font-sentences-sample</code> adds more to the <code class=\"language-plaintext highlighter-rouge\">show-font-select-preview</code></h3>
+<p>The new user option <code class=\"language-plaintext highlighter-rouge\">show-font-sentences-sample</code> is a list of strings
+that can be used to exhibit common patterns and letter combinations.
+The default value is carefully designed to show if a font family is
+stylistically consistent, such as with how it draws <code class=\"language-plaintext highlighter-rouge\">i</code>, <code class=\"language-plaintext highlighter-rouge\">l</code>, <code class=\"language-plaintext highlighter-rouge\">t</code>, or
+<code class=\"language-plaintext highlighter-rouge\">h</code>, <code class=\"language-plaintext highlighter-rouge\">n</code>, <code class=\"language-plaintext highlighter-rouge\">m</code>, and so on. Plus, it teaches you some obscure words like
+“scholarch”, “antipode”, and “heteroclite”: use them with your Greek
+friends—and if they do not know those words, then they must buy you
+a café frappé!</p>
+<h3>Miscellaneous</h3>
+<ul>
+<li>The face <code class=\"language-plaintext highlighter-rouge\">show-font-title-small</code> is an obsolete alias for the more
+appropriately named <code class=\"language-plaintext highlighter-rouge\">show-font-title-in-listing</code>.</li>
+<li>The prompt used by the command <code class=\"language-plaintext highlighter-rouge\">show-font-select-preview</code> now
+correctly uses its own history and default value.</li>
+<li>The default value of the user option <code class=\"language-plaintext highlighter-rouge\">show-font-character-sample</code>
+includes some more patterns to better test the adequacy of a font
+family. This sample is displayed in the buffer produced by the
+command <code class=\"language-plaintext highlighter-rouge\">show-font-select-preview</code>.</li>
+</ul>" nil nil "e104f5e9110e88d04fe693ef8918c53a") (127 (26636 31151 975880 30000) "https://protesilaos.com/politics/2025-04-25-eu-indifference-palestinians/" "On the =?utf-8?Q?EU=E2=80=99s?= indifference towards the Palestinians" nil "Fri, 25 Apr 2025 00:00:00 +0000" "<p><a href=\"https://www.socialeurope.eu/gazas-descent-into-catastrophe-tests-europes-conscience\">Writing for <em>Social Europe</em></a>,
+Josep Borell, the former “foreign minister” of the European Union
+(technically, the “High Representative of the European Union for
+Foreign Affairs”) laments the Union’s apparent double standard in how
+it treats the Ukrainian and Palestinian peoples:</p>
+<blockquote>
+<p>For some European countries, historical guilt over the Holocaust has
+arguably been transformed into a “reason of state” that justifies
+unconditional support for Israel, risking engaging the EU in
+complicity with crimes against humanity. One horror cannot justify
+another. Unless the values the EU claims to uphold are to lose all
+credibility, the bloc cannot continue to passively observe the
+unfolding horror in Gaza and the “Gazaification” of the West Bank.</p>
+</blockquote>
+<p>The fact of the matter is that the Union’s vaunted values only hold
+true when they align with power politics. Otherwise they are a perk
+for privileged locals. Those who believe that European elites actually
+care about democracy and fundamental rights for everyone have simply
+not been paying attention.</p>
+<p>In European politics there is no courage to push forward with bold
+ideas. It is a bureaucratic apparatus that has lots of competent
+administrators but few, if any, visionaries. Most policy-makers are
+conditioned into cowardice and fake modesty. They mince their words to
+the point of not saying anything, just how Josep Borell is doing here
+despite wanting to say something more than he does.</p>
+<p>How many countries, dear Josep Borell, is the “some European
+countries” you are referring to? Why is it so difficult to speak in
+plain terms about what you did and who exactly turned it down?</p>
+<p>European decision-makers are used to operating behind closed doors. It
+is why we do not have public discussions about EU affairs, outside
+whatever issue touches on some national sensitivity. This modus
+operandi is undemocratic. Forget about the institutions and the letter
+of the law. We do not need to rewrite the Treaties to change how we do
+politics. Josep Borell and every other person in that position has the
+liberty to speak his mind and to thus provide that power impulse which
+generates discussions. My idea of a politician is simple: if you are
+holding a leadership role you lead with honour and are loud about it
+so that we can better check on you.</p>
+<p>Until that happens, until the spirit of democratic conduct permeates
+the everyday practice of Union politics, we will continue to bear
+witness to the machinations of a massive bureaucracy and deal with
+such blatant double standards as the one outlined by the former
+commissioner.</p>
+<p>The supranational level where the European Commission, and thus
+someone like Josep Borell, operates at, is driven by the
+intergovernmental power dynamics at the European Council. If the
+Commission’s policies are implemented, it is because they flesh out
+the guidelines stipulated by the European Council. And, by the same
+token, if, say, Josep Borell’s actions do not lead to anything
+concrete it is because those do not align with the European Council’s
+agenda.</p>
+<p>Knowing about who “some European countries” are thus takes us to the
+heart of the issue. It is at the intergovernmental level where those
+countries exert their influence, always behind closed doors.</p>
+<p>Against this backdrop, it is pointless to think of Europeans as a bloc
+that has a coherent foreign policy. It will all be power politics
+wrapped in a neat package of euphemisms and virtue signalling.</p>
+<p>There is no “we” in this regard. I, as a person living in Cyprus, have
+no impact whatsoever on the outlook of “some European countries”
+because those countries are not subject to my right for democratic
+scrutiny: they do not answer to me as a citizen. This is exactly why
+we cannot have democracy in the EU in its current form. There is a
+mismatch between the powers of the Union, which apply to the entire
+architecture, and the accountability they are subject to which
+coagulates along national lines and has no sufficient supranational
+counterpart. I have, in the past, termed this phenomenon “sovereignty
+mismatch” on the premise that sovereignty in a democracy is reified in
+the virtuous cycle between state power and popular control. We now are
+subject to the power, but have no commensurate control.</p>
+<p>As such, “we” care about the Ukrainians simply because Russia poses a
+threat to “our” immediate interests. For the countries in the vicinity
+of Russia, this threat involves territorial claims as well and the
+understandable fear that what happened to Crimea and more recently in
+Eastern Ukraine can happen in the Baltics as well. By contrast, “we”
+have no immediate geopolitical interest in standing up to the human
+rights of the Palestinians so “we” pretend to not have seen or heard
+anything.</p>
+<p>The idea that a critique of the Israeli government’s actions can be
+construed as antisemitism is specious. No government should be immune
+to criticism. If it is, then this is the hallmark of tyranny. When I
+write against the EU, as I am doing right now in unequivocal terms, I
+am not being anti-European: I care for the wellness of this continent
+and these people and want the norms which underpin our institutions to
+be upheld.</p>
+<p>The Israelis have a right to self-determination which emanates from
+international law. They also have obligations stemming from the same
+corpus of legality. The same goes for every country. Yet international
+law is not featuring a sovereign, meaning that it is enforceable only
+when the international community acts in concert. Otherwise,
+international law is just a bunch of papers that powerful rulers
+blithely ignore.</p>
+<p>In this regard, it is a mistake to think that the Israeli government
+is acting unilaterally. None of this could have happened without the
+support and acquiescence of global powers such as the United States
+and the European Union (and the long history of Western colonial
+powers meddling in the Middle East among other places).</p>
+<p>What we Europeans are experiencing is the outward expression of an
+inner malaise. We do not have democracy in places where we need it,
+which empowers unaccountable elites to apply their double standards
+with impunity. It is a disgrace.</p>" nil nil "d1de3092b50d918e44b43ff9f80d3d84") (126 (26635 8774 601000 882000) "https://protesilaos.com/commentary/2025-04-25-dealing-indecision-maintenance-adventure/" "Dealing with indecision with a sense of maintenance and adventure" nil "Fri, 25 Apr 2025 00:00:00 +0000" "<p>What follows is an excerpt from a private exchange that I am publishing with the permission of my correspondent. The quoted/indented parts are the ones I am responding to. The starting point was that of dealing with free time and indifference, to which I added the themes of doing activities that require maintenance while also tending to the side of us that is visceral (not rational) and which needs a challenge or an adventure.</p>
+<hr />
+<blockquote>
+<p>What has been a nuisance to me lately, is the topic of free time and the feeling of indifference in the activities to fill it. I would love to hear your perspective on the matter.</p>
+<p>This struggle generally happens after I stop work on my day job, and the time is up to me to fill. I of course want to take advantage of this time, but find this desire to actually make the time full of frustration. From my perspective there are, at least, the following reasons for this feeling:</p>
+<ul>
+<li>Too many options of things to do</li>
+<li>Not knowing what activity I am more interested in</li>
+<li>The aforementioned pressure to ‘take advantage’ of this time</li>
+</ul>
+</blockquote>
+<p>I suspect this is a widespread feeling with the paradox of choice and concomitant fear of missing out. What I do is to effectively make my plans more deterministic, as they are contingent on past decisions, while retaining the discretionary power to do what I feel like in the moment.</p>
+<p>The way I approach life is a combination of a longer-term outline and short-term bursts of spontaneity within the overarching constraint of maintainability. I have a general idea of what I want to do for the future, such as to continue to develop my Emacs packages and work on/around the hut, but I do not write down a prescriptive regimen for each day. In practice, this happens at the level of my agenda, which only includes genuinely time-sensitive tasks like “meet with PERSON at 15:00”. Anything that is not time-sensitive is a “wishlist” item, meaning that I will check it out only when I feel like it.</p>
+<p>By introducing this criterion of intrinsic time-sensitivity, I am effectively achieving clarity in two ways: (i) I know for sure what I must do on the given day and (ii) I have insight into my free time. How to operate in my free time is more open-ended in principle, though fairly predictable in actuality, because of the maintainability inherent to the tasks I am committed to. In principle, I have the freedom to do whatever I want. Though because the tasks I have started require maintenance (Emacs packages, manual labour, …) I actually have fewer options to pick from. Take the release of Denote version 4, for example: there was no pressing reason for me to publish it last week. I could have postponed that to this week or some time within the next three months. I could, in principle, even say that I am not interested in publishing it at all. But this would have the longer-term effect of compounding the work I have to do if I intend to maintain the project, or it would lead to the discontinuation of the project (bugs would accumulate, users would eventually seek alternatives, et cetera).</p>
+<p>Maintenance, then, is the key. If the tasks you do have an inherent requirement of keeping up with them and you genuinely care about them, then you will keep working on them. This covers the manual labour I do as well. If, say, I do not clear the wild vegetation from around my place, I might be dealing with venomous snakes as well as an increasingly likely fire hazard during the summer. So I have to put in the effort, even though I do not have a strict timeline for doing so. Same for handling my dogs. I spend a lot of time with them each day, which is good for our relationship. I also go with them on long walks. This is “maintenance work” too because we continue to do something that is mutually beneficial for our friendship and our health.</p>
+<blockquote>
+<p>The first identified reason leads to the following train of thought: “Maybe I should read. But what book? Or maybe I should play a game…but what game? Perhaps I should journal. There is also that movie everyone at work is talking about. However, it is a beautiful day to go play disc golf.” You get the point. Each one of these I respond to with “I guess I could do that”. None really excite me. None seem to spark any more interest than the other, which is reason number 2 in the above list. It is a feeling of indifference towards all of them.</p>
+</blockquote>
+<p>Notice how all of these have no inherent maintainability component to them and the flip-side is that they require no commitment on your end. Watching a movie, for example, is a self-contained activity. Sure, it may be a series so you have to watch a few hours of video, but the idea is the same. The movie does not require you to keep revisiting it long-term. Video games are slightly different because they can trigger this feeling of accomplishment, like when you level up your character in a role-playing game, but have the same disadvantage as movies of containing the results to the virtual realm where they do not have a life of their own. Because they do not have a life of their own, there is no real urgency associated with them, no external accountability structure that compels you into action and keeps you honest, no emotion on your side that you have to tend to them. So what might appear as maintainability at the outset is, in fact, an illusion.</p>
+<p>What you want is to discover matters that have a life of their own and eventually opt for them. It is like gardening. If you do not clear the weeds and water your plants, the garden dies. So if you care about it, you will keep doing it again and again. Each action will contribute to the feeling of contentment, even if it is not one of amazement. Rather than an ephemeral rush of excitement, you get in a stable state of pleasure, of being in good terms with yourself and of appreciating the command you have over your life, as you become attuned to the “little things” rather than the firework-like moments that are flashy but ultimately fleeting.</p>
+<p>This is not to say that ephemeral experiences are inherently wrong. No! You can have those as well, though couch them in terms of a generally stable—indeed pleasurable—life.</p>
+<blockquote>
+<p>When I do finally to commit to something, I can’t help but think of all the other things I could be doing. Thinking that a different activity would make me feel like I am ‘taking advantage’ of my free time. This of course is a frustrating cycle.</p>
+</blockquote>
+<p>Yes, this is frustrating. I personally do not think in terms of “taking advantage” in a vacuum, but only relative to how I am maintaining the activity. I keep doing it with consistency, even just a little bit at a time, and so I preserve my momentum and feel nice about the discipline I show towards it. To use the example of sport, inconsistency is what kills enthusiasm for it. If you do not do it with regularity, it eventually feels painful and you quit.</p>
+<p>The approach of “taking advantage” does entail a major risk: of seeking self-contained experiences so that you can exploit as many of them as possible in an attempt to maximise said advantage. In other words, it inspires you to not go in depth, to not commit to whatever requires maintenance, and to instead try to see everything there is to be seen. But because “everything” is infinite while you are finite, you set yourself up for failure, in the form of frustration.</p>
+<p>Sticking to some things long-term is empowering for the very reason that it puts you in control of the situation: you are involved because your involvement is required for it to persist as an experience you may have. Instead of getting distracted by all the possible and theoretically rewarding experiences you could be partaking in, you remain focused on what works for you with regularity. Fundamentally, each new experience that is done without attention to its maintainability adds up to an unfulfilling lifestyle of not having something to hold onto and be held by, and thus comes at the cost of your wellness.</p>
+<blockquote>
+<p>To try and counter this struggle, I have been trying to be mindful about lowering expectations. Even though the logical part of me understands that all my free time can’t be an amazing experience, I still seem to act as if this is possible. If I am able to lower my expectations about what experiences should feel like, I anticipate that the part of me that second guesses the activity I decide on would quiet down to some extent. But perhaps that in itself is something I should lower my expectations on.</p>
+</blockquote>
+<p>I think this is the sort of trick that might work in some cases but is generally unreliable. You might, say, lower your expectations about how great that movie will be, but this does not change the fact that watching the movie does not have a longer-term aspect to it: it does not involve a commitment to its maintenance as it has no life of its own, as noted above. What I then think is that expectations must also be formulated in terms of the innate qualities of a given project or choice. Some are naturally short-lived while others have the tendency to stick around.</p>
+<p>What matters, then, is to factor in your feelings when you pick something that will stay with you for some time. Do I love dogs, for example? Am I prepared to tend to the needs of the dog 7 days a week and 365 days a year? Will I go on a walk no matter the weather conditions or at least try the next best alternative? And will I be willing to sacrifice some comforts, such as going on a vacation, if it means taking care of my dog? If you can answer these questions with your heart as well, then you have found something you like and which will keep you true to your word. You have liberated yourself from the trap that is the fear of missing out only when you can reliably remain true to your word.</p>
+<blockquote>
+<p>This theme of maintainability you cover here and in the succeeding paragraphs deeply resonates. Something I often think about that goes hand in hand with this theme is the practacility of an activity. I often feel as if the activities I engage in need to involve some practical aspect. But I then get caught up in thinking that any practicality I apply is fabricated. For example, reading has the practical aspect of teaching me something, a video game has the practical aspect of problem solving and interaction in a consequence free environment (relaxation and exploration).</p>
+<p>The practicality I associate with these activities do not actually contribute to my survival, or longer term outlook. I suppose a difference would be if I have the goal to become a doctor (I do not) then reading medcial books would fall under the maintenance, or pursuit, of this vision. This would then result in reading being a more practical activity.</p>
+</blockquote>
+<p>Practicality is important because it means you stick with an activity that is likely to reward your efforts in some way. Recreational activities, like watching movies or playing games, thus have the practicality of, well, “re-creation”: they let you disconnect from your duties and do something that makes you happy, relaxes you, etc.</p>
+<p>However, the consideration of practicality comes with the risk of reducing every decision to a calculation of the expected costs and benefits and, further, of making every choice subordinate to some higher purpose goal. We may say, for example, that gaming is practical because it is recreational, which in turn is practical because it gives you a new impetus to go to work, which in turn is practical because it sustains you, and so on until we ultimately reach the goal you are working towards, which is to live and, perhaps, to live well.</p>
+<p>Such analysis is fine in hindsight or to have as a rough idea of how to proceed, though it can lead to the sort of overthinking we have already been discussing: why is “to live” even a goal? Are we really choosing to live or are we living anyway until we reach a state, probably after many years, where we ponder such questions? Is, then, the goal “to live” but a rationalisation of what is already there? And what is “live well” supposed to be? To have a good end so that, for example, I tolerate abusive working conditions because the job pays handsomely and I will eventually enjoy my life afterwards with all that money? Or at the other end of the spectrum, to live well is to maximise my pleasure in the current moment as if there is no tomorrow? There are so many questions we can raise here and never reach a definitive answer. Are we even really operating in pursuit of a rational final goal?</p>
+<p>All this comes down to the onesidedness of the goal-oriented approach. It is rational in that it sets a target on the basis of weighing expected pros and cons. But in our life we do not have all the answers. We constantly operate in an environment of imperfect knowledge and can only understand things better with the benefit of hindsight. Yet there is no “replay button” for us, which means that whatever we do, we do it with at least some degree of uncertainty and faith that things will go our way. I then feel that we cannot afford to be rationalists in the strict sense. It is pretentious to claim as much.</p>
+<p>The cost-benefit calculus detracts from something basic. “Basic” as in simple or common but also as that which pertains to the basis of our life. This is the experience of excitement, passion, and adventure. Those are visceral, which the rationalist propensities of ours may dismiss as unreliable. Yet they trigger in us something that we cannot ignore with honesty; something that is empowering; something that we recognise when we feel it even if it eludes our efforts at defining it; something that complements or underpins our conscious decision-making as our animalistic alter ego.</p>
+<p>Consider again the example of a video game. Why is there such a thing as a difficulty setting? Or why do people do speed runs? What is it that inspires us to seek these increasingly challenging paths in gaming? Now generalise this adventure seeking, this wolf within, to matters of sport, programming, science. Why does the sportsperson try to further improve their performance? Why is the programmer bent on writing more elegant code? Why is the scientist interested in the deeper understanding of the world? Why is the philosopher even writing this? We do not have a rational answer as to what we will do after we discover the limits, yet this does not prevent us from trying.</p>
+<p>So, yes, practicality matters though there is also value in trusting our gut feeling or in following our heart. But not to the other extreme of foregoing reason. It is all about finding moderation in our ways.</p>
+<blockquote>
+<p>Do you think providing value to others is an important aspect in your pursuits? I ask mainly with your Emacs projects in mind:</p>
+<blockquote>
+<p>But this would have the longer-term effect of compounding the work I have to do if I intend to maintain the project, or it would lead to the discontinuation of the project (bugs would accumulate, users would eventually seek alternatives, et cetera).</p>
+</blockquote>
+<p>I have written a lot of elisp code over the years, but mainly for my own use. Therefore the mentioned maintenance aspect is rather limited. Thus I wonder if ensuring other’s needs are met is a motivator to keep up with a project. Or perhaps it is pride in one’s work that is shared with the public?</p>
+</blockquote>
+<p>Giving back to the community is an important consideration, though I cannot tell if it is the driving force. I suspect that underneath it is this visceral beast that seeks adventure, as I covered above. I have fun maintaining my programs, while I face the challenge to learn new things and to prove to myself that I can do it. Maintaining the code in public actually puts the whole activity in “hard mode”, because I cannot hide my flaws and must instead rise to the occasion. This is also why I do my publications in one go, as I have explained before (“alla prima”), but also why I publish so much of what I create: by not hiding my in-the-moment self, I essentially take away the option of failing badly and am thus increasing the challenge.</p>
+<p>I can apply the same explanation for many of my life choices, but you get the idea.</p>
+<blockquote>
+<p>I suspect that the answer here is up to the indivdual. For example, I do trail runs. However, if I do not have a race or event that I am signed up for then I know I will find ways to not train. Once I sign up for an event I now have motivation to train. If I do not, I will show up on race day with a risk of injury, or a having miserable time due to being unfit. Another example I can imagine is purchasing a fixer-upper house. Once you make that purchase you now have a financial liability so fixing up the house is a practical endeavor. Or as you put it: these activities have a ‘life of their own’. The race will not be put on hold because you are not prepared, and the fixer-upper will continue to deterioate if you do not put in the work.</p>
+</blockquote>
+<p>Very well! You then seem to have this sense of challenge as well and can relate to what I wrote already.</p>
+<blockquote>
+<p>To find a lifestyle that requires engaging in activities that require maintenance, it seems unavoidable that you will have to force discomfort. At least in the situation that I and many others find themselves in where survival, and therefore comfort is relatively easy. It is then up to you to identify an accountability structure that will motivate you, and to take that plunge.</p>
+</blockquote>
+<p>Agreed! Survival may not even be a factor here. Think of the example of speed running a game. Or the scientist who really needs to know about the mysteries of the world. None of these are matters of life or death. But people keep doing them and continue to push the boundaries. To what end? Nobody knows! To me, it comes down to this monologue:</p>
+<ul>
+<li>I will go for an exploration!</li>
+<li>What am I even going to explore?</li>
+<li>I do not know, which is why I have to explore!</li>
+</ul>" nil nil "2cb62690cdfeceb70881d6d68c463512") (125 (26633 14282 738115 660000) "https://protesilaos.com/interpretations/2025-04-22-galani-just-two-days/" "Interpretation of =?utf-8?Q?=E2=80=9CJust?= two =?utf-8?Q?days=E2=80=9D?= by Dimitra Galani" nil "Tue, 22 Apr 2025 00:00:00 +0000" "<p>The subject of this entry is an erotic and inspiring song by Dimitra Galani (Δήμητρα
+Γαλάνη) titled <em>Just two days</em>: <a href=\"https://www.youtube.com/watch?v=9ByBDFDvqmI\">https://www.youtube.com/watch?v=9ByBDFDvqmI</a>.</p>
+<p>Below are the original lyrics, my faithful translation of them, and
+then some comments on the substantive point.</p>
+<div class=\"language-plaintext highlighter-rouge\"><div class=\"highlight\"><pre class=\"highlight\"><code>Δυο μέρες μόνο
+Ερμηνεία:  Δήμητρα Γαλάνη
+Στίχοι:    Παρασκευάς Καρασούλος
+Μουσική:   Δήμητρα Γαλάνη
+Δυο μέρες μόνο
+Να σε κρατάω αγκαλιά
+Δυο μέρες μόνο
+Να σ'έχω δίπλα μου ξανά
+Για λίγο μόνο
+Δυο μέρες μόνο
+Σ'ένα ταξίδι αστραπή
+Να ξεδιπλώνω
+Να παίρνει ανάσα η ζωή
+Για λίγο μόνο
+Για τόσο μόνο
+Φως να γεμίζουν οι στιγμές
+Να λάμπουν μες στο χρόνο
+Όλο το σώμα μου να ζει
+Για σένα μόνο
+Δυο μέρες μόνο
+Να συνηθίζει το κορμί
+Κι εγώ να λιώνω
+Έπειτα μόνο τη φωνή σου
+Ν'ανταμώνω
+Δυο μέρες μόνο
+Όσο μια βόλτα διαρκεί
+Για τόσο μόνο
+Όλη η ζωή μου
+Αυτή η στιγμή
+Δυο μέρες μόνο
+</code></pre></div></div>
+<div class=\"language-plaintext highlighter-rouge\"><div class=\"highlight\"><pre class=\"highlight\"><code>Just two days
+Singers:  Dimitra Galani
+Lyrics:   Paraskevas Karasoulos
+Music:    Dimitra Galani
+Just two days
+To hold you in my embrace
+Just two days
+To have you beside me again
+Just for a little while
+Just two days
+On a lightning trip
+To be unfolding
+Life to be taking a breath
+Just for a little while
+Just for that long
+Moments to be filling with light
+To be shining in time
+My entire body to be living
+Just for you
+Just two days
+The body to be adapting
+And me be melting
+Then only your voice
+to be encountering
+Just two days
+As much as a stroll lasts
+Just for that long
+My entire life
+This very moment
+Just two days
+</code></pre></div></div>
+<p>In Greek we disambiguate the concept of <em>falling in love</em> from love in
+its broadest sense: this experience is called <em>erotas</em> (έρωτας) unlike
+the more subdued and general form of love, else <em>agape</em> (αγάπη).
+Erotas has been symbolised since antiquity as the god Eros, who is
+related to Aphrodite, the goddess of both beauty and love in their
+broadest sense. In English we have terms such as “erotic” (pertaining
+to Eros) and “aphrodisiac” (related to Aphrodite, though here this is a
+proxy for erotic and thus not faithful to the archetype of the goddess).</p>
+<p>What <em>Just two days</em> describes is the intensely passionate phenomenon
+of erotas. The artist is not shy about expressing a desire to defy all
+constraints and dismantle all barriers, to be fully present in the
+moment of physical attraction, to become one with the lover by not
+hedging anything, and consequently to touch the eternal through the
+momentary.</p>
+<p>Erotas is passion throughout. Authenticity is its beauty. As the
+ancient saying goes, it is invincible in battle (<em>eros anikate mahan</em>,
+«έρως ανίκατε μάχαν»). It being short-lived does not detract from the
+experience. If anything, it is what keeps it honest. The encounter has
+to be brief, just long enough to ride the wave of excitement but also
+to keep lust as the driving force.</p>
+<p>Those who share erotas make no pretences to propriety and care not of
+meeting social expectations. Such concerns might occur later, once
+erotas transpires. But erotas is impervious to the mode of longer-term
+planning and will not be burdened by the trivia of everyday affairs.
+It shall not be the facade of a business transaction; of securing the
+partner that maximises the chances of success in terms of social
+mobility and financial outcomes. No! Those may be worthwhile, but they
+do not belong to passion of this sort.</p>
+<p>When thinking of the different types of love, it is tempting to rank
+them and, perhaps, to place erotas at the bottom of the list due to
+how ephemeral it tends to be. This song inspires us to refrain from
+such an exercise, for it is misguided. It invites us to appreciate
+deep-seated erotic desire as such and to recognise it as yet another
+facet of the human condition. How can it be lesser (or indeed greater)
+when it is equally human?</p>
+<p>More generally, <em>Just two days</em> unapologetically presents us with an
+aspect of reality. It defies whatever taboo forces people into a
+pretentious modus vivendi. Erotas is not interested in conforming with
+some ideal of normativity, such as the cultural construct of the coy
+lady or the indomitable man qua guardian. There is a place for those,
+but not here. The artist then gives us the truth of what the person
+wants.</p>
+<p>We can choose to echo whatever moral precepts find currency in our
+milieu, about suppressing this and sacrificing that, or take the art
+as-is. However we go about it, reality does not care about our norms.
+Erotas will continue to be there, even if we condemn it as frivolous.
+It can still be felt equally by the unabashed womaniser and the shy
+girl, no matter the era and prevailing tradition.</p>
+<p>Those who wish to understand what it is to be human, do not argue with
+the cosmos. They start their inquiry from a position of acceptance and
+conclude their investigations in a state of acceptance. They take a
+step back to suspend judgement, while they remain calm in the face of
+openendedness. Uncertainty will not go away. Every answer engenders a
+million questions.</p>
+<p>With patience and sincerity, one shall discern the patterns exhibited
+in the world and take them for what they are. Only then is it time to
+admit, with humility, that without knowledge of the whole, there can
+be no final judgement about the parts. Our morality may then be
+appraised for what it is: a useful tool to make social life liveable;
+a tool that is refined to serve our ever-evolving needs; a tool
+nonetheless.</p>" nil nil "d2e41b5a96b8096b665454d66af6cae8") (124 (26631 55473 637778 86000) "https://protesilaos.com/interpretations/2025-04-22-galani-just-two-days/" "Interpretation of =?utf-8?Q?=E2=80=9CJust?= two =?utf-8?Q?days=E2=80=9D?= by Dimitra Galani" nil "Tue, 22 Apr 2025 00:00:00 +0000" "<p>The subject of this entry is an erotic and inspiring song by Dimitra Galani (Δήμητρα
+Γαλάνη) titled <em>Just two days</em>: <a href=\"https://www.youtube.com/watch?v=9ByBDFDvqmI\">https://www.youtube.com/watch?v=9ByBDFDvqmI</a>.</p>
+<p>Below are the original lyrics, my faithful translation of them, and
+then some comments on the substantive point.</p>
+<div class=\"language-plaintext highlighter-rouge\"><div class=\"highlight\"><pre class=\"highlight\"><code>Δυο μέρες μόνο
+Ερμηνεία:  Δήμητρα Γαλάνη
+Στίχοι:    Παρασκευάς Καρασούλος
+Μουσική:   Δήμητρα Γαλάνη
+Δυο μέρες μόνο
+Να σε κρατάω αγκαλιά
+Δυο μέρες μόνο
+Να σ'έχω δίπλα μου ξανά
+Για λίγο μόνο
+Δυο μέρες μόνο
+Σ'ένα ταξίδι αστραπή
+Να ξεδιπλώνω
+Να παίρνει ανάσα η ζωή
+Για λίγο μόνο
+Για τόσο μόνο
+Φως να γεμίζουν οι στιγμές
+Να λάμπουν μες στο χρόνο
+Όλο το σώμα μου να ζει
+Για σένα μόνο
+Δυο μέρες μόνο
+Να συνηθίζει το κορμί
+Κι εγώ να λιώνω
+Έπειτα μόνο τη φωνή σου
+Ν'ανταμώνω
+Δυο μέρες μόνο
+Όσο μια βόλτα διαρκεί
+Για τόσο μόνο
+Όλη η ζωή μου
+Αυτή η στιγμή
+Δυο μέρες μόνο
+</code></pre></div></div>
+<div class=\"language-plaintext highlighter-rouge\"><div class=\"highlight\"><pre class=\"highlight\"><code>Just two days
+Singers:  Dimitra Galani
+Lyrics:   Paraskevas Karasoulos
+Music:    Dimitra Galani
+Just two days
+To hold you in my embrace
+Just two days
+To have you beside me again
+Just for a little while
+Just two days
+On a lightning trip
+To be unfolding
+Life to be taking a breath
+Just for a little while
+Just for that long
+Moments to be filling with light
+To be shining in time
+My entire body to be living
+Just for you
+Just two days
+The body to be adapting
+And me be melting
+Then only your voice
+to be encountering
+Just two days
+As much as a stroll lasts
+Just for that long
+My entire life
+This very moment
+Just two days
+</code></pre></div></div>
+<p>In Greek we disambiguate the concept of <em>falling in love</em> from love in
+its broadest sense: this experience is called <em>erotas</em> (έρωτας) unlike
+the more subdued and general form of love, else <em>agape</em> (αγάπη).
+Erotas has been symbolised since antiquity as the god Eros, who is
+related to Aphrodite, the goddess of both beauty and love in their
+broadest sense. In English we have terms such as “erotic” (pertaining
+to Eros) and “aphrodisiac” (related to Aphrodite, though here this a
+proxy for erotic and thus not faithful to the archetype of the goddess).</p>
+<p>What <em>Just two days</em> describes is the intensely passionate phenomenon
+of erotas. The artist is not shy about expressing a desire to defy all
+constraints and dismantle all barriers, to be fully present in the
+moment of physical attraction, to become one with the lover by not
+hedging anything, and consequently to touch the eternal through the
+momentary.</p>
+<p>Erotas is passion throughout. Authenticity is its beauty. As the
+ancient saying goes, it is invincible in battle (<em>eros anikate mahan</em>,
+«έρως ανίκατε μάχαν»). It being short lived does not detract from the
+experience. If anything, it is what keeps it honest. The encounter has
+to be brief, just long enough to ride the wave of excitement but also
+to keep lust as the driving force.</p>
+<p>Those who share erotas make no pretences to propriety and care not of
+meeting social expectations. Such concerns might occur later, once
+erotas transpires. But erotas is impervious to the mode of longer-term
+planning and will not be burdened by the trivia of everyday affairs.
+It shall not be the facade of a business transaction; of securing the
+partner that maximises the chances of success in terms of social
+mobility and financial outcomes. No! Those may be worthwhile, but they
+do not belong to passion of this sort.</p>
+<p>When thinking of the different types of love, it is tempting to rank
+them and, perhaps, to place erotas at the bottom of the list due to
+how ephemeral it tends to be. This song inspires us to refrain from
+such an exercise, for it is misguided. It invites us to appreciate
+deep-seated erotic desire as such and to recognise it as yet another
+facet of the human condition. How can it be lesser (or indeed greater)
+when it is equally human?</p>
+<p>More generally, <em>Just two days</em> unapologetically presents us with an
+aspect of reality. It defies whatever taboo forces people into a
+pretentious modus vivendi. Erotas is not interested in conforming with
+some ideal of normativity, such as the cultural construct of the coy
+lady or the indomitable man qua guardian. There is a place for those,
+but not here. The artist then gives us the truth of what the person
+wants.</p>
+<p>We can choose to echo whatever moral precepts find currency in our
+milieu, about suppressing this and sacrificing that, or take the art
+as-is. However we go about it, reality does not care about our norms.
+Eros will continue to be there, even if we condemn it as frivolous. It
+will still be felt equally by the unabashed womaniser and the shy
+girl, no matter the era and prevailing tradition.</p>
+<p>Those who wish to understand what it is to be human, do not argue with
+the cosmos. They start their inquiry from a position of acceptance and
+conclude their investigations in a state of acceptance. They take a
+step back to suspend judgement, while they remain calm in the face of
+openendedness. Uncertainty will not go away. Every answer engenders a
+million questions.</p>
+<p>With patience and sincerity, one shall discern the patterns exhibited
+in the world and take them for what they are. Only then is it time to
+admit, with humility, that without knowledge of the whole, there can
+be no final judgement about the parts. Our morality may then be
+appraised for what it is: a useful tool to make social life liveable;
+a tool that is refined to serve our ever-evolving needs; a tool
+nonetheless.</p>" nil nil "a1af870e46ef16b91437bcfb541685aa") (123 (26630 29051 904140 975000) "https://protesilaos.com/commentary/2025-04-21-doing-it-alone-versus-others/" "Re: doing it alone VS doing it with others" nil "Mon, 21 Apr 2025 00:00:00 +0000" "<p>The following is an excerpt from a private exchange that I am
+publishing with permission and without sharing the personal details of
+my correspondent. The quoted/indented parts are from my correspondent.</p>
+<hr />
+<blockquote>
+<p>Some people say something like: “Learn to be alone, before you can
+start living with others” or “To improve yourself, you should be
+able to solve your problems on your own.”</p>
+</blockquote>
+<p>A general remark about this is that even when something is true, it
+can be turned into its opposite when it is applied uncritically. It is
+why we need to consider the specifics of the case and appreciate the
+nuances. This is what separates the smart person from the wise person:
+the latter understands when to suspend the application of the rules.</p>
+<p>In a vacuum, I think there is nothing obviously wrong with those views
+you quote. There are scenaria where I agree that being able to resolve
+your problems will help you deal with other people as well (or “other
+people’s problems”, if you will). For example, if you live alone you
+learn to manage your finances, keep your place in a habitable state at
+minimum, and so on. These skills are useful when you live with others
+as well.</p>
+<p>This is a matter of learning by doing. It helps you also develop an
+appreciation of the difficulties involved. Think, for instance, about
+trying to cook. Once you check for yourself that it is not easy to be
+a good cook, you are more likely to respect someone’s efforts on this
+front and to better appreciate what they do. Another example is with
+matters that require years of commitment, such as sport. You will see
+the average football fan who has never played the sport competitively
+talk big about a player’s performance. But if you actually try to do
+what you think is easy, then you realise how difficult it really
+is—at which point you think twice before spewing nonsense.</p>
+<p>Those granted, there will always be counterpoints. If we take the
+notion of “do it first on your own” to its extreme, then we reach an
+untenable situation where each person must only figure out everything
+on their own before engaging with others. But none can be on their own
+at the outset simply because they are raised in a society and culture
+that already puts them in the midst/influence of others.</p>
+<p>The mindful consideration then is all about finding the right balance.</p>
+<blockquote>
+<p>For example, it can be relevant when talking about romantic
+relationships. One could say that in order to truly love someone and
+function together well, one has to love oneself and take care of
+one’s problems first.</p>
+</blockquote>
+<p>Loving your self is a good basis for a relationship. I have first-hand
+experience with people who did not have that quality at the time,
+which made them insecure about the most trivial things. That quickly
+turns into a toxic or abusive environment, which is not healthy for a
+relationship (and for one’s own wellness by extension).</p>
+<p>Still, I think that the “do it on your own first” does not work for
+relationships, romantic or otherwise. You cannot learn about others in
+their absence. When you interact with someone, you are not dealing
+with an abstract human, but with that specific person. You can only
+know more about that person through direct exposure to them, not
+theoretical insights about some generic person.</p>
+<p>To me this looks more like a case of overthinking it. Suppose you want
+to learn more about friendship. One approach is to isolate yourself
+while you read all the literature on friendship. You have all the
+theory nailed down, but no actual experience of friendship. Another
+approach is to spend time with people and get to know what friendship
+is in practice with its nice and not-so-nice aspects. Perhaps knowing
+both the theory and the practice will provide you with a deeper
+understanding of the subject matter. The point, though, is that there
+will have to be action involved: it cannot be a strictly theoretical
+consideration.</p>
+<blockquote>
+<p>However, it seems that this way of thinking is flawed. Firstly, it’s
+hard to imagine someone who solved all of his problems, which would
+render him ‘ready’ for relationships. Secondly, we all know how
+enriching the presence of others can be. It’s a pity when people
+don’t ask for help, because they have an idea that they should be
+able to resolve the situation alone.</p>
+</blockquote>
+<p>I agree. One can never be “ready” about practical matters without
+doing the practice. Nothing else to add to that point.</p>
+<p>Asking for help involves something else though: trust. Sometimes it is
+not easy to open yourself up to others because you fear the
+consequences. I learnt this many years ago when I was doing 12-hour
+shifts and one day I noted how it is not fair to subsist in such a
+precarious way. Some smartass who was in a privileged position noted
+that “complaining is for pussies” and that I should, as a “real man”,
+take responsibility and power through. This remark was not mindful of
+my particular case, namely the fact that I was already powering
+through as someone who has been earning his keep since my early teens.
+He was lecturing me about responsibility as if I was some
+ne’er-do-well, not knowing that assuming responsibility is what I
+always do. Also, he was talking without considering the specifics of
+why I was even there: there was a global financial crisis that hit my
+country especially badly and I had to do such work while keeping my
+mouth shut to not lose the sole source of income available. If I were
+to be the “real man” he imagined, he would not have liked my forceful
+reaction. Do not question the commitment of a person who is fighting
+for the basics.</p>
+<p>Anyway, the gist is that there are systemic issues at play that cannot
+be reduced to mere matters of personal responsibility or outlook.
+People are more likely to seek help when they know they can trust the
+person they appeal to for assistance. Since I mentioned this
+much-touted manhood, it serves as a good example for our discussion. I
+find that it is harder for men to talk about their struggles because
+(i) those are perceived as a weakness, and (ii) men are conditioned to
+think of themselves as a failure (as not “real”) when they are not
+doing what they are supposed to. And it is not just toxic men who
+belittle other men: women do it too, calling them effeminate, whiny,
+and whatnot.</p>
+<p>Beside these, we have to consider the nature of one’s job, which has a
+direct impact on their livelihood. If you work in a place where
+unscrupulous competition is the norm, such as the world of politics
+where virtually no-one has honour, you realise that anything you say
+will be used against you. So you shut up and daydream of alternatives.</p>
+<p>There is also a dimension of being used to talking about your issues.
+If you grow up in an environment of persistent hardship, you are more
+likely to be self-reliant and resilient, which are often good
+qualities, but also more reluctant to trust others in your midst. So
+the “good qualities” are only so to an extent, to connect to my
+original general point.</p>
+<p>Trust, then, is subject to social pressures and expectations. It is
+situational. Of course, the notion of “let me be ready for it first”
+can play a role. This overthinking may even be a reflection of the
+underlying deficit in trust, rather that what causes this deficit. It
+is all about the specifics of the case.</p>
+<blockquote>
+<p>Do you relate your situation to these thoughts? It seems that you’ve
+learned a lot through ‘lone’ work. Would you develop your character
+so well if you received more help from others?</p>
+</blockquote>
+<p>I am definitely the lone wolf type, with both “lone” and “wolf” being
+relevant descriptors. You see me as the calm philosopher, though this
+is because I have simplified my environment while I have discovered
+outlets for my seemingly boundless exuberance. If I am confined to
+small spaces and forced to not express myself, if I do not have this
+sense of openendedness and adventure, I lose my vitality to the point
+of depression, just how a wild animal in captivity is no longer
+potent.</p>
+<p>I do not write this with pride. Everything is both good and bad,
+depending on the specifics. It simply is the reality of my character
+and situation.</p>
+<p>The upside is that I do not get influenced to do stuff I do not really
+want. For example, all my friends throughout the years, and most
+relatives, have been smokers, though I did not try to smoke not even
+once. Because they knew I do not yield to pressure, they never even
+bothered to ask. Same for not violating my own rules, such as eating
+sweets, doing casual gambling, and the like. This attitude of mine is
+expressed as discipline, where I remain committed to my tasks
+long-term and do not deviate from them on a whimsy. It is stable and
+for some may even be boring. One instance of this that is public is my
+website: it has been going on for 14+ years already and I publish more
+writings frequently (at times on a daily basis). The same goes for
+everything I enjoy doing: I do not switch from one activity to another
+without sticking to anything in particular. If I do something, I will
+most probably keep doing it for a long time.</p>
+<p>The downside of this lone wolf disposition is that I am not easy to
+approach, even though I am friendly and relaxed. For example, I was
+invited to an Easter table yesterday. “Do you want a beer?” they asked
+me. I responded negatively because I quit alcohol almost a decade ago.
+“Here is some cheesecake!” they said. I declined it because I quit
+eating sweets two decades ago. “Let’s play bingo; 2 euro to
+participate!”, which I again opted out of because I do not gamble. So
+I would talk with people there but I clearly was not one with the
+company. People were fine about it: I have had a good relationship
+with all of them for a long time already and have attended many such
+gatherings. It is just that I do not do what everybody else considers
+normal.</p>
+<p>Another downside of this is that I might appear to be judgemental,
+even though I am not. People may think that I consider, say, eating
+sweets to be some sort of sin. Whereas I do not care how others choose
+to live their life: I simply do not want others to tell how I should
+live my life.</p>
+<p>I will not force myself to be somebody else just to fit in. Fitting in
+is not a priority for me, perhaps because I know I can rely on myself.
+Or, maybe, I enjoy the challenge of trying to rely on myself and
+proving that I can do it. It may all be but a game to me and I am
+finding the pretext to continue playing it each time. Who knows?
+Hypotheses aside, there may be latent hubris in my lifestyle: the
+hubris of me seeking challenges that will ultimately undo me. Greek
+myths must have been inspired by such real stories. But I try to keep
+things in perspective and recognise my limits.</p>
+<p>Back to your question, I cannot answer the counterfactual. I cannot
+know what kind of person I would have been had I had different
+experiences. I suspect I would not be the same. Maybe I would not have
+the same level of self awareness or competence I have now because I
+would never have the need for it. Or maybe my competence would be
+expressed as a knack for trusting others and relying on their
+judgement rather that going my own way. I cannot tell… Again, this
+is not a matter of “good” versus “bad” in a vacuum: they are all good
+and bad in different degrees depending on the particularities.</p>
+<blockquote>
+<p>How to, then, reconcile self-improvement and relationships? Should
+we drop the expectation of being able to handle everything alone?</p>
+</blockquote>
+<p>What I have learnt is that despite our current trajectory we can
+always try to have a more balanced approach: to be with others without
+sacrificing our needs in the name of sociability. Like me accepting
+the invitation to join the table while knowing I would not perfectly
+blend in. Where the balance is will depend on the person.</p>
+<p>The key is to not go to extremes: the extreme of approaching a subject
+such as this from a purely theoretical perspective; the extreme of not
+trying to see things from the perspective of another; the extreme of
+never accommodating the needs of another; the extreme of not making
+any effort to improve yourself; the extreme of believing you are
+defective by design; the extreme of always echoing what others say
+just to fit in with the lads; the extreme of denying your self to get
+some short-lived validation. It all comes down to understanding the
+nuances.</p>" nil nil "0e3c2bf181ef5631158dc854897b5c41") (122 (26629 57987 846812 9000) "https://protesilaos.com/news/2025-04-20-vlog-tour-hut-back-side/" "Vlog: tour of the =?utf-8?Q?hut=E2=80=99s?= back side" nil "Sun, 20 Apr 2025 00:00:00 +0000" "<p>In this ~22-minute video I show the back side of my hut. Today I
+cleared the wild vegetation there and created a few raised garden
+beds. The next task is to plant vegetables on the garden beds. I also
+show the part of the land that is adjacent to the stream and describe
+the ongoing flood-control work I am doing there.</p>" nil nil "117982c7aeb2e409be0b8b15ea546108") (121 (26629 57987 842362 149000) "https://protesilaos.com/interpretations/2025-04-19-paschalidis-perseids/" "Interpretation of =?utf-8?B?4oCcUGVyc2VpZHPigJ0=?= by Miltos Paschalidis" nil "Sat, 19 Apr 2025 00:00:00 +0000" "<p>For today’s entry I have picked a song from the rich repertoire of
+songmaker Miltos Paschalidis. The title is <em>Perseids</em>:
+<a href=\"https://www.youtube.com/watch?v=DLO6ncUK9Bw\">https://www.youtube.com/watch?v=DLO6ncUK9Bw</a>.</p>
+<p>The Perseids is a shower of star dust that is visible from the night
+sky of Greece/Cyprus some time during mid August. I have observed the
+phenomenon a couple of times. It is spectacular! Though the song I am
+about to comment on is about a person’s inertia, even in the face of
+such special events.</p>
+<p>Below are the original lyrics, my faithful translation of them, and
+further commentary. Also check my other “interpretation” involving
+Miltos Paschalidis: <a href=\"https://protesilaos.com/interpretations/2024-11-20-paschalidis-tale-with-sad-ending/\">Tale with sad ending</a> (2024-11-20).</p>
+<div class=\"language-plaintext highlighter-rouge\"><div class=\"highlight\"><pre class=\"highlight\"><code>Περσείδες
+Ερμηνεία:  Μίλτος Πασχαλίδης
+Στίχοι:    Μίλτος Πασχαλίδης
+Μουσική:   Μίλτος Πασχαλίδης
+Πάνω στο μπράτσο χάραξε η μέρα μιαν ευχή
+για το χορό που στήσανε στ'αστέρια οι Περσείδες
+Τη νύχτα που ξαγρύπνησες μονάχη στο σκαλί
+τον ουρανό σου χάρισαν μα πάλι δε τον είδες
+Δε πέφτουνε χρυσάφι μου τα κάστρα με ευχές
+μήτε ξυπνούν τα όνειρα στις μαύρες τις οθόνες
+Δεν ξεγελούν τον ίσκιο τους οι μοναχές καρδιές
+φτιάχνουν χαρμάνι λησμονιάς μα ξημερώνουν μόνες
+Ανοίγω τα χέρια μου
+που όλο τον κόσμο χώρεσαν
+μα τώρα πια χωράνε
+μόνο εσένα
+Στο μπράτσο η μέρα χάραξε με πείσμα κι αντοχή
+δυο κρίνα φεγγαρόλουστα που φύτρωσαν στη πέτρα
+Μη μου ζητάς να σ'αρνηθώ ζωή μου και πληγή
+μέχρι να μου τελειώσουνε τα βέλη στη φαρέτρα
+Ανοίγω τα χέρια μου
+που όλο τον κόσμο χώρεσαν
+μα τώρα πια χωράνε
+μόνο εσένα
+</code></pre></div></div>
+<div class=\"language-plaintext highlighter-rouge\"><div class=\"highlight\"><pre class=\"highlight\"><code>Perseids
+Singers:  Miltos Paschalidis
+Lyrics:   Miltos Paschalidis
+Music:    Miltos Paschalidis
+The day etched a wish on the arm
+for the dance the Perseids set up in the stars
+The night you stayed awake alone at the stair
+they offered you the sky but you did not see it again
+Castles do not fall with wishes my gold
+neither do dreams wake up on black screens
+The lone hearts do not fool their shadow
+they make a forgetfulness blend but find dawn alone
+I open my arms
+that fit in the whole world
+but now only fit in
+you alone
+The day etched on the arm with grit and endurance
+two moonbathed lilies that sprung on the stone
+Do not ask me to reject you my life and wound
+until I run out of arrows in the quiver
+I open my arms
+that fit in the whole world
+but now only fit in
+you alone
+</code></pre></div></div>
+<p>I understand this song as a description of complacency and
+self-inflicted helplessness; of wishing for some eventuality and of
+claiming to strongly prefer it while remaining in the habit of doing
+nothing towards its realisation, not even when the opportunity arises.</p>
+<p>Sometimes the effort takes place but is halfhearted and thus too
+little to make a difference. It can be such that the person misses
+even the Perseids, this magnificent shower of gold pouring down from
+the heavens; a spectacle for which the poetic “you” had stayed up all
+night to bear witness to.</p>
+<p>These indecisive half-measures only reinforce the sense of
+helplessness. They seem to confirm the feeling that every attempt at
+change is futile. Though this is a self-fulfilling prophecy of not
+trying in earnest and of eventually discovering that the results are
+discouraging.</p>
+<p>The poetic “you” is likely limited in their choices by edifices that
+are thoroughly breakable, even if they do not appear to be such. It so
+happens that those allegorical castles are nothing but flimsy shanties,
+yet are impressed as unassailable fortresses in the mind of those who
+are not in the flow of trying hard enough.</p>
+<p>The helpless person of the sort here considered eventually identifies
+with this way of life. “It is who I am”, they might say, and all but
+beg to be rejected. The longing for rejection becomes a form of
+self-realisation and the moral high ground upon which one’s victimhood
+is established.</p>
+<p>If loneliness is genuinely bothersome, if it is what one seeks to
+escape from, then they must struggle to undo it with everything
+available at their disposal: fight down to the last arrow and then
+some. It is this unwillingness to give up—this desire to try with
+every ounce of one’s strength—that carries the potential to leave
+indelible marks and to ultimately bring about the wish of two lilies
+jointly bathing in the moonlight.</p>
+<p>The poet acknowledges that a lover is not pure bliss. It is a wound in
+potentiality just as it adds meaning to one’s life. It is the
+recognition of this mixed reality that we find throughout Greek
+culture from antiquity to modernity, of nothing being purely good or
+bad. It is why, for the sake of limiting this to contemporary music,
+we have the traditional song from Heperus that speaks of one’s love as
+“my ruin” (Χαλασιά μου). It may be affectionate yet retains the notion
+of happiness bundled up together with destruction:</p>
+<ul>
+<li><a href=\"https://www.youtube.com/watch?v=lJIomBSCEJg\">https://www.youtube.com/watch?v=lJIomBSCEJg</a> (cover by Kostas Tzimas and company).</li>
+<li><a href=\"https://www.youtube.com/watch?v=wtcjnbESfh4\">https://www.youtube.com/watch?v=wtcjnbESfh4</a> (cover by Maria Gkouva).</li>
+</ul>
+<p>Implied in this nuanced understanding of the cosmos is the view that
+love involves courage. It is not easy. Inertia can be comfortable,
+sometimes to a fault. It then is a matter of figuring out what one
+truly wants and of having the honesty to act accordingly. Is the
+poetic “you” prepared to experience this imperfect reality of love or
+are they content with how they are and do not want to change anything?</p>" nil nil "6a91db29df3d00bf7247cd8a3fe13b34") (120 (26627 17950 931772 153000) "https://protesilaos.com/interpretations/2025-03-01-papakonstantinou-minor-adulterations/" "Interpretation of =?utf-8?Q?=E2=80=9CMinor_adulterations=E2=80=9D?= by Vasilis Papakonstantinou" nil "Sat, 01 Mar 2025 00:00:00 +0000" "<p>For this entry, I have picked one of the many masterpieces performed
+by legendary Greek rock singer Vasilis Papakonstantinou:
+<a href=\"https://www.youtube.com/watch?v=SL5WqqSEn18\">https://www.youtube.com/watch?v=SL5WqqSEn18</a> (and by “many” I am
+thinking of “more than a hundred”). <em>Minor adulterations</em> gives us
+insight into the life of a troubled mind, as it tackles themes of
+failure, regret, introspection, and escapism.</p>
+<p>Below are the original lyrics, my translation of them, and some
+further philosophical thoughts.</p>
+<p>Also check the other “interpretations” involving Vasilis
+Papakonstantinou’s songs:</p>
+<ul>
+<li><a href=\"https://protesilaos.com/interpretations/2023-03-22-papakonstantinou-sophie/\">Sophie (The wild crowd)</a> (2023-03-22)</li>
+<li><a href=\"https://protesilaos.com/interpretations/2022-07-28-papakonstantinou-porto-rico/\">Porto Rico</a> (2022-07-28)</li>
+<li><a href=\"https://protesilaos.com/interpretations/2022-07-09-papakonstantinou-kabardina/\">Trench coat</a> (2022-07-09)</li>
+</ul>
+<div class=\"language-plaintext highlighter-rouge\"><div class=\"highlight\"><pre class=\"highlight\"><code>Μικρές Νοθείες
+Ερμηνεία:  Βασίλης Παπακωνσταντίνου
+Στίχοι:    Οδυσσέας Ιωάννου
+Μουσική:   Θάνος Μικρούτσικος
+Ποτέ του δεν κατάφερε να βγει σε μια λιακάδα
+και ζει με ό,τι περίσσεψε από ένα σκάρτο ποίημα
+τα πρωινά σηκώνεται με μια βαριά ζαλάδα
+και λέει πως τον ξύπνησε ένα μεγάλο κύμα
+Κρεμάει τις αφίσες του στα παράθυρά του
+Κρύβει το φως μα κρύβει κι όλα τ'άλλα
+γιατί το μόνο που λαχτάρησε ως λάφυρα του
+είναι μια θάλασσα να φτάνει ως τη σκάλα
+Βάζει σημάδια με στυλό πάνω στον τοίχο του
+Μετράει το ύψος του που πόντο-πόντο χάνει
+Μα κάθε βράδυ όταν βγαίνει απ'τον ύπνο του
+στέκεται όρθιος και τρυπάει το ταβάνι
+Είναι που ονειρεύεται πως φεύγει για ταξίδια
+πως μπαίνει μέσα σε παλιές φωτογραφίες
+Ξέρει αν μπορούσε θα'κανε μία απ'τα ίδια
+αλλά τι νόημα έχει το όνειρο χωρίς μικρές νοθείες
+</code></pre></div></div>
+<div class=\"language-plaintext highlighter-rouge\"><div class=\"highlight\"><pre class=\"highlight\"><code>Minor adulterations
+Singers:  Vasilis Papakonstantinou
+Lyrics:   Odysseas Ioannou
+Music:    Thanos Mikroutsikos
+Never did he manage to reach a sunshine
+and lives with whatever remains of a scrapped poem
+The mornings he gets up with heavy dizziness
+and says a great wave woke him up
+He hangs his posters on his windows
+Hides the light but also hides everything else
+because the only thing he desired as plunder
+was a sea that stretches to the stairs
+He sets marks on his wall with a pen
+Measures his height that he loses bit by bit
+But each night when he gets out of his slumber
+he stands up and pierces through the roof
+It is that he dreams of embarking on journeys
+that he gets into old pictures
+He knows if he could he would do more of the same
+but what is the point of a dream without minor adulterations
+</code></pre></div></div>
+<p>The poetic “he” is a person who is caught in a spiral of
+introspection. We get a hint as to what the cause is, in the form of
+the person’s own perfectionism, symbolised by the company of some
+scrapped poem. It is a memento of his works and his dissatisfaction
+with them. He is the most stern of judges in discarding works that do
+not live up to some ultimately irrelevant standard of objective
+excellence. Why irrelevant? Because a creator can only create what
+their condition renders possible. To reject the end result is to not
+recognise or accept what the condition is: it is to live in dissonance.</p>
+<p>This person is fundamentally ashamed of what they do and who they are.
+Hence the desire to withdraw from the public eye, to hide in his ever
+darker room, and to reminisce about the few experiences that were
+worth keeping a photograph of. It is perfectly fine to have ambitions
+and to set high standards. Though every plan has to be couched in
+terms of practicality, of the immediate experience of the world. It
+cannot be decoupled from what one is doing, where they started from,
+and what their trajectory is. It cannot be “objective” strictly
+speaking, as there is always some context that determines what is
+happening and delineates the realm of the potential.</p>
+<p>For as long as someone is putting in honest effort, to the best of
+their abilities, there is nothing to be ashamed of. Only cheating and
+faking it, only the lack of honour, is worthy of contempt. But the
+hard work is noble and praiseworthy as such, even if the results are
+not the best ever.</p>
+<p>Hiding from others is a healthy coping mechanism when it is an initial
+response to some injurious situation. One needs time to recuperate and
+come back stronger. Withdrawing into a safe space is thus helpful.
+Though it is paramount to not become fatalistic by thinking that this
+is the end of the world. By disaggregating the big problem into its
+smaller constituents, the pressure becomes less intense: one can
+tackle minor issues and get a taste of the ensuing small wins. It is a
+matter of not giving up, of not shutting off the sunlight completely.</p>
+<p>Concretely, the sort of overthinking described in this song cannot be
+overcome by more thinking. The cycle of negativity is broken by
+action. Our protagonist, this nameless “he”, must muster the courage
+to venture outside. Though this means that he has to swallow his pride
+and make some concessions, such as by relaxing his standards and
+lowering his expectations. Perhaps poetry is not what he is meant to
+do or he can still do it on the side while balancing it out with
+something else.</p>
+<p>It is single-mindedness and inflexibility that undoes a man. Those
+same qualities are invaluable in certain cases where one has to power
+through hardship. The key is to not lose sight of the bigger picture;
+to not make unflinching commitment the goal itself, but to understand
+that everyone can be wrong while the world can always introduce new
+states of affairs. Thus the priorities we once set for ourselves are
+either no longer correct or relevant.</p>
+<p>By blotting out the light and everything else with it, the person is
+bound to forgo the sense of perspective that informs sound judgement.
+Now, confined to their own space, dwelling over the same tired
+thoughts, all they can do is continue to lose any sense of
+self-respect, as they belittle their being one regret at a time.</p>
+<p>The titular “adulterations” do give us a hopeful message though. Just
+as we once dreamt of achieving something grand, we retain the ability
+to dream anew no matter the setbacks. We may modify what once was to
+fathom a purpose we had not envisaged. It is this very pivot that
+makes the adulteration of the original dream benign and, indeed,
+necessary. The world may then reveal to us an altogether different
+reality that the one we had hoped for; a reality that may still
+fulfil us.</p>" nil nil "c07366ac5ca5e708ea8712bc9952775a") (119 (26627 17950 925372 69000) "https://protesilaos.com/interpretations/2025-02-11-tolls-velesiotou-zouganeli/" "Interpretation of =?utf-8?B?4oCcVG9sbHPigJ0=?= by Fotini Velesiotou and Eleonora Zouganeli" nil "Tue, 11 Feb 2025 00:00:00 +0000" "<p>For this entry in the series, I have selected a song that I only
+discovered recently: <em>Tolls</em>. There are multiple versions of it,
+including the original performed by Fotini Velesiotou and Stavros
+Siolas, though the one I prefer is sung by Fotini Velesiotou and
+Eleonora Zouganeli: <a href=\"https://www.youtube.com/watch?v=XCzUX8grbLI\">https://www.youtube.com/watch?v=XCzUX8grbLI</a>.</p>
+<p>Before I proceed to translate the lyrics of <em>Tolls</em> and then elaborate
+on its deeper meaning, I must note that my plans this noon was to
+write an article about one of the songs performed by Eleonora
+Zouganeli. My first choice was <em>The Gardener</em>, which is the work of
+Pavlos Pavlides, another beloved artist of mine:
+<a href=\"https://www.youtube.com/watch?v=WrEIY277C_A\">https://www.youtube.com/watch?v=WrEIY277C_A</a>. Though I later decided
+to leave that for another time and focus on <em>Tolls</em> for the time
+being. Let us, then, enjoy the music and think about one of the
+lessons we can learn from it.</p>
+<p>Below are the original lyrics, my faithful translation of them, and
+further commentary.</p>
+<div class=\"language-plaintext highlighter-rouge\"><div class=\"highlight\"><pre class=\"highlight\"><code>Διόδια
+Ερμηνεία:  Φωτεινή Βελεσιώτου & Ελεωνόρα Ζουγανέλη
+Στίχοι:    Πόλυς Κυριάκου
+Μουσική:   Σταύρος Σιόλας
+Τώρα θα δεις τα χρώματα ν'αλλάζουνε
+και τα βουνά να σμίγουν ένα-ένα
+Άγγελοι σαν θνητοί θα σ'αγκαλιάζουνε
+εχθροί θα σου μιλούν αγαπημένα
+Τώρα θα πιω νερό απ'το ποτήρι σου
+δικά σου θα'ναι πια όσα δεν έχω
+Θα σπρώξω ουρανό στο παραθύρι σου
+κι ό,τι δεν άντεχα θα το αντέχω
+Τώρα θα πιάσω σπίτι στον παράδεισο
+τσάμπα οικόπεδο σε παράλια
+Του έρωτα θα βάλω το πουκάμισο
+και θα νικήσω δίχως πανοπλία
+Τώρα θα δεις μες στης ψυχής τα υπόγεια
+τραπέζι με ψωμί, νερό, κι αλάτι
+Τώρα που δεν υπάρχουνε διόδια
+που πέφτει σαν ζεστή βροχή η αγάπη
+</code></pre></div></div>
+<div class=\"language-plaintext highlighter-rouge\"><div class=\"highlight\"><pre class=\"highlight\"><code>Tolls
+Singers:  Fotini Velesiotou & Eleonora Zouganeli
+Lyrics:   Polys Kyriakou
+Music:    Stavros Siolas
+You will now see the colours changing
+and the mountains merging one-by-one
+Angels like mortals will be embracing you
+enemies will be talking to you lovingly
+Now I will drink water from your glass
+yours shall be all I no longer have
+I will push sky towards your window
+and anything I could not endure shall endure
+Now I will acquire a house in paradise
+Gratis property by the seaside
+I will wear love's shirt
+and shall win without an armour
+Now you will see the soul's basements
+table with bread, water, and salt
+Now that there are no tolls
+that love falls like warm rain
+</code></pre></div></div>
+<p>To me, <em>Tolls</em> describes the outlook a person has when they no longer
+treat people transactionally. Others are not means towards
+individualistic ends. They are all equal, fellow travellers on the
+same journey of life, with whom one may share a table, no matter how
+frugal it is.</p>
+<p>The worth of a person is not measured by how opulent their dining hall
+is. Indeed, excesses are often a sign of vanity and misplaced
+priorities. A serving of the essentials is enough when done with
+kindness. It is all about one’s intent and their willingness to
+recognise in everyone some inherent, inalienable value.</p>
+<p>This hearkens back to the ancient Greek ideal of hospitality,
+epitomised by the concept of Xenial Zeus (<em>ξένιος Ζευς</em> or <em>ξένιος
+Δίας</em>): “xenial” means “of the foreigners”. One must welcome strangers
+and treat them with care, while they must, in turn, respect the
+integrity of the household. There is mutual respect involved, whose
+deepening manifests as love.</p>
+<p>Love is not one-sided. A person can only feel loved when they are
+prepared to give love. This is because of the precondition of trust.
+One must open up their true self, to be recognised for who they are,
+to be confident that they are valued for their true self and not some
+persona thereof, and, in turn, to discover in others a genuine person
+that hides beneath the hardened carapace of quotidian transactionality.</p>
+<p>When you are loved for something you are not, such as some carefully
+curated character you maintain on social media, you distract yourself
+from the deep-seated contempt you harbour for yourself by chasing
+vanity points online. The dopamine boost takes your attention away
+from the hard-yet-rewarding work you need to do to (i) accept yourself
+and (ii) to then put your faith in others.</p>
+<p>One-sided love is a self-centred experience rooted in fear. It
+involves the imagination of another, who cannot be an actual person as
+their facets of selfhood are not explored. Those are substituted by
+potentially beautified or likely inaccurate fantasies. Such a state of
+mind happens within the confines of one’s comfort zone: they have not
+opened up to make themselves vulnerable and, necessarily, have not
+dared to discover real people.</p>
+<p>Love can hurt precisely because makes you vulnerable. To love is an
+act of courage, of overcoming one’s inhibitions, of looking past one’s
+ego, to find the others as they are, with all their imperfections.</p>
+<p>The reason Zeus is the tutelary figure of hospitality is because one
+must exhibit the combination of vigour, magnanimity, and big-picture
+thinking that befits the god of the sky and form-making. Hospitality
+is not the mere ephemeral business affair with a tourist, but the
+readiness to share with others that which you have no surplus of. It
+is this very attitude that dismantles the barriers, which exist
+between us.</p>" nil nil "4232353466ba7a0f03e7c062ca77e2ee") (118 (26625 60021 711577 754000) "https://protesilaos.com/codelog/2025-04-18-emacs-tmr-1-1-0/" "Emacs: tmr version 1.1.0" nil "Fri, 18 Apr 2025 00:00:00 +0000" "<p>TMR provides facilities for setting timers using a convenient
+notation. Lots of commands are available to operate on timers, while
+there also exists a tabulated view to display all timers in a nice
+grid.</p>
+<ul>
+<li>Package name (GNU ELPA): <code class=\"language-plaintext highlighter-rouge\">tmr</code></li>
+<li>Official manual: <a href=\"https://protesilaos.com/emacs/tmr\">https://protesilaos.com/emacs/tmr</a></li>
+<li>Change log: <a href=\"https://protesilaos.com/emacs/tmr-changelog\">https://protesilaos.com/emacs/tmr-changelog</a></li>
+<li>Git repositories:
+<ul>
+<li>GitHub: <a href=\"https://github.com/protesilaos/tmr\">https://github.com/protesilaos/tmr</a></li>
+<li>GitLab: <a href=\"https://gitlab.com/protesilaos/tmr\">https://gitlab.com/protesilaos/tmr</a></li>
+</ul>
+</li>
+<li>Backronym: TMR May Ring; Timer Must Run.</li>
+</ul>
+<p>Below are the release notes.</p>
+<hr />
+<h2>Version 1.1.0 on 2025-04-18</h2>
+<p>This version makes small refinements to an already stable package.</p>
+<h3>All of <code class=\"language-plaintext highlighter-rouge\">tmr-tabulated.el</code>  is part of <code class=\"language-plaintext highlighter-rouge\">tmr.el</code></h3>
+<p>The command <code class=\"language-plaintext highlighter-rouge\">tmr-tabulated-view</code>, which produces a grid with
+timers+descriptions, used to be in a separate file. It now is part of
+the singular <code class=\"language-plaintext highlighter-rouge\">tmr.el</code> to keep things simple. Users who were using
+<code class=\"language-plaintext highlighter-rouge\">(require 'tmr-tabulated)</code> or similar will now get a warning. Simply
+load <code class=\"language-plaintext highlighter-rouge\">tmr</code> instead.</p>
+<h3>Refined the behaviour of the <code class=\"language-plaintext highlighter-rouge\">tmr-tabulated-view</code> command</h3>
+<p>When the command <code class=\"language-plaintext highlighter-rouge\">tmr-tabulated-view</code> (alias <code class=\"language-plaintext highlighter-rouge\">tmr-list-timers</code>) is
+called interactively, it uses the <code class=\"language-plaintext highlighter-rouge\">*tmr-tabulated-view*</code> buffer just
+as it did before. Though it also evaluates the new user option
+<code class=\"language-plaintext highlighter-rouge\">tmr-list-timers-action-alist</code>: it is a variable that controls where
+the buffer is displayed. The default value displays the buffer at the
+bottom of the Emacs frame and makes some other tweaks for usability.</p>
+<p>Watch my video on the <code class=\"language-plaintext highlighter-rouge\">display-buffer-alist</code> for further details on
+how to control the display of buffers: <a href=\"https://protesilaos.com/codelog/2024-02-08-emacs-window-rules-display-buffer-alist/\">https://protesilaos.com/codelog/2024-02-08-emacs-window-rules-display-buffer-alist/</a>.</p>
+<p>The <code class=\"language-plaintext highlighter-rouge\">tmr-tabulated-view</code> command is further revised to make it
+callable from a program. One scenario where we do this is to interrupt
+the termination of Emacs if there are running timers (more below).</p>
+<h3>TMR interrupts the termination of Emacs if it must</h3>
+<p>In the past, we did not have anything to prevent the termination of
+Emacs if timers were running: Emacs would simply shut down. Now we
+define the <code class=\"language-plaintext highlighter-rouge\">tmr-kill-emacs-query-function</code>, which is added to the
+standard <code class=\"language-plaintext highlighter-rouge\">kill-emacs-query-functions</code>: if there are running timers, it
+asks for confirmation before closing Emacs. To make it easier for
+users to decide how to proceed, it also pops up the list with all the
+timers (i.e. it uses <code class=\"language-plaintext highlighter-rouge\">tmr-tabulated-view</code> from Lisp, as noted above).</p>
+<h3>The list view is easier to follow</h3>
+<p>The buffer produced by <code class=\"language-plaintext highlighter-rouge\">tmr-tabulated-view</code> now uses more colours to
+make it easier to track the data it presents. These are all the faces
+it applies:</p>
+<ul>
+<li>
+<p><strong><code class=\"language-plaintext highlighter-rouge\">tmr-tabulated-start-time</code>:</strong> The time when the timer was started.</p>
+</li>
+<li>
+<p><strong><code class=\"language-plaintext highlighter-rouge\">tmr-tabulated-end-time</code>:</strong> The time when the timer is set to end.</p>
+</li>
+<li>
+<p><strong><code class=\"language-plaintext highlighter-rouge\">tmr-tabulated-remaining-time</code>:</strong> The remaining time.</p>
+</li>
+<li>
+<p><strong><code class=\"language-plaintext highlighter-rouge\">tmr-tabulated-acknowledgement</code>:</strong> Whether the timer needs to be
+“acknowledged” after it ends (if it is marked as “acknowledged”,
+then it will not go away until the user confirms they have seen it).</p>
+</li>
+<li>
+<p><strong><code class=\"language-plaintext highlighter-rouge\">tmr-tabulated-description</code>:</strong> The text describing what the timer is
+about.</p>
+</li>
+</ul>" nil nil "cc8e12b8c48873cdb1516e27e2aaccab") (117 (26625 60021 711172 211000) "https://protesilaos.com/codelog/2025-04-17-emacs-modus-themes-4-7-0/" "Emacs: modus-themes version 4.7.0" nil "Thu, 17 Apr 2025 00:00:00 +0000" "<p>I just published the latest stable release of <a href=\"https://protesilaos.com/emacs/modus-themes\">the Modus
+themes</a>. The change log
+entry is reproduced further below. For any questions, you are welcome
+to <a href=\"https://protesilaos.com/contact/\">contact me</a>. I will now work to
+apply these same changes to emacs.git, so please wait a little longer
+for the updates to trickle down to you.</p>
+<ul>
+<li>Package name (GNU ELPA): <code class=\"language-plaintext highlighter-rouge\">modus-themes</code> (also built into Emacs 28+)</li>
+<li>Official manual: <a href=\"https://protesilaos.com/emacs/modus-themes\">https://protesilaos.com/emacs/modus-themes</a></li>
+<li>Change log: <a href=\"https://protesilaos.com/emacs/modus-themes-changelog\">https://protesilaos.com/emacs/modus-themes-changelog</a></li>
+<li>Colour palette: <a href=\"https://protesilaos.com/emacs/modus-themes-colors\">https://protesilaos.com/emacs/modus-themes-colors</a></li>
+<li>Sample pictures: <a href=\"https://protesilaos.com/emacs/modus-themes-pictures\">https://protesilaos.com/emacs/modus-themes-pictures</a></li>
+<li>Git repositories:
+<ul>
+<li>GitHub: <a href=\"https://github.com/protesilaos/modus-themes\">https://github.com/protesilaos/modus-themes</a></li>
+<li>GitLab: <a href=\"https://gitlab.com/protesilaos/modus-themes\">https://gitlab.com/protesilaos/modus-themes</a></li>
+</ul>
+</li>
+<li>Backronym: My Old Display Unexpectedly Sharpened … themes.</li>
+</ul>
+<hr />
+<h2>4.7.0 on 2025-04-17</h2>
+<p>This release introduces many subtle stylistic tweaks to the “tinted”,
+“deuteranopia”, and “tritanopia” theme variants.</p>
+<h3>The <code class=\"language-plaintext highlighter-rouge\">modus-themes-list-colors</code> command uses a tabulated list</h3>
+<p>This command and its <code class=\"language-plaintext highlighter-rouge\">modus-themes-list-colors-current</code> variant help
+users see the colour values and semantic palette mappings defined by
+the given theme. In the past, their buffer was designed in the same
+spirit as that of the command <code class=\"language-plaintext highlighter-rouge\">list-faces-display</code>, whereas now it is
+like the buffer of the command <code class=\"language-plaintext highlighter-rouge\">list-packages</code>. Concretely, users may
+now sort by column. Do <code class=\"language-plaintext highlighter-rouge\">M-x describe-mode</code> while in that buffer to
+learn about the available commands and their respective key bindings.</p>
+<h3>The “tinted” themes have slightly different colours</h3>
+<p>The overall feel of the <code class=\"language-plaintext highlighter-rouge\">modus-operandi-tinted</code> and <code class=\"language-plaintext highlighter-rouge\">modus-vivendi-tinted</code>
+themes is the same as before. Though in a side-by-side comparison between the
+old and new versions reveals lots of subtle differences. The general
+idea is to make the themes a bit more consistent by tweaking the
+foreground values to be more harmonious in combination with their
+background.</p>
+<h3>The “deuteranopia” themes are more consistently blue and yellow</h3>
+<p>These are the <code class=\"language-plaintext highlighter-rouge\">modus-operandi-deuteranopia</code> and <code class=\"language-plaintext highlighter-rouge\">modus-vivendi-deuteranopia</code>,
+which are optimised for users with red-green colour deficiency. In the
+past, these themes used blue and yellow hues wherever a concept of
+“success” versus “failure” had to be established. This approach is
+more generalised now, to include programming syntax highlighting and
+many other contexts. In short, the themes are more blue+yellow, while
+retaining their original feel.</p>
+<h3>The “tritanopia” themes are more consistently red and cyan</h3>
+<p>As above, the <code class=\"language-plaintext highlighter-rouge\">modus-operandi-tritanopia</code> and <code class=\"language-plaintext highlighter-rouge\">modus-vivendi-tritanopia</code>
+themes, which are optimised for users with blue-yellow colour deficiency,
+use a red+cyan palette in more places. Overall, they feel like they
+did before, only they are more consistent.</p>
+<h3>Miscellaneous</h3>
+<ul>
+<li>
+<p>Extended support for the <code class=\"language-plaintext highlighter-rouge\">icomplete</code> faces that are coming in Emacs
+version 31.</p>
+</li>
+<li>
+<p>Added support for <code class=\"language-plaintext highlighter-rouge\">treemacs</code> faces, courtesy of Rahul Juliato in
+pull request 121: <a href=\"https://github.com/protesilaos/modus-themes/pull/121\">https://github.com/protesilaos/modus-themes/pull/121</a>.
+Rahul has assigned copyright to the Free Software Foundation.</p>
+</li>
+<li>
+<p>Added support for the <code class=\"language-plaintext highlighter-rouge\">tldr</code> package.</p>
+</li>
+<li>
+<p>Extended support for <code class=\"language-plaintext highlighter-rouge\">adoc-mode</code>. Thanks to Leilei332 for the
+contribution in pull request 137: <a href=\"https://github.com/protesilaos/modus-themes/pull/137\">https://github.com/protesilaos/modus-themes/pull/137</a>.
+The change is within the ~15-line limit, meaning that the author
+does not need to assign copyright to the Free Software Foundation.</p>
+</li>
+<li>
+<p>Added support for my <code class=\"language-plaintext highlighter-rouge\">spacious-padding</code> package, specifically the
+faces it can use when the <code class=\"language-plaintext highlighter-rouge\">spacious-padding-subtle-mode-line</code> user
+option is enabled.</p>
+</li>
+<li>
+<p>Added support for the <code class=\"language-plaintext highlighter-rouge\">howm</code> package.</p>
+</li>
+<li>
+<p>Extended support to the new faces of the <code class=\"language-plaintext highlighter-rouge\">transient</code> package. More
+specifically, all those faces use the same colour for key bindings
+because the idea of colour coding keys (e.g. light yellow means
+something different than dark blue) does not work in practice when
+considering accessibility. Such semantics should not be limited to
+differences in colour: they should also have distinct indicators,
+such as ASCII or Unicode characters.</p>
+</li>
+<li>
+<p>Revised the <code class=\"language-plaintext highlighter-rouge\">avy</code> package’s faces to only use one coloured
+background. The multiple coloured backgrounds have been a perennial
+problem for our accessibility requirements and have made the themes
+needlessly more complex just to support an edge case. With this
+simplified style, <code class=\"language-plaintext highlighter-rouge\">avy</code> continues to work fine: it simply is less
+flamboyant. Other interfaces with <code class=\"language-plaintext highlighter-rouge\">avy</code>-like model of interaction,
+such as optional extensions to the <code class=\"language-plaintext highlighter-rouge\">vertico</code> and <code class=\"language-plaintext highlighter-rouge\">corfu</code> packages,
+have these same changes, in the interest of consistency.</p>
+</li>
+<li>
+<p>Update the <code class=\"language-plaintext highlighter-rouge\">meow</code> sample configuration in the manual. This package
+is not directly supported at the theme level because (i) I do not
+use it and (ii) it is very hard for an outsider to it to trigger the
+display of all of its faces in the right context. Without seeing how
+all of them look together, I cannot come up with a reliable design.
+The manual offers a “good enough” approximation.</p>
+</li>
+<li>
+<p>Broadened the support of the <code class=\"language-plaintext highlighter-rouge\">vterm</code> faces to include the “bright”
+colours, while updating those that were already covered. Thanks to
+Edgar Vincent for informing me that some of the vterm faces were
+changed a while ago. This was done in issue 317 on the GitLab
+mirror: <a href=\"https://gitlab.com/protesilaos/modus-themes/-/issues/317\">https://gitlab.com/protesilaos/modus-themes/-/issues/317</a>.</p>
+</li>
+<li>
+<p>Revised the <code class=\"language-plaintext highlighter-rouge\">org-column-title</code> face to inherit the <code class=\"language-plaintext highlighter-rouge\">fixed-pitch</code>
+face if the user option <code class=\"language-plaintext highlighter-rouge\">modus-themes-mixed-fonts</code> is non-nil. This
+user option makes it possible to have a buffer with proportionately
+spaced fonts (such as by enabling <code class=\"language-plaintext highlighter-rouge\">variable-pitch-mode</code>), while
+keeping spacing-sensitive elements, like tables and code blocks, in a
+monospaced font.</p>
+<p>Thanks to pedro-nonfree for bringing this matter to my attention in
+issue 129: <a href=\"https://github.com/protesilaos/modus-themes/issues/129\">https://github.com/protesilaos/modus-themes/issues/129</a>.</p>
+</li>
+<li>
+<p>Simplified the helper function <code class=\"language-plaintext highlighter-rouge\">modus-themes--retrieve-palette-value</code>
+to make it more efficiently. Thanks to Basil L. Contovounesios for
+the contribution in merge request 60 on the GitLab mirror:
+<a href=\"https://gitlab.com/protesilaos/modus-themes/-/merge_requests/60\">https://gitlab.com/protesilaos/modus-themes/-/merge_requests/60</a>.</p>
+</li>
+<li>
+<p>Reworded the minibuffer prompt of the <code class=\"language-plaintext highlighter-rouge\">modus-themes-list-colors</code>
+command.</p>
+</li>
+<li>
+<p>Made Ivy and IDO subdirectories and “virtual” buffers easier to tell
+apart from matching text highlights.</p>
+</li>
+<li>
+<p>Included coverage for the <code class=\"language-plaintext highlighter-rouge\">auto-dim-other-buffers-hide-face</code> of the
+package <code class=\"language-plaintext highlighter-rouge\">auto-dim-other-buffers</code></p>
+</li>
+<li>
+<p>Covered the built-in <code class=\"language-plaintext highlighter-rouge\">abbrev-table-name</code> face.</p>
+</li>
+</ul>" nil nil "87e16c7296f8b7c5f72875fc571f4efa") (116 (26625 60021 710494 436000) "https://protesilaos.com/commentary/2025-04-17-concern-psychedelics/" "My concern with psychedelics" nil "Thu, 17 Apr 2025 00:00:00 +0000" "<p>Writing for <em>Psyche</em> magazine in an article titled <a href=\"https://psyche.co/ideas/psychedelics-are-philosophical-tools-for-demolishing-assumptions\">Psychedelics are philosophical tools for demolishing assumptions</a> professor David J. Blacker makes a case in favour of psychedelic substances like LSD or psilocybin as conduits to wisdom. Here is a quote, with the text in square brackets coming from me:</p>
+<blockquote>
+<p>Absent a friendly neighbourhood Socrates, how might one deliberately go about removing the constraining weight of those pre-existing conceits [of thinking you know more than you actually do]? There is a chemical aid for precisely that – one that can reliably induce a powerful sense of wonder that very often results in a questioning of received reality and conventional wisdom. I refer, of course, to the ‘classic psychedelics’, the most influential psychedelic compounds of the past century or so: most notably, LSD, psilocybin (mushrooms), mescaline and the different forms of DMT, such as ayahuasca. If the conditions are right, even a moderate dose of a classic psychedelic is perceptually and somatically jarring enough to make the mysteriousness of the world feel real and urgent.</p>
+</blockquote>
+<p>David Blacker suggests that people can use psychedelics to broaden their horizons. They can be the impetus that puts one on the path to becoming more wise. It sounds plausible, though latent in this argument is the belief that psychedelics are a substitute for the hard work—indeed the rigorous lifestyle—of philosophy. One cannot be opportunistic. This is not some tourist destination or theme park that you escape to for a weekend, suspend your disbelief in the process, get impressed by the unfamiliar spectacles, and then return to your usual routines. No! It is a choice you make for life; a choice with far-reaching implications: to live in open-endedness and to embody your thoughts through your actions.</p>
+<p>The professor spends a lot of words trying to draw tenuous parallels between some of the ancient Greek philosophers and the potential of psychedelics, yet forgets to mention perhaps the most important lesson for individuals that we have in the Greek culture at-large: <strong>virtue</strong>. Virtue is your quality as a person, which you attain through years of practice and which you have to continuously exhibit through your deeds (unlike virtue signalling, which you do on a whimsy and requires no commitment whatsoever).</p>
+<p>I thus find it important to stress the difficulties involved and to instil in people a sense of responsibility for what lies ahead: are you prepared to give up the life you have to pursue philosophy? Not as an academic specialisation, but as a modus vivendi. Are you, for example, ready to forgo the conventional forms of success if that is what is required to preserve the integrity of your character? Can you remain tranquil in the face of uncertainty and do you have the honesty plus courage to give up on a certain point of view, no matter how attached you are to it, if faced with compelling reasons to do so?</p>
+<p>This is not to deny the transformative potential of psychedelics, of which I remain dubitative, but to remind folks that magical solutions do not exist. We live in an era in which individuals seek and often think they find the easy way forward, the “life hack”, the shortcut to enlightenment, the opulent consumerist experience which somehow also retains all the qualities of frugality, and so on. Everything that involves longer-term commitment has a commodified counterpart which, essentially, promises something that is not viable. For example, one can pay attention to their nutrition and channel all their efforts to a ten-year plan of discipline or they can buy this vaunted pill that doctors have designed to (i) provide all the nutrients while (ii) allowing for “cheating days” of eating burgers and whatnot. In other words: the promise is that you do not go through any discomfort but still get maximal benefits out of it. This is all bullshit writ large, yet it sells and is prevalent.</p>
+<p>Anything that requires a long-term outlook is not going to be easy. This is not limited to philosophy. It applies to every aspect of our lives. Think about competing in sport, making prudent financial choices, learning to elucidate your thoughts in a foreign tongue, becoming a skilled programmer, playing music at a concert, training your dog and taking care of it 7 days a week and 365 days a year for the entirety of its lifetime, and so on. None of this is done without considerable yet controlled discomfort.</p>
+<p>Commitment is a matter of one’s attitude. If you are willing to make the choice, first understand what you are getting yourself into, and then affirm you are going to deal with the consequences. Do not act haphazardly and definitely do not do it just because you got hyped up. Be meticulous and assume the responsibility of dealing with the lasting effects of your actions. Then you have what it takes to become decent at the given task and thus to be a better version of yourself. Otherwise, no substance will do the trick. What will happen instead is that you will be a fool who, like friends and relatives of mine who are no longer around, opts for a certain product under the misguided belief that it cannot possibly be abused to ultimately mess you up.</p>
+<p>Other than forgetting about virtue, my concern with proponents of psychedelics is that they do not tell us enough about how are those substances actually going to be used. They mention rituals from times of yore, such as the mysteries at ancient Eleusina, yet do not emphasise the fact that those were a likely once-in-a-lifetime pilgrimage that was done within a strict framework of religious initiation and conduct, as well as communal solidarity. There was no LSD dealer around the corner that would sell you whatever you would ask for. It was a highly controlled environment, predicated on robust hierarchies (indeed “hierarchy” means “holy rule”).</p>
+<p>I believe someone can be elevated spiritually from exposure to substances under the careful mentorship of a mystic. A mystic is someone who commits their life to the cause. But what about our modern world in which individuals are in the habit of consuming, or binging, all sorts of things without oversight from any such mystic? I remember those times when one of my relatives would take so-called “magic” mushrooms or the extract of cacti <em>every single day</em>. That was not pretty and there was nothing spiritual about such unbridled abuse. It was a mindless act of self-harm that exemplified the perversion of laziness as wisdom and of freedom as recklessness.</p>
+<p>As with the convenient presentation of the Eleusinian mysteries, I am sceptical of allusions to those much-touted indigenous tribes and their rituals. I have a strong suspicion that within those cultures there are powerful checks and clear social structures that ensure responsible use of psychedelics. Taking the concoction out of the ancient culture’s milieu, decoupling it from its religious and social functions, all but guarantees it is turned into yet another product that is instrumentalised in the service of profiteering and unceremoniously peddled to gullible hipsters.</p>
+<p>Does this mean that everybody who uses psychedelics is irresponsible? No, not at all. Though we must not forget what kind of world we live in and how we must act carefully when dealing with non-trivial matters.</p>
+<p>Psychedelics are a potent tool, yet a tool nonetheless: they are a possible means to a certain end, be it spiritual awakening, communal belonging, or anything else. As with all tools, they can be put to good use or be misused to the detriment of their users. No tool is ever sufficient without the person’s willingness to do the work. It is this individual responsibility that makes the difference between benign and harmful results. And no tool is fully understood without its user manual or in the absence of clear demonstration, which in this case come from long-standing traditions and the conduct of tutelary figures therein.</p>" nil nil "8001ea55076f2c24b0c66f6be54124ad") (115 (26623 25867 755779 191000) "https://protesilaos.com/codelog/2025-04-15-emacs-denote-4-0-0/" "Emacs: Denote version 4.0.0" nil "Tue, 15 Apr 2025 00:00:00 +0000" "<p>Denote aims to be a simple-to-use, focused-in-scope, and effective
+note-taking and file-naming tool for Emacs.</p>
+<p>Denote is based on the idea that files should follow a predictable and
+descriptive file-naming scheme.  The file name must offer a clear
+indication of what the contents are about, without reference to any
+other metadata.  Denote basically streamlines the creation of such
+files or file names while providing facilities to link between them
+(where those files are editable).</p>
+<p>Denote’s file-naming scheme is not limited to “notes”.  It can be used
+for all types of file, including those that are not editable in Emacs,
+such as videos.  Naming files in a constistent way makes their
+filtering and retrieval considerably easier.  Denote provides relevant
+facilities to rename files, regardless of file type.</p>
+<ul>
+<li>Package name (GNU ELPA): <code class=\"language-plaintext highlighter-rouge\">denote</code></li>
+<li>Official manual: <a href=\"https://protesilaos.com/emacs/denote\">https://protesilaos.com/emacs/denote</a></li>
+<li>Change log: <a href=\"https://protesilaos.com/emacs/denote-changelog\">https://protesilaos.com/emacs/denote-changelog</a></li>
+<li>Git repositories:
+<ul>
+<li>GitHub: <a href=\"https://github.com/protesilaos/denote\">https://github.com/protesilaos/denote</a></li>
+<li>GitLab: <a href=\"https://gitlab.com/protesilaos/denote\">https://gitlab.com/protesilaos/denote</a></li>
+</ul>
+</li>
+<li>Video demo: <a href=\"https://protesilaos.com/codelog/2022-06-18-denote-demo/\">https://protesilaos.com/codelog/2022-06-18-denote-demo/</a></li>
+<li>Backronyms: Denote Everything Neatly; Omit The Excesses.  Don’t Ever
+Note Only The Epiphenomenal.</li>
+</ul>
+<p>Below are the release notes.</p>
+<hr />
+<h2>Version 4.0.0 on 2025-04-15</h2>
+<p>This is a massive release. There is one breaking change, which should
+be easy to adapt to: this pertains to the reorganisation of the
+project to separate the “core” of Denote from its “extensions”. The
+core is the <code class=\"language-plaintext highlighter-rouge\">denote</code> package. Each extension now has its own package
+(details below).</p>
+<p>Other than that, this version includes lots of new features for
+searching and linking as well as quality-of-life refinements. We have
+generalised the infrastructure for performing queries in the
+<code class=\"language-plaintext highlighter-rouge\">denote-directory</code> and made the buffers with the search results more
+useful.</p>
+<p>Take your time to read through this publication. I am writing it for
+you. Also remember that the most up-to-date resource for anything
+related to Denote is its manual. You are always welcome to contact me:
+<a href=\"https://protesilaos.com/contact\">https://protesilaos.com/contact</a>. Or join the development on the Git
+repository.</p>
+<p>As usual, special thanks to Jean-Philippe Gagné Guay for making high
+quality contributions to Denote since the beginning of the project ~3
+years ago. Those will not always be headline features, but are
+important improvements to the underlying code base.</p>
+<p>I mention contributions from Jean-Philippe and others in its context.
+Though I do not cover implementation details, otherwise this document
+will be the size of a book. This does not mean that they are no
+important though. Please consult the Git commit log for all the
+technicalities.</p>
+<h3>All the “extras” are in separate packages, including the Org dynamic blocks</h3>
+<p>In previous versions of Denote, we included some optional extensions
+as part of the <code class=\"language-plaintext highlighter-rouge\">denote</code> package. These included the files
+<code class=\"language-plaintext highlighter-rouge\">denote-org-extras.el</code> (Org dynamic blocks, among others),
+<code class=\"language-plaintext highlighter-rouge\">denote-journal-extras.el</code> (streamlined for journaling),
+<code class=\"language-plaintext highlighter-rouge\">denote-silo-extras.el</code> (working with multiple Denote silos).</p>
+<p>The files <code class=\"language-plaintext highlighter-rouge\">denote-md-extras.el</code> (Markdown extras) and
+<code class=\"language-plaintext highlighter-rouge\">denote-sequence.el</code> (sequence notes, including Luhmann-style
+alphanumeric sequences) were also part of the project during the last
+development cycle, though they never made it into a tagged release.</p>
+<p>All these are now available as standalone packages on the official GNU
+ELPA archive:</p>
+<ul>
+<li>
+<p><strong><code class=\"language-plaintext highlighter-rouge\">denote-org</code>:</strong> In the Emacs configuration file, replace all
+instances of <code class=\"language-plaintext highlighter-rouge\">denote-org-extras</code> with <code class=\"language-plaintext highlighter-rouge\">denote-org</code>.</p>
+</li>
+<li>
+<p><strong><code class=\"language-plaintext highlighter-rouge\">denote-journal</code>:</strong> Replace <code class=\"language-plaintext highlighter-rouge\">denote-journal-extras</code> with <code class=\"language-plaintext highlighter-rouge\">denote-journal</code>.</p>
+</li>
+<li>
+<p><strong><code class=\"language-plaintext highlighter-rouge\">denote-silo</code>:</strong> Replace <code class=\"language-plaintext highlighter-rouge\">denote-silo-extras</code> with <code class=\"language-plaintext highlighter-rouge\">denote-silo</code>.</p>
+</li>
+<li>
+<p><strong><code class=\"language-plaintext highlighter-rouge\">denote-markdown</code> :</strong> Replace <code class=\"language-plaintext highlighter-rouge\">denote-md-extras</code> with <code class=\"language-plaintext highlighter-rouge\">denote-markdown</code>.</p>
+</li>
+<li>
+<p><strong><code class=\"language-plaintext highlighter-rouge\">denote-sequence</code>:</strong> No changes to any of the defined symbols.
+Simply get the new package.</p>
+</li>
+</ul>
+<p>I will document each of these packages further below. The plan, going
+forward, is to maintain all the packages and coordinate their new
+versions.</p>
+<h3>More things in “core”</h3>
+<p>While the extras are moved out to their own code repositories, all
+other features are merged into <code class=\"language-plaintext highlighter-rouge\">denote.el</code>. Those include everything
+that was in <code class=\"language-plaintext highlighter-rouge\">denote-sort.el</code> and <code class=\"language-plaintext highlighter-rouge\">denote-rename-buffer.el</code>.</p>
+<ul>
+<li>
+<p>The “sort” mechanism is mostly for package developers. We use it
+extensively in our Org dynamic blocks, which are now part of the
+<code class=\"language-plaintext highlighter-rouge\">denote-org</code> package.</p>
+</li>
+<li>
+<p>The <code class=\"language-plaintext highlighter-rouge\">denote-dired</code> command (alias <code class=\"language-plaintext highlighter-rouge\">denote-sort-dired</code>) is the only
+user-facing “sort” command we have always provided. It produces a
+fully fledged Dired buffer showing the results of the given search
+for file names. The matching files are sorted according to the
+user’s expressed preference. The details are described in the
+manual.</p>
+</li>
+<li>
+<p>The <code class=\"language-plaintext highlighter-rouge\">denote-rename-buffer-mode</code> and all of its user options are
+unchanged. This mode automatically renames the buffer of a given
+Denote file so that it is easier to read it. Again, the manual
+covers the technicalities.</p>
+</li>
+</ul>
+<p>Users do not need to make changes, unless they are explicitly loading
+<code class=\"language-plaintext highlighter-rouge\">denote-sort-dired</code> and <code class=\"language-plaintext highlighter-rouge\">denote-rename-buffer</code>. In that case, they may
+just remove those calls: only <code class=\"language-plaintext highlighter-rouge\">denote</code> needs to be loaded.</p>
+<h3>The <code class=\"language-plaintext highlighter-rouge\">denote-query-mode</code></h3>
+<p>Many of the features I will describe below produce search results via
+the built-in Xref mechanism. Xref performs a search with a Grep or
+Grep-like program, subject to the user option <code class=\"language-plaintext highlighter-rouge\">xref-search-program</code>.
+The buffer those search results are displayed in runs the
+<code class=\"language-plaintext highlighter-rouge\">denote-query-mode</code>. It supersedes <code class=\"language-plaintext highlighter-rouge\">denote-backlinks-mode</code>.</p>
+<p>The <code class=\"language-plaintext highlighter-rouge\">denote-query-mode</code> supports the following:</p>
+<ul>
+<li>Results are shown in the context, with the exact match in highlight.</li>
+<li>Matches are grouped by file. Each file is a “heading”.</li>
+<li>Headings can be folded with <code class=\"language-plaintext highlighter-rouge\">TAB</code>, just how it is done in Org buffers.</li>
+<li>The results can be used for further queries. Type <code class=\"language-plaintext highlighter-rouge\">C-h m</code>
+(<code class=\"language-plaintext highlighter-rouge\">describe-mode</code>) to learn about all the relevant commands.</li>
+</ul>
+<p>We have had support for Xref since the original version of Denote. It
+now is more generalised to cover backlinks, query links, and
+<code class=\"language-plaintext highlighter-rouge\">denote-grep</code> (more below).</p>
+<h3>Use query links for file contents or file names</h3>
+<p>Denote has always provided the option to link directly to a file with
+a given name by referencing its identifier. This can be done with the
+command <code class=\"language-plaintext highlighter-rouge\">denote-link</code>, among a few others like it (always consult the
+manual of Denote).</p>
+<p>In addition to these “direct links”, we also support “query links”.
+Those do not point to a file but instead trigger a search. The results
+are placed in a buffer that uses the appropriate major mode.</p>
+<p>There are two types of query links:</p>
+<ul>
+<li>
+<p><strong>Query file contents:</strong> Use the command <code class=\"language-plaintext highlighter-rouge\">denote-query-contents-link</code>
+to insert a query link at point for “file contents”. It perform a
+search inside files in the <code class=\"language-plaintext highlighter-rouge\">denote-directory</code> and put the results in
+a <code class=\"language-plaintext highlighter-rouge\">denote-query-mode</code> buffer.</p>
+</li>
+<li>
+<p><strong>Query file names:</strong> Use the <code class=\"language-plaintext highlighter-rouge\">denote-query-filenames-link</code> to insert
+a query link for “file names”. It performs the query against file
+names (not contents!) and puts the results in a <code class=\"language-plaintext highlighter-rouge\">dired</code> buffer.</p>
+</li>
+</ul>
+<p>The display of the buffer with the query link results is controlled by
+the user option <code class=\"language-plaintext highlighter-rouge\">denote-query-links-display-buffer-action</code>.</p>
+<p>Query links are styled a little bit differently than direct links.
+Compare the <code class=\"language-plaintext highlighter-rouge\">denote-faces-link</code> with <code class=\"language-plaintext highlighter-rouge\">denote-faces-query-link</code>. Both
+should look okay with most themes.</p>
+<p>Denote query links are supported as part of the <code class=\"language-plaintext highlighter-rouge\">denote:</code> hyperlink
+type. They are available in all file types we define (per the user
+option <code class=\"language-plaintext highlighter-rouge\">denote-file-type</code>) and should, in principle, work in any
+custom file type (advanced users can check the variable <code class=\"language-plaintext highlighter-rouge\">denote-file-types</code>).</p>
+<h3>Backlinks now always show their context</h3>
+<p>In the past, the command <code class=\"language-plaintext highlighter-rouge\">denote-backlinks</code> would produce a bespoke
+buffer showing a list of file names that included links to the current
+file (any file with the Denote file-naming scheme can have backlinks,
+by the way, including PDFs, videos, etc.). This buffer did not provide
+any additional functionality. We used to support the option to show
+results in their context via <code class=\"language-plaintext highlighter-rouge\">denote-backlinks-show-context</code>. Those
+would be rendered in a standard Xref buffer.</p>
+<p>The contextual results are now the default and sole option. This is
+because we have expanded the functionality of those buffers to use the
+<code class=\"language-plaintext highlighter-rouge\">denote-query-mode</code>, as explained above. Plus, it makes our code base
+simpler.</p>
+<p>Users will notice how backlikns look just like a query link for file
+contents. This is because backlinks are the original query links since
+day one of Denote.</p>
+<h3>Direct links to a file with matching contents</h3>
+<p>The command <code class=\"language-plaintext highlighter-rouge\">denote-link-to-file-with-contents</code> allows users to
+produce a direct link to a file whose contents (not file name!)
+includes the given query.</p>
+<p>Similarly, the command <code class=\"language-plaintext highlighter-rouge\">denote-link-to-all-files-with-contents</code>
+generates a typographic list (bullet list) to all files whose contents
+match the given query.</p>
+<p>The manual covers all linking commands in depth.</p>
+<h3>The essence of <code class=\"language-plaintext highlighter-rouge\">denote-search</code> is part of <code class=\"language-plaintext highlighter-rouge\">denote</code></h3>
+<p>The <code class=\"language-plaintext highlighter-rouge\">denote-search</code> package by Lucas Quintana uses the infrastructure
+of Denote to perform searches in file contents. We now provide its
+feature set as part of core <code class=\"language-plaintext highlighter-rouge\">denote</code>.</p>
+<p>We decided to do this since query links already introduced all of the
+requisite generalisations to <code class=\"language-plaintext highlighter-rouge\">denote-query-mode</code>.</p>
+<p>Users can rely on the commands <code class=\"language-plaintext highlighter-rouge\">denote-grep</code>, <code class=\"language-plaintext highlighter-rouge\">denote-grep-marked-dired-files</code>,
+and <code class=\"language-plaintext highlighter-rouge\">denote-grep-files-referenced-in-region</code>.</p>
+<p>The placement of these buffers is subject to the user option
+<code class=\"language-plaintext highlighter-rouge\">denote-grep-display-buffer-action</code>.</p>
+<p>This functionality was introduced in two pull requests by Lucas
+Quintana, 571 and 573, with further changes by me:</p>
+<ul>
+<li><a href=\"https://github.com/protesilaos/denote/pull/571\">https://github.com/protesilaos/denote/pull/571</a>.</li>
+<li><a href=\"https://github.com/protesilaos/denote/pull/573\">https://github.com/protesilaos/denote/pull/573</a>.</li>
+</ul>
+<p>Lucas has assigned copyright to the Free Software Foundation.</p>
+<p>I think this was a much-needed addition to the core of Denote. It
+complements <code class=\"language-plaintext highlighter-rouge\">denote-dired</code> and query links.</p>
+<h3>Formatting of links with <code class=\"language-plaintext highlighter-rouge\">denote-link-description-format</code></h3>
+<p>The old user option <code class=\"language-plaintext highlighter-rouge\">denote-link-description-function</code> is deprecated
+and superseded by the new <code class=\"language-plaintext highlighter-rouge\">denote-link-description-format</code>. The new
+user option still accepts a custom function as its value, so the old
+behaviour should be retained.</p>
+<p>What the new <code class=\"language-plaintext highlighter-rouge\">denote-link-description-format</code> supports is an easier
+way to customise the description of a link by using format specifiers
+for common options. For example, users who only want to see the title
+of the linked file can do this:</p>
+<div class=\"language-plaintext highlighter-rouge\"><div class=\"highlight\"><pre class=\"highlight\"><code>(setq denote-link-description-format \"%t\")
+</code></pre></div></div>
+<p>The documentation of this user option covers all the format specifiers
+and further details.</p>
+<h3>Miscellaneous changes for all users</h3>
+<ul>
+<li>
+<p>The command <code class=\"language-plaintext highlighter-rouge\">denote-add-front-matter</code> is superseded by
+<code class=\"language-plaintext highlighter-rouge\">denote-rename-file</code> and related. Those renaming commands will add
+missing front matter or rewrite the modified lines of existing front
+matter. This is due to refinements made by Jean-Philippe Gagné Guay
+to the file renaming mechanism. We discussed this deprecation in
+issue 498: <a href=\"https://github.com/protesilaos/denote/issues/498\">https://github.com/protesilaos/denote/issues/498</a>. Also
+thanks to Samuel Flint for reporting an earlier problem with file
+name signatures: <a href=\"https://github.com/protesilaos/denote/issues/492\">https://github.com/protesilaos/denote/issues/492</a>.</p>
+</li>
+<li>
+<p>The user option <code class=\"language-plaintext highlighter-rouge\">denote-open-link-function</code> specifies the function
+used by Denote to open the file of a direct link.</p>
+</li>
+<li>
+<p>The user option <code class=\"language-plaintext highlighter-rouge\">denote-org-store-link-to-heading</code> can now be set to
+form generic context links without a <code class=\"language-plaintext highlighter-rouge\">PROPERTIES</code> drawer and
+corresponding <code class=\"language-plaintext highlighter-rouge\">CUSTOM_ID</code>. Set the value of this variable to
+<code class=\"language-plaintext highlighter-rouge\">'context</code>. Read its documentation for further details.</p>
+</li>
+<li>
+<p>Also about <code class=\"language-plaintext highlighter-rouge\">denote-org-store-link-to-heading</code>, we have changed its
+default value to <code class=\"language-plaintext highlighter-rouge\">nil</code>, which is what we were doing for most of
+Denote’s history. This means that, by default, <code class=\"language-plaintext highlighter-rouge\">org-store-link</code> and
+anything building on top of it will create a link only to the
+current Denote file, like <code class=\"language-plaintext highlighter-rouge\">denote:IDENTIFIER</code>, but not to the
+current heading within that file. To create links to the
+file+heading, set the value of this variable to <code class=\"language-plaintext highlighter-rouge\">'id</code>.</p>
+</li>
+<li>
+<p>The command <code class=\"language-plaintext highlighter-rouge\">denote-dired-link-marked-notes</code> is an alias for
+<code class=\"language-plaintext highlighter-rouge\">denote-link-dired-marked-notes</code>.</p>
+</li>
+<li>
+<p>The user option <code class=\"language-plaintext highlighter-rouge\">denote-sort-dired-extra-prompts</code> control what
+<code class=\"language-plaintext highlighter-rouge\">denote-dired</code> (alias <code class=\"language-plaintext highlighter-rouge\">denote-sort-dired</code>) prompts for. It accepts
+either a nil value or a list of symbols among <code class=\"language-plaintext highlighter-rouge\">sort-by-component</code>,
+<code class=\"language-plaintext highlighter-rouge\">reverse-sort</code>, and <code class=\"language-plaintext highlighter-rouge\">exclude-regexp</code>. The order those symbols appear
+in the list is significant, with the leftmost coming first.</p>
+</li>
+<li>
+<p>There is a new <code class=\"language-plaintext highlighter-rouge\">denote-sort-identifier-comparison-function</code> variable
+which determines how identifier-based sorting should be done by
+default. It complements the existing <code class=\"language-plaintext highlighter-rouge\">denote-sort-title-comparison-function</code>,
+<code class=\"language-plaintext highlighter-rouge\">denote-sort-keywords-comparison-function</code>, <code class=\"language-plaintext highlighter-rouge\">denote-sort-signature-comparison-function</code>.
+Thanks to Maikol Solís for the contribution in pull request 517:
+<a href=\"https://github.com/protesilaos/denote/pull/517\">https://github.com/protesilaos/denote/pull/517</a>. The change is
+small, meaning that Maikol does not need to assign copyright to the
+Free Software Foundation (though I believe the paperwork is done, anyway).</p>
+</li>
+<li>
+<p>Lots of refinements to the doc strings of individual variables
+and/or functions as well as the manual.</p>
+</li>
+<li>
+<p>Lots of other contributions to discussions and questions on the Git
+repository. Granted, these are not “changes” per se but are part of
+the development effort nonetheless.</p>
+</li>
+<li>
+<p>Made <code class=\"language-plaintext highlighter-rouge\">denote-get-path-by-id</code> use <code class=\"language-plaintext highlighter-rouge\">denote-get-file-extension-sans-encryption</code>
+instead of <code class=\"language-plaintext highlighter-rouge\">denote-get-file-extension</code>. This fixes a bug where the
+extension is duplicated if it has an encryption component. Thanks to
+eum3l for the patch in pull request 562: <a href=\"https://github.com/protesilaos/denote/pull/562\">https://github.com/protesilaos/denote/pull/562</a>.
+The change is small, meaning that the author does not need to assign
+copyright to the Free Software Foundation.</p>
+</li>
+<li>
+<p>Same as above for <code class=\"language-plaintext highlighter-rouge\">denote--rename-file</code>, which was done in pull
+request 557: <a href=\"https://github.com/protesilaos/denote/pull/557\">https://github.com/protesilaos/denote/pull/557</a>.</p>
+</li>
+</ul>
+<h3>For developers or advanced users</h3>
+<p>The following have been added or modified.</p>
+<ul>
+<li>
+<p><strong>NEW Function <code class=\"language-plaintext highlighter-rouge\">denote-file-has-denoted-filename-p</code>:</strong> Return non-nil
+if <code class=\"language-plaintext highlighter-rouge\">FILE</code> respects the file-naming scheme of Denote. This tests the
+rules of Denote’s file-naming scheme. Sluggification is ignored. It
+is done by removing all file name components and validating what
+remains. Thanks to Jean-Philippe Gagné Guay for the pull request
+515: <a href=\"https://github.com/protesilaos/denote/pull/515\">https://github.com/protesilaos/denote/pull/515</a>.</p>
+</li>
+<li>
+<p><strong>NEW Functions <code class=\"language-plaintext highlighter-rouge\">denote-infer-keywords-from-files</code>:</strong> Return list of
+keywords in <code class=\"language-plaintext highlighter-rouge\">denote-directory-files</code>. With optional
+<code class=\"language-plaintext highlighter-rouge\">FILES-MATCHING-REGEXP</code>, only extract keywords from the matching
+files. Otherwise, do it for all files. Keep any duplicates. Users
+who do not want duplicates should refer to the functions
+<code class=\"language-plaintext highlighter-rouge\">denote-keywords</code>.</p>
+</li>
+<li>
+<p><strong>MODIFIED Function <code class=\"language-plaintext highlighter-rouge\">denote-keywords</code>:</strong> Returns an appropriate list
+of keyword candidates, while accounting for the value of the user
+option <code class=\"language-plaintext highlighter-rouge\">denote-infer-keywords</code>. It now also accepts the optional
+<code class=\"language-plaintext highlighter-rouge\">FILES-MATCHING-REGEXP</code> parameter.</p>
+</li>
+<li>
+<p><strong>MODIFIED Function <code class=\"language-plaintext highlighter-rouge\">denote-directory-files</code>:</strong> Returns a list of
+absolute file paths in variable <code class=\"language-plaintext highlighter-rouge\">denote-directory</code>. It now accepts
+the optional <code class=\"language-plaintext highlighter-rouge\">EXCLUDE-REGEXP</code> parameter.</p>
+</li>
+<li>
+<p><strong>MODIFIED Function <code class=\"language-plaintext highlighter-rouge\">denote-format-file-name</code>:</strong> Formats a file name.
+The way it treats its <code class=\"language-plaintext highlighter-rouge\">ID</code> parameter has changed. Please read its
+doc string. Thanks to Jean-Philippe Gagné Guay for the pull request
+496: <a href=\"https://github.com/protesilaos/denote/pull/496\">https://github.com/protesilaos/denote/pull/496</a>.</p>
+</li>
+<li>
+<p><strong>ALIAS Function <code class=\"language-plaintext highlighter-rouge\">denote-retrieve-filename-keywords-as-list</code>:</strong> This
+is a name that is easier to discover than <code class=\"language-plaintext highlighter-rouge\">denote-extract-keywords-from-path</code>,
+because of the many other functions with the <code class=\"language-plaintext highlighter-rouge\">denote-retrieve-*</code> prefix.</p>
+</li>
+<li>
+<p><strong>MODIFIED Function <code class=\"language-plaintext highlighter-rouge\">denote-retrieve-filename-identifier</code>:</strong> Extracts
+the identifier from <code class=\"language-plaintext highlighter-rouge\">FILE</code> name, if present, else returns nil. To
+create a new one from a date, refer to the <code class=\"language-plaintext highlighter-rouge\">denote-get-identifier</code>
+function. Thanks to Jean-Philippe Gagné Guay for the pull request
+476: <a href=\"https://github.com/protesilaos/denote/pull/476\">https://github.com/protesilaos/denote/pull/476</a>.</p>
+</li>
+<li>
+<p><strong>MODIFIED Function <code class=\"language-plaintext highlighter-rouge\">denote-get-identifier</code>:</strong> Converts <code class=\"language-plaintext highlighter-rouge\">DATE</code> into a
+Denote identifier using <code class=\"language-plaintext highlighter-rouge\">denote-id-format</code>. If <code class=\"language-plaintext highlighter-rouge\">DATE</code> is nil, it
+returns an empty string as the identifier. Also by Jean-Philippe in
+pull request 476 mentioned right above.</p>
+</li>
+<li>
+<p><strong>MODIFIED Function <code class=\"language-plaintext highlighter-rouge\">denote-date-prompt</code>:</strong> Prompts for a date,
+expecting <code class=\"language-plaintext highlighter-rouge\">YYYY-MM-DD</code> or that plus <code class=\"language-plaintext highlighter-rouge\">HH:MM</code> (or even <code class=\"language-plaintext highlighter-rouge\">HH:MM:SS</code>).
+Can also use Org’s more advanced date selection utility if the user
+option <code class=\"language-plaintext highlighter-rouge\">denote-date-prompt-use-org-read-date</code> is non-nil. It now has
+the optional parameters <code class=\"language-plaintext highlighter-rouge\">INITIAL-DATE</code> and <code class=\"language-plaintext highlighter-rouge\">PROMPT-TEXT</code>. Thanks to
+Jean-Philippe Gagné Guay for the pull request 576:
+<a href=\"https://github.com/protesilaos/denote/pull/576\">https://github.com/protesilaos/denote/pull/576</a>.</p>
+</li>
+<li>
+<p><strong>NEW Function <code class=\"language-plaintext highlighter-rouge\">denote-retrieve-groups-xref-query</code>:</strong> Accesses the
+location of xrefs for <code class=\"language-plaintext highlighter-rouge\">QUERY</code> and group them per file. Limit the
+search to text files.</p>
+</li>
+<li>
+<p><strong>NEW Function <code class=\"language-plaintext highlighter-rouge\">denote-retrieve-files-xref-query</code>:</strong> Returns sorted,
+deduplicated file names with matches for <code class=\"language-plaintext highlighter-rouge\">QUERY</code> in their contents.
+Limits the search to text files.</p>
+</li>
+<li>
+<p><strong>NEW Function <code class=\"language-plaintext highlighter-rouge\">denote-retrieve-xref-alist</code>:</strong> Returns xref alist of
+files with the location of matches for <code class=\"language-plaintext highlighter-rouge\">QUERY</code>. With optional
+<code class=\"language-plaintext highlighter-rouge\">FILES-MATCHING-REGEXP</code>, it limits the list of files accordingly
+(per <code class=\"language-plaintext highlighter-rouge\">denote-directory-files</code>). At all times, it limits the search
+to text files.</p>
+</li>
+<li>
+<p><strong>NEW Function <code class=\"language-plaintext highlighter-rouge\">denote-prepend-front-matter</code>:</strong> Prepend front matter
+to <code class=\"language-plaintext highlighter-rouge\">FILE</code>. The <code class=\"language-plaintext highlighter-rouge\">TITLE</code>, <code class=\"language-plaintext highlighter-rouge\">KEYWORDS</code>, <code class=\"language-plaintext highlighter-rouge\">DATE</code>, <code class=\"language-plaintext highlighter-rouge\">ID</code>, <code class=\"language-plaintext highlighter-rouge\">SIGNATURE</code>, and
+<code class=\"language-plaintext highlighter-rouge\">FILE-TYPE</code> are passed from the renaming command and are used to
+construct a new front matter block if appropriate.</p>
+</li>
+<li>
+<p><strong>MODIFIED Function <code class=\"language-plaintext highlighter-rouge\">denote-rewrite-front-matter</code>:</strong> Rewrites front
+matter of note after <code class=\"language-plaintext highlighter-rouge\">denote-rename-file</code> (or related). The <code class=\"language-plaintext highlighter-rouge\">FILE</code>,
+<code class=\"language-plaintext highlighter-rouge\">TITLE</code>, <code class=\"language-plaintext highlighter-rouge\">KEYWORDS</code>, <code class=\"language-plaintext highlighter-rouge\">SIGNATURE</code>, <code class=\"language-plaintext highlighter-rouge\">DATE</code>, <code class=\"language-plaintext highlighter-rouge\">IDENTIFIER</code>, and
+<code class=\"language-plaintext highlighter-rouge\">FILE-TYPE</code> arguments are given by the renaming command and are used
+to construct new front matter values if appropriate. If
+<code class=\"language-plaintext highlighter-rouge\">denote-rename-confirmations</code> contains <code class=\"language-plaintext highlighter-rouge\">rewrite-front-matter</code>,
+prompt to confirm the rewriting of the front matter. Otherwise
+produce a <code class=\"language-plaintext highlighter-rouge\">y-or-n-p</code> prompt to that effect. Thanks to
+Jean-Philippe Gagné Guay for the pull request 558:
+<a href=\"https://github.com/protesilaos/denote/pull/558\">https://github.com/protesilaos/denote/pull/558</a>.</p>
+</li>
+</ul>
+<h3>Denote “extensions” that are not in the <code class=\"language-plaintext highlighter-rouge\">denote</code> package anymore</h3>
+<h4><code class=\"language-plaintext highlighter-rouge\">denote-journal</code> integrates nicely with <code class=\"language-plaintext highlighter-rouge\">M-x calendar</code></h4>
+<p>The <code class=\"language-plaintext highlighter-rouge\">calendar</code> can now highlight days that have journal entry. It may
+also be used as a date picker to view or write a journal entry for
+that day.</p>
+<ul>
+<li>
+<p>Thanks to Alan Schmitt for reporting an issue with the calendar
+integration during development:
+<a href=\"https://github.com/protesilaos/denote-journal/issues/8\">https://github.com/protesilaos/denote-journal/issues/8</a>.</p>
+</li>
+<li>
+<p>Thanks to Vineet C. Kulkarni for tweaking the identification of the
+journal keyword to be more robust:
+<a href=\"https://github.com/protesilaos/denote-journal/pull/4\">https://github.com/protesilaos/denote-journal/pull/4</a>.</p>
+</li>
+<li>
+<p>Thanks to Honza Pokorny for fixing two small issues with the path
+expansion:</p>
+<ul>
+<li><a href=\"https://github.com/protesilaos/denote-journal/pull/5\">https://github.com/protesilaos/denote-journal/pull/5</a></li>
+<li><a href=\"https://github.com/protesilaos/denote-journal/pull/7\">https://github.com/protesilaos/denote-journal/pull/7</a></li>
+</ul>
+</li>
+</ul>
+<p>Other than that, the package is providing the same functionality as
+the discontinued <code class=\"language-plaintext highlighter-rouge\">denote-journal-extras.el</code>.</p>
+<ul>
+<li>Manual: <a href=\"https://protesilaos.com/emacs/denote-journal\">https://protesilaos.com/emacs/denote-journal</a>.</li>
+<li>GitHub: <a href=\"https://github.com/protesilaos/denote-journal\">https://github.com/protesilaos/denote-journal</a>.</li>
+</ul>
+<h4><code class=\"language-plaintext highlighter-rouge\">denote-org</code> is almost the same as the discontinued <code class=\"language-plaintext highlighter-rouge\">denote-org-extras.el</code></h4>
+<p>The only addition to dynamic blocks the optional <code class=\"language-plaintext highlighter-rouge\">:not-regexp</code> parameter.
+This is a regular expression that can further filter the results of a
+search, such that the matching items are removed from the output.</p>
+<p>The official manual of <code class=\"language-plaintext highlighter-rouge\">denote-org</code> covers the technicalities.</p>
+<ul>
+<li>Manual: <a href=\"https://protesilaos.com/emacs/denote-org\">https://protesilaos.com/emacs/denote-org</a>.</li>
+<li>GitHub: <a href=\"https://github.com/protesilaos/denote-org\">https://github.com/protesilaos/denote-org</a>.</li>
+</ul>
+<p>Also thanks to Elias Storms for fixing a small issue with the “missing
+links” Org dynamic block, in pull request 486: <a href=\"https://github.com/protesilaos/denote/pull/486\">https://github.com/protesilaos/denote/pull/486</a></p>
+<h4><code class=\"language-plaintext highlighter-rouge\">denote-silo</code> is the same as the discontinued <code class=\"language-plaintext highlighter-rouge\">denote-silo-extras.el</code></h4>
+<p>I have only made small tweaks to it, but nothing that changes the user
+experience.</p>
+<ul>
+<li>Manual: <a href=\"https://protesilaos.com/emacs/denote-silo\">https://protesilaos.com/emacs/denote-silo</a></li>
+<li>GitHub: <a href=\"https://github.com/protesilaos/denote-silo\">https://github.com/protesilaos/denote-silo</a></li>
+</ul>
+<h4><code class=\"language-plaintext highlighter-rouge\">denote-markdown</code> for some Markdown-specific extras</h4>
+<p>This package provides some convenience functions to better integrate
+Markdown with Denote. This is mostly about converting links from one
+type to another so that they can work in different applications
+(because Markdown does not have a standardised way to define custom
+link types). It also defines an “Obsidian” file type which does not
+have any front matter but only uses a level 1 heading for the title of
+the note.</p>
+<p>The code of <code class=\"language-plaintext highlighter-rouge\">denote-markdown</code> used to be bundled up with the <code class=\"language-plaintext highlighter-rouge\">denote</code>
+package before version <code class=\"language-plaintext highlighter-rouge\">4.0.0</code> of the latter and was available in the
+file <code class=\"language-plaintext highlighter-rouge\">denote-md-extras.el</code>. Users of the old code will need to adapt
+their setup to use the <code class=\"language-plaintext highlighter-rouge\">denote-markdown</code> package. This can be done by
+replacing all instances of <code class=\"language-plaintext highlighter-rouge\">denote-md-extras</code> with <code class=\"language-plaintext highlighter-rouge\">denote-markdown</code>
+across their configuration.</p>
+<ul>
+<li>Manual: <a href=\"https://protesilaos.com/emacs/denote-markdown\">https://protesilaos.com/emacs/denote-markdown</a></li>
+<li>GitHub: <a href=\"https://github.com/protesilaos/denote-markdown\">https://github.com/protesilaos/denote-markdown</a></li>
+</ul>
+<h4>Write sequence notes (or “folgezettel”) with <code class=\"language-plaintext highlighter-rouge\">denote-sequence</code></h4>
+<p>Users who want their notes to have an inherent structure can use
+<code class=\"language-plaintext highlighter-rouge\">denote-sequence</code>. The idea is to have thoughts that naturally form
+sequences and are named accordingly. The sequence scheme is either
+numeric or alphanumeric. The manual of the package explains all the
+details.</p>
+<ul>
+<li>Manual: <a href=\"https://protesilaos.com/emacs/denote-sequence\">https://protesilaos.com/emacs/denote-sequence</a></li>
+<li>GitHub: <a href=\"https://github.com/protesilaos/denote-sequence\">https://github.com/protesilaos/denote-sequence</a></li>
+</ul>
+<p>I had a lot of fun developing this comprehensive package during the
+winter holidays.</p>
+<p>Thanks to Claudio Migliorelli, Kierin Bell, Mirko Hernandez for
+helping me fix some issues during development:</p>
+<ul>
+<li><a href=\"https://github.com/protesilaos/denote/pull/518\">https://github.com/protesilaos/denote/pull/518</a>.</li>
+<li><a href=\"https://github.com/protesilaos/denote/pull/528\">https://github.com/protesilaos/denote/pull/528</a>.</li>
+<li><a href=\"https://github.com/protesilaos/denote/pull/540\">https://github.com/protesilaos/denote/pull/540</a>.</li>
+<li><a href=\"https://github.com/protesilaos/denote/pull/541\">https://github.com/protesilaos/denote/pull/541</a>.</li>
+<li><a href=\"https://github.com/protesilaos/denote-sequence/issues/2\">https://github.com/protesilaos/denote-sequence/issues/2</a>.</li>
+</ul>
+<h3>The <code class=\"language-plaintext highlighter-rouge\">consult-denote</code> also gets a small update</h3>
+<p>This has always been a standalone package. I made the function
+<code class=\"language-plaintext highlighter-rouge\">consult-denote-file-prompt</code> read the special-purpose variable
+<code class=\"language-plaintext highlighter-rouge\">denote-file-prompt-use-files-matching-regexp</code>. This is related to
+commit <code class=\"language-plaintext highlighter-rouge\">e0f1d47</code> in denote.git, about issue 536 as reported by Alan
+Schmitt: <a href=\"https://github.com/protesilaos/denote/issues/536\">https://github.com/protesilaos/denote/issues/536</a>. The
+variable <code class=\"language-plaintext highlighter-rouge\">denote-file-prompt-use-files-matching-regexp</code> is meant to be
+<code class=\"language-plaintext highlighter-rouge\">let</code> bound and is for advanced users or developers.</p>
+<h3>Feature freeze at least until the end of April 2025</h3>
+<p>I will not develop new features or accept pull request for a couple of
+weeks. The idea is to focus on fixing any bug reports. We can then
+publish point releases quickly.</p>
+<p>New features can be included after we are confident that the packages
+we have are okay.</p>
+<h3>Git commits</h3>
+<p>This is just an overview of the Git commits, though remember that
+there is more that goes into a project, such as the reporting of
+inconsistencies, discussion of new ideas, et cetera. Thanks to
+everybody involved! Plus, some commits are large while others are
+tiny.</p>
+<div class=\"language-plaintext highlighter-rouge\"><div class=\"highlight\"><pre class=\"highlight\"><code>~/Git/Projects/denote $ git shortlog 3.1.0..4.0.0  --summary --numbered
+470	Protesilaos Stavrou
+90	Jean-Philippe Gagné Guay
+6	Kierin Bell
+4	Alan Schmitt
+3	eum3l
+2	Claudio Migliorelli
+2	Lucas Quintana
+2	grtcdr
+1	Elias Storms
+1	Laurent Gatto
+1	Maikol Solís
+1	Octavian
+1	TomoeMami
+</code></pre></div></div>
+<p>The following are not accurate because they only reflect the changes
+after the reorganisation I made. But we have to start from somewhere.</p>
+<div class=\"language-plaintext highlighter-rouge\"><div class=\"highlight\"><pre class=\"highlight\"><code>~/Git/Projects/denote-journal $ git shortlog  --summary --numbered
+54	Protesilaos Stavrou
+2	Honza Pokorny
+1	Vineet C. Kulkarni
+~/Git/Projects/denote-sequence $ git shortlog  --summary --numbered
+22	Protesilaos Stavrou
+~/Git/Projects/denote-silo $ git shortlog  --summary --numbered
+17	Protesilaos Stavrou
+~/Git/Projects/denote-org $ git shortlog  --summary --numbered
+15	Protesilaos Stavrou
+~/Git/Projects/denote-markdown $ git shortlog  --summary --numbered
+11	Protesilaos Stavrou
+</code></pre></div></div>" nil nil "009b954b1ce632459bd48863144f96c1") (114 (26619 29093 713172 277000) "https://protesilaos.com/codelog/2025-04-12-emacs-lisp-elements-book/" "Emacs: My new =?utf-8?Q?=E2=80=98Emacs?= Lisp =?utf-8?Q?Elements=E2=80=99?= book" nil "Sat, 12 Apr 2025 00:00:00 +0000" "<p>I just published the book “Emacs Lisp Elements”. It is available for
+free and in freedom under the same terms as all documentation that
+ships with GNU Emacs:</p>
+<ul>
+<li>Official page: <a href=\"https://protesilaos.com/emacs/emacs-lisp-elements\">https://protesilaos.com/emacs/emacs-lisp-elements</a></li>
+<li>Git repository: <a href=\"https://github.com/protesilaos/emacs-lisp-elements\">https://github.com/protesilaos/emacs-lisp-elements</a></li>
+</ul>
+<p>I provide a big picture view of the Emacs Lisp programming language by
+combining prose with code. The goal is to give readers an idea of how
+Elisp works by showing some of the main concepts or patterns
+discernible in everyday code.</p>
+<p>Some chapters are beginner-friendly, while others dive into deeper
+waters. Though I think everything is still approachable, as I try to
+explain basic concepts and take things one step at a time.</p>
+<p>The book is not meant to be a replacement for the built-in Emacs Lisp
+Reference Manual. It simply gives you enough information to reason
+about Elisp. Once you start extending Emacs, the rest will follow
+naturally.</p>
+<p>I hope you enjoy it and continue to have fun with Emacs.</p>" nil nil "2117164c0c23856d417be268869f54e0") (113 (26615 35730 76873 677000) "https://protesilaos.com/codelog/2025-04-09-emacs-dired-preview-0-5-0/" "Emacs: dired-preview version 0.5.0" nil "Wed, 09 Apr 2025 00:00:00 +0000" "<p>This is a simple package to automatically preview in a window the file
+at point in Dired buffers. Preview windows are closed when they are no
+longer relevant, while preview buffers are killed if they have not
+been used for other purposes beside previewing. The package provides
+several customisation options to control its behaviour.</p>
+<ul>
+<li>Package name (GNU ELPA): <code class=\"language-plaintext highlighter-rouge\">dired-preview</code></li>
+<li>Official manual: <a href=\"https://protesilaos.com/emacs/dired-preview\">https://protesilaos.com/emacs/dired-preview</a></li>
+<li>Git repositories:
+<ul>
+<li>GitHub: <a href=\"https://github.com/protesilaos/dired-preview\">https://github.com/protesilaos/dired-preview</a></li>
+<li>GitLab: <a href=\"https://gitlab.com/protesilaos/dired-preview\">https://gitlab.com/protesilaos/dired-preview</a></li>
+</ul>
+</li>
+<li>Backronym: Directories Invariably Render Everything Decently …
+preview; dired … PDFs Require Extra Viewing Instructions for Emacs
+to Work.</li>
+</ul>
+<p>Below are the release notes</p>
+<hr />
+<h2>Version 0.5.0 on 2025-04-09</h2>
+<p>This version contains a few bug fixes and minor refinements that
+should improve the behaviour of the package.</p>
+<h3>Revised how preview windows are deleted</h3>
+<p>In the past, <code class=\"language-plaintext highlighter-rouge\">dired-preview-mode</code> could delete windows that held
+another buffer, thus undoing the window layout that was present before
+a preview buffer was displayed. Now <code class=\"language-plaintext highlighter-rouge\">dired-preview-mode</code> makes sure to
+only delete windows that have not had another buffer shown in them,
+i.e. windows that were created just for preview purposes.</p>
+<h3>Directories no longer get misunderstood as “large files”</h3>
+<p>We tweaked how we test the type of the buffer-to-be-preview such that
+directories are not mistaken for “large files”. This was an issue for
+Mac computers that Sean Devlin brought to my attention in issue 27:
+<a href=\"https://github.com/protesilaos/dired-preview/issues/27\">https://github.com/protesilaos/dired-preview/issues/27</a>.</p>
+<h3>The <code class=\"language-plaintext highlighter-rouge\">dired-preview-delay</code> has a 0.1 second minimum to avoid instability</h3>
+<p>A value of 0 could lead to a noticeably degraded experience while
+navigating the Dired buffer. Thanks to Yiyu Zhou for reporting the
+matter in issue 2 on the GitLab mirror:
+<a href=\"https://gitlab.com/protesilaos/dired-preview/-/issues/2\">https://gitlab.com/protesilaos/dired-preview/-/issues/2</a>.</p>
+<h3>Files without an extension can also be ignored</h3>
+<p>The user option <code class=\"language-plaintext highlighter-rouge\">dired-preview-ignored-extensions-regexp</code> will now
+also match files without an extension, such as the <code class=\"language-plaintext highlighter-rouge\">.DS_Store</code> on Mac
+computers.</p>
+<p>Thanks to Sean Devlin for the contribution in pull request 26:
+<a href=\"https://github.com/protesilaos/dired-preview/pull/26\">https://github.com/protesilaos/dired-preview/pull/26</a>. The change is
+within the ~15-line limit, meaning that Sean does not need to assign
+copyright to the Free Software Foundation.</p>
+<h3>The preview buffer is the “other window” for scrolling purposes</h3>
+<p>The commands which scroll the other window, such as
+<code class=\"language-plaintext highlighter-rouge\">scroll-other-window</code> now operate on the preview buffer when that is
+displayed. Thanks to Karthik Chikmagalur for proposing this in issue
+24: <a href=\"https://github.com/protesilaos/dired-preview/issues/24\">https://github.com/protesilaos/dired-preview/issues/24</a>.</p>
+<p>This is in addition to the commands we already provided for scrolling
+the preview window, namely, <code class=\"language-plaintext highlighter-rouge\">dired-preview-page-up</code> and <code class=\"language-plaintext highlighter-rouge\">dired-preview-page-down</code>.
+Do <code class=\"language-plaintext highlighter-rouge\">M-x describe-keymap</code> and then search for <code class=\"language-plaintext highlighter-rouge\">dired-preview-mode-map</code>:
+it is in effect when <code class=\"language-plaintext highlighter-rouge\">dired-preview-mode</code> is enabled.</p>" nil nil "31a9356338e5de8535eb8eeb5b7b3447") (112 (26610 13191 184057 956000) "https://protesilaos.com/codelog/2025-04-06-emacs-modus-tinted-refinements/" "Emacs: stylistic refinements to the =?utf-8?B?4oCcdGludGVk4oCd?= Modus themes" nil "Sun, 06 Apr 2025 00:00:00 +0000" "<p>As part of the current development target of the <code class=\"language-plaintext highlighter-rouge\">modus-themes</code> package, I am introducing small changes to the <code class=\"language-plaintext highlighter-rouge\">modus-operandi-tinted</code> and <code class=\"language-plaintext highlighter-rouge\">modus-vivendi-tinted</code> themes. These concern fine details, some of which most users will probably not even notice. Though the cumulative effect of these changes is obvious once we compare the themes to their main counterparts, namely, <code class=\"language-plaintext highlighter-rouge\">modus-operandi</code> and <code class=\"language-plaintext highlighter-rouge\">modus-vivendi</code>. I am doing this to improve the consistency of the “tinted” themes. I think existing users will appreciate the attention to detail.</p>
+<p>Below are some screen shots with the out-of-the-box design of the themes (remember that they are highly customisable). I also include pictures with <code class=\"language-plaintext highlighter-rouge\">spacious-padding-mode</code> enabled (from my <code class=\"language-plaintext highlighter-rouge\">spacious-padding</code> package). Notice that in this case the mode lines are just an overline, which is done by customising the user option <code class=\"language-plaintext highlighter-rouge\">spacious-padding-subtle-mode-line</code>.</p>
+<p>I plan to install those changes to emacs.git and make them available via GNU ELPA as part of <code class=\"language-plaintext highlighter-rouge\">modus-themes</code> version <code class=\"language-plaintext highlighter-rouge\">4.7.0</code>, which I hope to publish some time this month or in May.</p>
+<h2>Modus Operandi VS Modus Operandi Tinted</h2>
+<p><a href=\"https://protesilaos.com/assets/images/attachments/2025-04-06-modus-operandi-sample.png\"><img alt=\"Sample of modus-operandi theme\" src=\"https://protesilaos.com/assets/images/attachments/2025-04-06-modus-operandi-sample.png\" /></a></p>
+<p><a href=\"https://protesilaos.com/assets/images/attachments/2025-04-06-modus-operandi-tinted-sample.png\"><img alt=\"Sample of modus-operandi-tinted theme\" src=\"https://protesilaos.com/assets/images/attachments/2025-04-06-modus-operandi-tinted-sample.png\" /></a></p>
+<p><a href=\"https://protesilaos.com/assets/images/attachments/2025-04-06-modus-operandi-spacious-padding-sample.png\"><img alt=\"Sample of modus-operandi theme\" src=\"https://protesilaos.com/assets/images/attachments/2025-04-06-modus-operandi-spacious-padding-sample.png\" /></a></p>
+<p><a href=\"https://protesilaos.com/assets/images/attachments/2025-04-06-modus-operandi-tinted-spacious-padding-sample.png\"><img alt=\"Sample of modus-operandi-tinted theme\" src=\"https://protesilaos.com/assets/images/attachments/2025-04-06-modus-operandi-tinted-spacious-padding-sample.png\" /></a></p>
+<h2>Modus Vivendi VS Modus Vivendi Tinted</h2>
+<p><a href=\"https://protesilaos.com/assets/images/attachments/2025-04-06-modus-vivendi-sample.png\"><img alt=\"Sample of modus-vivendi theme\" src=\"https://protesilaos.com/assets/images/attachments/2025-04-06-modus-vivendi-sample.png\" /></a></p>
+<p><a href=\"https://protesilaos.com/assets/images/attachments/2025-04-06-modus-vivendi-tinted-sample.png\"><img alt=\"Sample of modus-vivendi-tinted theme\" src=\"https://protesilaos.com/assets/images/attachments/2025-04-06-modus-vivendi-tinted-sample.png\" /></a></p>
+<p><a href=\"https://protesilaos.com/assets/images/attachments/2025-04-06-modus-vivendi-spacious-padding-sample.png\"><img alt=\"Sample of modus-vivendi theme\" src=\"https://protesilaos.com/assets/images/attachments/2025-04-06-modus-vivendi-spacious-padding-sample.png\" /></a></p>
+<p><a href=\"https://protesilaos.com/assets/images/attachments/2025-04-06-modus-vivendi-tinted-spacious-padding-sample.png\"><img alt=\"Sample of modus-vivendi-tinted theme\" src=\"https://protesilaos.com/assets/images/attachments/2025-04-06-modus-vivendi-tinted-spacious-padding-sample.png\" /></a></p>
+<h2>About the Modus themes</h2>
+<p>Highly accessible themes, conforming with the highest standard for
+colour contrast between background and foreground values (WCAG AAA).
+They also are optimised for users with red-green or blue-yellow colour
+deficiency.</p>
+<p>The themes are very customisable and provide support for a wide range
+of packages.  Their manual is detailed so that new users can get
+started, while it also provides custom code for all sorts of more
+advanced customisations.</p>
+<p>Since August 2020, the original Modus themes (<code class=\"language-plaintext highlighter-rouge\">modus-operandi</code>,
+<code class=\"language-plaintext highlighter-rouge\">modus-vivendi</code>) are built into Emacs version 28 or higher. Emacs 28
+ships with <code class=\"language-plaintext highlighter-rouge\">modus-themes</code> version <code class=\"language-plaintext highlighter-rouge\">1.6.0</code>. Emacs 29 includes version
+<code class=\"language-plaintext highlighter-rouge\">3.0.0</code>. Emacs 30 provides version <code class=\"language-plaintext highlighter-rouge\">4.4.0</code>. Version 4 is a major
+refactoring of how the themes are implemented and customized. Such
+major versions are not backward-compatible due to the limited
+resources at my disposal to support multiple versions of Emacs and of
+the themes across the years.</p>
+<ul>
+<li>Package name (GNU ELPA): <code class=\"language-plaintext highlighter-rouge\">modus-themes</code></li>
+<li>Official manual: <a href=\"https://protesilaos.com/emacs/modus-themes\">https://protesilaos.com/emacs/modus-themes</a></li>
+<li>Change log: <a href=\"https://protesilaos.com/emacs/modus-themes-changelog\">https://protesilaos.com/emacs/modus-themes-changelog</a></li>
+<li>Colour palette: <a href=\"https://protesilaos.com/emacs/modus-themes-colors\">https://protesilaos.com/emacs/modus-themes-colors</a></li>
+<li>Sample pictures: <a href=\"https://protesilaos.com/emacs/modus-themes-pictures\">https://protesilaos.com/emacs/modus-themes-pictures</a></li>
+<li>Git repositories:
+<ul>
+<li>GitHub: <a href=\"https://github.com/protesilaos/modus-themes\">https://github.com/protesilaos/modus-themes</a></li>
+<li>GitLab: <a href=\"https://gitlab.com/protesilaos/modus-themes\">https://gitlab.com/protesilaos/modus-themes</a></li>
+</ul>
+</li>
+<li>Backronym: My Old Display Unexpectedly Sharpened … themes.</li>
+</ul>" nil nil "bf30bc2b566d9c4ff619dd38ab7d756f") (111 (26603 40584 920285 593000) "https://protesilaos.com/codelog/2025-03-31-emacs-denote-journal-calendar/" "Emacs: =?utf-8?Q?=E2=80=98denote-journal=E2=80=99?= integration with =?utf-8?Q?=E2=80=98M-x_calendar=E2=80=99?=" nil "Mon, 31 Mar 2025 00:00:00 +0000" "<p>I just made it possible for users of my <code class=\"language-plaintext highlighter-rouge\">denote-journal</code> package to
+interact with the <code class=\"language-plaintext highlighter-rouge\">M-x calendar</code> as part of their journaling workflow.</p>
+<h2>Highlight dates with a Denote journal entry</h2>
+<p>The new minor mode <code class=\"language-plaintext highlighter-rouge\">denote-journal-calendar-mode</code> highlights dates in
+the <code class=\"language-plaintext highlighter-rouge\">M-x calendar</code> which have a corresponding Denote journal entry.
+The applied face is called <code class=\"language-plaintext highlighter-rouge\">denote-journal-calendar</code>: I made it draw
+only a box around the date, thus respecting existing colouration. Here
+is a demonstration, which also includes red-coloured dates for holidays:</p>
+<p><a href=\"https://protesilaos.com/assets/images/attachments/2025-03-31-emacs-denote-journal-calendar.png\"><img alt=\"Generic Emacs calendar\" src=\"https://protesilaos.com/assets/images/attachments/2025-03-31-emacs-denote-journal-calendar.png\" /></a></p>
+<p>The <code class=\"language-plaintext highlighter-rouge\">denote-journal-calendar-mode</code> is buffer-local and meant to be
+activated inside the <code class=\"language-plaintext highlighter-rouge\">M-x calendar</code> buffer, thus:</p>
+<div class=\"language-elisp highlighter-rouge\"><div class=\"highlight\"><pre class=\"highlight\"><code><span class=\"p\">(</span><span class=\"nv\">add-hook</span> <span class=\"ss\">'calendar-mode-hook</span> <span class=\"nf\">#'</span><span class=\"nv\">denote-journal-calendar-mode</span><span class=\"p\">)</span>
+</code></pre></div></div>
+<h2>View the journal entry for the current date</h2>
+<p>While navigating the <code class=\"language-plaintext highlighter-rouge\">calendar</code> buffer, use the command
+<code class=\"language-plaintext highlighter-rouge\">denote-journal-calendar-find-file</code> to visit the Denote journal entry
+corresponding to the date at point. If there are multiple journal
+entries, the command will prompt you to select one among them.</p>
+<h2>Create or view journal entry for the current date</h2>
+<p>The command <code class=\"language-plaintext highlighter-rouge\">denote-journal-calendar-new-or-existing</code> creates a new
+journal entry for the date at point or visits any existing one. This is
+like <code class=\"language-plaintext highlighter-rouge\">denote-journal-new-or-existing-entry</code> but for the given <code class=\"language-plaintext highlighter-rouge\">M-x
+calendar</code> date.</p>
+<h2>Part of development</h2>
+<p>Remember that I have split <code class=\"language-plaintext highlighter-rouge\">denote</code> into several packages, one of
+which is <code class=\"language-plaintext highlighter-rouge\">denote-journal</code>. I plan to coordinate the release of new
+versions across all Denote-related packages, so expect the
+aforementioned to be available at around the same time as <code class=\"language-plaintext highlighter-rouge\">denote</code>
+version <code class=\"language-plaintext highlighter-rouge\">4.0.0</code> (which is going to be massive, by the way).</p>
+<h3>About Denote journal</h3>
+<p>The <code class=\"language-plaintext highlighter-rouge\">denote-journal</code> package makes it easier to use Denote for
+journaling. While it is possible to use the generic <code class=\"language-plaintext highlighter-rouge\">denote</code> command
+(and related) to maintain a journal, this package defines extra
+functionality to streamline the journaling workflow.</p>
+<p>The code of <code class=\"language-plaintext highlighter-rouge\">denote-journal</code> used to be bundled up with the <code class=\"language-plaintext highlighter-rouge\">denote</code>
+package before version <code class=\"language-plaintext highlighter-rouge\">4.0.0</code> of the latter and was available in the
+file <code class=\"language-plaintext highlighter-rouge\">denote-journal-extras.el</code>. Users of the old code will need to
+adapt their setup to use the <code class=\"language-plaintext highlighter-rouge\">denote-journal</code> package. This can be
+done by replacing all instances of <code class=\"language-plaintext highlighter-rouge\">denote-journal-extras</code> with
+<code class=\"language-plaintext highlighter-rouge\">denote-journal</code> across their configuration.</p>
+<ul>
+<li>Package name (GNU ELPA): <code class=\"language-plaintext highlighter-rouge\">denote-journal</code></li>
+<li>Official manual: <a href=\"https://protesilaos.com/emacs/denote-journal\">https://protesilaos.com/emacs/denote-journal</a></li>
+<li>Git repository: <a href=\"https://github.com/protesilaos/denote-journal\">https://github.com/protesilaos/denote-journal</a></li>
+<li>Backronym: Denote… Journaling Obviously Utilises Reasonableness
+Notwithstanding Affectionate Longing.</li>
+</ul>
+<h3>About Denote</h3>
+<p>Denote is a simple note-taking tool for Emacs.  It is based on the idea
+that notes should follow a predictable and descriptive file-naming
+scheme.  The file name must offer a clear indication of what the note is
+about, without reference to any other metadata.  Denote basically
+streamlines the creation of such files while providing facilities to
+link between them.</p>
+<p>Denote’s file-naming scheme is not limited to “notes”.  It can be used
+for all types of file, including those that are not editable in Emacs,
+such as videos.  Naming files in a consistent way makes their
+filtering and retrieval considerably easier.  Denote provides relevant
+facilities to rename files, regardless of file type.</p>
+<ul>
+<li>Package name (GNU ELPA): <code class=\"language-plaintext highlighter-rouge\">denote</code></li>
+<li>Official manual: <a href=\"https://protesilaos.com/emacs/denote\">https://protesilaos.com/emacs/denote</a></li>
+<li>Change log: <a href=\"https://protesilaos.com/emacs/denote-changelog\">https://protesilaos.com/emacs/denote-changelog</a></li>
+<li>Git repositories:
+<ul>
+<li>GitHub: <a href=\"https://github.com/protesilaos/denote\">https://github.com/protesilaos/denote</a></li>
+<li>GitLab: <a href=\"https://gitlab.com/protesilaos/denote\">https://gitlab.com/protesilaos/denote</a></li>
+</ul>
+</li>
+<li>Video demo: <a href=\"https://protesilaos.com/codelog/2022-06-18-denote-demo/\">https://protesilaos.com/codelog/2022-06-18-denote-demo/</a></li>
+<li>Backronyms: Denote Everything Neatly; Omit The Excesses.  Don’t Ever
+Note Only The Epiphenomenal.</li>
+</ul>" nil nil "6a2c71b2f6dd10b73233cc2f5729bc8c") (110 (26602 20644 137746 405000) "https://protesilaos.com/books/2025-03-29-so-smart-should-do-stuff/" "Philosophy: =?utf-8?Q?=E2=80=9CProt=2C?= you are so smart; you should be doing =?utf-8?Q?stuff!=E2=80=9D?=" nil "Sat, 29 Mar 2025 00:00:00 +0000" "<p>In this ~40-minute video I talk about the broad theme of high
+performance. This is about doing things at a level of excellence.
+There are exceptions you are conforming with and targets you are
+meeting. Those may be set externally or by yourself. I explain how we
+can get trapped in this world of high performance, by talking about
+relatable matters.</p>" nil nil "0ff5ea3dd6b3e5bc0f249ab86f0f2557") (109 (26598 40087 564216 792000) "https://protesilaos.com/codelog/2025-03-28-emacs-denote-query-links/" "Emacs: Denote =?utf-8?Q?=E2=80=98query_links=E2=80=99?= (links that trigger a search)" nil "Fri, 28 Mar 2025 00:00:00 +0000" "<p>In this ~16-minute video, I demonstrate the new, in-development “query
 links” functionality of Denote. These are links that trigger a search
 when you interact with them. There are two types of query links: (i)
 search in file contents, or (ii) search in file names. When there are

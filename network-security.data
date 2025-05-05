@@ -1,4 +1,4 @@
 ;;;; -*- mode: lisp-data -*-
 (
- (:id "sha1:11ed92c11e10db8f5b7141f5c124013824dc973c" :fingerprints ("sha1:34:ce:34:4b:cf:99:63:e8:a1:dd:e0:28:70:a4:56:90:47:27:1b:2a") :conditions nil)
+ (:id "sha1:11ed92c11e10db8f5b7141f5c124013824dc973c" :fingerprints ("sha1:34:ce:34:4b:cf:99:63:e8:a1:dd:e0:28:70:a4:56:90:47:27:1b:2a" "sha1:bc:a9:55:6d:46:69:f0:cc:77:78:bb:90:c4:0a:d1:7b:43:f7:7f:57") :host "news.gmane.io:nntp" :conditions (:same-cert))
 )

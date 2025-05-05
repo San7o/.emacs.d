@@ -1,5 +1,35 @@
 ;; -*- coding: utf-8-emacs; -*-
-(setq nnrss-group-data '((12 (26598 25801 912044 512000) "https://eli.thegreenplace.net/2025/notes-on-implementing-attention/" "Notes on implementing Attention" nil "Wed, 26 Mar 2025 17:15:00 -0700" "<p>Some notes on implementing attention blocks in pure Python +
+(setq nnrss-group-data '((18 (26644 42392 198240 376000) "https://eli.thegreenplace.net/2025/bloom-filters/" "Bloom filters" nil "Thu, 01 May 2025 18:35:00 -0700" "<p>The original motivation for the creation of Bloom filters is efficient set
+membership, using a probabilistic approach to significantly reduce the time and
+space required to reject items that are not members in a certain set.</p>
+<p>The data structure was proposed by Burton Bloom in <a class=\"reference external\" href=\"https://dl.acm.org/doi/pdf/10.1145/362686.362692\">a 1970 paper</a> titled \"Space …</p> (...)" nil nil "c584340001e20515168484e39a5db31c") (17 (26644 42392 197872 266000) "https://eli.thegreenplace.net/2025/notes-on-implementing-attention/" "Notes on implementing Attention" nil "Wed, 26 Mar 2025 17:15:00 -0700" "<p>Some notes on implementing attention blocks in pure Python +
+Numpy. The focus here is on the exact implementation in code, explaining all the
+shapes throughout the process. The motivation for why attention works is not
+covered here too deeply - there are plenty of excellent online resources
+explaining it.</p>
+<p>Several papers …</p> (...)" nil nil "7bf0f3458bc3d567ebdccba05826b41e") (16 (26627 17942 219788 357000) "https://eli.thegreenplace.net/2025/sparsely-gated-mixture-of-experts-moe/" "Sparsely-gated Mixture Of Experts (MoE)" nil "Fri, 18 Apr 2025 09:33:00 -0700" "<p>In <a class=\"reference external\" href=\"https://arxiv.org/pdf/1706.03762\">transformer models</a>, the
+<a class=\"reference external\" href=\"https://eli.thegreenplace.net/2025/notes-on-implementing-attention/\">attention block</a>
+is typically followed by a <em>feed forward</em> layer (FF), which is a simple fully-connected
+NN with a hidden layer and nonlinearity. Here's the code for such a block that
+uses ReLU:</p>
+<div class=\"highlight\"><pre><span></span><span class=\"k\">def</span> <span class=\"nf\">feed_forward_relu</span><span class=\"p\">(</span><span class=\"n\">x</span><span class=\"p\">,</span> <span class=\"n\">W1</span><span class=\"p\">,</span> <span class=\"n\">W2</span><span class=\"p\">):</span>
+<span class=\"sd\">\"\"\"Feed-forward layer with ReLU activation.</span>
+<span class=\"sd\">    Args:</span>
+<span class=\"sd\">        x: Input …</span></pre></div> (...)" nil nil "cebecf433b38c10e93e3fded87e50dcd") (15 (26619 29089 617847 17000) "https://eli.thegreenplace.net/2025/cross-entropy-and-kl-divergence/" "Cross-entropy and KL divergence" nil "Sat, 12 Apr 2025 06:54:00 -0700" "<p>Cross-entropy is widely used in modern ML to compute the loss for classification
+tasks. This post is a brief overview of the math behind it and a related
+concept called Kullback-Leibler (KL) divergence.</p>
+<div class=\"section\" id=\"information-content-of-a-single-random-event\">
+<h2>Information content of a single random event</h2>
+<p>We'll start with a single event (<em>E</em>) that has probability …</p></div> (...)" nil nil "40feb21bb06c996f98af5b8adf5826b8") (14 (26610 13187 288265 574000) "https://eli.thegreenplace.net/2025/reproducing-word2vec-with-jax/" "Reproducing word2vec with JAX" nil "Sat, 05 Apr 2025 06:19:00 -0700" "<p>The word2vec model was proposed in a 2013 paper by Google researchers called
+<a class=\"reference external\" href=\"https://arxiv.org/pdf/1301.3781\">\"Efficient Estimation of Word Representations in Vector Space\"</a>,
+and was further refined by additional papers from the same team. It kick-started
+the modern use of <em>embeddings</em> - dense vector representation of words (and later
+tokens) for language models …</p> (...)" nil nil "2dcd2de5045a8b81cc0126dc651bd04e") (13 (26603 40582 360647 619000) "https://eli.thegreenplace.net/2025/summary-of-reading-january-march-2025/" "Summary of reading: January - March 2025" nil "Mon, 31 Mar 2025 18:30:00 -0700" "<ul class=\"simple\">
+<li>\"The Birth of Britain: A History of the English Speaking Peoples, Volume I\"
+by Winston Churchill - yes, that Churchill :) While it was started in the
+1930s, the writing of this 4-volume history of Britain and its former
+colonites was interrupted by WWII and Churchill's positions as prime minister.
+It was …</li></ul> (...)" nil nil "0ed9d56a35cecf030addf5388a5ae9e9") (12 (26598 25801 912044 512000) "https://eli.thegreenplace.net/2025/notes-on-implementing-attention/" "Notes on implementing Attention" nil "Wed, 26 Mar 2025 17:15:00 -0700" "<p>Some notes on implementing attention blocks in pure Python +
 Numpy. The focus here is on the exact implementation in code, explaining all the
 shapes throughout the process. The motivation for why attention works is not
 covered here - there are plenty of excellent online resources explaining it.</p>

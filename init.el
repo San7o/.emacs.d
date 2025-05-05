@@ -21,6 +21,7 @@
 ;;                           (border-mode-line-inactive bg-nactive)
 ;;                           ))
 
+(setq custom-safe-themes t)
 (add-to-list 'custom-theme-load-path "~/.emacs.d/themes/")
 (load-theme 'giovanni-base)
 
@@ -210,6 +211,13 @@
   :ensure t
   :config
   (setq rfc-mode-directory (expand-file-name "~/.emacs.d/rfc/")))
+
+(use-package hledger-mode
+  :ensure
+  :config
+  (add-to-list 'auto-mode-alist '("\\.journal\\'" . hledger-mode))
+  (setq hledger-jfile "/home/santo/todo.org/expenses.journal")
+  (global-set-key (kbd "C-c j") 'hledger-run-command))
 
 (menu-bar-mode -1)
 (scroll-bar-mode -1)
