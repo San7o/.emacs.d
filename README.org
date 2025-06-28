@@ -1,0 +1,3 @@
+* Emacs config
+
+The interestring stuff is in [[file:init.org][init.org]].

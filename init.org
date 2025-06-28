@@ -4,16 +4,19 @@
 * Welcome
 #+INDEX: Giovanni's Diary!Programming!Emacs!Init
 
-Welcome to my humble emacs configuration file. This is my daily emacs
-setup, do not expect anything remarcable, just some lisp code :)
+Hello and welcome to my Emacs configuration file. I use Emacs daily
+for a lot of tasks such as coding, writing, reading mailing lists
+and blogs, and much more. This file contains my main configuration.
 
-Use =M-x load-file= to load this configuration. You can also use
-=eval-buffer= inside this buffer.
+To load this configuration you first need to generate the =.el= via
+=C-c C-v C-f= and selecting this file, then load the lisp code with
+=M-x load-file=.
 
 * Early Init
 
-This code gets executed very early during emacs' startup sequence.
-It is useful to speedup the startup process.
+This section generates the =early-init.el= file. This code gets
+executed very early during emacs' startup sequence.  It is useful to
+speedup the startup process.
 
 What I am doing here is to temporarely increase the treshold for the
 garbage collector for reduce Its frequency. The value
@@ -56,6 +59,9 @@ You can switch between light and dark mode with =modus-themes-toggle=.
 Yes, sometimes I use light mode when I am outside, and I never feel
 ashamed about it, I can do whatever I want.
 
+I currently have disabled them because I am using my custom theme (see
+below).
+
 #+begin_src emacs-lisp
   ;; (load-theme 'modus-vivendi t)
   ;; ;; Default theme is white, unless the time is after 18 (6 pm)
@@ -74,7 +80,7 @@ ashamed about it, I can do whatever I want.
   ;;                           ))
 #+end_src
 
-Add a directory for my custom themes:
+Add the directory for my custom themes:
 
 #+begin_src emacs-lisp
   (setq custom-safe-themes t)
