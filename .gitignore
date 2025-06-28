@@ -7,3 +7,14 @@ url
 transient
 recentf
 *~
+.emacs.desktop
+news/
+mastodon.plstore
+ac-comphist.dat
+.org-id-locations
+newsticker
+org-roam.db
+rfc/
+tramp
+persist/
+projects
