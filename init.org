@@ -235,15 +235,18 @@ Highlights uncommitted changes on the left of the buffer window.
 
 ** Emms
 
-Emms is an emacs music player.
+Emms is an emacs music player. You either need vlc or mpv as a
+backend.
 
 #+begin_src emacs-lisp
   (use-package emms
     :ensure t
     :hook (after-init . emms-all)
     :config
-    (setq emms-player-list '(emms-player-vlc)
-          emms-info-functions '(emms-info-native)))
+    (setq emms-source-file-default-directory "~/music/")
+    (setq emms-browser-music-directory "~/music/")
+    (setq emms-player-list '(emms-player-mpv))
+    (setq emms-info-functions '(emms-info-native)))
  #+end_src
  
 ** Gnus

@@ -105,51 +105,24 @@
   :ensure t
   :hook (after-init . emms-all)
   :config
-  (setq emms-player-list '(emms-player-vlc)
-        emms-info-functions '(emms-info-native)))
+  (setq emms-source-file-default-directory "~/music/")
+  (setq emms-browser-music-directory "~/music/")
+  (setq emms-player-list '(emms-player-mpv))
+  (setq emms-info-functions '(emms-info-native)))
 
 (require 'newsticker)
 (setq newsticker-url-list
       '(("Eli Bendersky" "https://eli.thegreenplace.net/feeds/all.atom.xml")
         ("Emacs Redux" "https://emacsredux.com/atom.xml")))
-
-(defvar my-gnus-emacs-list
-  '("nntp+news.gmane.io:gmane.emacs.announce"
-    "nntp+news.gmane.io:gwene.com.sachachua"
-    "nntp+news.gmane.io:gwene.org.irreal.blog"
-    "nnrss:Protesilaos Stavrou: Master feed with all updates"))
-
-(defvar my-gnus-linux-list
-  '("nntp+news.gmane.io:gmane.emacs.announce"
-    "nntp+news.gmane.io:gwene.net.lwn.headlines"
-    "nntp+news.gmane.io:gmane.linux.kernel.bpf"
-        "nnrss:Linux Kernel Monkey Log"))
-
-(defvar my-gnus-blogs-list
-  '("nnrss:Blog System.5"
-    "nnrss:https://www.usebox.net/jjm/blog/index.xml"
-    "nnrss:https://alexschroeder.ch/view/index.rss"))
-
-(defvar my-gnus-misc-list
-  '("nnrss:Seeds of Science"
-    "nntp+news.gmane.io:gwene.io.kubernetes"
-    "nntp+news.gmane.io:gmane.culture.internet.history"
-    "nntp+news.gmane.io:gmane.announcxe"))
-
-  (use-package gnus
+(use-package gnus
     :ensure t
     :config
     (setq gnus-select-method '(nntp "news.gmane.io"))
     (setq gnus-directory "~/.emacs.d/news/")
-    ;;(setq gnus-startup-file "~/.emacs.d/.newsrc.eld") ;; Not working
-    (add-to-list 'gnus-topic-alist
-                 (add-to-list 'my-gnus-emacs-list "Emacs") t)
-    (add-to-list 'gnus-topic-alist
-                 (add-to-list 'my-gnus-linux-list "Linux") t)
-    (add-to-list 'gnus-topic-alist
-                 (add-to-list 'my-gnus-blogs-list "Blogs") t)
-    (add-to-list 'gnus-topic-alist
-                 (add-to-list 'my-gnus-misc-list "Misc") t))
+    (setq gnus-home-directory "~/.emacs.d/")
+    (setq gnus-startup-file "~/.emacs.d/.newsrc")
+    (setq gnus-current-startup-file "~/.emacs.d/.newsrc")
+    (setq gnus-init-file "~/.emacs.d/"))
 
 (require 'mm-url)
 (defadvice mm-url-insert (after DE-convert-atom-to-rss () )
@@ -168,7 +141,9 @@
 (ad-activate 'mm-url-insert)
 
 (use-package yasnippet
-  :ensure t)
+  :ensure t
+  :config
+  (yas-global-mode 1))
 
 (use-package olivetti
   :ensure t)
