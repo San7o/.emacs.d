@@ -1,0 +1,3 @@
+[submodule "musync.el"]
+	path = musync.el
+	url = https://github.com/San7o/musync.el.git
