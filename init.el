@@ -266,6 +266,55 @@
 (global-set-key (kbd "C-c c") 'compile)
 (global-set-key (kbd "C-c v") 'modus-themes-toggle)
 
+(defcustom my-search-web-handler "https://duckduckgo.com/html/?q="
+  "How to search. Could be a string that accepts the search query at the end (URL-encoded)
+or a function that accepts the text (unencoded)."
+  :type '(choice (string :tag "Prefix URL to search engine.")
+                 (function :tag "Handler function.")))
+
+(defun my-open-url-or-search-web (&optional text-or-url)
+  (interactive (list (if (region-active-p)
+                         (buffer-substring (region-beginning) (region-end))
+                       (or
+                        (and (derived-mode-p 'org-mode)
+                             (let ((elem (org-element-context)))
+                               (and (eq (org-element-type elem) 'link)
+                                    (buffer-substring-no-properties
+                                     (org-element-begin elem)
+                                     (org-element-end elem)))))
+                        (thing-at-point 'url)
+                        (thing-at-point 'email)
+                        (thing-at-point 'filename)
+                        (thing-at-point 'word)))))
+    (catch 'done
+      (let (list)
+        (with-temp-buffer
+          (insert text-or-url)
+          (org-mode)
+          (goto-char (point-min))
+          ;; We add all the links to a list first because following them may change the point
+          (while (re-search-forward org-any-link-re nil t)
+            (add-to-list 'list (match-string-no-properties 0)))
+          (when list
+            (dolist (link list)
+              (org-link-open-from-string link))
+            (throw 'done list))
+          ;; Try emails
+          (while (re-search-forward thing-at-point-email-regexp nil t)
+            (add-to-list 'list (match-string-no-properties 0)))
+          (when list
+            (compose-mail (string-join list ", "))
+            (throw 'done list)))
+        ;; Open filename if specified, or do a web search
+        (cond
+         ((ffap-guesser) (find-file-at-point))
+         ((functionp my-search-web-handler)
+          (funcall my-search-web-handler text-or-url))
+         ((stringp my-search-web-handler)
+          (browse-url (concat my-search-web-handler (url-hexify-string text-or-url))))))))
+
+(keymap-global-set "C-c o" #'my-open-url-or-search-web)
+
 ;;(require 'undo-tree)
 ;;(global-undo-tree-mode)
 
