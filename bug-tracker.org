@@ -1,0 +1,16 @@
+#+startup: content indent
+
+* Bug Tracker
+
+The GNU Bug Tracker at https://debbugs.gnu.org. Emacs bugs are filed
+in the tracker under the ‘emacs’ package. The tracker records
+information about the status of each bug, the initial bug report, and
+the follow-up messages by the bug reporter and Emacs developers. You
+can search for bugs by subject, severity, and other criteria.
+
+Instead of browsing the bug tracker as a webpage, you can browse it
+from Emacs using the debbugs package, which can be downloaded via the
+Package Menu (see Packages). This package provides the command M-x
+debbugs-gnu to list bugs, and M-x debbugs-gnu-search to search for a
+specific bug. User tags, applied by the Emacs maintainers, are shown
+by M-x debbugs-gnu-usertags.
