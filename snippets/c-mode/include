@@ -2,4 +2,4 @@
 # name: include 
 # key: #
 # --
-#include <$0>
+#include <$0.h>
