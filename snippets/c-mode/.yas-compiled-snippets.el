@@ -1,0 +1,13 @@
+;;; Compiled snippets and support files for `c-mode'
+;;; Snippet definitions:
+;;;
+(yas-define-snippets 'c-mode
+                     '(("p" "printf(\"$0\");" "printf" nil nil nil "/home/santo/.emacs.d/snippets/c-mode/printf" nil nil)
+                       ("MIT" "//\n// MIT License\n//\n// Copyright (c) 2025 Giovanni Santini\n//\n// Permission is hereby granted, free of charge, to any person obtaining a copy\n// of this software and associated documentation files (the \"Software\"), to deal\n// in the Software without restriction, including without limitation the rights\n// to use, copy, modify, merge, publish, distribute, sublicense, and/or sell\n// copies of the Software, and to permit persons to whom the Software is\n// furnished to do so, subject to the following conditions:\n//\n// The above copyright notice and this permission notice shall be included in\n// all copies or substantial portions of the Software.\n//\n// THE SOFTWARE IS PROVIDED \"AS IS\", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR\n// IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,\n// FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE\n// AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER\n// LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,\n// OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE\n// SOFTWARE.\n//\n\n$0" "mit" nil nil nil "/home/santo/.emacs.d/snippets/c-mode/mit" nil nil)
+                       ("main" "int main(int argc, char** argv)\n{\n    $0\n    return 0;\n}" "main" nil nil nil "/home/santo/.emacs.d/snippets/c-mode/main" nil nil)
+                       ("#" "#include <$0.h>" "include" nil nil nil "/home/santo/.emacs.d/snippets/c-mode/include" nil nil)
+                       ("ifcpp" "#ifdef __cplusplus\nextern \"C\"\n{\n#endif\n\n$0\n\n#ifdef __cplusplus\n}\n#endif" "ifcpp" nil nil nil "/home/santo/.emacs.d/snippets/c-mode/ifcpp" nil nil)
+                       ("hello" "#include <stdio.h>\n\nint main(int argc, char** argv)\n{\n    printf(\"Hello, World!\");\n    $0\n    return 0;\n}" "hello" nil nil nil "/home/santo/.emacs.d/snippets/c-mode/hello" nil nil)))
+
+
+;;; Do not edit! File generated at Mon Sep 15 20:33:57 2025
