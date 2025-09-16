@@ -6,4 +6,4 @@
                        ("hello" "## --- Settings ---\n\nCFLAGS=-Wall -Werror -Wpedantic -ggdb\nLDFLAGS=\nCC=gcc\n\nOUT_NAME=hello\nOBJ=main.o\n\n## --- Commands ---\n\n# --- Targets ---\n\nall: $(OUT_NAME)\n\nrun: $(OUT_NAME)\n	chmod +x $(OUT_NAME)\n	./$(OUT_NAME)\n\n$(OUT_NAME): $(OBJ)\n	$(CC) $(OBJ) $(LDFLAGS) $(CLAGS) -o $(OUT_NAME)\n\n%.o: %.c\n	$(CC) $(CFLAGS) -c $< -o $@\n\nclean:\n	rm $(OBJ) 2>/dev/null || :\n\ndistclean:\n	rm $(OUT_NAME) 2>/dev/null || :\n" "hello" nil nil nil "/home/santo/.emacs.d/snippets/makefile-mode/hello" nil nil)))
 
 
-;;; Do not edit! File generated at Mon Sep 15 20:33:57 2025
+;;; Do not edit! File generated at Tue Sep 16 11:17:19 2025
