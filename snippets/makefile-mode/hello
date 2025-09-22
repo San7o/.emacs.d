@@ -8,7 +8,7 @@ CFLAGS=-Wall -Werror -Wpedantic -ggdb
 LDFLAGS=
 CC=gcc
 
-OUT_NAME=hello
+OUT_NAME=hello$0
 OBJ=main.o
 
 ## --- Commands ---
