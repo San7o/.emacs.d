@@ -1,34 +1,46 @@
 # -*- mode: snippet -*-
-# name: hello 
+# name: hello
 # key: hello
 # --
-## --- Settings ---
+# SPDX-License-Identifier: MIT
+# Author:  Giovanni Santini
+# Mail:    giovanni.santini@proton.me
+# License: MIT
 
-CFLAGS=-Wall -Werror -Wpedantic -ggdb
-LDFLAGS=
-CC=gcc
+#
+# Compiler files
+#
+CFLAGS      = -Wall -Werror -Wpedantic -std=c99
+DEBUG_FLAGS = -ggdb
+LDFLAGS     =
+CC?         = gcc
 
-OUT_NAME=hello$0
-OBJ=main.o
+#
+# Project files
+#
+OUT_NAME = hello
+OBJ      = hello.o
 
-## --- Commands ---
-
-# --- Targets ---
-
+#
+# Commands
+#
 all: $(OUT_NAME)
+
+debug: CFLAGS += $(DEBUG_FLAGS)
+debug: $(OUT_NAME)
 
 run: $(OUT_NAME)
 	chmod +x $(OUT_NAME)
 	./$(OUT_NAME)
+
+clean:
+	rm -f $(OBJ)
+
+distclean:
+	rm -f $(OUT_NAME)
 
 $(OUT_NAME): $(OBJ)
 	$(CC) $(OBJ) $(LDFLAGS) $(CLAGS) -o $(OUT_NAME)
 
 %.o: %.c
 	$(CC) $(CFLAGS) -c $< -o $@
-
-clean:
-	rm $(OBJ) 2>/dev/null || :
-
-distclean:
-	rm $(OUT_NAME) 2>/dev/null || :
