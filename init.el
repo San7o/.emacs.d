@@ -260,6 +260,8 @@
 (setq-default indent-tabs-mode nil)
 (setq-default tab-width 2)
 
+(add-to-list 'auto-mode-alist '("\\.inl\\'" . c++-mode))
+
 ;; Monkey-type game
 ;;(require 'typit)
 
