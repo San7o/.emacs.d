@@ -6,4 +6,4 @@
                        ("hello" "# SPDX-License-Identifier: MIT\n# Author:  Giovanni Santini\n# Mail:    giovanni.santini@proton.me\n# License: MIT\n\n#\n# Compiler files\n#\nCFLAGS      = -Wall -Werror -Wpedantic -std=c99\nDEBUG_FLAGS = -ggdb\nLDFLAGS     =\nCC?         = gcc\n\n#\n# Project files\n#\nOUT_NAME = hello\nOBJ      = hello.o\n\n#\n# Commands\n#\nall: $(OUT_NAME)\n\ndebug: CFLAGS += $(DEBUG_FLAGS)\ndebug: $(OUT_NAME)\n\nrun: $(OUT_NAME)\n	chmod +x $(OUT_NAME)\n	./$(OUT_NAME)\n\nclean:\n	rm -f $(OBJ)\n\ndistclean:\n	rm -f $(OUT_NAME)\n\n$(OUT_NAME): $(OBJ)\n	$(CC) $(OBJ) $(LDFLAGS) $(CFLAGS) -o $(OUT_NAME)\n\n%.o: %.c\n	$(CC) $(CFLAGS) -c $< -o $@\n" "hello" nil nil nil "/home/santo/.emacs.d/snippets/makefile-mode/hello" nil nil)))
 
 
-;;; Do not edit! File generated at Sun Oct 12 11:09:13 2025
+;;; Do not edit! File generated at Mon Oct 13 15:21:55 2025

@@ -1,0 +1,12 @@
+# -*- mode: snippet -*-
+# name: hello-cpp
+# key: hello
+# --
+#include <iostream>
+
+int main(int argc, char** argv)
+{
+  std::cout << "Hello, World!" << std::endl;
+  $0
+  return 0;
+}
