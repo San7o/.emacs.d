@@ -8,7 +8,7 @@
 # License: MIT
 
 #
-# Compiler files
+# Compiler flags
 #
 CFLAGS      = -Wall -Werror -Wpedantic -std=c99
 DEBUG_FLAGS = -ggdb
