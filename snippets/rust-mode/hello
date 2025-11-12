@@ -1,0 +1,7 @@
+# -*- mode: snippet -*-
+# name: hello 
+# key: hello
+# --
+fn main() {
+   println!("Hello, World!");
+}
