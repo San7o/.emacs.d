@@ -371,15 +371,6 @@ Grep in minibuffer.
     :ensure t)
 #+end_src
 
-** Kubernetes
-
-Manage kubernetes clusters in emacs.
-
-#+begin_src emacs-lisp
-(use-package kubernetes
-  :ensure t)
-#+end_src
-
 ** Ox-publish + simple-httpd
 
 Generate static websites from org-mode.
@@ -389,18 +380,6 @@ Generate static websites from org-mode.
   ;;  :ensure t)
   (use-package simple-httpd
     :ensure t)
-#+end_src
-
-** Mastodon
-
-Mastodon client in emacs.
-
-#+begin_src emacs-lisp
-  (use-package mastodon
-    :ensure t
-    :config
-    (setq mastodon-instance-url "https://mastodon.social"
-          mastodon-active-user "santo7"))
 #+end_src
 
 ** auto-complete
@@ -436,21 +415,6 @@ Browse and read RFC documents.
     :ensure t
     :config
     (setq rfc-mode-directory (expand-file-name "~/.emacs.d/rfc/")))
-#+end_src
-
-** hledger
-An Emacs major mode for writing hledger journals and generating useful
-accounting reports.
-
-The external hledger program should be installed first, or most of the
-report features won't work.
-#+begin_src emacs-lisp
-  (use-package hledger-mode
-    :ensure
-    :config
-    (add-to-list 'auto-mode-alist '("\\.journal\\'" . hledger-mode))
-    (setq hledger-jfile "/home/santo/todo.org/expenses.journal")
-    (global-set-key (kbd "C-c j") 'hledger-run-command))
 #+end_src
 
 * Customization
@@ -559,6 +523,26 @@ Recognize =.inl= files as cpp files.
 
 #+begin_src emacs-lisp
   (add-to-list 'auto-mode-alist '("\\.inl\\'" . c++-mode))
+#+end_src
+
+** Writer mode
+
+Enter a minimal zen writer mode.
+
+#+begin_src emacs-lisp
+  (defun writer-mode-enable ()
+    (interactive)
+    (olivetti-mode 1)
+    (display-line-numbers-mode 0)
+    (global-display-fill-column-indicator-mode 0)
+    (global-diff-hl-mode 0))
+
+  (defun writer-mode-disable ()
+    (interactive)
+    (olivetti-mode 0)
+    (display-line-numbers-mode 1)
+    (global-display-fill-column-indicator-mode 1)
+    (global-diff-hl-mode 0))
 #+end_src
 
 
@@ -742,6 +726,21 @@ is now complete.
 
 #+begin_src emacs-lisp
 ;;(desktop-save-mode 1)
+#+end_src
+
+** hledger
+An Emacs major mode for writing hledger journals and generating useful
+accounting reports.
+
+The external hledger program should be installed first, or most of the
+report features won't work.
+#+begin_src emacs-lisp
+;;  (use-package hledger-mode
+;;    :ensure
+;;    :config
+;;    (add-to-list 'auto-mode-alist '("\\.journal\\'" . hledger-mode))
+;;    (setq hledger-jfile "/home/santo/todo.org/expenses.journal")
+;;    (global-set-key (kbd "C-c j") 'hledger-run-command))
 #+end_src
 
 ** EXWM
