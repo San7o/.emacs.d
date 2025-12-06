@@ -535,14 +535,18 @@ Enter a minimal zen writer mode.
     (olivetti-mode 1)
     (display-line-numbers-mode 0)
     (global-display-fill-column-indicator-mode 0)
-    (global-diff-hl-mode 0))
+    (global-diff-hl-mode 0)
+    (display-time-mode 0)
+    (display-battery-mode 0))
 
   (defun writer-mode-disable ()
     (interactive)
     (olivetti-mode 0)
     (display-line-numbers-mode 1)
     (global-display-fill-column-indicator-mode 1)
-    (global-diff-hl-mode 0))
+    (global-diff-hl-mode 1)
+    (display-time-mode 1)
+    (display-battery-mode 1))
 #+end_src
 
 

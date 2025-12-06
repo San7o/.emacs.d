@@ -174,19 +174,10 @@
 (use-package swiper
   :ensure t)
 
-(use-package kubernetes
-  :ensure t)
-
 ;;(use-package ox-publish
 ;;  :ensure t)
 (use-package simple-httpd
   :ensure t)
-
-(use-package mastodon
-  :ensure t
-  :config
-  (setq mastodon-instance-url "https://mastodon.social"
-        mastodon-active-user "santo7"))
 
 (when (< emacs-major-version 30)
   (use-package auto-complete
@@ -205,13 +196,6 @@
   :ensure t
   :config
   (setq rfc-mode-directory (expand-file-name "~/.emacs.d/rfc/")))
-
-(use-package hledger-mode
-  :ensure
-  :config
-  (add-to-list 'auto-mode-alist '("\\.journal\\'" . hledger-mode))
-  (setq hledger-jfile "/home/santo/todo.org/expenses.journal")
-  (global-set-key (kbd "C-c j") 'hledger-run-command))
 
 (menu-bar-mode -1)
 (scroll-bar-mode -1)
@@ -261,6 +245,24 @@
 (setq-default tab-width 2)
 
 (add-to-list 'auto-mode-alist '("\\.inl\\'" . c++-mode))
+
+(defun writer-mode-enable ()
+  (interactive)
+  (olivetti-mode 1)
+  (display-line-numbers-mode 0)
+  (global-display-fill-column-indicator-mode 0)
+  (global-diff-hl-mode 0)
+  (display-time-mode 0)
+  (display-battery-mode 0))
+
+(defun writer-mode-disable ()
+  (interactive)
+  (olivetti-mode 0)
+  (display-line-numbers-mode 1)
+  (global-display-fill-column-indicator-mode 1)
+  (global-diff-hl-mode 1)
+  (display-time-mode 1)
+  (display-battery-mode 1))
 
 ;; Monkey-type game
 ;;(require 'typit)
@@ -374,6 +376,13 @@ or a function that accepts the text (unencoded)."
 ;;    :ensure t)
 
 ;;(desktop-save-mode 1)
+
+;;  (use-package hledger-mode
+;;    :ensure
+;;    :config
+;;    (add-to-list 'auto-mode-alist '("\\.journal\\'" . hledger-mode))
+;;    (setq hledger-jfile "/home/santo/todo.org/expenses.journal")
+;;    (global-set-key (kbd "C-c j") 'hledger-run-command))
 
 ;; ############## EXWM BEGIN ##################
 ;; Emac's X window manager, works fine
