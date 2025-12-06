@@ -126,32 +126,6 @@ To update completition percentage: =C-c C-c=.
                         :matchers ("begin" "$1" "$" "$$" "\\(" "\\["))))
     (add-hook 'org-mode-hook 'org-fragtog-mode)
 #+end_src
-
-** org-roam
-
-#+begin_src emacs-lisp
-  (use-package org-roam
-    :ensure t
-    :custom
-    (org-roam-directory "/home/santo/giovanni-diary/content")
-    :init
-    (setq org-roam-v2-ack t) ;; acknowledge v2
-    :config
-    (org-roam-db-autosync-mode))
-#+end_src
-
-#+begin_src emacs-lisp
-  ;; (use-package org-roam-ui
-  ;;   :ensure t
-  ;;   :after org-roam
-  ;;   :hook (after-init . org-roam-ui-mode)
-  ;;   :config
-  ;;   (setq org-roam-ui-sync-theme t
-  ;;         org-roam-ui-follow t
-  ;;         org-roam-ui-update-on-save t
-          ;; org-roam-ui-open-on-start t))
-#+end_src
-
 ** Markdown mode
 
 I use markdown mode when editing markdown document, mostly on
@@ -188,15 +162,6 @@ that you can use.
     :hook (after-init . which-key-mode))
 #+end_src
 
-** Markdown-mode
-
-Enables markdown highlights on emacs.
-
-#+begin_src emacs-lisp
-  (use-package markdown-mode
-    :ensure t)
-#+end_src
-
 ** Ivy
 
 Ivy is a generic completition mechanism for emacs.
@@ -206,8 +171,9 @@ Ivy is a generic completition mechanism for emacs.
     :ensure t
     :hook (after-init . ivy-mode)
     :config
-    (setq ivy-use-virtual-buffers t)
-    (setq enable-recursive-minibuffers t))
+    (setopt ivy-use-virtual-buffers t)
+    (setopt enable-recursive-minibuffers t)
+    (setopt ivy-count-format "(%d/%d) "))
 #+end_src
 
 ** Avy
@@ -386,10 +352,10 @@ Generate static websites from org-mode.
 
 Available by default in emacs 30.
 #+begin_src emacs-lisp
-    (when (< emacs-major-version 30)
-      (use-package auto-complete
-        :ensure t
-        :hook (after-init . auto-complete-mode)))
+  (when (< emacs-major-version 30)
+    (use-package auto-complete
+      :ensure t
+      :hook (after-init . global-auto-complete-mode)))
 #+end_src
 
 ** Flycheck
@@ -547,16 +513,6 @@ Enter a minimal zen writer mode.
     (global-diff-hl-mode 1)
     (display-time-mode 1)
     (display-battery-mode 1))
-#+end_src
-
-
-* Games
-
-A collection of some games.
-
-#+begin_src emacs-lisp
-  ;; Monkey-type game
-  ;;(require 'typit)
 #+end_src
 
 * Shortcuts
@@ -745,6 +701,31 @@ report features won't work.
 ;;    (add-to-list 'auto-mode-alist '("\\.journal\\'" . hledger-mode))
 ;;    (setq hledger-jfile "/home/santo/todo.org/expenses.journal")
 ;;    (global-set-key (kbd "C-c j") 'hledger-run-command))
+#+end_src
+
+** org-roam
+
+#+begin_src emacs-lisp
+  ;; (use-package org-roam
+  ;;  :ensure t
+  ;;  :custom
+  ;;  (org-roam-directory "/home/santo/giovanni-diary/content")
+  ;;  :init
+  ;;  (setq org-roam-v2-ack t) ;; acknowledge v2
+  ;;  :config
+  ;;  (org-roam-db-autosync-mode))
+#+end_src
+
+#+begin_src emacs-lisp
+  ;; (use-package org-roam-ui
+  ;;   :ensure t
+  ;;   :after org-roam
+  ;;   :hook (after-init . org-roam-ui-mode)
+  ;;   :config
+  ;;   (setq org-roam-ui-sync-theme t
+  ;;         org-roam-ui-follow t
+  ;;         org-roam-ui-update-on-save t
+          ;; org-roam-ui-open-on-start t))
 #+end_src
 
 ** EXWM

@@ -49,25 +49,6 @@
                       :matchers ("begin" "$1" "$" "$$" "\\(" "\\["))))
   (add-hook 'org-mode-hook 'org-fragtog-mode)
 
-(use-package org-roam
-  :ensure t
-  :custom
-  (org-roam-directory "/home/santo/giovanni-diary/content")
-  :init
-  (setq org-roam-v2-ack t) ;; acknowledge v2
-  :config
-  (org-roam-db-autosync-mode))
-
-;; (use-package org-roam-ui
-;;   :ensure t
-;;   :after org-roam
-;;   :hook (after-init . org-roam-ui-mode)
-;;   :config
-;;   (setq org-roam-ui-sync-theme t
-;;         org-roam-ui-follow t
-;;         org-roam-ui-update-on-save t
-        ;; org-roam-ui-open-on-start t))
-
 (use-package markdown-mode
   :ensure t)
 
@@ -80,15 +61,13 @@
   :ensure t
   :hook (after-init . which-key-mode))
 
-(use-package markdown-mode
-  :ensure t)
-
 (use-package ivy
   :ensure t
   :hook (after-init . ivy-mode)
   :config
-  (setq ivy-use-virtual-buffers t)
-  (setq enable-recursive-minibuffers t))
+  (setopt ivy-use-virtual-buffers t)
+  (setopt enable-recursive-minibuffers t)
+  (setopt ivy-count-format "(%d/%d) "))
 
 (use-package avy
   :ensure t
@@ -182,7 +161,7 @@
 (when (< emacs-major-version 30)
   (use-package auto-complete
     :ensure t
-    :hook (after-init . auto-complete-mode)))
+    :hook (after-init . global-auto-complete-mode)))
 
 (use-package flycheck
   :ensure
@@ -263,9 +242,6 @@
   (global-diff-hl-mode 1)
   (display-time-mode 1)
   (display-battery-mode 1))
-
-;; Monkey-type game
-;;(require 'typit)
 
 (global-set-key (kbd "C-c c") 'compile)
 (global-set-key (kbd "C-c v") 'modus-themes-toggle)
@@ -383,6 +359,25 @@ or a function that accepts the text (unencoded)."
 ;;    (add-to-list 'auto-mode-alist '("\\.journal\\'" . hledger-mode))
 ;;    (setq hledger-jfile "/home/santo/todo.org/expenses.journal")
 ;;    (global-set-key (kbd "C-c j") 'hledger-run-command))
+
+;; (use-package org-roam
+;;  :ensure t
+;;  :custom
+;;  (org-roam-directory "/home/santo/giovanni-diary/content")
+;;  :init
+;;  (setq org-roam-v2-ack t) ;; acknowledge v2
+;;  :config
+;;  (org-roam-db-autosync-mode))
+
+;; (use-package org-roam-ui
+;;   :ensure t
+;;   :after org-roam
+;;   :hook (after-init . org-roam-ui-mode)
+;;   :config
+;;   (setq org-roam-ui-sync-theme t
+;;         org-roam-ui-follow t
+;;         org-roam-ui-update-on-save t
+        ;; org-roam-ui-open-on-start t))
 
 ;; ############## EXWM BEGIN ##################
 ;; Emac's X window manager, works fine
