@@ -20,3 +20,4 @@ persist/
 projects
 .cache
 .lsp-session-v1
+#.*
