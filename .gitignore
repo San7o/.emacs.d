@@ -21,3 +21,4 @@ projects
 .cache
 .lsp-session-v1
 #.*
+.mc-lists.el

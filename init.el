@@ -76,6 +76,9 @@
 ;; Alternative way of setting a keybinding:
 ;;(global-set-key (kbd "C-:") 'avy-goto-char)
 
+(use-package multiple-cursors
+  :ensure t)
+
 (use-package diff-hl
   :ensure t
   :hook (after-init . global-diff-hl-mode))
