@@ -101,6 +101,16 @@ I use =use-package= to manage all my packages.
     (package-install 'use-package)))
 #+end_src
 
+** Xah fly keys
+
+#+begin_src emacs-lisp
+  (add-to-list 'load-path "~/.emacs.d/lisp")
+  (require 'xah-fly-keys)
+  (xah-fly-keys-set-layout "qwerty")
+  (xah-fly-keys 1)
+#+end_src
+
+
 ** Org mode
 
 Org mode settings. I use org mode everywhere in my life.
@@ -182,9 +192,7 @@ Jump to visible text using a char-based decision tree. Lovely!
 
 #+begin_src emacs-lisp
   (use-package avy
-    :ensure t
-    :bind
-    ("C-:" . avy-goto-char))
+    :ensure t)
   ;; Alternative way of setting a keybinding:
   ;;(global-set-key (kbd "C-:") 'avy-goto-char)
 #+end_src
@@ -194,7 +202,7 @@ Jump to visible text using a char-based decision tree. Lovely!
 #+begin_src emacs-lisp
   (use-package multiple-cursors
     :ensure t)
-  (globacl-set-key (kbd "C-S-c C-S-c") 'mc/edit-lines)
+  (global-set-key (kbd "C-S-c C-S-c") 'mc/edit-lines)
   (global-set-key (kbd "C->") 'mc/mark-next-like-this)
   (global-set-key (kbd "C-<") 'mc/mark-previous-like-this)
   (global-set-key (kbd "C-c C-<") 'mc/mark-all-like-this)
@@ -395,6 +403,14 @@ Browse and read RFC documents.
 #+end_src
 
 * Customization
+
+** Movement
+
+#+begin_src emacs-lisp
+  (keymap-global-set "C-s" #'isearch-forward-regexp)
+  (keymap-global-set "C-:" #'avy-goto-char-timer)
+#+end_src
+
 ** Cleanup the screen
  
  #+begin_src emacs-lisp

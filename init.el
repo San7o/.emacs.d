@@ -31,6 +31,11 @@
      ;; (package-refresh-contents))
     (package-install 'use-package)))
 
+(add-to-list 'load-path "~/.emacs.d/lisp")
+(require 'xah-fly-keys)
+(xah-fly-keys-set-layout "qwerty")
+(xah-fly-keys 1)
+
 (use-package org
     :ensure nil ; do not try to install it as it is built-in
     :config
@@ -70,14 +75,16 @@
   (setopt ivy-count-format "(%d/%d) "))
 
 (use-package avy
-  :ensure t
-  :bind
-  ("C-:" . avy-goto-char))
+  :ensure t)
 ;; Alternative way of setting a keybinding:
 ;;(global-set-key (kbd "C-:") 'avy-goto-char)
 
 (use-package multiple-cursors
   :ensure t)
+(global-set-key (kbd "C-S-c C-S-c") 'mc/edit-lines)
+(global-set-key (kbd "C->") 'mc/mark-next-like-this)
+(global-set-key (kbd "C-<") 'mc/mark-previous-like-this)
+(global-set-key (kbd "C-c C-<") 'mc/mark-all-like-this)
 
 (use-package diff-hl
   :ensure t
@@ -178,6 +185,9 @@
   :ensure t
   :config
   (setq rfc-mode-directory (expand-file-name "~/.emacs.d/rfc/")))
+
+(keymap-global-set "C-s" #'isearch-forward-regexp)
+(keymap-global-set "C-:" #'avy-goto-char-timer)
 
 (menu-bar-mode -1)
 (scroll-bar-mode -1)
