@@ -190,6 +190,16 @@
     :link "https://music.youtube.com/watch?v=acQrKPVA32I&si=FGB9pE_lxtHUdh77")
   ;; Edm
   (list
+    :name "Starbright"
+    :author "Dabin"
+    :category "Edm"
+    :link "https://music.youtube.com/watch?v=0nnmtuGPXiA&si=sBhYoqimjA9_Lxvp")
+  (list
+    :name "Holding On"
+    :author "Dabin"
+    :category "Edm"
+    :link "https://music.youtube.com/watch?v=_T3XuEWju78&si=ViLML4QxMgOmdfq3")
+  (list
     :name "Save Me"
     :author "NURKO and Kyle Hume"
     :category "Edm"
