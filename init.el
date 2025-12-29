@@ -99,19 +99,19 @@
   (setq emms-player-list '(emms-player-mpv))
   (setq emms-info-functions '(emms-info-native)))
 
-(require 'newsticker)
-(setq newsticker-url-list
-      '(("Eli Bendersky" "https://eli.thegreenplace.net/feeds/all.atom.xml")
-        ("Emacs Redux" "https://emacsredux.com/atom.xml")))
 (use-package gnus
     :ensure t
     :config
-    (setq gnus-select-method '(nntp "news.gmane.io"))
     (setq gnus-directory "~/.emacs.d/news/")
     (setq gnus-home-directory "~/.emacs.d/")
     (setq gnus-startup-file "~/.emacs.d/.newsrc")
     (setq gnus-current-startup-file "~/.emacs.d/.newsrc")
-    (setq gnus-init-file "~/.emacs.d/"))
+    (setq gnus-init-file "~/.emacs.d/")
+
+    (require 'nnrss)
+    (setq gnus-select-method '(nntp "news.gmane.io"))
+    (setq gnus-secondary-select-methods
+          '((nnrss ""))))
 
 (require 'mm-url)
 (defadvice mm-url-insert (after DE-convert-atom-to-rss () )

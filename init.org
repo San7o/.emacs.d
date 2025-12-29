@@ -109,8 +109,6 @@ I use =use-package= to manage all my packages.
   (xah-fly-keys-set-layout "qwerty")
   (xah-fly-keys 1)
 #+end_src
-
-
 ** Org mode
 
 Org mode settings. I use org mode everywhere in my life.
@@ -248,29 +246,27 @@ Some useful shortcuts:
 - =A u=: show all sources
 - =G R=: register a new rss feed
 
-Some blogs use Atom feeds instead of RSS feeds, and Gnus does not
-support them. As a temporay solution, I am subscribing to them
-via newsticker. I will write some code to convert Atom into rss
-so that gnus can read them.
-
 #+begin_src emacs-lisp
-  (require 'newsticker)
-  (setq newsticker-url-list
-        '(("Eli Bendersky" "https://eli.thegreenplace.net/feeds/all.atom.xml")
-          ("Emacs Redux" "https://emacsredux.com/atom.xml")))
   (use-package gnus
       :ensure t
       :config
-      (setq gnus-select-method '(nntp "news.gmane.io"))
       (setq gnus-directory "~/.emacs.d/news/")
       (setq gnus-home-directory "~/.emacs.d/")
       (setq gnus-startup-file "~/.emacs.d/.newsrc")
       (setq gnus-current-startup-file "~/.emacs.d/.newsrc")
-      (setq gnus-init-file "~/.emacs.d/"))
+      (setq gnus-init-file "~/.emacs.d/")
+
+      (require 'nnrss)
+      (setq gnus-select-method '(nntp "news.gmane.io"))
+      (setq gnus-secondary-select-methods
+            '((nnrss ""))))
 #+end_src
 
-Read atom feeds with gnus. Stolen from the emacswiki, you need to
-download =atom2rss.xsl= first from https://atom.geekhood.net/.
+Some blogs use Atom feeds instead of RSS feeds, and Gnus does not
+support them by default. To enable atom feeds, you need to install
+=xsltproc= (usually packaged by your distribution, for example
+=apt-get install xsltproc=). Then load the following code (copied from
+the emacs wiki):
 
 #+begin_src emacs-lisp
   (require 'mm-url)

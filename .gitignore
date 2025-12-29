@@ -8,7 +8,6 @@ transient
 recentf
 *~
 .emacs.desktop
-news/
 mastodon.plstore
 ac-comphist.dat
 .org-id-locations
