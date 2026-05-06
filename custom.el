@@ -43,8 +43,8 @@
  '(package-selected-packages
    '(avy diff-hl emms flycheck ggtags magit marginalia markdown-mode
          multiple-cursors nerd-icons-completion nerd-icons-corfu
-         nerd-icons-dired olivetti org-fragtog rfc-mode simple-httpd
-         swiper yasnippet))
+         nerd-icons-dired olivetti org-fragtog rfc-mode rust-mode
+         simple-httpd swiper yasnippet))
  '(safe-local-variable-values
    '((etags-regen-ignores "test/manual/etags/")
      (etags-regen-regexp-alist
