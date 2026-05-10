@@ -472,8 +472,9 @@ Browse and read RFC documents.
 ** Column Line
 
 #+begin_src emacs-lisp
+  (setq-default display-fill-column-indicator-column 80)
+  (setq-default fill-column 80)
   (global-display-fill-column-indicator-mode 1)
-  (setq global-display-fill-column-indicator-column 80)
 #+end_src
 
 ** Clean ~ files

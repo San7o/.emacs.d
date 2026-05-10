@@ -221,8 +221,9 @@
 (setq-default gnutls-trustfiles (list "~/.emacs.d/cacert.pem"
                                      "/etc/pki/tls/certs/ca-bundle.pem"))
 
+(setq-default display-fill-column-indicator-column 80)
+(setq-default fill-column 80)
 (global-display-fill-column-indicator-mode 1)
-(setq global-display-fill-column-indicator-column 80)
 
 (setq backup-directory-alist '(("." . "~/.emacs.d/backup"))
   backup-by-copying t    ; Don't delink hardlinks
