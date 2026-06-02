@@ -37,14 +37,13 @@
      "1975806871262a714d8b5f363d9ba1b4e7496b3dbf9d506b5342e2619f24ca6b"
      "c9e63647d90e7dc59d52c176fbfd46fd2cfed275cd2bad9b29b6cf620d3389b6"
      "36e7dbc8f9ef915a7dd5b34d7360c0763e583aef28d50ceeed50d445b9702c4a"
-     "76ada746ab3bb01113ae1cd8c42a41f69b187eb8e1e09532c321b7e0fa8f87d7"
-     default))
+     "76ada746ab3bb01113ae1cd8c42a41f69b187eb8e1e09532c321b7e0fa8f87d7" default))
  '(org-agenda-files nil)
  '(package-selected-packages
-   '(avy diff-hl emms flycheck ggtags magit marginalia markdown-mode
-         multiple-cursors nerd-icons-completion nerd-icons-corfu
-         nerd-icons-dired olivetti org-fragtog rfc-mode rust-mode
-         simple-httpd swiper yasnippet))
+   '(avy devicetree-ts-mode diff-hl emms flycheck ggtags htmlize magit marginalia
+         markdown-mode multiple-cursors nerd-icons-completion nerd-icons-corfu
+         nerd-icons-dired olivetti org-fragtog rfc-mode rust-mode simple-httpd
+         swiper transient yasnippet))
  '(safe-local-variable-values
    '((etags-regen-ignores "test/manual/etags/")
      (etags-regen-regexp-alist
